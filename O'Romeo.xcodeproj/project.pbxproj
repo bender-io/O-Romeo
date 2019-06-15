@@ -11,7 +11,11 @@
 		569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CCD22B45ADC0025C319 /* Main.storyboard */; };
 		569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */; };
 		569A6CDE22B57A800025C319 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CDD22B57A800025C319 /* Fonts */; };
-		569A6CE022B57AD50025C319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CDF22B57AD50025C319 /* Assets.xcassets */; };
+		569A6CE222B589890025C319 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CE122B589890025C319 /* Home.storyboard */; };
+		569A6CE422B58A230025C319 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE322B58A230025C319 /* HomeTableViewController.swift */; };
+		569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE622B58A430025C319 /* LoginViewController.swift */; };
+		569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE822B58A580025C319 /* SignupViewController.swift */; };
+		569A6CEF22B5A8BF0025C319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CEE22B5A8BF0025C319 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +25,11 @@
 		569A6CD322B45ADE0025C319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		569A6CD522B45ADE0025C319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		569A6CDD22B57A800025C319 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		569A6CDF22B57AD50025C319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		569A6CE122B589890025C319 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		569A6CE322B58A230025C319 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		569A6CE622B58A430025C319 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		569A6CEE22B5A8BF0025C319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			children = (
 				569A6CDB22B45AF90025C319 /* Resources */,
 				569A6CDC22B45B060025C319 /* Storyboards */,
+				569A6CE522B58A270025C319 /* View Controllers */,
 			);
 			path = "O'Romeo";
 			sourceTree = "<group>";
@@ -64,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
+				569A6CEE22B5A8BF0025C319 /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
-				569A6CDF22B57AD50025C319 /* Assets.xcassets */,
 				569A6CD522B45ADE0025C319 /* Info.plist */,
 			);
 			path = Resources;
@@ -75,9 +84,36 @@
 			isa = PBXGroup;
 			children = (
 				569A6CCD22B45ADC0025C319 /* Main.storyboard */,
+				569A6CE122B589890025C319 /* Home.storyboard */,
 				569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		569A6CE522B58A270025C319 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				569A6CEA22B58A7E0025C319 /* Login */,
+				569A6CEB22B58A910025C319 /* Main */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		569A6CEA22B58A7E0025C319 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				569A6CE622B58A430025C319 /* LoginViewController.swift */,
+				569A6CE822B58A580025C319 /* SignupViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		569A6CEB22B58A910025C319 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				569A6CE322B58A230025C319 /* HomeTableViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */,
+				569A6CE222B589890025C319 /* Home.storyboard in Resources */,
 				569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */,
-				569A6CE022B57AD50025C319 /* Assets.xcassets in Resources */,
 				569A6CDE22B57A800025C319 /* Fonts in Resources */,
+				569A6CEF22B5A8BF0025C319 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
+				569A6CE422B58A230025C319 /* HomeTableViewController.swift in Sources */,
+				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.brianhersh.O-Romeo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.brianhersh.O-Romeo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

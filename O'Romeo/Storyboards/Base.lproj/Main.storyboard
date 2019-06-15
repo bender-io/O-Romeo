@@ -22,16 +22,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="iDr-eC-HG5">
             <objects>
-                <viewController id="yeN-YR-20c" sceneMemberID="viewController">
+                <viewController id="yeN-YR-20c" customClass="LoginViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYl-t8-5wM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
-                                <rect key="frame" x="20" y="104" width="374" height="159"/>
+                                <rect key="frame" x="20" y="273" width="374" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -52,7 +52,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-5k-Ocz">
                                         <rect key="frame" x="112" y="114" width="150" height="45"/>
-                                        <color key="backgroundColor" name="NarenjiOrange"/>
+                                        <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="FiG-re-iHt"/>
                                         </constraints>
@@ -60,6 +60,9 @@
                                         <state key="normal" title="sign in">
                                             <color key="titleColor" name="OffWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="loginToHomeTVC" id="Y8D-Be-TOp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -70,19 +73,19 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
-                                <rect key="frame" x="20" y="279" width="374" height="51.5"/>
+                                <rect key="frame" x="20" y="448" width="374" height="51.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5">
                                         <rect key="frame" x="119" y="0.0" width="136" height="14.5"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="OffWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
                                         <rect key="frame" x="163.5" y="22.5" width="47" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up">
-                                            <color key="titleColor" name="NarenjiOrange"/>
+                                            <color key="titleColor" name="Highlights"/>
                                         </state>
                                         <connections>
                                             <segue destination="pDG-fY-qF4" kind="show" identifier="toSignUpVC" id="NNv-2b-pUW"/>
@@ -90,13 +93,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
+                                <rect key="frame" x="125" y="108" width="164" height="145"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FTl-qy-7Yg" secondAttribute="trailing" constant="125" id="80q-YZ-Uku"/>
+                            <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="top" secondItem="FTl-qy-7Yg" secondAttribute="bottom" constant="20" id="NrQ-s7-J7a"/>
                             <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FDQ-Qb-Vu0" secondAttribute="trailing" constant="20" id="UdL-Gv-CFZ"/>
-                            <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="top" secondItem="o1q-YQ-5cp" secondAttribute="top" constant="16" id="Zcy-eu-Keb"/>
                             <constraint firstItem="QUu-0U-tSP" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="20" id="cQQ-iv-u2v"/>
                             <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="20" id="g27-mh-zME"/>
+                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="top" secondItem="o1q-YQ-5cp" secondAttribute="top" constant="20" id="gRs-Ud-59R"/>
+                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="125" id="tIO-Vm-omf"/>
                             <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="QUu-0U-tSP" secondAttribute="trailing" constant="20" id="uvz-Sx-V7i"/>
                             <constraint firstItem="QUu-0U-tSP" firstAttribute="top" secondItem="FDQ-Qb-Vu0" secondAttribute="bottom" constant="16" id="w6f-Pp-aGE"/>
                         </constraints>
@@ -108,16 +117,24 @@
             </objects>
             <point key="canvasLocation" x="1278.2608695652175" y="-521.65178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
+        <scene sceneID="Pbp-Yi-KTV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="cjA-6w-YVr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRY-uF-S5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="-102"/>
+        </scene>
+        <!--Signup View Controller-->
         <scene sceneID="5VY-Kv-ORX">
             <objects>
-                <viewController id="pDG-fY-qF4" sceneMemberID="viewController">
+                <viewController id="pDG-fY-qF4" customClass="SignupViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crB-71-aRM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
-                                <rect key="frame" x="20" y="104" width="374" height="216"/>
+                                <rect key="frame" x="20" y="273" width="374" height="216"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -145,7 +162,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS">
                                         <rect key="frame" x="112" y="171" width="150" height="45"/>
-                                        <color key="backgroundColor" name="NarenjiOrange"/>
+                                        <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="yjM-xH-EF6"/>
                                         </constraints>
@@ -153,6 +170,9 @@
                                         <state key="normal" title="sign up">
                                             <color key="titleColor" name="OffWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="signupToHomeTVC" id="lqN-Zy-QEQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -164,19 +184,25 @@
                                     <constraint firstItem="spR-m3-VYt" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="svQ-0d-O7Y"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
+                                <rect key="frame" x="125" y="108" width="164" height="145"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
+                            <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="FRU-rg-hsu" secondAttribute="trailing" constant="125" id="2sG-lJ-u96"/>
+                            <constraint firstItem="FRU-rg-hsu" firstAttribute="top" secondItem="c6v-iM-ozN" secondAttribute="top" constant="20" id="GTe-LA-ITE"/>
                             <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="CPm-be-fjd" secondAttribute="trailing" constant="20" id="Uge-zj-agw"/>
+                            <constraint firstItem="FRU-rg-hsu" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="125" id="nnX-bK-tAb"/>
                             <constraint firstItem="CPm-be-fjd" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="20" id="qNW-EF-2GJ"/>
-                            <constraint firstItem="CPm-be-fjd" firstAttribute="top" secondItem="c6v-iM-ozN" secondAttribute="top" constant="16" id="rhy-NM-sYE"/>
+                            <constraint firstItem="CPm-be-fjd" firstAttribute="top" secondItem="FRU-rg-hsu" secondAttribute="bottom" constant="20" id="tl8-og-jKf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c6v-iM-ozN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5N-Wt-i9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210.144927536232" y="-522.32142857142856"/>
+            <point key="canvasLocation" x="2170" y="-522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DWo-88-Fdo">
@@ -186,8 +212,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLe-fe-397">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="ChromeYellow"/>
-                        <color key="barTintColor" name="FreeSpeechBlue"/>
+                        <color key="tintColor" name="Highlights"/>
+                        <color key="barTintColor" name="Primary"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -200,17 +226,21 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="ChromeYellow">
-            <color red="1" green="0.6588235294117647" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="FreeSpeechBlue">
-            <color red="0.23529411764705882" green="0.25098039215686274" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="NarenjiOrange">
-            <color red="1" green="0.75294117647058822" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="Romeo" width="820" height="145"/>
+        <namedColor name="Highlights">
+            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="OffWhite">
-            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.41960784313725491" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lqN-Zy-QEQ"/>
+    </inferredMetricsTieBreakers>
 </document>
