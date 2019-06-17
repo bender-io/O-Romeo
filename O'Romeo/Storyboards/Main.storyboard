@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-694" y="-202"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="Zdy-S5-gFG">
             <objects>
-                <viewController id="ETL-l2-8UL" customClass="HomeViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ETL-l2-8UL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XwA-Jk-cfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
