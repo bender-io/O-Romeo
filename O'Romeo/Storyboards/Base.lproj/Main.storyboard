@@ -57,10 +57,11 @@
                                             <constraint firstAttribute="width" constant="150" id="FiG-re-iHt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                        <state key="normal" title="sign in">
+                                        <state key="normal" title="log in">
                                             <color key="titleColor" name="OffWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="loginButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="a69-jP-tbj"/>
                                             <segue destination="cjA-6w-YVr" kind="showDetail" identifier="loginToHomeTVC" id="Y8D-Be-TOp"/>
                                         </connections>
                                     </button>
@@ -72,46 +73,51 @@
                                     <constraint firstItem="rDJ-mK-J43" firstAttribute="leading" secondItem="FDQ-Qb-Vu0" secondAttribute="leading" id="icE-AE-jUH"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
-                                <rect key="frame" x="20" y="448" width="374" height="51.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
+                                <rect key="frame" x="111.5" y="817" width="191" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5">
-                                        <rect key="frame" x="119" y="0.0" width="136" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
                                         <color key="textColor" name="OffWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
-                                        <rect key="frame" x="163.5" y="22.5" width="47" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
+                                        <rect key="frame" x="144" y="0.0" width="47" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up">
                                             <color key="titleColor" name="Highlights"/>
                                         </state>
                                         <connections>
+                                            <action selector="signupButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="5yI-B3-oIL"/>
                                             <segue destination="pDG-fY-qF4" kind="show" identifier="toSignUpVC" id="NNv-2b-pUW"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
-                                <rect key="frame" x="125" y="108" width="164" height="145"/>
+                                <rect key="frame" x="100" y="108" width="214" height="145"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FTl-qy-7Yg" secondAttribute="trailing" constant="125" id="80q-YZ-Uku"/>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FTl-qy-7Yg" secondAttribute="trailing" constant="100" id="80q-YZ-Uku"/>
+                            <constraint firstItem="QUu-0U-tSP" firstAttribute="centerX" secondItem="o1q-YQ-5cp" secondAttribute="centerX" id="Lrz-A9-TTQ"/>
                             <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="top" secondItem="FTl-qy-7Yg" secondAttribute="bottom" constant="20" id="NrQ-s7-J7a"/>
                             <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FDQ-Qb-Vu0" secondAttribute="trailing" constant="20" id="UdL-Gv-CFZ"/>
-                            <constraint firstItem="QUu-0U-tSP" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="20" id="cQQ-iv-u2v"/>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="bottom" secondItem="QUu-0U-tSP" secondAttribute="bottom" constant="16" id="X1D-yJ-1ZN"/>
                             <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="20" id="g27-mh-zME"/>
                             <constraint firstItem="FTl-qy-7Yg" firstAttribute="top" secondItem="o1q-YQ-5cp" secondAttribute="top" constant="20" id="gRs-Ud-59R"/>
-                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="125" id="tIO-Vm-omf"/>
-                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="QUu-0U-tSP" secondAttribute="trailing" constant="20" id="uvz-Sx-V7i"/>
-                            <constraint firstItem="QUu-0U-tSP" firstAttribute="top" secondItem="FDQ-Qb-Vu0" secondAttribute="bottom" constant="16" id="w6f-Pp-aGE"/>
+                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="100" id="tIO-Vm-omf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o1q-YQ-5cp"/>
                     </view>
                     <navigationItem key="navigationItem" id="RWc-6J-vAs"/>
+                    <connections>
+                        <outlet property="loginButton" destination="NFu-5k-Ocz" id="3fb-oI-F6S"/>
+                        <outlet property="loginTextField" destination="rDJ-mK-J43" id="jKG-Ha-OUk"/>
+                        <outlet property="passwordTextField" destination="5ss-2o-ykW" id="9cg-1C-VVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7r-kH-kjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,14 +152,14 @@
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field">
                                         <rect key="frame" x="0.0" y="57" width="374" height="45"/>
                                         <color key="backgroundColor" name="OffWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spR-m3-VYt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spR-m3-VYt" userLabel="Username Text Field">
                                         <rect key="frame" x="0.0" y="114" width="374" height="45"/>
                                         <color key="backgroundColor" name="OffWhite"/>
                                         <nil key="textColor"/>
@@ -171,6 +177,7 @@
                                             <color key="titleColor" name="OffWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
                                             <segue destination="cjA-6w-YVr" kind="showDetail" identifier="signupToHomeTVC" id="lqN-Zy-QEQ"/>
                                         </connections>
                                     </button>
@@ -185,20 +192,26 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
-                                <rect key="frame" x="125" y="108" width="164" height="145"/>
+                                <rect key="frame" x="100" y="108" width="214" height="145"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="FRU-rg-hsu" secondAttribute="trailing" constant="125" id="2sG-lJ-u96"/>
+                            <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="FRU-rg-hsu" secondAttribute="trailing" constant="100" id="2sG-lJ-u96"/>
                             <constraint firstItem="FRU-rg-hsu" firstAttribute="top" secondItem="c6v-iM-ozN" secondAttribute="top" constant="20" id="GTe-LA-ITE"/>
                             <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="CPm-be-fjd" secondAttribute="trailing" constant="20" id="Uge-zj-agw"/>
-                            <constraint firstItem="FRU-rg-hsu" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="125" id="nnX-bK-tAb"/>
+                            <constraint firstItem="FRU-rg-hsu" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="100" id="nnX-bK-tAb"/>
                             <constraint firstItem="CPm-be-fjd" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="20" id="qNW-EF-2GJ"/>
                             <constraint firstItem="CPm-be-fjd" firstAttribute="top" secondItem="FRU-rg-hsu" secondAttribute="bottom" constant="20" id="tl8-og-jKf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c6v-iM-ozN"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="UmI-8T-OWO" id="3xz-79-040"/>
+                        <outlet property="passwordTextField" destination="spR-m3-VYt" id="aOH-vU-i3d"/>
+                        <outlet property="signupButton" destination="i5e-gD-qcS" id="m1B-vE-BI8"/>
+                        <outlet property="usernameTextField" destination="spR-m3-VYt" id="m46-OL-c2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5N-Wt-i9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
