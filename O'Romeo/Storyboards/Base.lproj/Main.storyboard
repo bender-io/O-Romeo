@@ -208,7 +208,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="UmI-8T-OWO" id="3xz-79-040"/>
-                        <outlet property="passwordTextField" destination="spR-m3-VYt" id="aOH-vU-i3d"/>
+                        <outlet property="passwordTextField" destination="sc5-WH-ZA1" id="HdI-lI-mAr"/>
                         <outlet property="signupButton" destination="i5e-gD-qcS" id="m1B-vE-BI8"/>
                         <outlet property="usernameTextField" destination="spR-m3-VYt" id="m46-OL-c2t"/>
                     </connections>
@@ -260,6 +260,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8D-Be-TOp"/>
+        <segue reference="lqN-Zy-QEQ"/>
     </inferredMetricsTieBreakers>
 </document>
