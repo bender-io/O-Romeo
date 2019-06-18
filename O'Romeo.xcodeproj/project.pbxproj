@@ -16,6 +16,7 @@
 		569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE822B58A580025C319 /* SignupViewController.swift */; };
 		569A6CEF22B5A8BF0025C319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CEE22B5A8BF0025C319 /* Assets.xcassets */; };
 		569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF222B7E11D0025C319 /* HomeViewController.swift */; };
+		569A6CF522B879430025C319 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF422B879430025C319 /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		569A6CEE22B5A8BF0025C319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		569A6CF222B7E11D0025C319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		569A6CF422B879430025C319 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		569A6CEB22B58A910025C319 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				569A6CF422B879430025C319 /* HomeTableViewController.swift */,
 				569A6CF222B7E11D0025C319 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -193,6 +196,7 @@
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
+				569A6CF522B879430025C319 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
