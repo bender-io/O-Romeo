@@ -147,11 +147,11 @@
 		569A6CC822B45ADC0025C319 /* O'Romeo */ = {
 			isa = PBXGroup;
 			children = (
-				E412349822B9515F0066796E /* Model Controllers */,
-				E412349522B9506C0066796E /* Models */,
 				569A6CDB22B45AF90025C319 /* Resources */,
 				560BF55322B972B4000E7F66 /* CustomUI */,
 				569A6CDC22B45B060025C319 /* Storyboards */,
+				E412349522B9506C0066796E /* Models */,
+				E412349822B9515F0066796E /* Model Controllers */,
 				569A6CE522B58A270025C319 /* View Controllers */,
 			);
 			path = "O'Romeo";
