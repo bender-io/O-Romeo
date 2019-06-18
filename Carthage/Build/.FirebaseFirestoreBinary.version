@@ -15,12 +15,12 @@
       "hash" : "8678b83cde56c21facd86b4b3e8d0cba741801f4cff0ef9a3e686e545f3707f3"
     },
     {
-      "name" : "Protobuf",
-      "hash" : "3a32edccf01f788e5cc9a89ef543880763a512ab076041561213edf278a607cb"
-    },
-    {
       "name" : "gRPC-C++",
       "hash" : "b5c0d887c96210c902c4840cc2760248f7e7c961ac4033921041a476bf3bbc5e"
+    },
+    {
+      "name" : "Protobuf",
+      "hash" : "3a32edccf01f788e5cc9a89ef543880763a512ab076041561213edf278a607cb"
     },
     {
       "name" : "BoringSSL-GRPC",
