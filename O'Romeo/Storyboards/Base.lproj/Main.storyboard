@@ -14,11 +14,11 @@
         <array key="SF-Compact-Rounded-Light.otf">
             <string>SFCompactRounded-Light</string>
         </array>
-        <array key="SF-Compact-Rounded-Regular.otf">
-            <string>SFCompactRounded-Regular</string>
-        </array>
         <array key="SF-Compact-Rounded-Semibold.otf">
             <string>SFCompactRounded-Semibold</string>
+        </array>
+        <array key="SF-Compact-Rounded-Thin.otf">
+            <string>SFCompactRounded-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -33,24 +33,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
                                 <rect key="frame" x="20" y="273" width="374" height="159"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
-                                        <color key="backgroundColor" name="OffWhite"/>
+                                        <color key="backgroundColor" name="White10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="jEj-cl-pYk"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-2o-ykW">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-2o-ykW" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="374" height="45"/>
-                                        <color key="backgroundColor" name="OffWhite"/>
+                                        <color key="backgroundColor" name="White10"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-5k-Ocz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-5k-Ocz" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="112" y="114" width="150" height="45"/>
                                         <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
@@ -58,7 +58,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="log in">
-                                            <color key="titleColor" name="OffWhite"/>
+                                            <color key="titleColor" name="White100"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="a69-jP-tbj"/>
@@ -115,8 +115,8 @@
                     <navigationItem key="navigationItem" id="RWc-6J-vAs"/>
                     <connections>
                         <outlet property="loginButton" destination="NFu-5k-Ocz" id="3fb-oI-F6S"/>
-                        <outlet property="loginTextField" destination="rDJ-mK-J43" id="jKG-Ha-OUk"/>
                         <outlet property="passwordTextField" destination="5ss-2o-ykW" id="9cg-1C-VVb"/>
+                        <outlet property="usernameTextField" destination="rDJ-mK-J43" id="jKG-Ha-OUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7r-kH-kjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,31 +142,31 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
                                 <rect key="frame" x="20" y="273" width="374" height="216"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
-                                        <color key="backgroundColor" name="OffWhite"/>
+                                        <color key="backgroundColor" name="White10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="4K0-a1-qGU"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="374" height="45"/>
-                                        <color key="backgroundColor" name="OffWhite"/>
+                                        <color key="backgroundColor" name="White10"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spR-m3-VYt" userLabel="Username Text Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spR-m3-VYt" userLabel="Username Text Field" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="374" height="45"/>
-                                        <color key="backgroundColor" name="OffWhite"/>
+                                        <color key="backgroundColor" name="White10"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="112" y="171" width="150" height="45"/>
                                         <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
@@ -174,7 +174,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up">
-                                            <color key="titleColor" name="OffWhite"/>
+                                            <color key="titleColor" name="White100"/>
                                         </state>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
@@ -252,8 +252,14 @@
         <namedColor name="Secondary">
             <color red="0.41960784313725491" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="White10">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White100">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lqN-Zy-QEQ"/>
+        <segue reference="Y8D-Be-TOp"/>
     </inferredMetricsTieBreakers>
 </document>
