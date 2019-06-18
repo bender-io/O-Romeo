@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560BF55222B9671A000E7F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560BF55122B9671A000E7F66 /* Assets.xcassets */; };
+		560BF55522B972CC000E7F66 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55422B972CC000E7F66 /* extensions.swift */; };
+		560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55822B97737000E7F66 /* RomeoButton.swift */; };
+		560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55A22B9784F000E7F66 /* RomeoTextField.swift */; };
 		569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CC922B45ADC0025C319 /* AppDelegate.swift */; };
 		569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CCD22B45ADC0025C319 /* Main.storyboard */; };
 		569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */; };
@@ -14,8 +18,8 @@
 		569A6CE222B589890025C319 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CE122B589890025C319 /* Home.storyboard */; };
 		569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE622B58A430025C319 /* LoginViewController.swift */; };
 		569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE822B58A580025C319 /* SignupViewController.swift */; };
-		569A6CEF22B5A8BF0025C319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CEE22B5A8BF0025C319 /* Assets.xcassets */; };
 		569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF222B7E11D0025C319 /* HomeViewController.swift */; };
+
 		569A6CF522B879430025C319 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF422B879430025C319 /* HomeTableViewController.swift */; };
 		E412349722B950AD0066796E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349622B950AD0066796E /* Person.swift */; };
 		E412349A22B9517C0066796E /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349922B9517C0066796E /* PersonController.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560BF55122B9671A000E7F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		560BF55422B972CC000E7F66 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		560BF55822B97737000E7F66 /* RomeoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoButton.swift; sourceTree = "<group>"; };
+		560BF55A22B9784F000E7F66 /* RomeoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoTextField.swift; sourceTree = "<group>"; };
 		569A6CC622B45ADC0025C319 /* O'Romeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O'Romeo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		569A6CC922B45ADC0025C319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		569A6CCE22B45ADC0025C319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,8 +61,8 @@
 		569A6CE122B589890025C319 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		569A6CE622B58A430025C319 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		569A6CEE22B5A8BF0025C319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		569A6CF222B7E11D0025C319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+
 		569A6CF422B879430025C319 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		E412349622B950AD0066796E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E412349922B9517C0066796E /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560BF55322B972B4000E7F66 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				560BF55422B972CC000E7F66 /* extensions.swift */,
+				560BF55822B97737000E7F66 /* RomeoButton.swift */,
+				560BF55A22B9784F000E7F66 /* RomeoTextField.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		569A6CBD22B45ADC0025C319 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +154,7 @@
 				E412349822B9515F0066796E /* Model Controllers */,
 				E412349522B9506C0066796E /* Models */,
 				569A6CDB22B45AF90025C319 /* Resources */,
+				560BF55322B972B4000E7F66 /* CustomUI */,
 				569A6CDC22B45B060025C319 /* Storyboards */,
 				569A6CE522B58A270025C319 /* View Controllers */,
 			);
@@ -146,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
-				569A6CEE22B5A8BF0025C319 /* Assets.xcassets */,
+				560BF55122B9671A000E7F66 /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
 				569A6CD522B45ADE0025C319 /* Info.plist */,
 				E41234C422B954FA0066796E /* GoogleService-Info.plist */,
@@ -185,7 +204,6 @@
 		569A6CEB22B58A910025C319 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				569A6CF422B879430025C319 /* HomeTableViewController.swift */,
 				569A6CF222B7E11D0025C319 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -297,7 +315,7 @@
 				569A6CE222B589890025C319 /* Home.storyboard in Resources */,
 				569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */,
 				569A6CDE22B57A800025C319 /* Fonts in Resources */,
-				569A6CEF22B5A8BF0025C319 /* Assets.xcassets in Resources */,
+				560BF55222B9671A000E7F66 /* Assets.xcassets in Resources */,
 				E41234C522B954FA0066796E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,10 +331,12 @@
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
+				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
+				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
+				560BF55522B972CC000E7F66 /* extensions.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
-				569A6CF522B879430025C319 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

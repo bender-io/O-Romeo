@@ -11,23 +11,22 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: - IBOutlets
-    
-    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.layer.cornerRadius = 5
     }
     
     // MARK: - IBActions
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        guard let loginText = loginTextField.text,
+        guard let emailText = usernameTextField.text,
             let passwordText = passwordTextField.text
             else { print("Couldn't unwrap textfield text: \(#function)"); return }
-        UserController.shared.signInUserWith(email: loginText, password: passwordText) { (error) in
+        UserController.shared.signInUserWith(email: emailText, password: passwordText) { (error) in
             if let error = error {
                 print("There was an error: \(error) : \(#function)")
                 self.presentLoginErrorAlert()

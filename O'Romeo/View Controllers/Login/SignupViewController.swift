@@ -19,7 +19,6 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signupButton.layer.cornerRadius = 5
     }
     
     // MARK: - IBActions
