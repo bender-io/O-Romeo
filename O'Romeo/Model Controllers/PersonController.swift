@@ -50,6 +50,7 @@ class PersonController {
                 } else {
                     guard let docID = ref?.documentID else { completion(docIDError); return }
                     UserController.shared.updatePersonUIDs(with: docID)
+                    self.addDefaultInterests(for: docID)
                     print("Document added with ID: \(docID)")
                 }
                 completion(nil)
@@ -59,10 +60,10 @@ class PersonController {
     /// Takes in a persons name and an interest. Filters through the persons array ([Person]) to find the person with matching name. Then grabs the personUID of the person and uses that to find the persons document in firestore. Once the document is found, the interest is added to the intrests array in the person document.
     ///
     /// - Parameters:
-    ///   - person: Name of person to be updated (String)
+    ///   - person: Uid of person to be updated (String)
     ///   - interest: Interest to be added (String)
-    func updatePersonInterests(for person: String, with interest: String) {
-        let value = persons.filter { $0.name == person }
+    func updatePersonInterests(for personUID: String, with interest: String) {
+        let value = persons.filter { $0.personUID == personUID }
         
         guard let personUID = value.first?.personUID else { print("Couldn't unwrap value.first?.personUID: \(#function)"); return }
         db.collection("person").document(personUID).updateData([
@@ -83,6 +84,31 @@ class PersonController {
                 else { print("Failed snapshot gaurd: \(#function)"); return }
             
             self.persons = snapshot.documents.compactMap { Person(from: $0.data(), uid: $0.documentID) }
+        }
+    }
+    
+    /// Creates default interests for the specified person using their personUID
+    ///
+    /// - Parameter personUID: The uid for the person (String)
+    func addDefaultInterests(for personUID: String) {
+        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Color", description: "Put favorite color here") {
+            (error) in
+            if let error = error {
+                print("There was an error creating default interest 1: \(error)")
+            }
+        }
+        
+        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Flower", description: "Put favorite flower here") { (error) in
+            if let error = error {
+                print("There was an error creating default interest 2: \(error)")
+            }
+        }
+        
+        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Movie", description: "Put favorite movie here") {
+            (error) in
+            if let error = error {
+                print("There was an error creating default interest 3: \(error)")
+            }
         }
     }
 }

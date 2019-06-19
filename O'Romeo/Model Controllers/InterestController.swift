@@ -25,10 +25,10 @@ class InterestController {
     /// Creates a new interest for the specified person and adds it to the "interest" collection in firestore. Next the specified persons array of interests is updated to contain the uid for the newly created interest.
     ///
     /// - Parameters:
-    ///   - person: The person object to add the interest too (Person)
+    ///   - personUID: The uid of the person object to add the interest too (String)
     ///   - name: The name of the interest (String)
     ///   - description: The description of the interest (String)
-    func createInterestFor(person: Person, with name: String, description: String, completion: @escaping (Error?) -> Void) {
+    func createInterestFor(personUID: String, with name: String, description: String, completion: @escaping (Error?) -> Void) {
         let interest = interests.filter { $0.name == name }
         let interestError = "Interest already exists: \(#function)" as! Error
         let docIDError = "Couldn't unwrap ref.documentID: \(#function)" as! Error
@@ -38,13 +38,13 @@ class InterestController {
         ref = db.collection("interest").addDocument(data: [
             "name" : name,
             "description" : description,
-            "personUID" : person.personUID
+            "personUID" : personUID
             ], completion: { (error) in
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
                     guard let docID = ref?.documentID else { completion(docIDError); return }
-                    PersonController.shared.updatePersonInterests(for: person.name, with: docID)
+                    PersonController.shared.updatePersonInterests(for: personUID, with: docID)
                     print("Document added with ID: \(docID)")
                 }
                 completion(nil)
