@@ -29,8 +29,14 @@ class PersonController {
     ///   - anniversary: Anniversary of relationship (String = "")
     ///   - birthday: Birthday of person (String = "")
     ///   - interests: Interests of person ([String] = [])
-    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = []) {
-        guard let currentUser = Auth.auth().currentUser else { print("No current user: \(#function)"); return }
+    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], completion: @escaping (Error?) -> Void) {
+        let person = persons.filter { $0.name == name }
+        let personError = "Person already exists: \(#function)" as! Error
+        let currentUserError = "No current user: \(#function)" as! Error
+        let docIDError = "Couldn't unwrap ref.documentID: \(#function)" as! Error
+        
+        guard name == person.first?.name else { completion(personError); return }
+        guard let currentUser = Auth.auth().currentUser else { completion(currentUserError); return }
         var ref: DocumentReference? = nil
         ref = db.collection("person").addDocument(data: [
             "name" : name,
@@ -42,10 +48,11 @@ class PersonController {
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
-                    guard let docID = ref?.documentID else { print("Couldn't unwrap ref.documentID: \(#function)"); return }
+                    guard let docID = ref?.documentID else { completion(docIDError); return }
                     UserController.shared.updatePersonUIDs(with: docID)
                     print("Document added with ID: \(docID)")
                 }
+                completion(nil)
         })
     }
     
