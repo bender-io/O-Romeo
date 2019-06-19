@@ -229,6 +229,7 @@
                     <tabBarItem key="tabBarItem" image="Home " selectedImage="Home " id="I5T-NX-nJf"/>
                     <connections>
                         <outlet property="segmentedControl" destination="UJB-DM-97g" id="HoY-d7-hrj"/>
+                        <outlet property="tableView" destination="0eo-zK-Nix" id="84g-Q4-drt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsa-mm-Vra" userLabel="First Responder" sceneMemberID="firstResponder"/>

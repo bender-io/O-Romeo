@@ -11,12 +11,19 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     
     var eventType: EventType = .nightLife
     var eventResults: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
+            self.eventResults = event
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func eventSegmentControl(_ sender: Any) {
@@ -25,7 +32,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
-                    self.view.layoutIfNeeded()
+                    self.tableView.reloadData()
                 }
             }
         } else if segmentedControl.selectedSegmentIndex == 1 {
@@ -33,7 +40,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
-                    self.view.layoutIfNeeded()
+                    self.tableView.reloadData()
+                    
                 }
             }
         } else if segmentedControl.selectedSegmentIndex == 2 {
@@ -41,7 +49,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
-                    self.view.layoutIfNeeded()
+                    self.tableView.reloadData()
                 }
             }
         } else if segmentedControl.selectedSegmentIndex == 3 {
@@ -49,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
-                    self.view.layoutIfNeeded()
+                    self.tableView.reloadData()
                 }
             }
         }
