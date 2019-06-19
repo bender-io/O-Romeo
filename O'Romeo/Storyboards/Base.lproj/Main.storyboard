@@ -25,13 +25,13 @@
         <!--Login View Controller-->
         <scene sceneID="iDr-eC-HG5">
             <objects>
-                <viewController id="yeN-YR-20c" customClass="LoginViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="yeN-YR-20c" customClass="LoginViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYl-t8-5wM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
-                                <rect key="frame" x="20" y="273" width="374" height="159"/>
+                                <rect key="frame" x="20" y="144" width="374" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -74,16 +74,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
-                                <rect key="frame" x="111.5" y="817" width="191" height="29"/>
+                                <rect key="frame" x="107" y="817" width="200.5" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
                                         <color key="textColor" name="OffWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
-                                        <rect key="frame" x="144" y="0.0" width="47" height="29"/>
+                                        <rect key="frame" x="154.5" y="0.0" width="46" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up">
                                             <color key="titleColor" name="Highlights"/>
@@ -96,7 +96,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
-                                <rect key="frame" x="100" y="108" width="214" height="145"/>
+                                <rect key="frame" x="100" y="108" width="214" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
