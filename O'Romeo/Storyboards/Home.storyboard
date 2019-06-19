@@ -19,21 +19,87 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="Yhu-St-oZ3">
             <objects>
-                <viewController id="m6i-b0-Fee" sceneMemberID="viewController">
+                <viewController id="m6i-b0-Fee" customClass="SearchViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rGe-E4-L98">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search locations" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Wa-Blx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <color key="barTintColor" name="Primary"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="m6i-b0-Fee" id="GQr-0i-Sva"/>
+                                </connections>
+                            </searchBar>
+                            <searchBar tag="1" contentMode="redraw" barStyle="black" placeholder="Location" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-Fm-O8R">
+                                <rect key="frame" x="0.0" y="100" width="414" height="56"/>
+                                <color key="barTintColor" name="Primary"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="m6i-b0-Fee" id="PHc-RL-bL3"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WV7-tn-5Kc">
+                                <rect key="frame" x="20" y="156" width="374" height="657"/>
+                                <color key="backgroundColor" name="White10"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeCell" textLabel="QoE-0p-YuO" rowHeight="66" style="IBUITableViewCellStyleDefault" id="OE5-Lx-6Cj">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OE5-Lx-6Cj" id="S9g-JK-t6Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(place)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QoE-0p-YuO">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
+                                                    <color key="textColor" name="White100"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="White10"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="m6i-b0-Fee" id="a6r-Kf-hhz"/>
+                                    <outlet property="delegate" destination="m6i-b0-Fee" id="nDG-8F-VMG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="uCu-Wa-Blx" firstAttribute="trailing" secondItem="BdA-6w-R4c" secondAttribute="trailing" id="1ab-n5-jj3"/>
+                            <constraint firstItem="uCu-Wa-Blx" firstAttribute="top" secondItem="BdA-6w-R4c" secondAttribute="top" id="O5u-c4-x5F"/>
+                            <constraint firstItem="BdA-6w-R4c" firstAttribute="bottom" secondItem="WV7-tn-5Kc" secondAttribute="bottom" id="Ucf-js-LOZ"/>
+                            <constraint firstItem="eDz-Fm-O8R" firstAttribute="leading" secondItem="BdA-6w-R4c" secondAttribute="leading" id="YEA-ds-qsH"/>
+                            <constraint firstAttribute="trailing" secondItem="WV7-tn-5Kc" secondAttribute="trailing" constant="20" id="gpT-ks-inn"/>
+                            <constraint firstItem="uCu-Wa-Blx" firstAttribute="leading" secondItem="BdA-6w-R4c" secondAttribute="leading" id="hEj-zU-9EQ"/>
+                            <constraint firstItem="WV7-tn-5Kc" firstAttribute="leading" secondItem="BdA-6w-R4c" secondAttribute="leading" constant="20" id="jh9-Nn-pmh"/>
+                            <constraint firstItem="eDz-Fm-O8R" firstAttribute="top" secondItem="uCu-Wa-Blx" secondAttribute="bottom" id="ksb-7Q-g0a"/>
+                            <constraint firstItem="eDz-Fm-O8R" firstAttribute="trailing" secondItem="BdA-6w-R4c" secondAttribute="trailing" id="sgF-h3-XQI"/>
+                            <constraint firstItem="WV7-tn-5Kc" firstAttribute="top" secondItem="eDz-Fm-O8R" secondAttribute="bottom" id="voW-mO-4ek"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BdA-6w-R4c"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search" id="H0R-Ub-V8Z"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="eDz-Fm-O8R" id="KpQ-kJ-UuV"/>
+                        <outlet property="placesSearchBar" destination="uCu-Wa-Blx" id="cYa-u7-0tG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi8-NZ-V6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1329" y="-202"/>
+            <point key="canvasLocation" x="-1330.4347826086957" y="-202.23214285714286"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3hd-I7-heg">
