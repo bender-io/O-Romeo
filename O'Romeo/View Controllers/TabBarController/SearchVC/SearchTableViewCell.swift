@@ -32,5 +32,4 @@ class SearchTableViewCell: UITableViewCell {
         self.phoneNumberLabel.text = yelp.displayPhone
         
     }
-    
 }

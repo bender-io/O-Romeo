@@ -35,6 +35,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
+
         
         return cell
     }
@@ -54,4 +55,3 @@ extension SearchViewController : UISearchBarDelegate {
         }
     }
 }
-
