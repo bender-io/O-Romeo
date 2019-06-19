@@ -63,7 +63,7 @@
                                 <rect key="frame" x="20" y="134" width="374" height="679"/>
                                 <color key="backgroundColor" name="White10"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="250" id="LFj-Wn-VZR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="250" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFj-Wn-VZR" id="Q3l-vg-Bqk">
@@ -110,6 +110,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
+                                        <connections>
+                                            <outlet property="distanceLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
+                                            <outlet property="eventAddressLabel" destination="FJT-qF-Alo" id="yWP-Tb-jeZ"/>
+                                            <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
+                                            <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -129,6 +135,9 @@
                                     <segment title="" image="Music"/>
                                 </segments>
                                 <color key="tintColor" name="Highlights"/>
+                                <connections>
+                                    <action selector="eventSegmentControl:" destination="ETL-l2-8UL" eventType="valueChanged" id="tVu-As-GXU"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
@@ -144,6 +153,9 @@
                         <viewLayoutGuide key="safeArea" id="PRI-QO-QuT"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="Home " selectedImage="Home " id="I5T-NX-nJf"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="UJB-DM-97g" id="HoY-d7-hrj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsa-mm-Vra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

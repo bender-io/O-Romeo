@@ -43,6 +43,8 @@
 		E41234C122B9525C0066796E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E41234C022B9525C0066796E /* libc++.tbd */; };
 		E41234C322B952630066796E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E41234C222B952630066796E /* libsqlite3.tbd */; };
 		E41234C722B955170066796E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41234C622B955170066796E /* UserController.swift */; };
+		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
+		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECFE939622B99CA00042C00A /* GoogleService-Info.plist */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
@@ -89,6 +91,8 @@
 		E41234C022B9525C0066796E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E41234C222B952630066796E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E41234C622B955170066796E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				E412349522B9506C0066796E /* Models */,
 				E412349822B9515F0066796E /* Model Controllers */,
 				569A6CE522B58A270025C319 /* View Controllers */,
+				EC88206222BA6353006438B4 /* Helpers */,
 			);
 			path = "O'Romeo";
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				569A6CEA22B58A7E0025C319 /* Login */,
 				569A6CEB22B58A910025C319 /* Home */,
+				EC88206322BA6559006438B4 /* EventTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -261,6 +267,14 @@
 				E41234A922B9524B0066796E /* Protobuf.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC88206222BA6353006438B4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC88206022BA625A006438B4 /* Enums.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,8 @@
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
+				EC88206122BA625A006438B4 /* Enums.swift in Sources */,
+				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
 				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
 				560BF55522B972CC000E7F66 /* extensions.swift in Sources */,
