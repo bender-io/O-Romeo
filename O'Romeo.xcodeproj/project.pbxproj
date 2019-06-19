@@ -43,6 +43,8 @@
 		E41234C122B9525C0066796E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E41234C022B9525C0066796E /* libc++.tbd */; };
 		E41234C322B952630066796E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E41234C222B952630066796E /* libsqlite3.tbd */; };
 		E41234C722B955170066796E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41234C622B955170066796E /* UserController.swift */; };
+		E49AAE1822B99FB20099C45A /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1722B99FB20099C45A /* Interest.swift */; };
+		E49AAE1A22B99FC90099C45A /* InterestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1922B99FC90099C45A /* InterestController.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECFE939622B99CA00042C00A /* GoogleService-Info.plist */; };
@@ -50,6 +52,7 @@
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
 		ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939E22B99D400042C00A /* EventfulController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,10 @@
 		E41234C022B9525C0066796E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E41234C222B952630066796E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E41234C622B955170066796E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+
+		E49AAE1722B99FB20099C45A /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		E49AAE1922B99FC90099C45A /* InterestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestController.swift; sourceTree = "<group>"; };
+
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
 		ECFE939E22B99D400042C00A /* EventfulController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventfulController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +234,12 @@
 			isa = PBXGroup;
 			children = (
 				E412349622B950AD0066796E /* Person.swift */,
+
+				E49AAE1722B99FB20099C45A /* Interest.swift */,
+
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
+
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,8 +249,12 @@
 			children = (
 				E412349922B9517C0066796E /* PersonController.swift */,
 				E41234C622B955170066796E /* UserController.swift */,
+
+				E49AAE1922B99FC90099C45A /* InterestController.swift */,
+
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
+
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -354,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E412349722B950AD0066796E /* Person.swift in Sources */,
+				E49AAE1822B99FB20099C45A /* Interest.swift in Sources */,
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
@@ -364,6 +381,7 @@
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
 				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
+				E49AAE1A22B99FC90099C45A /* InterestController.swift in Sources */,
 				560BF55522B972CC000E7F66 /* extensions.swift in Sources */,
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */,
