@@ -12,6 +12,7 @@
 		560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55A22B9784F000E7F66 /* RomeoTextField.swift */; };
 		563FD18222B98B0600ADA9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563FD18122B98B0600ADA9CA /* GoogleService-Info.plist */; };
 		563FD18422B9999500ADA9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563FD18322B9999500ADA9CA /* Assets.xcassets */; };
+		563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */; };
 		569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CC922B45ADC0025C319 /* AppDelegate.swift */; };
 		569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CCD22B45ADC0025C319 /* Main.storyboard */; };
 		569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		560BF55A22B9784F000E7F66 /* RomeoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoTextField.swift; sourceTree = "<group>"; };
 		563FD18122B98B0600ADA9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		563FD18322B9999500ADA9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		569A6CC622B45ADC0025C319 /* O'Romeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O'Romeo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		569A6CC922B45ADC0025C319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		569A6CCE22B45ADC0025C319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,10 +101,12 @@
 		E41234C622B955170066796E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E49AAE1722B99FB20099C45A /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		E49AAE1922B99FC90099C45A /* InterestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestController.swift; sourceTree = "<group>"; };
+
 		E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
+
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -211,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				569A6CEA22B58A7E0025C319 /* Login */,
-				569A6CEB22B58A910025C319 /* Home */,
+				569A6CEB22B58A910025C319 /* TabBarController */,
 				EC88206322BA6559006438B4 /* EventTableViewCell.swift */,
 				E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */,
 				E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */,
@@ -230,12 +234,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		569A6CEB22B58A910025C319 /* Home */ = {
+		569A6CEB22B58A910025C319 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
 				569A6CF222B7E11D0025C319 /* HomeViewController.swift */,
+				563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */,
 			);
-			path = Home;
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		E412349522B9506C0066796E /* Models */ = {
@@ -375,6 +380,7 @@
 				E49AAE1822B99FB20099C45A /* Interest.swift in Sources */,
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
+				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
