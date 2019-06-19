@@ -22,7 +22,18 @@ class InterestController {
     
     // MARK: - Methods
     
-    func createInterestFor(person: Person, with name: String, description: String) {
+    /// Creates a new interest for the specified person and adds it to the "interest" collection in firestore. Next the specified persons array of interests is updated to contain the uid for the newly created interest.
+    ///
+    /// - Parameters:
+    ///   - person: The person object to add the interest too (Person)
+    ///   - name: The name of the interest (String)
+    ///   - description: The description of the interest (String)
+    func createInterestFor(person: Person, with name: String, description: String, completion: @escaping (Error?) -> Void) {
+        let interest = interests.filter { $0.name == name }
+        let interestError = "Interest already exists: \(#function)" as! Error
+        let docIDError = "Couldn't unwrap ref.documentID: \(#function)" as! Error
+        
+        guard name != interest.first?.name else { completion(interestError); return }
         var ref: DocumentReference? = nil
         ref = db.collection("interest").addDocument(data: [
             "name" : name,
@@ -32,13 +43,19 @@ class InterestController {
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
-                    guard let docID = ref?.documentID else { print("Couldn't unwrap ref.documentID: \(#function)"); return }
+                    guard let docID = ref?.documentID else { completion(docIDError); return }
                     PersonController.shared.updatePersonInterests(for: person.name, with: docID)
                     print("Document added with ID: \(docID)")
                 }
+                completion(nil)
         })
     }
     
+    /// Updates the interest with the specified name.
+    ///
+    /// - Parameters:
+    ///   - name: The new name (String)
+    ///   - description: The new description (String)
     func updateInterest(name: String, description: String) {
         let interest = interests.filter { $0.name == name }
         
@@ -53,6 +70,9 @@ class InterestController {
         }
     }
     
+    /// Fetches the interests for the specified person from the firestore.
+    ///
+    /// - Parameter person: The person object to fetch from (Person)
     func fetchInterestsFromFirestore(for person: Person) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot,
