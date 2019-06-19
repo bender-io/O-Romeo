@@ -51,7 +51,7 @@
                                 <rect key="frame" x="20" y="156" width="374" height="657"/>
                                 <color key="backgroundColor" name="White10"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="215" id="OE5-Lx-6Cj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="215" id="OE5-Lx-6Cj" customClass="SearchTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OE5-Lx-6Cj" id="S9g-JK-t6Q">
@@ -123,6 +123,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
+                                        <connections>
+                                            <outlet property="categoriesLabel" destination="eAo-tv-aCF" id="bfH-0f-m6l"/>
+                                            <outlet property="directionsLabel" destination="lPQ-PJ-AZC" id="6wQ-ZC-UF8"/>
+                                            <outlet property="phoneNumberLabel" destination="6fq-ce-Vjh" id="ZVX-LL-WNn"/>
+                                            <outlet property="ratingLabel" destination="vYH-sb-Kpw" id="VaJ-h3-KE3"/>
+                                            <outlet property="searchImageView" destination="Qqu-nv-Dfz" id="HzB-G4-W1H"/>
+                                            <outlet property="searchNameLabel" destination="bLq-DI-sty" id="691-CO-n9I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -150,6 +158,7 @@
                     <connections>
                         <outlet property="locationSearchBar" destination="eDz-Fm-O8R" id="KpQ-kJ-UuV"/>
                         <outlet property="placesSearchBar" destination="uCu-Wa-Blx" id="cYa-u7-0tG"/>
+                        <outlet property="tableView" destination="WV7-tn-5Kc" id="hKe-Ot-VAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi8-NZ-V6y" userLabel="First Responder" sceneMemberID="firstResponder"/>

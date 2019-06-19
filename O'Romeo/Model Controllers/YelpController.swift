@@ -11,7 +11,8 @@ import UIKit
 class YelpController {
     
     static let shared = YelpController()
-    let apiKey = "eFXOAyct4_UkcfVl7f9s43kknuHxWYop6_9D7hy3PL-5_5toxG0k4jtNIUAPTEHNrvAl_eCjT6WzCoLKPrZsTFKw0oxxq5Q4f576N1MjSqItKEIM2hyBvC2KDsUHXXYx"
+    let apiKey = "5lGUJfWuPeOedsyXWTGUSO37-Ct3hL4XnzEXqKdUCJ0uY8CqCualyOwcX3hkh2aN88eLZvrhNkE0TDIwmSCTSFWRom4vVr3zcrZHxbqps49RaPpk-H0PuTxgDrYKXXYx"
+
     let searchBaseURL = "https://api.yelp.com/v3/businesses/search"
     
     func fetchRestaurants(searchTerm: String, completion: @escaping ([Yelp]) -> Void) {

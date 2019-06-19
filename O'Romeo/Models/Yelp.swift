@@ -16,12 +16,13 @@ struct Yelp: Codable {
     let name: String
     let imageURL: String
     let displayPhone: String
-    let rating: Double?
+    let rating: Double
     let location: Location
     let price: Price?
+    let categories: [Category]
     
     enum CodingKeys: String, CodingKey {
-        case name, location, rating, price
+        case name, location, rating, price, categories
         case imageURL = "image_url"
         case displayPhone = "display_phone"
     }
@@ -39,4 +40,9 @@ struct Location: Codable {
 enum Price: String, Codable {
     case empty = "$"
     case price = "$$"
+}
+
+struct Category: Codable {
+    let alias: String
+    let title: String
 }
