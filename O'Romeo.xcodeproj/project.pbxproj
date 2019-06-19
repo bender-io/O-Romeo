@@ -45,6 +45,10 @@
 		E41234C722B955170066796E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41234C622B955170066796E /* UserController.swift */; };
 		E49AAE1822B99FB20099C45A /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1722B99FB20099C45A /* Interest.swift */; };
 		E49AAE1A22B99FC90099C45A /* InterestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1922B99FC90099C45A /* InterestController.swift */; };
+		E49AAE1C22BAA4040099C45A /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */; };
+		E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */; };
+		E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */; };
+		E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECFE939622B99CA00042C00A /* GoogleService-Info.plist */; };
@@ -52,7 +56,6 @@
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
 		ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939E22B99D400042C00A /* EventfulController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,10 +97,12 @@
 		E41234C022B9525C0066796E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E41234C222B952630066796E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E41234C622B955170066796E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-
 		E49AAE1722B99FB20099C45A /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		E49AAE1922B99FC90099C45A /* InterestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestController.swift; sourceTree = "<group>"; };
-
+		E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
+		E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -105,7 +110,6 @@
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
 		ECFE939E22B99D400042C00A /* EventfulController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventfulController.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,10 @@
 				569A6CEA22B58A7E0025C319 /* Login */,
 				569A6CEB22B58A910025C319 /* Home */,
 				EC88206322BA6559006438B4 /* EventTableViewCell.swift */,
+				E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */,
+				E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */,
+				E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */,
+				E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -234,12 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				E412349622B950AD0066796E /* Person.swift */,
-
 				E49AAE1722B99FB20099C45A /* Interest.swift */,
-
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,12 +254,9 @@
 			children = (
 				E412349922B9517C0066796E /* PersonController.swift */,
 				E41234C622B955170066796E /* UserController.swift */,
-
 				E49AAE1922B99FC90099C45A /* InterestController.swift */,
-
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
-
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -374,10 +376,12 @@
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
+				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
 				EC88206122BA625A006438B4 /* Enums.swift in Sources */,
+				E49AAE1C22BAA4040099C45A /* PeopleListViewController.swift in Sources */,
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
 				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
@@ -386,7 +390,9 @@
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */,
 				ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */,
+				E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
+				E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
