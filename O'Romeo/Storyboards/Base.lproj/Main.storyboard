@@ -33,7 +33,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
                                 <rect key="frame" x="20" y="273" width="374" height="159"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                         <color key="backgroundColor" name="White10"/>
                                         <constraints>
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="112" y="114" width="150" height="45"/>
                                         <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="FiG-re-iHt"/>
+                                            <constraint firstAttribute="width" secondItem="NFu-5k-Ocz" secondAttribute="height" multiplier="10:3" id="Um6-ER-Yhi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="log in">
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
-                                <rect key="frame" x="20" y="273" width="374" height="216"/>
+                                <rect key="frame" x="20" y="273" width="374" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -159,18 +159,11 @@
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spR-m3-VYt" userLabel="Username Text Field" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114" width="374" height="45"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="171" width="150" height="45"/>
+                                        <rect key="frame" x="112" y="114" width="150" height="45"/>
                                         <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="yjM-xH-EF6"/>
+                                            <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up">
@@ -184,11 +177,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="sc5-WH-ZA1" secondAttribute="trailing" id="SMi-nV-rQ4"/>
-                                    <constraint firstAttribute="trailing" secondItem="spR-m3-VYt" secondAttribute="trailing" id="gne-uP-ieH"/>
                                     <constraint firstAttribute="trailing" secondItem="UmI-8T-OWO" secondAttribute="trailing" id="ljM-Wt-EJv"/>
                                     <constraint firstItem="UmI-8T-OWO" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="o3r-A0-zEH"/>
                                     <constraint firstItem="sc5-WH-ZA1" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="rqP-to-EwV"/>
-                                    <constraint firstItem="spR-m3-VYt" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="svQ-0d-O7Y"/>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
@@ -210,7 +201,6 @@
                         <outlet property="emailTextField" destination="UmI-8T-OWO" id="3xz-79-040"/>
                         <outlet property="passwordTextField" destination="sc5-WH-ZA1" id="HdI-lI-mAr"/>
                         <outlet property="signupButton" destination="i5e-gD-qcS" id="m1B-vE-BI8"/>
-                        <outlet property="usernameTextField" destination="spR-m3-VYt" id="m46-OL-c2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5N-Wt-i9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,6 +250,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lqN-Zy-QEQ"/>
+        <segue reference="Y8D-Be-TOp"/>
     </inferredMetricsTieBreakers>
 </document>
