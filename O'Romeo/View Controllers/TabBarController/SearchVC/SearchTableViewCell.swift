@@ -30,6 +30,10 @@ class SearchTableViewCell: UITableViewCell {
         self.categoriesLabel.text = yelp.categories.first?.title
         self.directionsLabel.text = yelp.location.displayAddress.first
         self.phoneNumberLabel.text = yelp.displayPhone
-        
+        YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
+            DispatchQueue.main.async {
+                self.searchImageView.image = image
+            }
+        }
     }
 }
