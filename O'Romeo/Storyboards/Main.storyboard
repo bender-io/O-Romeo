@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hcm-rn-5hP">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Yhu-St-oZ3">
+            <objects>
+                <viewController id="m6i-b0-Fee" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rGe-E4-L98">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Primary"/>
+                        <viewLayoutGuide key="safeArea" id="BdA-6w-R4c"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Add" selectedImage="Add" id="H0R-Ub-V8Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pi8-NZ-V6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="-202"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zdy-S5-gFG">
+            <objects>
+                <viewController id="ETL-l2-8UL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XwA-Jk-cfD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Primary"/>
+                        <viewLayoutGuide key="safeArea" id="PRI-QO-QuT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home" id="I5T-NX-nJf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lsa-mm-Vra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1977" y="-202"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rVp-uO-Hlm">
+            <objects>
+                <tabBarController id="Hcm-rn-5hP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5yA-6F-XAo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Primary"/>
+                        <color key="selectedImageTintColor" name="Highlights"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ETL-l2-8UL" kind="relationship" relationship="viewControllers" id="wZm-Ad-1cO"/>
+                        <segue destination="m6i-b0-Fee" kind="relationship" relationship="viewControllers" id="vlb-1g-e3P"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecw-c8-m9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1328" y="-929"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add" width="22" height="22"/>
+        <image name="home" width="26" height="25"/>
+        <namedColor name="Highlights">
+            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

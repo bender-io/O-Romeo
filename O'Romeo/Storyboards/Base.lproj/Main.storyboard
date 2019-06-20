@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VNR-oh-r1i">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Light.otf">
+            <string>SFCompactRounded-Light</string>
+        </array>
+        <array key="SF-Compact-Rounded-Semibold.otf">
+            <string>SFCompactRounded-Semibold</string>
+        </array>
+        <array key="SF-Compact-Rounded-Thin.otf">
+            <string>SFCompactRounded-Thin</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="iDr-eC-HG5">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="yeN-YR-20c" customClass="LoginViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vYl-t8-5wM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
+                                <rect key="frame" x="20" y="273" width="374" height="159"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                        <color key="backgroundColor" name="White10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="jEj-cl-pYk"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-2o-ykW" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57" width="374" height="45"/>
+                                        <color key="backgroundColor" name="White10"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-5k-Ocz" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="114" width="150" height="45"/>
+                                        <color key="backgroundColor" name="Secondary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NFu-5k-Ocz" secondAttribute="height" multiplier="10:3" id="Um6-ER-Yhi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
+                                        <state key="normal" title="log in">
+                                            <color key="titleColor" name="White100"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="a69-jP-tbj"/>
+                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="loginToHomeTVC" id="Y8D-Be-TOp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5ss-2o-ykW" secondAttribute="trailing" id="0XH-ao-kdU"/>
+                                    <constraint firstItem="5ss-2o-ykW" firstAttribute="leading" secondItem="FDQ-Qb-Vu0" secondAttribute="leading" id="HWM-HR-WiL"/>
+                                    <constraint firstAttribute="trailing" secondItem="rDJ-mK-J43" secondAttribute="trailing" id="SDt-bp-OWU"/>
+                                    <constraint firstItem="rDJ-mK-J43" firstAttribute="leading" secondItem="FDQ-Qb-Vu0" secondAttribute="leading" id="icE-AE-jUH"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
+                                <rect key="frame" x="111.5" y="817" width="191" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
+                                        <color key="textColor" name="OffWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
+                                        <rect key="frame" x="144" y="0.0" width="47" height="29"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
+                                        <state key="normal" title="sign up">
+                                            <color key="titleColor" name="Highlights"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signupButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="5yI-B3-oIL"/>
+                                            <segue destination="pDG-fY-qF4" kind="show" identifier="toSignUpVC" id="NNv-2b-pUW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
+                                <rect key="frame" x="100" y="108" width="214" height="145"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FTl-qy-7Yg" secondAttribute="trailing" constant="100" id="80q-YZ-Uku"/>
+                            <constraint firstItem="QUu-0U-tSP" firstAttribute="centerX" secondItem="o1q-YQ-5cp" secondAttribute="centerX" id="Lrz-A9-TTQ"/>
+                            <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="top" secondItem="FTl-qy-7Yg" secondAttribute="bottom" constant="20" id="NrQ-s7-J7a"/>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FDQ-Qb-Vu0" secondAttribute="trailing" constant="20" id="UdL-Gv-CFZ"/>
+                            <constraint firstItem="o1q-YQ-5cp" firstAttribute="bottom" secondItem="QUu-0U-tSP" secondAttribute="bottom" constant="16" id="X1D-yJ-1ZN"/>
+                            <constraint firstItem="FDQ-Qb-Vu0" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="20" id="g27-mh-zME"/>
+                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="top" secondItem="o1q-YQ-5cp" secondAttribute="top" constant="20" id="gRs-Ud-59R"/>
+                            <constraint firstItem="FTl-qy-7Yg" firstAttribute="leading" secondItem="o1q-YQ-5cp" secondAttribute="leading" constant="100" id="tIO-Vm-omf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o1q-YQ-5cp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RWc-6J-vAs"/>
+                    <connections>
+                        <outlet property="loginButton" destination="NFu-5k-Ocz" id="3fb-oI-F6S"/>
+                        <outlet property="passwordTextField" destination="5ss-2o-ykW" id="9cg-1C-VVb"/>
+                        <outlet property="usernameTextField" destination="rDJ-mK-J43" id="jKG-Ha-OUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a7r-kH-kjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1278.2608695652175" y="-521.65178571428567"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Pbp-Yi-KTV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="cjA-6w-YVr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRY-uF-S5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="-102"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="5VY-Kv-ORX">
+            <objects>
+                <viewController id="pDG-fY-qF4" customClass="SignupViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="crB-71-aRM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
+                                <rect key="frame" x="20" y="273" width="374" height="159"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                        <color key="backgroundColor" name="White10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="4K0-a1-qGU"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57" width="374" height="45"/>
+                                        <color key="backgroundColor" name="White10"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="114" width="150" height="45"/>
+                                        <color key="backgroundColor" name="Secondary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
+                                        <state key="normal" title="sign up">
+                                            <color key="titleColor" name="White100"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
+                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="signupToHomeTVC" id="lqN-Zy-QEQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sc5-WH-ZA1" secondAttribute="trailing" id="SMi-nV-rQ4"/>
+                                    <constraint firstAttribute="trailing" secondItem="UmI-8T-OWO" secondAttribute="trailing" id="ljM-Wt-EJv"/>
+                                    <constraint firstItem="UmI-8T-OWO" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="o3r-A0-zEH"/>
+                                    <constraint firstItem="sc5-WH-ZA1" firstAttribute="leading" secondItem="CPm-be-fjd" secondAttribute="leading" id="rqP-to-EwV"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
+                                <rect key="frame" x="100" y="108" width="214" height="145"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="FRU-rg-hsu" secondAttribute="trailing" constant="100" id="2sG-lJ-u96"/>
+                            <constraint firstItem="FRU-rg-hsu" firstAttribute="top" secondItem="c6v-iM-ozN" secondAttribute="top" constant="20" id="GTe-LA-ITE"/>
+                            <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="CPm-be-fjd" secondAttribute="trailing" constant="20" id="Uge-zj-agw"/>
+                            <constraint firstItem="FRU-rg-hsu" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="100" id="nnX-bK-tAb"/>
+                            <constraint firstItem="CPm-be-fjd" firstAttribute="leading" secondItem="c6v-iM-ozN" secondAttribute="leading" constant="20" id="qNW-EF-2GJ"/>
+                            <constraint firstItem="CPm-be-fjd" firstAttribute="top" secondItem="FRU-rg-hsu" secondAttribute="bottom" constant="20" id="tl8-og-jKf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c6v-iM-ozN"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="UmI-8T-OWO" id="3xz-79-040"/>
+                        <outlet property="passwordTextField" destination="sc5-WH-ZA1" id="HdI-lI-mAr"/>
+                        <outlet property="signupButton" destination="i5e-gD-qcS" id="m1B-vE-BI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5N-Wt-i9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="-522"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DWo-88-Fdo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VNR-oh-r1i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLe-fe-397">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Highlights"/>
+                        <color key="barTintColor" name="Primary"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yeN-YR-20c" kind="relationship" relationship="rootViewController" id="BNB-gu-oay"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD3-nU-bQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="368.11594202898556" y="-521.65178571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Romeo" width="820" height="145"/>
+        <namedColor name="Highlights">
+            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OffWhite">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.41960784313725491" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White10">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White100">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lqN-Zy-QEQ"/>
+    </inferredMetricsTieBreakers>
+</document>
