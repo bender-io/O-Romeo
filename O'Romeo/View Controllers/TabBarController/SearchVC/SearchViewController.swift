@@ -24,6 +24,23 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
+    // TODO: - Add function to Model Controller
+    private func callNumber(phoneNumber:String) {
+        
+        if let phoneCallURL = URL(string: "telprompt://\(phoneNumber)") {
+            
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                if #available(iOS 10.0, *) {
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                    application.openURL(phoneCallURL as URL)
+                    
+                }
+            }
+        }
+    }
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +53,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
 
-        
         return cell
     }
 }
