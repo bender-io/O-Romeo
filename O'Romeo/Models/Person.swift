@@ -11,11 +11,11 @@ import Foundation
 struct Person {
     
     let name: String
-    let bday: String
-    let anniversary: String
-    let userUID: String
-    let personUID: String
-    var interests: [String]
+    let bday: String?
+    let anniversary: String?
+    let userUID: String?
+    let personUID: String?
+    var interests: [String]?
     
     init?(from dictionary: [String : Any], uid: String) {
         guard let name = dictionary["name"] as? String,

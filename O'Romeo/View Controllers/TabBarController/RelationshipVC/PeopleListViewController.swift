@@ -23,6 +23,11 @@ class PeopleListViewController: UIViewController {
             helperLabel.isHidden = true
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Navigation
 
@@ -38,7 +43,6 @@ class PeopleListViewController: UIViewController {
 }
 
 // MARK: - Extensions
-
 extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +50,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "relationshipCell", for: indexPath) as! PersonTableViewCell
         
         let person = PersonController.shared.persons[indexPath.row]
         cell.person = person
