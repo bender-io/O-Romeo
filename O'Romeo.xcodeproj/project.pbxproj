@@ -10,10 +10,10 @@
 		560BF55522B972CC000E7F66 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55422B972CC000E7F66 /* extensions.swift */; };
 		560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55822B97737000E7F66 /* RomeoButton.swift */; };
 		560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55A22B9784F000E7F66 /* RomeoTextField.swift */; };
-		563FD18222B98B0600ADA9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563FD18122B98B0600ADA9CA /* GoogleService-Info.plist */; };
 		563FD18422B9999500ADA9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563FD18322B9999500ADA9CA /* Assets.xcassets */; };
 		563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */; };
 		563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD19022BAE31200ADA9CA /* SearchTableViewCell.swift */; };
+		563FD19522BC249700ADA9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563FD19422BC249700ADA9CA /* GoogleService-Info.plist */; };
 		569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CC922B45ADC0025C319 /* AppDelegate.swift */; };
 		569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CCD22B45ADC0025C319 /* Main.storyboard */; };
 		569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */; };
@@ -54,7 +54,6 @@
 		EC68D8F422BBE3A100345EBC /* Relationships.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC68D8F322BBE3A100345EBC /* Relationships.storyboard */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
-		ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECFE939622B99CA00042C00A /* GoogleService-Info.plist */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
@@ -65,10 +64,10 @@
 		560BF55422B972CC000E7F66 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		560BF55822B97737000E7F66 /* RomeoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoButton.swift; sourceTree = "<group>"; };
 		560BF55A22B9784F000E7F66 /* RomeoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoTextField.swift; sourceTree = "<group>"; };
-		563FD18122B98B0600ADA9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		563FD18322B9999500ADA9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		563FD19022BAE31200ADA9CA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		563FD19422BC249700ADA9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		569A6CC622B45ADC0025C319 /* O'Romeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O'Romeo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		569A6CC922B45ADC0025C319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		569A6CCE22B45ADC0025C319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +110,6 @@
 		EC68D8F322BBE3A100345EBC /* Relationships.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Relationships.storyboard; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
@@ -222,12 +220,11 @@
 		569A6CDB22B45AF90025C319 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ECFE939622B99CA00042C00A /* GoogleService-Info.plist */,
+				563FD19422BC249700ADA9CA /* GoogleService-Info.plist */,
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
 				563FD18322B9999500ADA9CA /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
 				569A6CD522B45ADE0025C319 /* Info.plist */,
-				563FD18122B98B0600ADA9CA /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -387,11 +384,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E412349C22B9521D0066796E /* gRPCCertificates-Cpp.bundle in Resources */,
-				ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */,
+				563FD19522BC249700ADA9CA /* GoogleService-Info.plist in Resources */,
 				569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */,
 				569A6CE222B589890025C319 /* Home.storyboard in Resources */,
 				EC68D8F422BBE3A100345EBC /* Relationships.storyboard in Resources */,
-				563FD18222B98B0600ADA9CA /* GoogleService-Info.plist in Resources */,
 				569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */,
 				569A6CDE22B57A800025C319 /* Fonts in Resources */,
 				563FD18422B9999500ADA9CA /* Assets.xcassets in Resources */,
@@ -575,7 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VGUCD6ZAV7;
+				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -601,7 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VGUCD6ZAV7;
+				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

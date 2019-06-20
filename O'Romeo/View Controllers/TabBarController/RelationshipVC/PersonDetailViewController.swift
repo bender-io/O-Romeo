@@ -34,9 +34,9 @@ class PersonDetailViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text, let interests = makeYourOwnTF.text else { return }
-        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday, interests: [interests]) { (error) in
-            if let error = error {
-                print("Error updating views \(error)")
+        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday, interests: [interests]) { (success) in
+            if !success {
+                print("Error!")
             }
         }
         navigationController?.popViewController(animated: true)

@@ -11,8 +11,8 @@ import UIKit
 class PersonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var anniversaryLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
 
     var person: Person? {
         didSet {
@@ -20,11 +20,11 @@ class PersonTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Cell Methods
     func updateViews() {
         guard let person = person else { print("Couldn't unwrap person: \(#function)"); return }
-        
         nameLabel.text = person.name
-//        cityLabel.text = person.city
-//        distanceLabel.text = person.distance
+        anniversaryLabel.text = person.anniversary
+        birthdayLabel.text = person.bday
     }
 }
