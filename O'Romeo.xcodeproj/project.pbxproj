@@ -51,6 +51,7 @@
 		E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */; };
 		E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */; };
 		E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */; };
+		EC68D8F422BBE3A100345EBC /* Relationships.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC68D8F322BBE3A100345EBC /* Relationships.storyboard */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECFE939622B99CA00042C00A /* GoogleService-Info.plist */; };
@@ -107,6 +108,7 @@
 		E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
+		EC68D8F322BBE3A100345EBC /* Relationships.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Relationships.storyboard; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECFE939622B99CA00042C00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -159,8 +161,8 @@
 		563FD18D22BAB4AF00ADA9CA /* RelationshipVC */ = {
 			isa = PBXGroup;
 			children = (
-				E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */,
 				E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */,
+				E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */,
 				E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */,
 				E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */,
 			);
@@ -235,6 +237,7 @@
 			children = (
 				569A6CCD22B45ADC0025C319 /* Main.storyboard */,
 				569A6CE122B589890025C319 /* Home.storyboard */,
+				EC68D8F322BBE3A100345EBC /* Relationships.storyboard */,
 				569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -387,6 +390,7 @@
 				ECFE939722B99CA10042C00A /* GoogleService-Info.plist in Resources */,
 				569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */,
 				569A6CE222B589890025C319 /* Home.storyboard in Resources */,
+				EC68D8F422BBE3A100345EBC /* Relationships.storyboard in Resources */,
 				563FD18222B98B0600ADA9CA /* GoogleService-Info.plist in Resources */,
 				569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */,
 				569A6CDE22B57A800025C319 /* Fonts in Resources */,
