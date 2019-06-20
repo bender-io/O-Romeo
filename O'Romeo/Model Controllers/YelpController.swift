@@ -12,9 +12,9 @@ class YelpController {
     
     static let shared = YelpController()
     let apiKey = "5lGUJfWuPeOedsyXWTGUSO37-Ct3hL4XnzEXqKdUCJ0uY8CqCualyOwcX3hkh2aN88eLZvrhNkE0TDIwmSCTSFWRom4vVr3zcrZHxbqps49RaPpk-H0PuTxgDrYKXXYx"
-    
+
     let searchBaseURL = "https://api.yelp.com/v3/businesses/search"
-    
+        
     func fetchRestaurants(searchTerm: String, completion: @escaping ([Yelp]) -> Void) {
         guard let baseURL = URL(string: searchBaseURL) else { completion([]) ; return }
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -48,7 +48,7 @@ class YelpController {
                 completion([])
                 return
             }
-        }.resume()
+            }.resume()
     }
     
     func fetchImageFor(yelp: Yelp, completion: @escaping((UIImage?) -> Void)) {
@@ -66,7 +66,7 @@ class YelpController {
             guard let data = data else { completion(nil); return }
             let image = UIImage(data: data)
             completion(image)
-        }.resume()
+            }.resume()
     }
 }
 
