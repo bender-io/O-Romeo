@@ -25,7 +25,7 @@ class EventTableViewCell: UITableViewCell {
         guard let event = event else { return }
         self.eventNameLabel.text = event.title
         self.eventAddressLabel.text = event.venueAddress
-        
+
         EventfulController.shared.fetchImageFor(eventful: event) { (image) in
             if let image = image {
                 DispatchQueue.main.async {

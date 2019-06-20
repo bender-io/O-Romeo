@@ -14,14 +14,15 @@ class YelpController {
     let apiKey = "5lGUJfWuPeOedsyXWTGUSO37-Ct3hL4XnzEXqKdUCJ0uY8CqCualyOwcX3hkh2aN88eLZvrhNkE0TDIwmSCTSFWRom4vVr3zcrZHxbqps49RaPpk-H0PuTxgDrYKXXYx"
 
     let searchBaseURL = "https://api.yelp.com/v3/businesses/search"
-    
+        
     func fetchRestaurants(searchTerm: String, completion: @escaping ([Yelp]) -> Void) {
         guard let baseURL = URL(string: searchBaseURL) else { completion([]) ; return }
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let locationItem = URLQueryItem(name: "location", value: "Salt Lake City")
         let searchItem = URLQueryItem(name: "term", value: searchTerm)
+        let locationItem = URLQueryItem(name: "location", value: "Salt Lake City")
+        
         // https://api.yelp.com/v3/businesses/search?location=Salt%20Lake%20City&term=restaurant
-        components?.queryItems = [locationItem, searchItem]
+        components?.queryItems = [searchItem, locationItem]
         
         guard let requestURL = components?.url else { completion([]) ; return }
         
