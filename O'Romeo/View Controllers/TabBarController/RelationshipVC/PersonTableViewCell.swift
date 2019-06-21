@@ -25,6 +25,6 @@ class PersonTableViewCell: UITableViewCell {
         guard let person = person else { print("Couldn't unwrap person: \(#function)"); return }
         nameLabel.text = person.name
         anniversaryLabel.text = person.anniversary
-        birthdayLabel.text = person.bday
+        birthdayLabel.text = person.birthday
     }
 }

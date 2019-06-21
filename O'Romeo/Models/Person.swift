@@ -11,22 +11,22 @@ import Foundation
 struct Person {
     
     let name: String
-    let bday: String?
+    let birthday: String?
     let anniversary: String?
-    let userUID: String?
-    let personUID: String?
+    let userUID: String
+    let personUID: String
     var interests: [String]?
     
     init?(from dictionary: [String : Any], uid: String) {
         guard let name = dictionary["name"] as? String,
-            let bday = dictionary["bday"] as? String,
+            let birthday = dictionary["birthday"] as? String,
             let anniversary = dictionary["anniversary"] as? String,
             let userUID = dictionary["userUID"] as? String,
             let interests = dictionary["interests"] as? [String]
             else { return nil }
         
         self.name = name
-        self.bday = bday
+        self.birthday = birthday
         self.anniversary = anniversary
         self.userUID = userUID
         self.interests = interests

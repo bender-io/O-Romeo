@@ -27,9 +27,9 @@ class SignupViewController: UIViewController {
         guard let emailText = emailTextField.text,
             let passwordText = passwordTextField.text
             else { print("Couldnt unwrap email and password text: \(#function)"); return }
-        UserController.shared.createUserWith(email: emailText, password: passwordText) { (error) in
-            if let error = error {
-                print("There was an error creating a new user: \(error) : \(#function)")
+        UserController.shared.createUserWith(email: emailText, password: passwordText) { (success) in
+            if !success {
+                print("There was an error creating a new user: \(#function)")
                 self.presentSignupErrorAlert()
             }
         }
