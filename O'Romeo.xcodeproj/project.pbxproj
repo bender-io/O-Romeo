@@ -51,8 +51,10 @@
 		E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */; };
 		E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */; };
 		E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */; };
+		EC63E07422BD32D200A1BF46 /* AddToCalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC63E07322BD32D200A1BF46 /* AddToCalendarController.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
+		ECA07C4022BD361D008741B0 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* Calendar.swift */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
@@ -106,8 +108,10 @@
 		E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
+		EC63E07322BD32D200A1BF46 /* AddToCalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCalendarController.swift; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		ECA07C3F22BD361D008741B0 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				E49AAE1722B99FB20099C45A /* Interest.swift */,
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
+				ECA07C3F22BD361D008741B0 /* Calendar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				E49AAE1922B99FC90099C45A /* InterestController.swift */,
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
+				EC63E07322BD32D200A1BF46 /* AddToCalendarController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
+				ECA07C4022BD361D008741B0 /* Calendar.swift in Sources */,
 				EC88206122BA625A006438B4 /* Enums.swift in Sources */,
 				E49AAE1C22BAA4040099C45A /* PeopleListViewController.swift in Sources */,
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
@@ -416,6 +423,7 @@
 				560BF55522B972CC000E7F66 /* extensions.swift in Sources */,
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */,
+				EC63E07422BD32D200A1BF46 /* AddToCalendarController.swift in Sources */,
 				ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */,
 				E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */,
 				563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */,

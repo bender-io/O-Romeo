@@ -854,10 +854,10 @@
             </objects>
             <point key="canvasLocation" x="1346" y="532"/>
         </scene>
-        <!--View Controller-->
+        <!--Interest Detail View Controller-->
         <scene sceneID="dEj-3A-BFd">
             <objects>
-                <viewController id="b8a-eZ-DqN" sceneMemberID="viewController">
+                <viewController id="b8a-eZ-DqN" customClass="InterestDetailViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ECP-iA-gMl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -890,6 +890,7 @@
                                     <color key="titleColor" name="White100"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveButtonTapped:" destination="b8a-eZ-DqN" eventType="touchUpInside" id="WnO-1e-iGe"/>
                                     <action selector="saveButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="kpL-1a-AD2"/>
                                 </connections>
                             </button>
@@ -922,6 +923,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WM5-Ga-AVy"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="m9V-hd-IVz" id="IF3-HP-3Vc"/>
+                        <outlet property="nameTextField" destination="2ik-pv-Nlm" id="Q6j-Uj-rQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEv-WF-Jgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

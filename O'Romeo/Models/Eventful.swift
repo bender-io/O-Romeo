@@ -20,18 +20,18 @@ struct Events: Codable {
 
 // MARK: - Event
 struct Event: Codable {
-    let url: String
+    let url: String?
     let startTime: String
-    let eventDescription: String
+    let eventDescription: String?
     let title: String
     let venueAddress: String
-    let cityName: String
-    let regionAbbr: String
+    let cityName: String?
+    let regionAbbr: String?
     let postalCode: String?
-    let countryAbbr: String
+    let countryAbbr: String?
     let image: Image?
-    let venueName: String
-    let venueURL: String
+    let venueName: String?
+    let venueURL: String?
     
     enum CodingKeys: String, CodingKey {
         case url

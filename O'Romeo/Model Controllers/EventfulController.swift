@@ -10,6 +10,7 @@ import UIKit
 
 class EventfulController {
     static let shared = EventfulController()
+    var eventsArray: [Eventful] = []
     //api key WFqCdKSnVRgh3tms
     //http://api.eventful.com/json/events/search?keywords=music&location=Salt%20Lake%20City&date=Future
     let apiKey = "WFqCdKSnVRgh3tms"
