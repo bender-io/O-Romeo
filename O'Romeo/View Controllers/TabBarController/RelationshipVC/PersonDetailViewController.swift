@@ -14,6 +14,8 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var birthdayTF: UITextField!
     @IBOutlet weak var anniversaryTF: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addMoreButton: UIButton!
+    @IBOutlet weak var interestsLabel: UILabel!
     
     var person: Person?
 
@@ -29,11 +31,26 @@ class PersonDetailViewController: UIViewController {
         updateViews()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        InterestController.shared.interests = []
+    }
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text  else { return }
-        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday) { (success) in
-            if !success {
-                print("There was an error creating the person: \(#function)")
+        if let person = person {
+            PersonController.shared.updatePersonInfo(for: person.personUID, name: name, birthday: birthday, anniversary: anniversary) {
+                (error) in
+                if let error = error {
+                    print("There was an error updating the person info: \(error.localizedDescription): \(#function)")
+                }
+            }
+            
+        } else {
+            PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday) { (error) in
+                if let error = error {
+                    print("\(error.localizedDescription): \(#function)")
+                }
             }
         }
         navigationController?.popViewController(animated: true)
@@ -43,12 +60,23 @@ class PersonDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let person = person else { print("There was an error unwrapping the person: \(#function)"); return }
-        julietNameTF.text = person.name
-        birthdayTF.text = person.birthday
-        anniversaryTF.text = person.anniversary
-        InterestController.shared.fetchInterestsFromFirestore(for: person) {
-            self.tableView.reloadData()
+        if let person = person {
+//            tableView.isHidden = false
+//            addMoreButton.isHidden = false
+//            interestsLabel.isHidden = false
+            julietNameTF.text = person.name
+            birthdayTF.text = person.birthday
+            anniversaryTF.text = person.anniversary
+            InterestController.shared.fetchInterestsFromFirestore(for: person) { (error) in
+                if let error = error {
+                    print("There was an error fetching interests: \(error.localizedDescription): \(#function)")
+                }
+                self.tableView.reloadData()
+            }
+        } else {
+//            tableView.isHidden = true
+//            addMoreButton.isHidden = true
+//            interestsLabel.isHidden = true
         }
     }
     
