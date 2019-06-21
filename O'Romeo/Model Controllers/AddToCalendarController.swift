@@ -14,7 +14,7 @@ class AddToCalendarController {
     
     var addToCalendarArray: [Calendar] = []
     
-    func addToCalendar(date: Date, time: String, julietName: String, event: String, address: String) {
+    func addToCalendar(date: String, time: String, julietName: String, event: String, address: String) {
         let addedToCalendar = Calendar(date: date, time: time, julietName: julietName, event: event, address: address)
         addToCalendarArray.append(addedToCalendar)
     }
@@ -24,7 +24,7 @@ class AddToCalendarController {
         addToCalendarArray.remove(at: eventsToDelete)
     }
     
-    func updateEvents(calendar: Calendar, date: Date, time: String, julietName: String, event: String, address: String) {
+    func updateEvents(calendar: Calendar, date: String, time: String, julietName: String, event: String, address: String) {
         calendar.date = date
         calendar.time = time
         calendar.julietName = julietName
