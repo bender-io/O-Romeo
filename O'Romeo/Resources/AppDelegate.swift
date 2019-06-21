@@ -15,22 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let home: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        
-        if let _ = Auth.auth().currentUser {
-            let homeViewController = home.instantiateViewController(withIdentifier: "HomeViewController")
-            self.window?.rootViewController = homeViewController
-            self.window?.makeKeyAndVisible()
-        } else {
-            let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
-            self.window?.rootViewController = loginViewController
-            self.window?.makeKeyAndVisible()
-        }
         return true
     }
 
