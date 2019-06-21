@@ -10,11 +10,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Compact-Rounded-Bold.otf">
-            <string>SFCompactRounded-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -24,27 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="raY-Wh-hKG">
-                                <rect key="frame" x="82" y="147" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="raY-Wh-hKG">
+                                <rect key="frame" x="94.5" y="-29.5" width="225.00000000000023" height="956.00000000000023"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="3FR-Bp-cKf"/>
-                                    <constraint firstAttribute="width" constant="250" id="4QL-ur-GaI"/>
+                                    <constraint firstAttribute="width" constant="225" id="4QL-ur-GaI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-uM-gLU">
-                                <rect key="frame" x="0.0" y="432" width="414" height="29"/>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="24"/>
-                                <color key="textColor" name="Highlights"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2L7-Ar-59p"/>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.6" id="SCY-Zd-gGn"/>
-                            <constraint firstItem="Kak-uM-gLU" firstAttribute="top" secondItem="raY-Wh-hKG" secondAttribute="bottom" constant="35" id="u5f-9V-GJR"/>
-                            <constraint firstItem="Kak-uM-gLU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uGt-4v-iji"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kak-uM-gLU" secondAttribute="trailing" id="vtA-rE-Vqt"/>
+                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.99" id="SCY-Zd-gGn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -55,10 +40,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="1024" height="1024"/>
-        <namedColor name="Highlights">
-            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="LoadingLogo" width="956" height="956"/>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

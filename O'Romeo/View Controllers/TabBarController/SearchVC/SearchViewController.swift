@@ -23,7 +23,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         placesSearchBar.delegate = self
     }
     
-    
     // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
         
