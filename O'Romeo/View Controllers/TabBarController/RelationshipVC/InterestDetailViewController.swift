@@ -11,7 +11,7 @@ import UIKit
 class InterestDetailViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextField: RomeoTextField!
     
     var interest: Interest?
 
@@ -20,12 +20,12 @@ class InterestDetailViewController: UIViewController {
         
         guard let interest = interest else { print("Could not unwrap interest: \(#function)"); return }
         nameTextField.text = interest.name
-        descriptionTextView.text = interest.description
+        descriptionTextField.text = interest.description
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text,
-            let description = descriptionTextView.text
+            let description = descriptionTextField.text
             else { print("Couldn't unwrap textfields: \(#function)"); return }
         InterestController.shared.updateInterest(name: name, description: description)
     }
