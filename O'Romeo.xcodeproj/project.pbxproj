@@ -55,6 +55,7 @@
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		ECA07C4022BD361D008741B0 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* Calendar.swift */; };
+		ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
@@ -112,6 +113,7 @@
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ECA07C3F22BD361D008741B0 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDateViewController.swift; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		569A6CE522B58A270025C319 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ECC8FB5522BD7EC1002CC29E /* AddDateVC */,
 				569A6CEA22B58A7E0025C319 /* Login */,
 				569A6CEB22B58A910025C319 /* TabBarController */,
 			);
@@ -326,6 +329,14 @@
 				EC88206022BA625A006438B4 /* Enums.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ECC8FB5522BD7EC1002CC29E /* AddDateVC */ = {
+			isa = PBXGroup;
+			children = (
+				ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */,
+			);
+			path = AddDateVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */,
 				563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
+				ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */,
 				E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
     
     var event: Event? {
         didSet {
@@ -29,9 +29,9 @@ class EventTableViewCell: UITableViewCell {
         self.eventNameLabel.text = event.title
         self.eventAddressLabel.text = event.venueAddress
         self.cityLabel.text = event.cityName
-//        self.descriptionLabel.text = event.eventDescription
-//        self.dateLabel.text = event.startTime
-//        self.urlLabel.text = event.url
+        self.descriptionLabel.text = event.eventDescription
+        self.dateLabel.text = event.startTime
+        self.urlButton.titleLabel?.text = event.url
         
 
         EventfulController.shared.fetchImageFor(eventful: event) { (image) in

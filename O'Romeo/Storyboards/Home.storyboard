@@ -93,13 +93,13 @@
                                                                             <rect key="frame" x="0.0" y="66.5" width="226" height="33.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-tv-aCF">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="199.5" height="33.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="198.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(mi)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-da-hI4">
-                                                                                    <rect key="frame" x="203.5" y="0.0" width="22.5" height="33.5"/>
+                                                                                    <rect key="frame" x="202.5" y="0.0" width="23.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
@@ -121,16 +121,16 @@
                                                             <rect key="frame" x="20" y="134" width="334" height="64"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ipH-Jk-kMT">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="64"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-PJ-AZC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="White100"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(phoneNumber)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-ce-Vjh">
-                                                                            <rect key="frame" x="0.0" y="34" width="225" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="34" width="223" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="Highlights"/>
                                                                             <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-Yb-m1s">
-                                                                    <rect key="frame" x="233" y="0.0" width="101" height="64"/>
+                                                                    <rect key="frame" x="231" y="0.0" width="103" height="64"/>
                                                                     <state key="normal" image="Calendar"/>
                                                                     <connections>
                                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
@@ -321,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Primary"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="130" id="wAk-Hm-0I3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3">
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wAk-Hm-0I3" id="RiF-VV-Ktz">
@@ -394,7 +394,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Primary"/>
                                 <connections>
-                                    <segue destination="T8g-8l-1y4" kind="show" identifier="editDateDetailVC" id="DEl-sq-28l"/>
+                                    <segue destination="T8g-8l-1y4" kind="presentation" identifier="editDateDetailVC" id="DEl-sq-28l"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -416,10 +416,10 @@
             </objects>
             <point key="canvasLocation" x="-2259.4202898550725" y="531.69642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
             <objects>
-                <viewController id="T8g-8l-1y4" sceneMemberID="viewController">
+                <viewController id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tix-HP-h0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,8 +487,18 @@
                         <viewLayoutGuide key="safeArea" id="b0r-sH-Z4H"/>
                     </view>
                     <navigationItem key="navigationItem" id="iWV-Uk-cTd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MRd-PV-0SU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MRd-PV-0SU">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="T8g-8l-1y4" id="fGS-Sw-ST4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLocationTF" destination="qmc-BO-SbI" id="5K5-0i-Guz"/>
+                        <outlet property="dateTF" destination="jMR-MI-P6Z" id="dR9-sP-WaM"/>
+                        <outlet property="eventTF" destination="Xgr-Mm-iLM" id="2JQ-SB-ccc"/>
+                        <outlet property="julietNameTF" destination="E3Y-TR-rp3" id="L4i-Y4-JFf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5e-cV-Vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -526,7 +536,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <color key="textColor" name="Highlights"/>
@@ -578,7 +588,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g5c-2Q-0wd">
                                                             <rect key="frame" x="0.0" y="0.0" width="250" height="71"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
@@ -633,9 +643,12 @@
                                         <color key="backgroundColor" name="White10"/>
                                         <connections>
                                             <outlet property="cityLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
+                                            <outlet property="dateLabel" destination="pak-cb-Em8" id="GKk-7O-v6s"/>
+                                            <outlet property="descriptionLabel" destination="Him-bG-rDP" id="n3w-Yg-kWx"/>
                                             <outlet property="eventAddressLabel" destination="FJT-qF-Alo" id="yWP-Tb-jeZ"/>
                                             <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
                                             <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
+                                            <outlet property="urlButton" destination="qMt-AA-ChJ" id="wI4-mP-Bk4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

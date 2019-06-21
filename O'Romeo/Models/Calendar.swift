@@ -10,14 +10,12 @@ import Foundation
 
 class Calendar: Equatable {
     var date: String?
-    var time: String?
     var julietName: String
     var event: String?
     var address: String
     
-    init(date: String, time: String, julietName: String, event: String, address: String) {
+    init(date: String, julietName: String, event: String, address: String) {
         self.date = date
-        self.time = time
         self.julietName = julietName
         self.event = event
         self.address = address
@@ -25,7 +23,6 @@ class Calendar: Equatable {
     
     static func ==(lhs: Calendar, rhs: Calendar) -> Bool {
         return lhs.date == rhs.date &&
-        lhs.time == rhs.time &&
         lhs.julietName == rhs.julietName &&
         lhs.event == rhs.event &&
         lhs.address == rhs.address
