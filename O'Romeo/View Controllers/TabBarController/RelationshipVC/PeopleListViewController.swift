@@ -16,6 +16,7 @@ class PeopleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
+        tableView.dataSource = self
 //        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
 //        if tableView.numberOfRows(inSection: 0) == 0 {
 //            helperLabel.isHidden = false
@@ -26,6 +27,7 @@ class PeopleListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        PersonController.shared.fetchPersonsFromFirestore()
         tableView.reloadData()
     }
 
@@ -46,8 +48,7 @@ class PeopleListViewController: UIViewController {
 extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-//        return PersonController.shared.persons.count
+        return PersonController.shared.persons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

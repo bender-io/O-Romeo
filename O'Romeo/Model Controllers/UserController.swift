@@ -26,15 +26,14 @@ class UserController {
     ///   - email: Users email (String)
     ///   - password: Users password (String)
     ///   - completion: Returns an error if there was one (Error)
-    func createUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
-        let dataError = "Couldnt unwrap data: \(#function)" as! Error
+    func createUserWith(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             if let error = error {
                 print("There was an error creating the user: \(error) : \(error.localizedDescription)")
-                completion(error)
+                completion(false)
             }
             
-            guard let data = data else { completion(dataError); return }
+            guard let data = data else { print("Couldnt unwrap data: \(#function)"); completion(false); return }
             self.db.collection("user").document(data.user.uid).setData([
                 "personUIDs" : []
                 ], completion: { (error) in
@@ -44,7 +43,7 @@ class UserController {
                         print("Document added with ID: \(data.user.uid)")
                     }
             })
-            completion(nil)
+            completion(true)
         }
     }
     

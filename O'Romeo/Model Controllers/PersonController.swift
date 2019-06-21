@@ -31,12 +31,9 @@ class PersonController {
     ///   - interests: Interests of person ([String] = [])
     func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], completion: @escaping (Bool) -> Void) {
         let person = persons.filter { $0.name == name }
-//        let personError = "Person already exists: \(#function)" as! Error
-//        let currentUserError = "No current user: \(#function)" as! Error
-//        let docIDError = "Couldn't unwrap ref.documentID: \(#function)" as! Error
         
-        guard name == person.first?.name else { completion(false); return }
-        guard let currentUser = Auth.auth().currentUser else { completion(false); return }
+        guard name != person.first?.name else { print("Person already exists: \(#function)"); completion(false); return }
+        guard let currentUser = Auth.auth().currentUser else { print("No current user: \(#function)"); completion(false); return }
         var ref: DocumentReference? = nil
         ref = db.collection("person").addDocument(data: [
             "name" : name,
@@ -48,7 +45,7 @@ class PersonController {
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
-                    guard let docID = ref?.documentID else { completion(false); return }
+                    guard let docID = ref?.documentID else { print("Couldn't unwrap ref.documentID: \(#function)"); completion(false); return }
                     UserController.shared.updatePersonUIDs(with: docID)
                     self.addDefaultInterests(for: docID)
                     print("Document added with ID: \(docID)")
@@ -91,23 +88,23 @@ class PersonController {
     ///
     /// - Parameter personUID: The uid for the person (String)
     func addDefaultInterests(for personUID: String) {
-        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Color", description: "Put favorite color here") {
-            (error) in
-            if let error = error {
-                print("There was an error creating default interest 1: \(error)")
+        InterestController.shared.createInterestFor(personUID: personUID, name: "Favorite Color", description: "Put favorite color here") {
+            (success) in
+            if !success {
+                print("There was an error creating default interest 1")
             }
         }
         
-        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Flower", description: "Put favorite flower here") { (error) in
-            if let error = error {
-                print("There was an error creating default interest 2: \(error)")
+        InterestController.shared.createInterestFor(personUID: personUID, name: "Favorite Flower", description: "Put favorite flower here") { (success) in
+            if !success {
+                print("There was an error creating default interest 2")
             }
         }
         
-        InterestController.shared.createInterestFor(personUID: personUID, with: "Favorite Movie", description: "Put favorite movie here") {
-            (error) in
-            if let error = error {
-                print("There was an error creating default interest 3: \(error)")
+        InterestController.shared.createInterestFor(personUID: personUID, name: "Favorite Movie", description: "Put favorite movie here") {
+            (success) in
+            if !success {
+                print("There was an error creating default interest 3")
             }
         }
     }

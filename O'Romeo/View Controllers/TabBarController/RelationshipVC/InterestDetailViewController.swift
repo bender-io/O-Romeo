@@ -10,10 +10,13 @@ import UIKit
 
 class InterestDetailViewController: UIViewController {
     
+    static let shared = InterestDetailViewController()
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var interest: Interest?
+    var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,17 @@ class InterestDetailViewController: UIViewController {
         guard let name = nameTextField.text,
             let description = descriptionTextView.text
             else { print("Couldn't unwrap textfields: \(#function)"); return }
-        InterestController.shared.updateInterest(name: name, description: description)
+        
+        if person != nil {
+            InterestController.shared.updateInterest(name: name, description: description)
+        } else {
+            guard let person = person else { print("Couldn't unwrap the person: \(#function)"); return }
+            InterestController.shared.createInterestFor(personUID: person.personUID, name: name, description: description) { (success) in
+                if !success {
+                    print("There was an error creating an interest: \(#function)")
+                }
+            }
+        }
     }
 }
+

@@ -28,12 +28,10 @@ class InterestController {
     ///   - personUID: The uid of the person object to add the interest too (String)
     ///   - name: The name of the interest (String)
     ///   - description: The description of the interest (String)
-    func createInterestFor(personUID: String, with name: String, description: String, completion: @escaping (Error?) -> Void) {
+    func createInterestFor(personUID: String, name: String, description: String, completion: @escaping (Bool) -> Void) {
         let interest = interests.filter { $0.name == name }
-        let interestError = "Interest already exists: \(#function)" as! Error
-        let docIDError = "Couldn't unwrap ref.documentID: \(#function)" as! Error
         
-        guard name != interest.first?.name else { completion(interestError); return }
+        guard name != interest.first?.name else { print("Interest already exists: \(#function)"); completion(false); return }
         var ref: DocumentReference? = nil
         ref = db.collection("interest").addDocument(data: [
             "name" : name,
@@ -43,11 +41,11 @@ class InterestController {
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
-                    guard let docID = ref?.documentID else { completion(docIDError); return }
+                    guard let docID = ref?.documentID else { print("Couldn't unwrap ref.documentID: \(#function)"); completion(false); return }
                     PersonController.shared.updatePersonInterests(for: personUID, with: docID)
                     print("Document added with ID: \(docID)")
                 }
-                completion(nil)
+                completion(true)
         })
     }
     

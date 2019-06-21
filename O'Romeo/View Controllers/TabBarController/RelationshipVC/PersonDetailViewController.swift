@@ -13,75 +13,68 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var julietNameTF: UITextField!
     @IBOutlet weak var birthdayTF: UITextField!
     @IBOutlet weak var anniversaryTF: UITextField!
-    @IBOutlet weak var favoriteColorTF: UITextField!
-    @IBOutlet weak var favoriteFlowerTF: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         updateViews()
         
-        julietNameTF.text = person?.name
-        birthdayTF.text = person?.bday
-        anniversaryTF.text = person?.anniversary
-        //        favoriteColorTF.text = person.
-        //        favoriteFlowerTF.text = person.
-        //        makeYourOwnTF.text = [person.interests]
-//        interestTableView.delegate = self
+        guard let person = person else { print("There was an error unwrapping the person: \(#function)"); return }
+        InterestController.shared.fetchInterestsFromFirestore(for: person)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text  else { return }
-        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday, interests: ["test interest"]) { (success) in
+        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday) { (success) in
             if !success {
-                print("Error!")
+                print("There was an error creating the person: \(#function)")
             }
         }
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func addMoreButtonTapped(_ sender: Any) {
+        InterestDetailViewController.shared.person = person
+    }
+    
     func updateViews() {
         guard let person = person else { return }
         julietNameTF.text = person.name
-        birthdayTF.text = person.bday
+        birthdayTF.text = person.birthday
         anniversaryTF.text = person.anniversary
-        //        favoriteColorTF.text = person.
-        //        favoriteFlowerTF.text = person.
-//        makeYourOwnTF.text = [person.interests]
     }
     
-}
-    
     // MARK: - Navigation
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toInterestDetailView" {
-//            guard let index = interestTableView.indexPathForSelectedRow,
-//                let destinationVC = segue.destination as? InterestDetailViewController
-//                else { return }
-//            let interest = InterestController.shared.interests[index.row]
-//            destinationVC.interest = interest
-//        }
-//    }
-//}
-//
-//// MARK: - Extensions
-//
-//extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return InterestController.shared.interests.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath)
-//
-//        let interest = InterestController.shared.interests[indexPath.row]
-//        cell.textLabel?.text = interest.name
-//
-//        return cell
-//    }
-//
-//
-//}
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInterestDetailView" {
+            guard let index = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? InterestDetailViewController
+                else { return }
+            let interest = InterestController.shared.interests[index.row]
+            destinationVC.interest = interest
+        }
+    }
+}
+
+// MARK: - Extensions
+
+extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return InterestController.shared.interests.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath)
+
+        let interest = InterestController.shared.interests[indexPath.row]
+        cell.textLabel?.text = interest.name
+
+        return cell
+    }
+}
