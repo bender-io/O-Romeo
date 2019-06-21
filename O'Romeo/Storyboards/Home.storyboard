@@ -775,7 +775,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pZ6-5m-MEW">
-                                <rect key="frame" x="20" y="287.5" width="374" height="112.5"/>
+                                <rect key="frame" x="20" y="287.5" width="374" height="21.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-8k-X7h">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
@@ -783,55 +783,56 @@
                                         <color key="textColor" name="Highlights"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-Vg-ypt">
-                                        <rect key="frame" x="0.0" y="26.5" width="374" height="86"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite color..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ben-bW-5pz" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
-                                                <color key="backgroundColor" name="White10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="jPB-yu-7N2"/>
-                                                </constraints>
-                                                <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite flower..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utQ-O1-yY4" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="46" width="374" height="40"/>
-                                                <color key="backgroundColor" name="White10"/>
-                                                <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czB-xX-rKO" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="140.5" y="420" width="133" height="40"/>
+                                <rect key="frame" x="157" y="579" width="100" height="40"/>
                                 <color key="backgroundColor" name="Secondary"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="77O-gU-zu0"/>
-                                    <constraint firstAttribute="width" secondItem="czB-xX-rKO" secondAttribute="height" multiplier="10:3" id="VPh-ZH-fE0"/>
+                                    <constraint firstAttribute="height" constant="40" id="FNK-sV-0e2"/>
+                                    <constraint firstAttribute="width" constant="100" id="q2U-p3-IDu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <state key="normal" title="add more">
                                     <color key="titleColor" name="White100"/>
                                 </state>
                                 <connections>
+                                    <action selector="addMoreButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="Cay-ct-jae"/>
                                     <segue destination="b8a-eZ-DqN" kind="show" identifier="toAddMoreVC" id="cJl-dU-OAU"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXi-Rh-bHA">
+                                <rect key="frame" x="20" y="317" width="374" height="246"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="interestCell" id="Whd-nI-wQZ">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Whd-nI-wQZ" id="LX6-OV-VMm">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="White10"/>
+                                        <connections>
+                                            <segue destination="b8a-eZ-DqN" kind="show" identifier="toInterestDetailView" id="2fo-xV-UHK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="bMv-NP-9rI" firstAttribute="top" secondItem="hFU-Pb-yvA" secondAttribute="top" constant="20" id="0t3-2b-464"/>
+                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="bottom" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="250" id="2V2-xe-obj"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="pZ6-5m-MEW" secondAttribute="trailing" constant="20" id="DMR-NG-vjH"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="20" id="Qpk-Dn-ruA"/>
-                            <constraint firstItem="czB-xX-rKO" firstAttribute="top" secondItem="pZ6-5m-MEW" secondAttribute="bottom" constant="20" id="YUn-DA-03E"/>
+                            <constraint firstItem="gXi-Rh-bHA" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="UDG-M5-7RJ"/>
                             <constraint firstItem="bMv-NP-9rI" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="aKH-0T-Qph"/>
-                            <constraint firstItem="czB-xX-rKO" firstAttribute="centerX" secondItem="hFU-Pb-yvA" secondAttribute="centerX" id="c91-6J-ydV"/>
+                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="gXi-Rh-bHA" secondAttribute="trailing" constant="20" id="cHV-wo-kEm"/>
                             <constraint firstItem="pZ6-5m-MEW" firstAttribute="top" secondItem="bMv-NP-9rI" secondAttribute="bottom" constant="20" id="caf-pn-ZQc"/>
+                            <constraint firstItem="gXi-Rh-bHA" firstAttribute="top" secondItem="pZ6-5m-MEW" secondAttribute="bottom" constant="8" id="cah-Ho-o65"/>
+                            <constraint firstItem="czB-xX-rKO" firstAttribute="centerX" secondItem="ehA-xj-fjL" secondAttribute="centerX" id="o7K-Tk-Sjg"/>
+                            <constraint firstItem="czB-xX-rKO" firstAttribute="top" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="16" id="raZ-7m-ZOw"/>
                             <constraint firstItem="pZ6-5m-MEW" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="yqe-vr-kSb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFU-Pb-yvA"/>
@@ -848,6 +849,7 @@
                         <outlet property="anniversaryTF" destination="sTO-Gr-7W4" id="WcQ-vp-2ni"/>
                         <outlet property="birthdayTF" destination="clg-GF-zQz" id="697-rC-yXS"/>
                         <outlet property="julietNameTF" destination="LVy-aw-QZc" id="zuB-Le-jzR"/>
+                        <outlet property="tableView" destination="gXi-Rh-bHA" id="Lhv-st-yvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-0C-2DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -982,6 +984,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cJl-dU-OAU"/>
         <segue reference="7N5-EK-FNd"/>
         <segue reference="kOA-gh-dMq"/>
     </inferredMetricsTieBreakers>

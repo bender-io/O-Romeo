@@ -73,14 +73,15 @@ class PersonController {
     }
     
     /// Fetches all the persons for the current user and sets them to the persons array ([Person])
-    func fetchPersonsFromFirestore() {
-        guard let userUID = Auth.auth().currentUser?.uid else { print("Couldn't unwrap Auth.auth().currentUser.uid: \(#function)"); return }
+    func fetchPersonsFromFirestore(completion: @escaping () -> Void) {
+        guard let userUID = Auth.auth().currentUser?.uid else { print("Couldn't unwrap Auth.auth().currentUser.uid: \(#function)"); completion(); return }
         db.collection("person").whereField("userUID", isEqualTo: userUID).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
-                else { print("Failed snapshot gaurd: \(#function)"); return }
+                else { print("Failed snapshot gaurd: \(#function)"); completion(); return }
             
             self.persons = snapshot.documents.compactMap { Person(from: $0.data(), uid: $0.documentID) }
+            completion()
         }
     }
     

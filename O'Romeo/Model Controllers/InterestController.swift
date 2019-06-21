@@ -54,11 +54,8 @@ class InterestController {
     /// - Parameters:
     ///   - name: The new name (String)
     ///   - description: The new description (String)
-    func updateInterest(name: String, description: String) {
-        let interest = interests.filter { $0.name == name }
-        
-        guard let interestUID = interest.first?.interestUID else { print("Couldn't unwrap interestUID: \(#function)"); return }
-        db.collection("interest").document(interestUID).updateData([
+    func updateInterest(interest: Interest, name: String, description: String) {
+        db.collection("interest").document(interest.interestUID).updateData([
             "name" : name,
             "description" : description
         ]) { (error) in
@@ -71,13 +68,14 @@ class InterestController {
     /// Fetches the interests for the specified person from the firestore.
     ///
     /// - Parameter person: The person object to fetch from (Person)
-    func fetchInterestsFromFirestore(for person: Person) {
+    func fetchInterestsFromFirestore(for person: Person, completion: @escaping () -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
-                else { print("Failed snapshot gaurd: \(#function)"); return }
+                else { print("Failed snapshot gaurd: \(#function)"); completion(); return }
             
             self.interests = snapshot.documents.compactMap { Interest(from: $0.data(), uid: $0.documentID) }
+            completion()
         }
     }
 }
