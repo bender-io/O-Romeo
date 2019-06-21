@@ -28,10 +28,10 @@ class InterestController {
     ///   - personUID: The uid of the person object to add the interest too (String)
     ///   - name: The name of the interest (String)
     ///   - description: The description of the interest (String)
-    func createInterestFor(personUID: String, name: String, description: String, completion: @escaping (Bool) -> Void) {
+    func createInterestFor(personUID: String, name: String, description: String, completion: @escaping (Error?) -> Void) {
         let interest = interests.filter { $0.name == name }
         
-        guard name != interest.first?.name else { print("Interest already exists: \(#function)"); completion(false); return }
+        guard name != interest.first?.name else { completion(Errors.interestAlreadyExists); return }
         var ref: DocumentReference? = nil
         ref = db.collection("interest").addDocument(data: [
             "name" : name,
@@ -41,11 +41,15 @@ class InterestController {
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
                 } else {
-                    guard let docID = ref?.documentID else { print("Couldn't unwrap ref.documentID: \(#function)"); completion(false); return }
-                    PersonController.shared.updatePersonInterests(for: personUID, with: docID)
+                    guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
+                    PersonController.shared.updatePersonInterests(for: personUID, with: docID, completion: { (error) in
+                        if let error = error {
+                            print("There was an error: \(error.localizedDescription): \(#function)")
+                        }
+                    })
                     print("Document added with ID: \(docID)")
                 }
-                completion(true)
+                completion(nil)
         })
     }
     
@@ -60,7 +64,7 @@ class InterestController {
             "description" : description
         ]) { (error) in
             if let error = error {
-                print("there was an error updating the interest: \(error) : \(error.localizedDescription)")
+                print("there was an error updating the interest: \(error) : \(error.localizedDescription): \(#function)")
             }
         }
     }
@@ -68,14 +72,14 @@ class InterestController {
     /// Fetches the interests for the specified person from the firestore.
     ///
     /// - Parameter person: The person object to fetch from (Person)
-    func fetchInterestsFromFirestore(for person: Person, completion: @escaping () -> Void) {
+    func fetchInterestsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
-                else { print("Failed snapshot gaurd: \(#function)"); completion(); return }
+                else { completion(Errors.snapshotGuard); return }
             
             self.interests = snapshot.documents.compactMap { Interest(from: $0.data(), uid: $0.documentID) }
-            completion()
+            completion(nil)
         }
     }
 }

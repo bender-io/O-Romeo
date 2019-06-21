@@ -32,12 +32,13 @@ class InterestDetailViewController: UIViewController {
         if let interest = interest {
             InterestController.shared.updateInterest(interest: interest, name: name, description: description)
         } else if let person = person {
-            InterestController.shared.createInterestFor(personUID: person.personUID, name: name, description: description) { (success) in
-                if !success {
-                    print("There was an error creating an interest: \(#function)")
+            InterestController.shared.createInterestFor(personUID: person.personUID, name: name, description: description) { (error) in
+                if let error = error {
+                    print("There was an error creating an interest: \(error.localizedDescription): \(#function)")
                 }
             }
         }
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -27,7 +27,10 @@ class PeopleListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        PersonController.shared.fetchPersonsFromFirestore {
+        PersonController.shared.fetchPersonsFromFirestore { (error) in
+            if let error = error {
+                print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
+            }
             self.tableView.reloadData()
         }
     }
@@ -59,5 +62,9 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.person = person
         
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
