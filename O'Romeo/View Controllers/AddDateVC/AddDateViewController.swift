@@ -42,6 +42,11 @@ class AddDateViewController: UIViewController {
         
     }
     
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return resignFirstResponder()
     }

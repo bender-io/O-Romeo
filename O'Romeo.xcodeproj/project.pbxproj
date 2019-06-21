@@ -431,11 +431,8 @@
 				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
-
 				E49AAE2822BD800A0099C45A /* Errors.swift in Sources */,
-
 				560BC9D922BD6D82003D7248 /* LaunchScreenViewController.swift in Sources */,
-
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
