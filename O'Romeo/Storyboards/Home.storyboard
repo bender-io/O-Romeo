@@ -309,48 +309,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-zK-Nix">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="224" estimatedRowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-zK-Nix">
                                 <rect key="frame" x="20" y="129" width="374" height="684"/>
                                 <color key="backgroundColor" name="White10"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="269" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="269"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="225" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFj-Wn-VZR" id="Q3l-vg-Bqk">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="269"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-3D-kqF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="Y2h-Qs-3ZE"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
-                                                    <rect key="frame" x="8" y="158" width="358" height="69"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9uD-kk-meM">
+                                                    <rect key="frame" x="20" y="20" width="334" height="150"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
-                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="21.5"/>
-                                                            <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
-                                                            <color key="textColor" name="Highlights"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(street)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-qF-Alo">
-                                                            <rect key="frame" x="0.0" y="28.5" width="358" height="17"/>
-                                                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                            <color key="textColor" name="White100"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(distance)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erB-7b-V1m">
-                                                            <rect key="frame" x="0.0" y="52.5" width="358" height="16.5"/>
-                                                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                            <color key="textColor" name="White100"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-3D-kqF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="150" id="Y2h-Qs-3ZE"/>
+                                                                <constraint firstAttribute="width" secondItem="kJ4-3D-kqF" secondAttribute="height" multiplier="1:1" id="ZC8-EK-PMp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
+                                                            <rect key="frame" x="158" y="0.0" width="176" height="150"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
+                                                                    <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
+                                                                    <color key="textColor" name="Highlights"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(street)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-qF-Alo">
+                                                                    <rect key="frame" x="0.0" y="58" width="176" height="46"/>
+                                                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                                                    <color key="textColor" name="White100"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(distance)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erB-7b-V1m">
+                                                                    <rect key="frame" x="0.0" y="104" width="176" height="46"/>
+                                                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
+                                                                    <color key="textColor" name="White100"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="jjs-Nw-ov1" secondAttribute="bottom" id="noO-FU-wwD"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-VF-zQ7">
-                                                    <rect key="frame" x="0.0" y="237" width="374" height="32"/>
+                                                    <rect key="frame" x="0.0" y="193" width="374" height="32"/>
                                                     <color key="backgroundColor" name="Primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="Qaq-4k-UIR"/>
@@ -358,15 +367,11 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="jjs-Nw-ov1" secondAttribute="trailing" constant="8" id="5Ws-St-RYF"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ltk-VF-zQ7" secondAttribute="bottom" id="ENr-AK-vxH"/>
-                                                <constraint firstItem="kJ4-3D-kqF" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="GjA-du-mGc"/>
-                                                <constraint firstItem="Ltk-VF-zQ7" firstAttribute="top" secondItem="jjs-Nw-ov1" secondAttribute="bottom" constant="10" id="NWs-na-vgv"/>
-                                                <constraint firstAttribute="trailing" secondItem="kJ4-3D-kqF" secondAttribute="trailing" id="P7X-2x-WK1"/>
-                                                <constraint firstItem="kJ4-3D-kqF" firstAttribute="top" secondItem="Q3l-vg-Bqk" secondAttribute="top" id="XTX-k4-FCy"/>
+                                                <constraint firstItem="9uD-kk-meM" firstAttribute="top" secondItem="Q3l-vg-Bqk" secondAttribute="top" constant="20" id="GqZ-wN-nO8"/>
+                                                <constraint firstItem="9uD-kk-meM" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" constant="20" id="S5U-OQ-1Xa"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ltk-VF-zQ7" secondAttribute="trailing" id="aXP-tR-6Qp"/>
-                                                <constraint firstItem="jjs-Nw-ov1" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" constant="8" id="d0f-kW-ZuN"/>
-                                                <constraint firstItem="jjs-Nw-ov1" firstAttribute="top" secondItem="kJ4-3D-kqF" secondAttribute="bottom" constant="8" id="tWD-ak-tWN"/>
+                                                <constraint firstAttribute="trailing" secondItem="9uD-kk-meM" secondAttribute="trailing" constant="20" id="cmN-wC-NNw"/>
                                                 <constraint firstItem="Ltk-VF-zQ7" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="tgb-of-8cP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -553,12 +558,11 @@
                                     <constraint firstAttribute="height" constant="40" id="77O-gU-zu0"/>
                                     <constraint firstAttribute="width" secondItem="czB-xX-rKO" secondAttribute="height" multiplier="10:3" id="VPh-ZH-fE0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <state key="normal" title="add more">
                                     <color key="titleColor" name="White100"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="hFT-hb-6fo"/>
                                     <segue destination="b8a-eZ-DqN" kind="show" identifier="toAddMoreVC" id="cJl-dU-OAU"/>
                                 </connections>
                             </button>
@@ -625,7 +629,7 @@
                                     <constraint firstAttribute="width" secondItem="4zK-eS-1KT" secondAttribute="height" multiplier="10:3" id="BLa-E3-acT"/>
                                     <constraint firstAttribute="height" constant="40" id="Ymm-Io-PbM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <state key="normal" title="add">
                                     <color key="titleColor" name="White100"/>
                                 </state>

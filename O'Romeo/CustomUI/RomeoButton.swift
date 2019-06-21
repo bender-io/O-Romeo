@@ -16,13 +16,7 @@ class RomeoButton: UIButton {
     }
     
     // MARK: - Button Methods
-    func updateFontTo(fontName: String) {
-        guard let size = self.titleLabel?.font.pointSize else { return }
-        self.titleLabel?.font = UIFont(name: fontName, size: size)
-    }
-    
     func setupUI() {
-        updateFontTo(fontName: FontNames.sfRegular)
         self.backgroundColor = .secondary
         self.cornerRadios()
         self.setTitleColor(.white100, for: .normal)
