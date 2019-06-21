@@ -93,13 +93,13 @@
                                                                             <rect key="frame" x="0.0" y="66.5" width="226" height="33.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-tv-aCF">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="198.5" height="33.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="199.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(mi)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-da-hI4">
-                                                                                    <rect key="frame" x="202.5" y="0.0" width="23.5" height="33.5"/>
+                                                                                    <rect key="frame" x="203.5" y="0.0" width="22.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
@@ -121,16 +121,16 @@
                                                             <rect key="frame" x="20" y="134" width="334" height="64"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ipH-Jk-kMT">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="64"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-PJ-AZC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="White100"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(phoneNumber)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-ce-Vjh">
-                                                                            <rect key="frame" x="0.0" y="34" width="223" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="34" width="225" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="Highlights"/>
                                                                             <nil key="highlightedColor"/>
@@ -138,10 +138,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-Yb-m1s">
-                                                                    <rect key="frame" x="231" y="0.0" width="103" height="64"/>
+                                                                    <rect key="frame" x="233" y="0.0" width="101" height="64"/>
                                                                     <state key="normal" image="Calendar"/>
                                                                     <connections>
-                                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="addDateDetailVC" id="zhy-EK-y3N"/>
+                                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -609,7 +609,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Calendar"/>
                                                     <connections>
-                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="addDateDetailVC" id="kOA-gh-dMq"/>
+                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="fromEventVC" id="kOA-gh-dMq"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -632,7 +632,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
                                         <connections>
-                                            <outlet property="distanceLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
+                                            <outlet property="cityLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
                                             <outlet property="eventAddressLabel" destination="FJT-qF-Alo" id="yWP-Tb-jeZ"/>
                                             <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
                                             <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
@@ -983,6 +983,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7N5-EK-FNd"/>
-        <segue reference="kOA-gh-dMq"/>
+        <segue reference="zhy-EK-y3N"/>
     </inferredMetricsTieBreakers>
 </document>
