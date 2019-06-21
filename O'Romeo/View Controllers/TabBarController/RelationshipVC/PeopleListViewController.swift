@@ -11,17 +11,17 @@ import UIKit
 class PeopleListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var helperLabel: UILabel!
+//    @IBOutlet weak var helperLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
-        if tableView.numberOfRows(inSection: 0) == 0 {
-            helperLabel.isHidden = false
-        } else {
-            helperLabel.isHidden = true
-        }
+//        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
+//        if tableView.numberOfRows(inSection: 0) == 0 {
+//            helperLabel.isHidden = false
+//        } else {
+//            helperLabel.isHidden = true
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +32,7 @@ class PeopleListViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPersonDetailView" {
+        if segue.identifier == "editPersonDetailVC" {
             guard let index = tableView.indexPathForSelectedRow,
                 let destinationVC = segue.destination as? PersonDetailViewController
                 else { return }
@@ -46,15 +46,16 @@ class PeopleListViewController: UIViewController {
 extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PersonController.shared.persons.count
+        return 1
+//        return PersonController.shared.persons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "relationshipCell", for: indexPath) as! PersonTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "relationshipCell", for: indexPath) as? PersonTableViewCell
         
         let person = PersonController.shared.persons[indexPath.row]
-        cell.person = person
+        cell?.person = person
         
-        return cell
+        return cell ?? UITableViewCell()
     }
 }

@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
-
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -21,7 +20,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let emailText = usernameTextField.text,
             let passwordText = passwordTextField.text

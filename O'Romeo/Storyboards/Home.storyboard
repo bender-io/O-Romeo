@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Regular.otf">
+            <string>SFCompactRounded-Regular</string>
+        </array>
         <array key="SF-Compact-Rounded-Semibold.otf">
             <string>SFCompactRounded-Semibold</string>
         </array>
@@ -47,8 +50,8 @@
                                     <outlet property="delegate" destination="m6i-b0-Fee" id="PHc-RL-bL3"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WV7-tn-5Kc">
-                                <rect key="frame" x="20" y="195" width="374" height="657"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WV7-tn-5Kc">
+                                <rect key="frame" x="20" y="176" width="374" height="637"/>
                                 <color key="backgroundColor" name="White10"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="250" id="OE5-Lx-6Cj" customClass="SearchTableViewCell" customModule="O_Romeo" customModuleProvider="target">
@@ -64,7 +67,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v6W-ob-PWF">
                                                             <rect key="frame" x="20" y="0.0" width="334" height="100"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spa 3" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-nv-Dfz">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-nv-Dfz">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="100" id="cMg-qy-SGa"/>
@@ -181,6 +184,7 @@
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="uCu-Wa-Blx" firstAttribute="trailing" secondItem="BdA-6w-R4c" secondAttribute="trailing" id="1ab-n5-jj3"/>
+                            <constraint firstItem="WV7-tn-5Kc" firstAttribute="top" secondItem="eDz-Fm-O8R" secondAttribute="bottom" constant="20" id="BLP-ve-75K"/>
                             <constraint firstItem="uCu-Wa-Blx" firstAttribute="top" secondItem="BdA-6w-R4c" secondAttribute="top" id="O5u-c4-x5F"/>
                             <constraint firstItem="BdA-6w-R4c" firstAttribute="bottom" secondItem="WV7-tn-5Kc" secondAttribute="bottom" id="Ucf-js-LOZ"/>
                             <constraint firstItem="eDz-Fm-O8R" firstAttribute="leading" secondItem="BdA-6w-R4c" secondAttribute="leading" id="YEA-ds-qsH"/>
@@ -189,7 +193,6 @@
                             <constraint firstItem="WV7-tn-5Kc" firstAttribute="leading" secondItem="BdA-6w-R4c" secondAttribute="leading" constant="20" id="jh9-Nn-pmh"/>
                             <constraint firstItem="eDz-Fm-O8R" firstAttribute="top" secondItem="uCu-Wa-Blx" secondAttribute="bottom" id="ksb-7Q-g0a"/>
                             <constraint firstItem="eDz-Fm-O8R" firstAttribute="trailing" secondItem="BdA-6w-R4c" secondAttribute="trailing" id="sgF-h3-XQI"/>
-                            <constraint firstItem="WV7-tn-5Kc" firstAttribute="top" secondItem="eDz-Fm-O8R" secondAttribute="bottom" id="voW-mO-4ek"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BdA-6w-R4c"/>
                     </view>
@@ -212,25 +215,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTI-gu-GIE" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="132" y="398" width="150" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="CYb-Vf-QkF"/>
-                                    <constraint firstAttribute="height" constant="45" id="Pxn-3A-7gW"/>
-                                </constraints>
-                                <state key="normal" title="add your juliet"/>
-                                <connections>
-                                    <segue destination="nh2-1X-ri3" kind="show" identifier="toPersonDetailVC" id="9pj-o4-HuY"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reH-5c-4Pz">
-                                <rect key="frame" x="20" y="62" width="374" height="250"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reH-5c-4Pz">
+                                <rect key="frame" x="20" y="108" width="374" height="705"/>
                                 <color key="backgroundColor" name="Primary"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="qza-1W-fk3"/>
-                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="relationshipCell" rowHeight="100" id="G5t-10-VPd" customClass="PersonTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="relationshipCell" rowHeight="100" id="G5t-10-VPd" customClass="PersonTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5t-10-VPd" id="Zjw-1C-2PT">
@@ -281,39 +270,36 @@
                                             <outlet property="anniversaryLabel" destination="4pS-8d-w2r" id="H3V-SO-uSC"/>
                                             <outlet property="birthdayLabel" destination="GYZ-Yo-G1C" id="eKL-Xe-gll"/>
                                             <outlet property="nameLabel" destination="dgB-Q7-99r" id="Amm-d3-EQH"/>
+                                            <segue destination="nh2-1X-ri3" kind="show" identifier="editPersonDetailVC" id="KHe-ML-l5x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(helperText)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iU-Lr-AG0">
-                                <rect key="frame" x="20" y="463" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="reH-5c-4Pz" firstAttribute="leading" secondItem="uA6-TB-X4g" secondAttribute="leading" constant="20" id="CLh-GZ-4f3"/>
-                            <constraint firstItem="MTI-gu-GIE" firstAttribute="top" secondItem="reH-5c-4Pz" secondAttribute="bottom" constant="30" id="WGG-cX-D0k"/>
                             <constraint firstItem="uA6-TB-X4g" firstAttribute="trailing" secondItem="reH-5c-4Pz" secondAttribute="trailing" constant="20" id="bqQ-8o-92T"/>
-                            <constraint firstItem="MTI-gu-GIE" firstAttribute="centerX" secondItem="uA6-TB-X4g" secondAttribute="centerX" id="feV-co-6YN"/>
-                            <constraint firstItem="uA6-TB-X4g" firstAttribute="trailing" secondItem="9iU-Lr-AG0" secondAttribute="trailing" constant="20" id="fmb-6A-Z2w"/>
-                            <constraint firstItem="9iU-Lr-AG0" firstAttribute="top" secondItem="MTI-gu-GIE" secondAttribute="bottom" constant="20" id="gm8-Lt-9g3"/>
-                            <constraint firstItem="reH-5c-4Pz" firstAttribute="top" secondItem="uA6-TB-X4g" secondAttribute="top" constant="30" id="hTM-WR-Du6"/>
-                            <constraint firstItem="9iU-Lr-AG0" firstAttribute="leading" secondItem="uA6-TB-X4g" secondAttribute="leading" constant="20" id="qeX-X3-k4J"/>
+                            <constraint firstItem="reH-5c-4Pz" firstAttribute="top" secondItem="uA6-TB-X4g" secondAttribute="top" constant="20" id="hTM-WR-Du6"/>
+                            <constraint firstItem="uA6-TB-X4g" firstAttribute="bottom" secondItem="reH-5c-4Pz" secondAttribute="bottom" id="z2g-f4-oZb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uA6-TB-X4g"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CFQ-Ou-zNh"/>
+                    <navigationItem key="navigationItem" id="CFQ-Ou-zNh">
+                        <barButtonItem key="rightBarButtonItem" image="Add" id="nl1-wF-kBC">
+                            <color key="tintColor" name="Highlights"/>
+                            <connections>
+                                <segue destination="nh2-1X-ri3" kind="show" identifier="addPersonDetailVC" id="7N5-EK-FNd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="helperLabel" destination="9iU-Lr-AG0" id="BSW-Re-fNk"/>
                         <outlet property="tableView" destination="reH-5c-4Pz" id="oja-kp-ghi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVK-Eg-KTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484.05797101449281" y="-202.23214285714286"/>
+            <point key="canvasLocation" x="-426" y="532"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Zdy-S5-gFG">
@@ -324,24 +310,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-zK-Nix">
-                                <rect key="frame" x="20" y="134" width="374" height="679"/>
+                                <rect key="frame" x="20" y="129" width="374" height="684"/>
                                 <color key="backgroundColor" name="White10"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="250" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="250"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="269" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="269"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LFj-Wn-VZR" id="Q3l-vg-Bqk">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="269"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date-night" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-3D-kqF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-3D-kqF">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="Y2h-Qs-3ZE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
-                                                    <rect key="frame" x="8" y="158" width="358" height="69.5"/>
+                                                    <rect key="frame" x="8" y="158" width="358" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
                                                             <rect key="frame" x="0.0" y="0.0" width="358" height="21.5"/>
@@ -355,22 +341,33 @@
                                                             <color key="textColor" name="White100"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(distance)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erB-7b-V1m">
-                                                            <rect key="frame" x="0.0" y="52.5" width="358" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(distance)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erB-7b-V1m">
+                                                            <rect key="frame" x="0.0" y="52.5" width="358" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                             <color key="textColor" name="White100"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-VF-zQ7">
+                                                    <rect key="frame" x="0.0" y="237" width="374" height="32"/>
+                                                    <color key="backgroundColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="Qaq-4k-UIR"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="jjs-Nw-ov1" secondAttribute="trailing" constant="8" id="5Ws-St-RYF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ltk-VF-zQ7" secondAttribute="bottom" id="ENr-AK-vxH"/>
                                                 <constraint firstItem="kJ4-3D-kqF" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="GjA-du-mGc"/>
+                                                <constraint firstItem="Ltk-VF-zQ7" firstAttribute="top" secondItem="jjs-Nw-ov1" secondAttribute="bottom" constant="10" id="NWs-na-vgv"/>
                                                 <constraint firstAttribute="trailing" secondItem="kJ4-3D-kqF" secondAttribute="trailing" id="P7X-2x-WK1"/>
                                                 <constraint firstItem="kJ4-3D-kqF" firstAttribute="top" secondItem="Q3l-vg-Bqk" secondAttribute="top" id="XTX-k4-FCy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ltk-VF-zQ7" secondAttribute="trailing" id="aXP-tR-6Qp"/>
                                                 <constraint firstItem="jjs-Nw-ov1" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" constant="8" id="d0f-kW-ZuN"/>
                                                 <constraint firstItem="jjs-Nw-ov1" firstAttribute="top" secondItem="kJ4-3D-kqF" secondAttribute="bottom" constant="8" id="tWD-ak-tWN"/>
+                                                <constraint firstItem="Ltk-VF-zQ7" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="tgb-of-8cP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
@@ -389,6 +386,7 @@
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-DM-97g">
                                 <rect key="frame" x="20" y="59" width="374" height="51"/>
+                                <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="479-LE-q9z"/>
                                 </constraints>
@@ -406,7 +404,7 @@
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="0eo-zK-Nix" firstAttribute="top" secondItem="UJB-DM-97g" secondAttribute="bottom" constant="25" id="6Gh-K2-0tL"/>
+                            <constraint firstItem="0eo-zK-Nix" firstAttribute="top" secondItem="UJB-DM-97g" secondAttribute="bottom" constant="20" id="6Gh-K2-0tL"/>
                             <constraint firstItem="PRI-QO-QuT" firstAttribute="trailing" secondItem="UJB-DM-97g" secondAttribute="trailing" constant="20" id="PPD-Cz-CG6"/>
                             <constraint firstItem="UJB-DM-97g" firstAttribute="top" secondItem="PRI-QO-QuT" secondAttribute="top" constant="15" id="avk-t3-ncv"/>
                             <constraint firstItem="0eo-zK-Nix" firstAttribute="leading" secondItem="PRI-QO-QuT" secondAttribute="leading" constant="20" id="cvk-fH-tIP"/>
@@ -476,81 +474,105 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bMv-NP-9rI">
-                                <rect key="frame" x="10" y="289" width="394" height="318"/>
+                                <rect key="frame" x="20" y="108" width="374" height="159.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4x-6h-OAM">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" name="Highlights"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your juliet's name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVy-aw-QZc">
-                                        <rect key="frame" x="0.0" y="36" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter her birthday..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clg-GF-zQz">
-                                        <rect key="frame" x="0.0" y="72" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add the anniversary dates..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTO-Gr-7W4">
-                                        <rect key="frame" x="0.0" y="108" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="White100"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOe-eB-mRL">
-                                        <rect key="frame" x="0.0" y="144" width="394" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite color..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x72-wJ-8HH">
-                                        <rect key="frame" x="0.0" y="180" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite flower..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAm-VJ-9ZZ">
-                                        <rect key="frame" x="0.0" y="216" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="make your own..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-jm-6Et">
-                                        <rect key="frame" x="0.0" y="252" width="394" height="30"/>
-                                        <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pZ-vK-Czm" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="288" width="394" height="30"/>
-                                        <color key="backgroundColor" name="Secondary"/>
-                                        <state key="normal" title="add more...">
-                                            <color key="titleColor" name="Highlights"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="301-mB-PZW"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="iQ7-dy-apB">
+                                        <rect key="frame" x="0.0" y="27.5" width="374" height="132"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your juliet's name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVy-aw-QZc" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <color key="backgroundColor" name="White10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="qD3-Q7-rx8"/>
+                                                </constraints>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter her birthday..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clg-GF-zQz" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46" width="374" height="40"/>
+                                                <color key="backgroundColor" name="White10"/>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add the anniversary dates..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTO-Gr-7W4" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="92" width="374" height="40"/>
+                                                <color key="backgroundColor" name="White10"/>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pZ6-5m-MEW">
+                                <rect key="frame" x="20" y="287.5" width="374" height="112.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-8k-X7h">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" name="Highlights"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-Vg-ypt">
+                                        <rect key="frame" x="0.0" y="26.5" width="374" height="86"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite color..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ben-bW-5pz" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                <color key="backgroundColor" name="White10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="jPB-yu-7N2"/>
+                                                </constraints>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite flower..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utQ-O1-yY4" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46" width="374" height="40"/>
+                                                <color key="backgroundColor" name="White10"/>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czB-xX-rKO" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="420" width="133" height="40"/>
+                                <color key="backgroundColor" name="Secondary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="77O-gU-zu0"/>
+                                    <constraint firstAttribute="width" secondItem="czB-xX-rKO" secondAttribute="height" multiplier="10:3" id="VPh-ZH-fE0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                <state key="normal" title="add more">
+                                    <color key="titleColor" name="White100"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="hFT-hb-6fo"/>
+                                    <segue destination="b8a-eZ-DqN" kind="show" identifier="toAddMoreVC" id="cJl-dU-OAU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="bMv-NP-9rI" firstAttribute="centerX" secondItem="ehA-xj-fjL" secondAttribute="centerX" id="TPL-8E-e9e"/>
-                            <constraint firstItem="bMv-NP-9rI" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="10" id="gvX-qM-id3"/>
-                            <constraint firstItem="bMv-NP-9rI" firstAttribute="centerY" secondItem="ehA-xj-fjL" secondAttribute="centerY" id="qqz-Il-YmG"/>
-                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="10" id="t7X-LQ-gzr"/>
+                            <constraint firstItem="bMv-NP-9rI" firstAttribute="top" secondItem="hFU-Pb-yvA" secondAttribute="top" constant="20" id="0t3-2b-464"/>
+                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="pZ6-5m-MEW" secondAttribute="trailing" constant="20" id="DMR-NG-vjH"/>
+                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="20" id="Qpk-Dn-ruA"/>
+                            <constraint firstItem="czB-xX-rKO" firstAttribute="top" secondItem="pZ6-5m-MEW" secondAttribute="bottom" constant="20" id="YUn-DA-03E"/>
+                            <constraint firstItem="bMv-NP-9rI" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="aKH-0T-Qph"/>
+                            <constraint firstItem="czB-xX-rKO" firstAttribute="centerX" secondItem="hFU-Pb-yvA" secondAttribute="centerX" id="c91-6J-ydV"/>
+                            <constraint firstItem="pZ6-5m-MEW" firstAttribute="top" secondItem="bMv-NP-9rI" secondAttribute="bottom" constant="20" id="caf-pn-ZQc"/>
+                            <constraint firstItem="pZ6-5m-MEW" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="yqe-vr-kSb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFU-Pb-yvA"/>
                     </view>
@@ -565,27 +587,97 @@
                     <connections>
                         <outlet property="anniversaryTF" destination="sTO-Gr-7W4" id="WcQ-vp-2ni"/>
                         <outlet property="birthdayTF" destination="clg-GF-zQz" id="697-rC-yXS"/>
-                        <outlet property="favoriteColorTF" destination="x72-wJ-8HH" id="U9C-IT-zJ5"/>
-                        <outlet property="favoriteFlowerTF" destination="hAm-VJ-9ZZ" id="RzO-6M-WqU"/>
                         <outlet property="julietNameTF" destination="LVy-aw-QZc" id="zuB-Le-jzR"/>
-                        <outlet property="makeYourOwnTF" destination="yNx-jm-6Et" id="mwW-aP-xkh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-0C-2DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="583"/>
+            <point key="canvasLocation" x="435" y="532"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dEj-3A-BFd">
+            <objects>
+                <viewController id="b8a-eZ-DqN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ECP-iA-gMl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ik-pv-Nlm" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="137.5" width="374" height="40"/>
+                                <color key="backgroundColor" name="White10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yux-1d-4ZW"/>
+                                </constraints>
+                                <color key="textColor" name="Highlights"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-O0-IrO">
+                                <rect key="frame" x="20" y="108" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" name="Highlights"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zK-eS-1KT" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="420.5" width="133" height="40"/>
+                                <color key="backgroundColor" name="Secondary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4zK-eS-1KT" secondAttribute="height" multiplier="10:3" id="BLa-E3-acT"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ymm-Io-PbM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                <state key="normal" title="add">
+                                    <color key="titleColor" name="White100"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="kpL-1a-AD2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="description..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-hd-IVz" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="185.5" width="374" height="215"/>
+                                <color key="backgroundColor" name="White10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="wOY-hp-XR7"/>
+                                </constraints>
+                                <color key="textColor" name="Highlights"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="WM5-Ga-AVy" firstAttribute="trailing" secondItem="m9V-hd-IVz" secondAttribute="trailing" constant="20" id="19S-pD-1aB"/>
+                            <constraint firstItem="m9V-hd-IVz" firstAttribute="top" secondItem="2ik-pv-Nlm" secondAttribute="bottom" constant="8" id="2si-uh-jSH"/>
+                            <constraint firstItem="TnH-O0-IrO" firstAttribute="leading" secondItem="ECP-iA-gMl" secondAttribute="leading" constant="20" id="61D-bN-TTn"/>
+                            <constraint firstItem="WM5-Ga-AVy" firstAttribute="trailing" secondItem="TnH-O0-IrO" secondAttribute="trailing" constant="20" id="8sU-0P-yBa"/>
+                            <constraint firstItem="2ik-pv-Nlm" firstAttribute="leading" secondItem="WM5-Ga-AVy" secondAttribute="leading" constant="20" id="Elb-HB-lMf"/>
+                            <constraint firstItem="WM5-Ga-AVy" firstAttribute="trailing" secondItem="m9V-hd-IVz" secondAttribute="trailing" constant="20" id="Ev2-kS-zr9"/>
+                            <constraint firstItem="WM5-Ga-AVy" firstAttribute="trailing" secondItem="2ik-pv-Nlm" secondAttribute="trailing" constant="20" id="OwV-qt-htd"/>
+                            <constraint firstItem="m9V-hd-IVz" firstAttribute="leading" secondItem="WM5-Ga-AVy" secondAttribute="leading" constant="20" id="Sh6-nq-ZFf"/>
+                            <constraint firstItem="4zK-eS-1KT" firstAttribute="centerX" secondItem="WM5-Ga-AVy" secondAttribute="centerX" id="aZa-Vb-70H"/>
+                            <constraint firstItem="4zK-eS-1KT" firstAttribute="top" secondItem="m9V-hd-IVz" secondAttribute="bottom" constant="20" id="amK-Nk-slA"/>
+                            <constraint firstItem="m9V-hd-IVz" firstAttribute="leading" secondItem="WM5-Ga-AVy" secondAttribute="leading" constant="20" id="ck9-w2-Kug"/>
+                            <constraint firstItem="2ik-pv-Nlm" firstAttribute="top" secondItem="TnH-O0-IrO" secondAttribute="bottom" constant="8" id="jsi-Io-5Zi"/>
+                            <constraint firstItem="TnH-O0-IrO" firstAttribute="top" secondItem="WM5-Ga-AVy" secondAttribute="top" constant="20" id="znR-je-dQd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WM5-Ga-AVy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEv-WF-Jgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1261" y="532"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="22" height="22"/>
         <image name="Culture" width="49" height="47"/>
         <image name="Food" width="37" height="37"/>
         <image name="Home " width="26" height="25"/>
+        <image name="Logo" width="1024" height="1024"/>
         <image name="Martini" width="31" height="34"/>
         <image name="Music" width="48" height="48"/>
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
-        <image name="date-night" width="282" height="179"/>
-        <image name="spa 3" width="267" height="189"/>
         <namedColor name="Highlights">
             <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -602,4 +694,7 @@
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7N5-EK-FNd"/>
+    </inferredMetricsTieBreakers>
 </document>

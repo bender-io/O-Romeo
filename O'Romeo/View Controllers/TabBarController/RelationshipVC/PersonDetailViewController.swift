@@ -15,7 +15,6 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var anniversaryTF: UITextField!
     @IBOutlet weak var favoriteColorTF: UITextField!
     @IBOutlet weak var favoriteFlowerTF: UITextField!
-    @IBOutlet weak var makeYourOwnTF: UITextField!
     
     var person: Person?
 
@@ -33,8 +32,8 @@ class PersonDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text, let interests = makeYourOwnTF.text else { return }
-        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday, interests: [interests]) { (success) in
+        guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text  else { return }
+        PersonController.shared.createPersonWith(name: name, anniversary: anniversary, birthday: birthday, interests: ["test interest"]) { (success) in
             if !success {
                 print("Error!")
             }
