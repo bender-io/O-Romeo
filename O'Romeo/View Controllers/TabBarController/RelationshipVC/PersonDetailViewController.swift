@@ -22,9 +22,11 @@ class PersonDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         updateViews()
-        
-        guard let person = person else { print("There was an error unwrapping the person: \(#function)"); return }
-        InterestController.shared.fetchInterestsFromFirestore(for: person)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateViews()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -38,25 +40,31 @@ class PersonDetailViewController: UIViewController {
     }
     
     @IBAction func addMoreButtonTapped(_ sender: Any) {
-        InterestDetailViewController.shared.person = person
     }
     
     func updateViews() {
-        guard let person = person else { return }
+        guard let person = person else { print("There was an error unwrapping the person: \(#function)"); return }
         julietNameTF.text = person.name
         birthdayTF.text = person.birthday
         anniversaryTF.text = person.anniversary
+        InterestController.shared.fetchInterestsFromFirestore(for: person) {
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInterestDetailView" {
-            guard let index = tableView.indexPathForSelectedRow,
-                let destinationVC = segue.destination as? InterestDetailViewController
+            guard let destinationVC = segue.destination as? InterestDetailViewController,
+                let index = tableView.indexPathForSelectedRow
                 else { return }
             let interest = InterestController.shared.interests[index.row]
             destinationVC.interest = interest
+        }
+        if segue.identifier == "toAddMoreVC" {
+            guard let destinationVC = segue.destination as? InterestDetailViewController else { return }
+            destinationVC.person = person
         }
     }
 }
@@ -74,6 +82,7 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
 
         let interest = InterestController.shared.interests[indexPath.row]
         cell.textLabel?.text = interest.name
+        cell.textLabel?.textColor = .highlights
 
         return cell
     }

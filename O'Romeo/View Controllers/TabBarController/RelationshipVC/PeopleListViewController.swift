@@ -27,8 +27,9 @@ class PeopleListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        PersonController.shared.fetchPersonsFromFirestore()
-        tableView.reloadData()
+        PersonController.shared.fetchPersonsFromFirestore {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Navigation
