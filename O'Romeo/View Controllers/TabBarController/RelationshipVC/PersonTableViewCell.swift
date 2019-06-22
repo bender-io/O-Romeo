@@ -10,6 +10,7 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!

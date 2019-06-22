@@ -10,18 +10,18 @@ import UIKit
 import FirebaseAuth
 
 class LaunchScreenViewController: UIViewController {
-
-    // MARK: - Properties
-    var window : UIWindow?
     
+    // MARK: - Properties
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var launchLogo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createShapeLayer()
-        createTrackLayer()
-        runAnimation()
+        animateLayers()
+        launchLogo.center = self.view.center
         
         // MARK: - Screen Segues
         let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -31,20 +31,23 @@ class LaunchScreenViewController: UIViewController {
             if let _ = Auth.auth().currentUser {
                 let homeViewController = home.instantiateViewController(withIdentifier: "HomeViewController")
                 UIApplication.shared.windows.first!.rootViewController = homeViewController
-                self.window?.makeKeyAndVisible()
             } else {
                 let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
-                self.window?.rootViewController = loginViewController
-                self.window?.makeKeyAndVisible()
+                UIApplication.shared.windows.first!.rootViewController = loginViewController
             }
         }
     }
     
-
-// MARK: - Animation Methods
-func createShapeLayer() {
+    // MARK: - Animation Methods
+    func animateLayers() {
+        createShapeLayer()
+        createTrackLayer()
+        runAnimation()
+    }
+    
+    func createShapeLayer() {
         let center = view.center
-        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: (-CGFloat.pi / 2), endAngle: (2 * CGFloat.pi), clockwise: true)        
+        let circularPath = UIBezierPath(arcCenter: center, radius: 90, startAngle: (-CGFloat.pi / 2), endAngle: (2 * CGFloat.pi), clockwise: true)
         shapeLayer.path = circularPath.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor.highlights.cgColor
@@ -56,7 +59,7 @@ func createShapeLayer() {
     
     func createTrackLayer() {
         let center = view.center
-        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: (-CGFloat.pi / 2), endAngle: (2 * CGFloat.pi), clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 90, startAngle: (-CGFloat.pi / 2), endAngle: (2 * CGFloat.pi), clockwise: true)
         
         trackLayer.path = circularPath.cgPath
         trackLayer.fillColor = UIColor.clear.cgColor
@@ -67,11 +70,11 @@ func createShapeLayer() {
     
     func runAnimation() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        
         basicAnimation.toValue = 1
         basicAnimation.duration = 2
         basicAnimation.isRemovedOnCompletion = false
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        
         shapeLayer.add(basicAnimation, forKey: "basicAnimation")
     }
 }

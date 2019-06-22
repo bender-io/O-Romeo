@@ -8,16 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     var eventType: EventType = .nightLife
     var eventResults: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
             self.eventResults = event
             DispatchQueue.main.async {
@@ -26,6 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - IBActions
     @IBAction func eventSegmentControl(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             eventType = .nightLife

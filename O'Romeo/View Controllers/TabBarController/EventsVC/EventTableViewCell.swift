@@ -10,6 +10,7 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventAddressLabel: UILabel!
@@ -33,7 +34,6 @@ class EventTableViewCell: UITableViewCell {
         self.dateLabel.text = event.startTime
         self.urlButton.titleLabel?.text = event.url
         
-
         EventfulController.shared.fetchImageFor(eventful: event) { (image) in
             if let image = image {
                 DispatchQueue.main.async {

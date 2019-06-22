@@ -15,11 +15,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     var yelpResults: [Yelp] = []
     var isExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
     }
     
@@ -35,7 +37,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 } else {
                     // Fallback on earlier versions
                     application.openURL(phoneCallURL as URL)
-                    
                 }
             }
         }

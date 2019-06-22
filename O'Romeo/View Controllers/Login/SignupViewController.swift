@@ -11,7 +11,6 @@ import UIKit
 class SignupViewController: UIViewController {
 
     // MARK: - IBOutlets
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -19,10 +18,10 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     // MARK: - IBActions
-    
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         guard let emailText = emailTextField.text,
             let passwordText = passwordTextField.text
@@ -36,7 +35,6 @@ class SignupViewController: UIViewController {
     }
     
     // MARK: - Methods
-    
     func presentSignupErrorAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Signup Failed", message: "This Email address belongs to another account", preferredStyle: .alert)

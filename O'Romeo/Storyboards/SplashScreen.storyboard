@@ -20,19 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4FM-IN-l04">
-                                <rect key="frame" x="94.5" y="440.5" width="225" height="16"/>
+                                <rect key="frame" x="107" y="348.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="a1K-4c-XbR"/>
+                                    <constraint firstAttribute="width" secondItem="4FM-IN-l04" secondAttribute="height" multiplier="1:1" id="Rcd-Zc-K9k"/>
+                                    <constraint firstAttribute="width" constant="200" id="lhG-w6-3wL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="4FM-IN-l04" firstAttribute="centerX" secondItem="0GQ-n6-lIV" secondAttribute="centerX" id="1YY-ij-Xq3"/>
-                            <constraint firstItem="4FM-IN-l04" firstAttribute="centerY" secondItem="0GQ-n6-lIV" secondAttribute="centerY" multiplier="0.99" id="Tby-Dt-565"/>
+                            <constraint firstItem="4FM-IN-l04" firstAttribute="centerY" secondItem="0GQ-n6-lIV" secondAttribute="centerY" multiplier="0.99" id="8J5-JD-HaR"/>
+                            <constraint firstItem="4FM-IN-l04" firstAttribute="centerX" secondItem="0GQ-n6-lIV" secondAttribute="centerX" id="XSq-7I-N1O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0GQ-n6-lIV"/>
                     </view>
+                    <connections>
+                        <outlet property="launchLogo" destination="4FM-IN-l04" id="lSo-AG-EG6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUC-Sk-Pjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,7 @@ import UIKit
 
 class AddDateViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var julietNameTF: RomeoTextField!
     @IBOutlet weak var dateTF: RomeoTextField!
     @IBOutlet weak var eventTF: RomeoTextField!
@@ -24,8 +25,7 @@ class AddDateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
     
     func updateViews() {
@@ -36,29 +36,17 @@ class AddDateViewController: UIViewController {
         dateLocationTF.text = calendar.address
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return resignFirstResponder()
+    }
+    
+    // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text else { return }
         AddToCalendarController.shared.addToCalendar(date: date, julietName: julietName, event: event, address: address)
-        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return resignFirstResponder()
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

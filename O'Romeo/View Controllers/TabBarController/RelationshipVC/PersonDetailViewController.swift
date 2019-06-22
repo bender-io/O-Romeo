@@ -10,6 +10,7 @@ import UIKit
 
 class PersonDetailViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var julietNameTF: UITextField!
     @IBOutlet weak var birthdayTF: UITextField!
     @IBOutlet weak var anniversaryTF: UITextField!
@@ -17,10 +18,12 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var addMoreButton: UIButton!
     @IBOutlet weak var interestsLabel: UILabel!
     
+    // MARK: - Landing Pad
     var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         tableView.delegate = self
         tableView.dataSource = self
         updateViews()
@@ -36,6 +39,7 @@ class PersonDetailViewController: UIViewController {
         InterestController.shared.interests = []
     }
     
+    // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text  else { return }
         if let person = person {
@@ -81,7 +85,6 @@ class PersonDetailViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInterestDetailView" {
             guard let destinationVC = segue.destination as? InterestDetailViewController,
@@ -98,7 +101,6 @@ class PersonDetailViewController: UIViewController {
 }
 
 // MARK: - Extensions
-
 extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

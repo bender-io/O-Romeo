@@ -13,7 +13,6 @@ import FirebaseAuth
 class PersonController {
     
     // MARK: - Properties
-    
     static let shared = PersonController()
     
     let db = UserController.shared.db

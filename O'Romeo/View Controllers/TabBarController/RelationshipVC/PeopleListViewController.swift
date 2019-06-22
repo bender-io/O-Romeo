@@ -10,11 +10,13 @@ import UIKit
 
 class PeopleListViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var helperLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         tableView.delegate = self
         tableView.dataSource = self
 //        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
@@ -36,7 +38,6 @@ class PeopleListViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editPersonDetailVC" {
             guard let index = tableView.indexPathForSelectedRow,

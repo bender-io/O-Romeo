@@ -536,10 +536,10 @@
             </objects>
             <point key="canvasLocation" x="-1304" y="532"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Event View Controller-->
         <scene sceneID="Zdy-S5-gFG">
             <objects>
-                <viewController id="ETL-l2-8UL" customClass="HomeViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ETL-l2-8UL" customClass="EventViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XwA-Jk-cfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1034,6 +1034,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="cJl-dU-OAU"/>
         <segue reference="7N5-EK-FNd"/>
-        <segue reference="yVP-oN-gfR"/>
+        <segue reference="kOA-gh-dMq"/>
     </inferredMetricsTieBreakers>
 </document>

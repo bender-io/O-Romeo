@@ -10,20 +10,24 @@ import UIKit
 
 class InterestDetailViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: RomeoTextField!
     
+    // MARK: - Properties
     var interest: Interest?
     var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         guard let interest = interest else { print("Could not unwrap interest: \(#function)"); return }
         nameTextField.text = interest.name
         descriptionTextField.text = interest.description
     }
     
+    // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text,
             let description = descriptionTextField.text
