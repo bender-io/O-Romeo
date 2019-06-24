@@ -73,21 +73,21 @@ class PersonController {
         }
     }
     
-    /// Takes in a persons name and a calendar event. Filters through the persons array ([Person]) to find the person with matching name. Then grabs the personUID of the person and uses that to find the persons document in firestore. Once the document is found, the event is added to the calendar array in the person document.
+    /// Takes in a persons name and an event. Filters through the persons array ([Person]) to find the person with matching name. Then grabs the personUID of the person and uses that to find the persons document in firestore. Once the document is found, the event is added to the Date Log in the person document.
     ///
     /// - Parameters:
     ///   - personUID: Uid of person to be updated (String)
-    ///   - calendar: Calendar event to be added (String)
+    ///   - event: Event to be added (String)
     ///   - completion: error (Error)
-    func updatePersonEvents(for personUID: String, with event: String, completion: @escaping (Error?) -> Void) {
+    func updatePersonDateLog(for personUID: String, with event: String, completion: @escaping (Error?) -> Void) {
         let value = persons.filter { $0.personUID == personUID }
         
         guard let personUID = value.first?.personUID else { completion(Errors.unwrapPersonUID); return }
         db.collection("person").document(personUID).updateData([
-            "calendar" : FieldValue.arrayUnion([event])
+            "dateLog" : FieldValue.arrayUnion([event])
         ]) { (error) in
             if let error = error {
-                print("There was an error updating the persons calendar events: \(error): \(error.localizedDescription) : \(#function)")
+                print("There was an error updating the persons datelog: \(error): \(error.localizedDescription) : \(#function)")
             }
             completion(nil)
         }

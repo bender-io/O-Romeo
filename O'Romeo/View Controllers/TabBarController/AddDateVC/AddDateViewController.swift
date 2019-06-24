@@ -29,11 +29,11 @@ class AddDateViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let calendar = calendar else { return }
-        julietNameTF.text = calendar.julietName
-        dateTF.text = calendar.date
-        eventTF.text = calendar.event
-        dateLocationTF.text = calendar.address
+//        guard let calendar = calendar else { return }
+//        julietNameTF.text = calendar.julietName
+//        dateTF.text = calendar.date
+//        eventTF.text = calendar.event
+//        dateLocationTF.text = calendar.address
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -43,7 +43,7 @@ class AddDateViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text else { return }
-        AddToCalendarController.shared.addToCalendar(date: date, julietName: julietName, event: event, address: address)
+//        AddToCalendarController.shared.addToCalendar(date: date, julietName: julietName, event: event, address: address)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

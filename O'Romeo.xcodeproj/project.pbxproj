@@ -55,10 +55,10 @@
 		E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */; };
 		E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */; };
 		E49AAE2822BD800A0099C45A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2722BD800A0099C45A /* Errors.swift */; };
-		E49AAE2A22C145F20099C45A /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2922C145F20099C45A /* CalendarController.swift */; };
+		E49AAE2A22C145F20099C45A /* DateLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2922C145F20099C45A /* DateLogController.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
-		ECA07C4022BD361D008741B0 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* Calendar.swift */; };
+		ECA07C4022BD361D008741B0 /* DateLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* DateLog.swift */; };
 		ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
@@ -117,10 +117,10 @@
 		E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2722BD800A0099C45A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		E49AAE2922C145F20099C45A /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		E49AAE2922C145F20099C45A /* DateLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLogController.swift; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		ECA07C3F22BD361D008741B0 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		ECA07C3F22BD361D008741B0 /* DateLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLog.swift; sourceTree = "<group>"; };
 		ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDateViewController.swift; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 				E49AAE1722B99FB20099C45A /* Interest.swift */,
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
-				ECA07C3F22BD361D008741B0 /* Calendar.swift */,
+				ECA07C3F22BD361D008741B0 /* DateLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				E49AAE1922B99FC90099C45A /* InterestController.swift */,
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
-				E49AAE2922C145F20099C45A /* CalendarController.swift */,
+				E49AAE2922C145F20099C45A /* DateLogController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -436,11 +436,11 @@
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
 				E49AAE2822BD800A0099C45A /* Errors.swift in Sources */,
 				560BC9D922BD6D82003D7248 /* LaunchScreenViewController.swift in Sources */,
-				E49AAE2A22C145F20099C45A /* CalendarController.swift in Sources */,
+				E49AAE2A22C145F20099C45A /* DateLogController.swift in Sources */,
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,
-				ECA07C4022BD361D008741B0 /* Calendar.swift in Sources */,
+				ECA07C4022BD361D008741B0 /* DateLog.swift in Sources */,
 				EC88206122BA625A006438B4 /* Enums.swift in Sources */,
 				E49AAE1C22BAA4040099C45A /* PeopleListViewController.swift in Sources */,
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
