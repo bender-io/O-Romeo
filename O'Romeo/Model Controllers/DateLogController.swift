@@ -11,13 +11,28 @@ import FirebaseFirestore
 
 class DateLogController {
     
+    // MARK: - Properties
+    
+
     static let shared = DateLogController()
     
     var dateLogs: [DateLog] = []
     
     let db = UserController.shared.db
     
-    func createCalendarEvent(date: Date, julietName: String, event: String, address: String, personUID: String, description: String, completion: @escaping (Error?) -> Void) {
+    // MARK: - Methods
+    
+    /// Creates a new dateLog for the specified person and adds it to the "dateLog" collection in firestore. Next the specified persons array of dateLogs is updated to contain the uid for the newly created dateLog.
+    ///
+    /// - Parameters:
+    ///   - date: Time of date (Date)
+    ///   - julietName: Name of girl (String)
+    ///   - event: Name of event (String)
+    ///   - address: Address of event (String)
+    ///   - personUID: Uid of person (String)
+    ///   - description: Description of event (String)
+    ///   - completion: error (Error)
+    func createDateLog(date: Date, julietName: String, event: String, address: String, personUID: String, description: String, completion: @escaping (Error?) -> Void) {
         
         var ref: DocumentReference? = nil
         ref = db.collection("dateLog").addDocument(data: [
@@ -36,13 +51,37 @@ class DateLogController {
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")
                         }
+                        LocalNotificationsController.shared.scheduleUserNotifications(for: date, uid: docID)
                     })
                 }
                 completion(nil)
         })
     }
     
-    func updateEvents(dateLog: DateLog, date: Date, julietName: String, event: String, address: String, description: String) {
+    /// Deletes the interest with the given dateLogUID
+    ///
+    /// - Parameters:
+    ///   - dateLogUID: Uid of dateLog to be deleted (String)
+    ///   - completion: error (Error)
+    func deleteDateLog(dateLogUID: String, completion: @escaping (Error?) -> Void) {
+        db.collection("dateLog").document(dateLogUID).delete { (error) in
+            if let error = error {
+                print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+    }
+    
+    /// Updates the dateLog with the specified parameters
+    ///
+    /// - Parameters:
+    ///   - dateLog: DateLog to be updated (DateLog)
+    ///   - date: New date (Date)
+    ///   - julietName: New person name (String)
+    ///   - event: New event name (String)
+    ///   - address: New Address (String)
+    ///   - description: New Description (String)
+    func updateDataLog(dateLog: DateLog, date: Date, julietName: String, event: String, address: String, description: String) {
         db.collection("dateLog").document(dateLog.dateLogUID).updateData([
             "date" : date,
             "julietName" : julietName,
@@ -56,7 +95,12 @@ class DateLogController {
         }
     }
     
-    func fetchCalendarEventsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
+    /// Fetches the dateLog for the specified person from the firestore
+    ///
+    /// - Parameters:
+    ///   - person: The person to fetch from (Person)
+    ///   - completion: error (Error)
+    func fetchDataLogFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("dateLog").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching calendar events: \(error) : \(error.localizedDescription) : \(#function)")
