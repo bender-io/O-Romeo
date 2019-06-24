@@ -25,6 +25,7 @@
 		569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE822B58A580025C319 /* SignupViewController.swift */; };
 		569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF222B7E11D0025C319 /* HomeViewController.swift */; };
 		56CCE33822BC3A5900CEFE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCE33722BC3A5900CEFE3B /* Assets.xcassets */; };
+		56F694E122C145DC008F47BF /* LocalNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F694E022C145DC008F47BF /* LocalNotificationsController.swift */; };
 		E412349722B950AD0066796E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349622B950AD0066796E /* Person.swift */; };
 		E412349A22B9517C0066796E /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349922B9517C0066796E /* PersonController.swift */; };
 		E412349C22B9521D0066796E /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E412349B22B9521D0066796E /* gRPCCertificates-Cpp.bundle */; };
@@ -87,6 +88,7 @@
 		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		569A6CF222B7E11D0025C319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56CCE33722BC3A5900CEFE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56F694E022C145DC008F47BF /* LocalNotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
 		E412349622B950AD0066796E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E412349922B9517C0066796E /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		E412349B22B9521D0066796E /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/FirebaseFirestore.framework/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				E49AAE1922B99FC90099C45A /* InterestController.swift */,
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
+				56F694E022C145DC008F47BF /* LocalNotificationsController.swift */,
 				E49AAE2922C145F20099C45A /* DateLogController.swift */,
 			);
 			path = "Model Controllers";
@@ -432,6 +435,7 @@
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
+				56F694E122C145DC008F47BF /* LocalNotificationsController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
 				E49AAE2822BD800A0099C45A /* Errors.swift in Sources */,
