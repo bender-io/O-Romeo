@@ -64,7 +64,7 @@ class InterestController {
             "description" : description
         ]) { (error) in
             if let error = error {
-                print("there was an error updating the interest: \(error) : \(error.localizedDescription): \(#function)")
+                print("There was an error updating the interest: \(error) : \(error.localizedDescription): \(#function)")
             }
         }
     }
@@ -74,6 +74,10 @@ class InterestController {
     /// - Parameter person: The person object to fetch from (Person)
     func fetchInterestsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
+            if let error = error {
+                print("There was an error fetching interests: \(error) : \(error.localizedDescription) : \(#function)")
+            }
+            
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }

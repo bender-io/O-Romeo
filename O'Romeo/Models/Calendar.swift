@@ -8,23 +8,37 @@
 
 import Foundation
 
-class Calendar: Equatable {
-    var date: String?
-    var julietName: String
+struct Calendar {
+    var date: Date?
+    var julietName: String?
     var event: String?
-    var address: String
+    var address: String?
+    let personUID: String
+    let calendarUID: String
+    var description: String?
     
-    init(date: String, julietName: String, event: String, address: String) {
+    init?(from dictionary: [String: Any], uid: String) {
+        guard let date = dictionary["date"] as? Date,
+            let julietName = dictionary["julietName"] as? String,
+            let event = dictionary["event"] as? String,
+            let address = dictionary["address"] as? String,
+            let personUID = dictionary["personUID"] as? String,
+            let description = dictionary["description"] as? String
+            else { return nil }
+        
         self.date = date
         self.julietName = julietName
         self.event = event
         self.address = address
+        self.personUID = personUID
+        self.description = description
+        self.calendarUID = uid
     }
+}
+
+extension Calendar: Equatable {
     
     static func ==(lhs: Calendar, rhs: Calendar) -> Bool {
-        return lhs.date == rhs.date &&
-        lhs.julietName == rhs.julietName &&
-        lhs.event == rhs.event &&
-        lhs.address == rhs.address
+        return lhs.calendarUID == rhs.calendarUID
     }
 }
