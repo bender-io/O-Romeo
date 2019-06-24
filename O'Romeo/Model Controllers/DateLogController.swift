@@ -13,6 +13,7 @@ class DateLogController {
     
     // MARK: - Properties
     
+
     static let shared = DateLogController()
     
     var dateLogs: [DateLog] = []

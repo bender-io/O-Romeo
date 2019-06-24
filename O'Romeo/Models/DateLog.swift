@@ -13,7 +13,7 @@ struct DateLog {
     var julietName: String?
     var event: String?
     var address: String?
-    let personUID: String
+    let personUID: String?
     let dateLogUID: String
     var description: String?
         
@@ -33,6 +33,15 @@ struct DateLog {
         self.personUID = personUID
         self.description = description
         self.dateLogUID = uid
+    }
+    
+    init(event: Event, personUID: String, dateLogUID: String, julietName: String) {
+        self.date = event.startTime.asDate()
+        self.event = event.title
+        self.address = event.venueAddress
+        self.personUID = personUID
+        self.dateLogUID = UUID().uuidString
+        self.julietName = julietName
     }
 }
 

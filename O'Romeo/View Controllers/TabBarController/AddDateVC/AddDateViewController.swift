@@ -16,12 +16,9 @@ class AddDateViewController: UIViewController {
     @IBOutlet weak var eventTF: RomeoTextField!
     @IBOutlet weak var dateLocationTF: RomeoTextField!
     
-    var calendar: Calendar? {
-        didSet {
-            loadViewIfNeeded()
-            updateViews()
-        }
-    }
+    var dateLog: DateLog?
+        
+    var person: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +26,7 @@ class AddDateViewController: UIViewController {
     }
     
     func updateViews() {
-//        guard let calendar = calendar else { return }
-//        julietNameTF.text = calendar.julietName
-//        dateTF.text = calendar.date
-//        eventTF.text = calendar.event
-//        dateLocationTF.text = calendar.address
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -42,8 +35,13 @@ class AddDateViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text else { return }
-//        AddToCalendarController.shared.addToCalendar(date: date, julietName: julietName, event: event, address: address)
+        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text, let person = person
+        else { return }
+        DateLogController.shared.createCalendarEvent(date: date, julietName: julietName, event: event, address: address, personUID: person.personUID, description: "") { (error) in
+            if let error = error {
+                print("Error saving to calendar 🤬 \(error.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
