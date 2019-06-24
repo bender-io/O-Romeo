@@ -17,7 +17,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+=======
         self.hideKeyboardWhenTappedAround()
+>>>>>>> added segues from events to add calendar
     }
     
     // MARK: - IBActions

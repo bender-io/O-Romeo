@@ -10,7 +10,10 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
     
+<<<<<<< HEAD
+=======
     // MARK: - IBOutlets
+>>>>>>> added segues from events to add calendar
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!

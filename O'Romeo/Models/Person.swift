@@ -16,15 +16,22 @@ struct Person {
     let userUID: String
     let personUID: String
     var interests: [String]?
-    var dateLog: [String]?
+<<<<<<< HEAD
+=======
+    var events: [String]?
+>>>>>>> added segues from events to add calendar
     
     init?(from dictionary: [String : Any], uid: String) {
         guard let name = dictionary["name"] as? String,
             let birthday = dictionary["birthday"] as? String,
             let anniversary = dictionary["anniversary"] as? String,
             let userUID = dictionary["userUID"] as? String,
+<<<<<<< HEAD
+            let interests = dictionary["interests"] as? [String]
+=======
             let interests = dictionary["interests"] as? [String],
-            let dateLog = dictionary["dateLog"] as? [String]
+            let events = dictionary["events"] as? [String]
+>>>>>>> added segues from events to add calendar
             else { return nil }
         
         self.name = name
@@ -33,7 +40,10 @@ struct Person {
         self.userUID = userUID
         self.interests = interests
         self.personUID = uid
-        self.dateLog = dateLog
+<<<<<<< HEAD
+=======
+        self.events = events
+>>>>>>> added segues from events to add calendar
     }
 }
 

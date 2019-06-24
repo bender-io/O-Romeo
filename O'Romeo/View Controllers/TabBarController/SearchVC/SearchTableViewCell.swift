@@ -10,7 +10,10 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
+<<<<<<< HEAD
+=======
     // MARK: - IBOutlets
+>>>>>>> added segues from events to add calendar
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var searchNameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!

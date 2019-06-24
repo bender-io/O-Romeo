@@ -10,13 +10,19 @@ import UIKit
 
 class PeopleListViewController: UIViewController {
 
+<<<<<<< HEAD
+=======
     // MARK: - IBOutlets
+>>>>>>> added segues from events to add calendar
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var helperLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+=======
         self.hideKeyboardWhenTappedAround()
+>>>>>>> added segues from events to add calendar
         tableView.delegate = self
         tableView.dataSource = self
 //        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
@@ -29,6 +35,14 @@ class PeopleListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+<<<<<<< HEAD
+        PersonController.shared.fetchPersonsFromFirestore()
+        tableView.reloadData()
+    }
+
+    // MARK: - Navigation
+
+=======
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
@@ -38,6 +52,7 @@ class PeopleListViewController: UIViewController {
     }
 
     // MARK: - Navigation
+>>>>>>> added segues from events to add calendar
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editPersonDetailVC" {
             guard let index = tableView.indexPathForSelectedRow,
@@ -64,8 +79,11 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell ?? UITableViewCell()
     }
+<<<<<<< HEAD
+=======
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+>>>>>>> added segues from events to add calendar
 }

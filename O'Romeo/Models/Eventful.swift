@@ -26,6 +26,12 @@ struct Event: Codable {
     let title: String
     let venueAddress: String
     let cityName: String?
+<<<<<<< HEAD
+    let regionAbbr: String?
+    let postalCode: String?
+    let countryAbbr: String?
+=======
+>>>>>>> added segues from events to add calendar
     let image: Image?
     let venueName: String?
     let venueURL: String?
@@ -37,6 +43,12 @@ struct Event: Codable {
         case title
         case venueAddress = "venue_address"
         case cityName = "city_name"
+<<<<<<< HEAD
+        case regionAbbr = "region_abbr"
+        case postalCode = "postal_code"
+        case countryAbbr = "country_abbr"
+=======
+>>>>>>> added segues from events to add calendar
         case image
         case venueName = "venue_name"
         case venueURL = "venue_url"

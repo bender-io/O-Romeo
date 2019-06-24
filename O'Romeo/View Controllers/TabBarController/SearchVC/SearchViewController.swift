@@ -15,16 +15,26 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+<<<<<<< HEAD
+=======
     // MARK: - Properties
+>>>>>>> added segues from events to add calendar
     var yelpResults: [Yelp] = []
     var isExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+        placesSearchBar.delegate = self
+    }
+    
+    
+=======
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
     }
     
+>>>>>>> added segues from events to add calendar
     // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
         
@@ -37,6 +47,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 } else {
                     // Fallback on earlier versions
                     application.openURL(phoneCallURL as URL)
+<<<<<<< HEAD
+                    
+=======
+>>>>>>> added segues from events to add calendar
                 }
             }
         }

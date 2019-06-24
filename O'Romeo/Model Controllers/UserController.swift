@@ -26,6 +26,16 @@ class UserController {
     ///   - email: Users email (String)
     ///   - password: Users password (String)
     ///   - completion: Returns an error if there was one (Error)
+<<<<<<< HEAD
+    func createUserWith(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
+            if let error = error {
+                print("There was an error creating the user: \(error) : \(error.localizedDescription): \(#function)")
+                completion(error)
+            }
+            
+            guard let data = data else { print("Couldnt unwrap data: \(#function)"); completion(false); return }
+=======
     func createUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             if let error = error {
@@ -34,16 +44,25 @@ class UserController {
             }
             
             guard let data = data else { completion(Errors.unwrapData); return }
+>>>>>>> added segues from events to add calendar
             self.db.collection("user").document(data.user.uid).setData([
                 "personUIDs" : []
                 ], completion: { (error) in
                     if let error = error {
+<<<<<<< HEAD
+                        print("Error adding document: \(error) : \(error.localizedDescription)")
+=======
                         print("Error adding document: \(error) : \(error.localizedDescription): \(#function)")
+>>>>>>> added segues from events to add calendar
                     } else {
                         print("Document added with ID: \(data.user.uid)")
                     }
             })
+<<<<<<< HEAD
+            completion(true)
+=======
             completion(nil)
+>>>>>>> added segues from events to add calendar
         }
     }
     

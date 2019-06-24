@@ -40,7 +40,11 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
+<<<<<<< HEAD
+	<string>Main</string>
+=======
 	<string>SplashScreen</string>
+>>>>>>> added segues from events to add calendar
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
