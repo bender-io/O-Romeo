@@ -54,6 +54,20 @@ class PersonController {
         })
     }
     
+    /// Deletes the person document using the passed in personUID
+    ///
+    /// - Parameters:
+    ///   - personUID: Uid of person to be deleted (String)
+    ///   - completion: error (Error)
+    func deletePerson(personUID: String, completion: @escaping (Error?) -> Void) {
+        db.collection("person").document(personUID).delete { (error) in
+            if let error = error {
+                print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+    }
+    
     /// Takes in a persons name and an interest. Filters through the persons array ([Person]) to find the person with matching name. Then grabs the personUID of the person and uses that to find the persons document in firestore. Once the document is found, the interest is added to the intrests array in the person document.
     ///
     /// - Parameters:
