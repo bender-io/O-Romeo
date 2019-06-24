@@ -53,9 +53,24 @@ class InterestController {
         })
     }
     
-    /// Updates the interest with the specified name.
+    /// Deletes the interest with the given interestUID
     ///
     /// - Parameters:
+    ///   - interestUID: Uid of interest to be deleted (String)
+    ///   - completion: error (Error)
+    func deleteInterest(interestUID: String, completion: @escaping (Error?) -> Void) {
+        db.collection("interest").document(interestUID).delete { (error) in
+            if let error = error {
+                print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+    }
+    
+    /// Updates the interest with the specified parameters.
+    ///
+    /// - Parameters:
+    ///   - interest: Interest to be updated (Interest)
     ///   - name: The new name (String)
     ///   - description: The new description (String)
     func updateInterest(interest: Interest, name: String, description: String) {
@@ -69,9 +84,11 @@ class InterestController {
         }
     }
     
-    /// Fetches the interests for the specified person from the firestore.
+    /// Fetches the interests for the specified person from the firestore
     ///
-    /// - Parameter person: The person object to fetch from (Person)
+    /// - Parameters:
+    ///   - person: The person to fetch from (Person)
+    ///   - completion: error (Error)
     func fetchInterestsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
