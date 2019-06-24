@@ -312,16 +312,16 @@
             </objects>
             <point key="canvasLocation" x="484" y="532"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Calendar Table View Controller-->
         <scene sceneID="vqx-Q0-8Cj">
             <objects>
-                <tableViewController id="CCc-tm-Olh" sceneMemberID="viewController">
+                <tableViewController id="CCc-tm-Olh" customClass="CalendarTableViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Primary"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wAk-Hm-0I3" id="RiF-VV-Ktz">
@@ -394,6 +394,11 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Primary"/>
                                 <connections>
+                                    <outlet property="addressLabel" destination="xOe-lz-RYI" id="YCn-dz-zD0"/>
+                                    <outlet property="dateLabel" destination="QAS-Ne-4mA" id="jbC-6y-vPo"/>
+                                    <outlet property="eventNameLabel" destination="rdW-vG-Yk7" id="B0J-o7-IOH"/>
+                                    <outlet property="julietNameLabel" destination="v5x-TS-jCq" id="9Tb-NS-cht"/>
+                                    <outlet property="timeLabel" destination="TCy-oo-jn8" id="cGw-NV-Fe1"/>
                                     <segue destination="T8g-8l-1y4" kind="presentation" identifier="editDateDetailVC" id="DEl-sq-28l"/>
                                 </connections>
                             </tableViewCell>

@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 
-class CalendarController {
+class DateLogController {
     
-    static let shared = CalendarController()
+    static let shared = DateLogController()
     
     var dateLogs: [DateLog] = []
     
