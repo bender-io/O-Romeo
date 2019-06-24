@@ -28,7 +28,7 @@ class PersonController {
     ///   - anniversary: Anniversary of relationship (String = "")
     ///   - birthday: Birthday of person (String = "")
     ///   - interests: Interests of person ([String] = [])
-    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], completion: @escaping (Error?) -> Void) {
+    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], dateLog: [String] = [], completion: @escaping (Error?) -> Void) {
         let person = persons.filter { $0.name == name }
         
         guard name != person.first?.name else { completion(Errors.personAlreadyExists); return }
@@ -39,7 +39,8 @@ class PersonController {
             "anniversary" : anniversary,
             "birthday" : birthday,
             "userUID" : currentUser.uid,
-            "interests" : interests
+            "interests" : interests,
+            "dateLog" : dateLog
             ], completion: { (error) in
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription): \(#function)")
