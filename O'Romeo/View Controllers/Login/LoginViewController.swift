@@ -14,12 +14,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+
     }
-    
+
     // MARK: - IBActions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let emailText = usernameTextField.text,
@@ -32,12 +33,12 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func signupButtonTapped(_ sender: UIButton) {
     }
-    
+
     // MARK: - Methods
-    
+
     func presentLoginErrorAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Login Failed", message: "The Email or Password is Incorrect", preferredStyle: .alert)

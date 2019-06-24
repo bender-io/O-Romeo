@@ -11,17 +11,17 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class InterestController {
-    
+
     // MARK: - Properties
-    
+
     static let shared = InterestController()
-    
+
     let db = UserController.shared.db
-    
+
     var interests = [Interest]()
-    
+
     // MARK: - Methods
-    
+
     /// Creates a new interest for the specified person and adds it to the "interest" collection in firestore. Next the specified persons array of interests is updated to contain the uid for the newly created interest.
     ///
     /// - Parameters:
@@ -30,8 +30,9 @@ class InterestController {
     ///   - description: The description of the interest (String)
     func createInterestFor(personUID: String, name: String, description: String, completion: @escaping (Error?) -> Void) {
         let interest = interests.filter { $0.name == name }
-        
+
         guard name != interest.first?.name else { completion(Errors.interestAlreadyExists); return }
+
         var ref: DocumentReference? = nil
         ref = db.collection("interest").addDocument(data: [
             "name" : name,
@@ -50,9 +51,10 @@ class InterestController {
                     print("Document added with ID: \(docID)")
                 }
                 completion(nil)
+
         })
     }
-    
+
     /// Deletes the interest with the given interestUID
     ///
     /// - Parameters:
@@ -66,7 +68,7 @@ class InterestController {
             }
         }
     }
-    
+
     /// Updates the interest with the specified parameters.
     ///
     /// - Parameters:
@@ -75,32 +77,33 @@ class InterestController {
     ///   - description: The new description (String)
     func updateInterest(interest: Interest, name: String, description: String) {
         db.collection("interest").document(interest.interestUID).updateData([
+
             "name" : name,
             "description" : description
         ]) { (error) in
             if let error = error {
                 print("There was an error updating the interest: \(error) : \(error.localizedDescription): \(#function)")
+
             }
         }
     }
-    
+
     /// Fetches the interests for the specified person from the firestore
     ///
-    /// - Parameters:
-    ///   - person: The person to fetch from (Person)
-    ///   - completion: error (Error)
+    /// - Parameter person: The person object to fetch from (Person)
     func fetchInterestsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching interests: \(error) : \(error.localizedDescription) : \(#function)")
             }
-            
+
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }
-            
+
             self.interests = snapshot.documents.compactMap { Interest(from: $0.data(), uid: $0.documentID) }
             completion(nil)
+
         }
     }
 }

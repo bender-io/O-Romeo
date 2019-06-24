@@ -29,7 +29,7 @@ struct Event: Codable {
     let image: Image?
     let venueName: String?
     let venueURL: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case url
         case startTime = "start_time"

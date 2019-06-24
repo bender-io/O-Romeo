@@ -141,7 +141,9 @@
                                                                     <rect key="frame" x="250" y="0.0" width="84" height="64"/>
                                                                     <state key="normal" image="Calender"/>
                                                                     <connections>
+
                                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
+
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -315,13 +317,15 @@
         <!--Calendar Table View Controller-->
         <scene sceneID="vqx-Q0-8Cj">
             <objects>
-                <tableViewController id="CCc-tm-Olh" customClass="CalendarTableViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CalendarTable" id="CCc-tm-Olh" customClass="CalendarTableViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Primary"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wAk-Hm-0I3" id="RiF-VV-Ktz">
@@ -394,12 +398,14 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Primary"/>
                                 <connections>
+
                                     <outlet property="addressLabel" destination="xOe-lz-RYI" id="YCn-dz-zD0"/>
                                     <outlet property="dateLabel" destination="QAS-Ne-4mA" id="jbC-6y-vPo"/>
                                     <outlet property="eventNameLabel" destination="rdW-vG-Yk7" id="B0J-o7-IOH"/>
                                     <outlet property="julietNameLabel" destination="v5x-TS-jCq" id="9Tb-NS-cht"/>
                                     <outlet property="timeLabel" destination="TCy-oo-jn8" id="cGw-NV-Fe1"/>
                                     <segue destination="T8g-8l-1y4" kind="presentation" identifier="editDateDetailVC" id="DEl-sq-28l"/>
+
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -413,6 +419,7 @@
                             <color key="tintColor" name="Highlights"/>
                             <connections>
                                 <segue destination="T8g-8l-1y4" kind="presentation" identifier="addDateDetailVC" id="yVP-oN-gfR"/>
+
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -424,7 +431,8 @@
         <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
             <objects>
-                <viewController id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addDateVC" id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="tix-HP-h0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,8 +465,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="A8d-jd-R6f"/>
                                                 </constraints>
-                                                <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+
+                                                <color key="textColor" name="White50"/>
+
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -466,19 +476,24 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event / activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-Mm-iLM" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="46" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+
+                                        <color key="textColor" name="White50"/>
+
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-BO-SbI" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="Highlights"/>
-                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="13"/>
+
+                                        <color key="textColor" name="White50"/>
+
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
+
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-zm-A5H">
                                 <rect key="frame" x="99" y="245.5" width="216" height="40"/>
                                 <subviews>
@@ -512,21 +527,56 @@
                                     </button>
                                 </subviews>
                             </stackView>
+
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-BC-2pB" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="157" y="241.5" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A15-OM-saK"/>
+                                    <constraint firstAttribute="height" constant="40" id="hTn-Qg-wbN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
+                                <state key="normal" title="save">
+                                    <color key="titleColor" name="White100"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="1Lg-10-48R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-J0-Q9K" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="157" y="297.5" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DoD-xN-b5x"/>
+                                    <constraint firstAttribute="width" constant="100" id="y6j-rf-A5X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleColor" name="White100"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="5Xa-uY-uSF"/>
+                                </connections>
+                            </button>
+
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="4Fj-Za-sNh"/>
                             <constraint firstItem="rRR-zm-A5H" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="6Fb-s8-e32"/>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="top" secondItem="b0r-sH-Z4H" secondAttribute="top" constant="20" id="782-nd-M44"/>
-                            <constraint firstItem="rRR-zm-A5H" firstAttribute="top" secondItem="uTp-F7-HZC" secondAttribute="bottom" constant="20" id="Fsf-mJ-6dZ"/>
+                            <constraint firstItem="k85-J0-Q9K" firstAttribute="top" secondItem="MX6-BC-2pB" secondAttribute="bottom" constant="16" id="Dxp-aZ-q5F"/>
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="uTp-F7-HZC" secondAttribute="trailing" constant="20" id="RaL-oI-w0d"/>
                             <constraint firstItem="uTp-F7-HZC" firstAttribute="top" secondItem="80d-Qh-DIS" secondAttribute="bottom" constant="8" id="Sbt-ky-Bmg"/>
+                            <constraint firstItem="k85-J0-Q9K" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="Vgx-AL-QEh"/>
                             <constraint firstItem="uTp-F7-HZC" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="f6p-Ac-owK"/>
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="80d-Qh-DIS" secondAttribute="trailing" constant="20" id="nTV-pt-jaP"/>
+                            <constraint firstItem="MX6-BC-2pB" firstAttribute="top" secondItem="uTp-F7-HZC" secondAttribute="bottom" constant="16" id="nkU-ka-d6k"/>
+                            <constraint firstItem="MX6-BC-2pB" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="qHa-8S-Ajw"/>
+
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0r-sH-Z4H"/>
                     </view>
                     <navigationItem key="navigationItem" id="iWV-Uk-cTd">
+
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="MRd-PV-0SU">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="T8g-8l-1y4" id="fGS-Sw-ST4"/>
@@ -539,6 +589,7 @@
                         <outlet property="eventTF" destination="Xgr-Mm-iLM" id="2JQ-SB-ccc"/>
                         <outlet property="julietNameTF" destination="E3Y-TR-rp3" id="L4i-Y4-JFf"/>
                     </connections>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5e-cV-Vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="9WU-fY-6Tf">
@@ -551,10 +602,12 @@
             </objects>
             <point key="canvasLocation" x="-1817" y="761"/>
         </scene>
+
         <!--Event View Controller-->
         <scene sceneID="Zdy-S5-gFG">
             <objects>
                 <viewController id="ETL-l2-8UL" customClass="EventViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="XwA-Jk-cfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -583,7 +636,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
+
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
+
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <color key="textColor" name="Highlights"/>
@@ -635,7 +690,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g5c-2Q-0wd">
                                                             <rect key="frame" x="0.0" y="0.0" width="250" height="71"/>
                                                             <subviews>
+
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
+
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
@@ -666,7 +723,10 @@
                                                     </constraints>
                                                     <state key="normal" image="Calender"/>
                                                     <connections>
+
+                                                        <action selector="calendarButtonTapped:" destination="LFj-Wn-VZR" eventType="touchUpInside" id="d4I-u5-ZS1"/>
                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromEventVC" id="kOA-gh-dMq"/>
+
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -689,6 +749,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
                                         <connections>
+
                                             <outlet property="cityLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
                                             <outlet property="dateLabel" destination="pak-cb-Em8" id="GKk-7O-v6s"/>
                                             <outlet property="descriptionLabel" destination="Him-bG-rDP" id="n3w-Yg-kWx"/>
@@ -696,6 +757,7 @@
                                             <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
                                             <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
                                             <outlet property="urlButton" destination="qMt-AA-ChJ" id="wI4-mP-Bk4"/>
+
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -835,7 +897,9 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pZ6-5m-MEW">
+
                                 <rect key="frame" x="20" y="287.5" width="374" height="21.5"/>
+
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-8k-X7h">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
@@ -851,6 +915,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FNK-sV-0e2"/>
                                     <constraint firstAttribute="width" constant="100" id="q2U-p3-IDu"/>
+
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <state key="normal" title="add more">
@@ -879,10 +944,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="bMv-NP-9rI" firstAttribute="top" secondItem="hFU-Pb-yvA" secondAttribute="top" constant="20" id="0t3-2b-464"/>
+
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="bottom" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="250" id="2V2-xe-obj"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="pZ6-5m-MEW" secondAttribute="trailing" constant="20" id="DMR-NG-vjH"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="20" id="Qpk-Dn-ruA"/>
@@ -893,6 +960,7 @@
                             <constraint firstItem="gXi-Rh-bHA" firstAttribute="top" secondItem="pZ6-5m-MEW" secondAttribute="bottom" constant="8" id="cah-Ho-o65"/>
                             <constraint firstItem="czB-xX-rKO" firstAttribute="centerX" secondItem="ehA-xj-fjL" secondAttribute="centerX" id="o7K-Tk-Sjg"/>
                             <constraint firstItem="czB-xX-rKO" firstAttribute="top" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="16" id="raZ-7m-ZOw"/>
+
                             <constraint firstItem="pZ6-5m-MEW" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="yqe-vr-kSb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFU-Pb-yvA"/>
@@ -911,7 +979,9 @@
                         <outlet property="birthdayTF" destination="clg-GF-zQz" id="697-rC-yXS"/>
                         <outlet property="interestsLabel" destination="Ttz-8k-X7h" id="ekI-ba-FfY"/>
                         <outlet property="julietNameTF" destination="LVy-aw-QZc" id="zuB-Le-jzR"/>
+
                         <outlet property="tableView" destination="gXi-Rh-bHA" id="Lhv-st-yvK"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-0C-2DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1030,7 +1100,9 @@
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
         <namedColor name="Highlights">
+
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+
         </namedColor>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1044,10 +1116,15 @@
         <namedColor name="White100">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+
+        <namedColor name="White50">
+            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2fo-xV-UHK"/>
+        <segue reference="cJl-dU-OAU"/>
         <segue reference="7N5-EK-FNd"/>
         <segue reference="yVP-oN-gfR"/>
+
     </inferredMetricsTieBreakers>
 </document>
