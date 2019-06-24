@@ -93,13 +93,13 @@
                                                                             <rect key="frame" x="0.0" y="66.5" width="226" height="33.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(category)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-tv-aCF">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="199.5" height="33.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="198.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(mi)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-da-hI4">
-                                                                                    <rect key="frame" x="203.5" y="0.0" width="22.5" height="33.5"/>
+                                                                                    <rect key="frame" x="202.5" y="0.0" width="23.5" height="33.5"/>
                                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                                     <color key="textColor" name="White100"/>
                                                                                     <nil key="highlightedColor"/>
@@ -121,16 +121,16 @@
                                                             <rect key="frame" x="20" y="134" width="334" height="64"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ipH-Jk-kMT">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="242" height="64"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-PJ-AZC">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="243.5" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="242" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="White100"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(phoneNumber)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-ce-Vjh">
-                                                                            <rect key="frame" x="0.0" y="34" width="243.5" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="34" width="242" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <color key="textColor" name="Highlights"/>
                                                                             <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-Yb-m1s">
-                                                                    <rect key="frame" x="251.5" y="0.0" width="82.5" height="64"/>
+                                                                    <rect key="frame" x="250" y="0.0" width="84" height="64"/>
                                                                     <state key="normal" image="Calender"/>
                                                                     <connections>
                                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
@@ -245,22 +245,22 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hrs-JG-7iI">
-                                                    <rect key="frame" x="20" y="11" width="79" height="62"/>
+                                                    <rect key="frame" x="20" y="11" width="77.5" height="63.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-Q7-99r">
-                                                            <rect key="frame" x="0.0" y="0.0" width="79" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="77.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                             <color key="textColor" name="Highlights"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(anniversary)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pS-8d-w2r">
-                                                            <rect key="frame" x="0.0" y="25" width="79" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="25.5" width="77.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                             <color key="textColor" name="White100"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(birthday)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYZ-Yo-G1C">
-                                                            <rect key="frame" x="0.0" y="45.5" width="79" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="46.5" width="77.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                             <color key="textColor" name="White100"/>
                                                             <nil key="highlightedColor"/>
@@ -332,25 +332,25 @@
                                             <rect key="frame" x="40" y="21" width="334" height="88"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yD9-eg-9pj">
-                                                    <rect key="frame" x="8" y="8" width="318" height="68"/>
+                                                    <rect key="frame" x="8" y="8" width="318" height="69.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-Vt-Rwh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="155" height="68"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="155" height="69.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(juliet)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-TS-jCq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="16"/>
                                                                     <color key="textColor" name="Highlights"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(event)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdW-vG-Yk7">
-                                                                    <rect key="frame" x="0.0" y="27" width="155" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="155" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOe-lz-RYI">
-                                                                    <rect key="frame" x="0.0" y="51.5" width="155" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="52.5" width="155" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
@@ -358,16 +358,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="UaE-ZY-BdW">
-                                                            <rect key="frame" x="163" y="0.0" width="155" height="68"/>
+                                                            <rect key="frame" x="163" y="0.0" width="155" height="69.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-Ne-4mA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCy-oo-jn8">
-                                                                    <rect key="frame" x="0.0" y="38.5" width="155" height="29.5"/>
+                                                                    <rect key="frame" x="0.0" y="39.5" width="155" height="30"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
@@ -436,85 +436,95 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ahg-0h-ICn">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what's her name?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3Y-TR-rp3" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="233.5" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3Y-TR-rp3" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="319.5" height="40"/>
                                                 <color key="backgroundColor" name="White10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="vWU-wF-Fd9"/>
                                                 </constraints>
                                                 <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="when is the date?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-MI-P6Z" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="239.5" y="0.0" width="134.5" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-MI-P6Z" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="325.5" y="0.0" width="48.5" height="40"/>
                                                 <color key="backgroundColor" name="White10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="A8d-jd-R6f"/>
                                                 </constraints>
-                                                <color key="textColor" name="White50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="Highlights"/>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what's the event or activity?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-Mm-iLM" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event / activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-Mm-iLM" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="46" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="White50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="Highlights"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what's the location?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-BO-SbI" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-BO-SbI" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-                                        <color key="textColor" name="White50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="Highlights"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-BC-2pB" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="157" y="241.5" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="A15-OM-saK"/>
-                                    <constraint firstAttribute="height" constant="40" id="hTn-Qg-wbN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
-                                <state key="normal" title="save">
-                                    <color key="titleColor" name="White100"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="1Lg-10-48R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-J0-Q9K" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="157" y="297.5" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="DoD-xN-b5x"/>
-                                    <constraint firstAttribute="width" constant="100" id="y6j-rf-A5X"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
-                                <state key="normal" title="cancel">
-                                    <color key="titleColor" name="White100"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="5Xa-uY-uSF"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-zm-A5H">
+                                <rect key="frame" x="99" y="245.5" width="216" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-J0-Q9K" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DoD-xN-b5x"/>
+                                            <constraint firstAttribute="width" constant="100" id="y6j-rf-A5X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" name="White100"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="5Xa-uY-uSF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-BC-2pB" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="116" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="A15-OM-saK"/>
+                                            <constraint firstAttribute="height" constant="40" id="hTn-Qg-wbN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
+                                        <state key="normal" title="save">
+                                            <color key="titleColor" name="White100"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="1Lg-10-48R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-lf-DR1">
+                                <rect key="frame" x="0.0" y="367" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="583104005.08081603">
+                                    <!--2019-06-24 21:20:05 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="4Fj-Za-sNh"/>
+                            <constraint firstItem="rRR-zm-A5H" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="6Fb-s8-e32"/>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="top" secondItem="b0r-sH-Z4H" secondAttribute="top" constant="20" id="782-nd-M44"/>
-                            <constraint firstItem="k85-J0-Q9K" firstAttribute="top" secondItem="MX6-BC-2pB" secondAttribute="bottom" constant="16" id="Dxp-aZ-q5F"/>
+                            <constraint firstItem="rRR-zm-A5H" firstAttribute="top" secondItem="uTp-F7-HZC" secondAttribute="bottom" constant="20" id="Fsf-mJ-6dZ"/>
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="uTp-F7-HZC" secondAttribute="trailing" constant="20" id="RaL-oI-w0d"/>
                             <constraint firstItem="uTp-F7-HZC" firstAttribute="top" secondItem="80d-Qh-DIS" secondAttribute="bottom" constant="8" id="Sbt-ky-Bmg"/>
-                            <constraint firstItem="k85-J0-Q9K" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="Vgx-AL-QEh"/>
                             <constraint firstItem="uTp-F7-HZC" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="f6p-Ac-owK"/>
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="80d-Qh-DIS" secondAttribute="trailing" constant="20" id="nTV-pt-jaP"/>
-                            <constraint firstItem="MX6-BC-2pB" firstAttribute="top" secondItem="uTp-F7-HZC" secondAttribute="bottom" constant="16" id="nkU-ka-d6k"/>
-                            <constraint firstItem="MX6-BC-2pB" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="qHa-8S-Ajw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0r-sH-Z4H"/>
                     </view>
@@ -569,13 +579,13 @@
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="58.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <color key="textColor" name="Highlights"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(street)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-qF-Alo">
-                                                                    <rect key="frame" x="0.0" y="58.5" width="176" height="45.5"/>
+                                                                    <rect key="frame" x="0.0" y="58" width="176" height="46"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
@@ -615,25 +625,25 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="awy-Ql-YiA">
-                                                    <rect key="frame" x="26" y="196" width="250" height="70"/>
+                                                    <rect key="frame" x="26" y="196" width="250" height="71"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g5c-2Q-0wd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="70"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="71"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(startTime)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pak-cb-Em8">
-                                                                    <rect key="frame" x="0.0" y="20.5" width="250" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="21" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-AA-ChJ">
-                                                                    <rect key="frame" x="0.0" y="41" width="250" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="42" width="250" height="29"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                                                     <state key="normal" title="(url)">
                                                                         <color key="titleColor" name="Highlights"/>
@@ -1028,9 +1038,6 @@
         </namedColor>
         <namedColor name="White100">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White50">
-            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
