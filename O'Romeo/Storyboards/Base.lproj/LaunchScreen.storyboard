@@ -10,14 +10,7 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-<<<<<<< HEAD
-    <customFonts key="customFonts">
-        <array key="SF-Compact-Rounded-Bold.otf">
-            <string>SFCompactRounded-Bold</string>
-        </array>
-    </customFonts>
-=======
->>>>>>> added segues from events to add calendar
+
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -27,23 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="raY-Wh-hKG">
-                                <rect key="frame" x="82" y="147" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="raY-Wh-hKG" secondAttribute="height" multiplier="1:1" id="ROK-BN-Oth"/>
-                                    <constraint firstAttribute="width" constant="200" id="VWM-dO-s2S"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" name="Primary"/>
-                        <constraints>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2L7-Ar-59p"/>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.6" id="SCY-Zd-gGn"/>
-                            <constraint firstItem="Kak-uM-gLU" firstAttribute="top" secondItem="raY-Wh-hKG" secondAttribute="bottom" constant="35" id="u5f-9V-GJR"/>
-                            <constraint firstItem="Kak-uM-gLU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uGt-4v-iji"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kak-uM-gLU" secondAttribute="trailing" id="vtA-rE-Vqt"/>
-=======
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="raY-Wh-hKG">
                                 <rect key="frame" x="94.5" y="346" width="225" height="225"/>
                                 <constraints>
@@ -57,7 +33,7 @@
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2L7-Ar-59p"/>
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.99" constant="10" id="SCY-Zd-gGn"/>
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94.5" id="Tz5-xp-G2B"/>
->>>>>>> added segues from events to add calendar
+
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,14 +44,8 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name="Logo" width="1024" height="1024"/>
-        <namedColor name="Highlights">
-            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-=======
         <image name="LoadingLogo" width="956" height="956"/>
->>>>>>> added segues from events to add calendar
+
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -9,37 +9,29 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
     // MARK: - IBOutlets
     @IBOutlet weak var placesSearchBar: UISearchBar!
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
-<<<<<<< HEAD
-=======
+
     // MARK: - Properties
->>>>>>> added segues from events to add calendar
+
     var yelpResults: [Yelp] = []
     var isExpanded = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        placesSearchBar.delegate = self
-    }
-    
-    
-=======
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
     }
-    
->>>>>>> added segues from events to add calendar
+
+
     // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
-        
+
         if let phoneCallURL = URL(string: "telprompt://\(phoneNumber)") {
-            
+
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 if #available(iOS 10.0, *) {
@@ -47,23 +39,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 } else {
                     // Fallback on earlier versions
                     application.openURL(phoneCallURL as URL)
-<<<<<<< HEAD
-                    
-=======
->>>>>>> added segues from events to add calendar
+
                 }
             }
         }
     }
-    
+
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return yelpResults.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
-        
+
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
 
@@ -72,7 +61,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 }
 
 extension SearchViewController : UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.tag == 0 {
             guard let searchText = searchBar.text, !searchText.isEmpty else { return }

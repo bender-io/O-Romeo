@@ -13,7 +13,7 @@ protocol EventTableViewCellDelegate: class {
 }
 
 class EventTableViewCell: UITableViewCell {
-    
+
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -22,14 +22,14 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
-    
+
     var event: Event? {
         didSet {
             updateViews()
         }
     }
     weak var delegate: EventTableViewCellDelegate?
-    
+
     func updateViews() {
         guard let event = event else { return }
         self.eventNameLabel.text = event.title
@@ -38,7 +38,7 @@ class EventTableViewCell: UITableViewCell {
         self.descriptionLabel.text = event.eventDescription
         self.dateLabel.text = event.startTime
         self.urlButton.titleLabel?.text = event.url
-        
+
         EventfulController.shared.fetchImageFor(eventful: event) { (image) in
             if let image = image {
                 DispatchQueue.main.async {

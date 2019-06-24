@@ -9,11 +9,9 @@
 import UIKit
 
 class PersonTableViewCell: UITableViewCell {
-    
-<<<<<<< HEAD
-=======
+
     // MARK: - IBOutlets
->>>>>>> added segues from events to add calendar
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
@@ -23,7 +21,7 @@ class PersonTableViewCell: UITableViewCell {
             updateViews()
         }
     }
-    
+
     // MARK: - Cell Methods
     func updateViews() {
         guard let person = person else { print("Couldn't unwrap person: \(#function)"); return }

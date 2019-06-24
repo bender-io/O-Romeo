@@ -9,17 +9,11 @@
       "color" : {
         "color-space" : "srgb",
         "components" : {
-<<<<<<< HEAD
-          "red" : "0x1E",
-          "alpha" : "1.000",
-          "blue" : "0xCF",
-          "green" : "0xE3"
-=======
           "red" : "0.118",
           "alpha" : "1.000",
           "blue" : "0.812",
           "green" : "0.890"
->>>>>>> added segues from events to add calendar
+
         }
       }
     }

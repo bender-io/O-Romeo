@@ -213,10 +213,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VNR-oh-r1i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLe-fe-397">
-<<<<<<< HEAD
-=======
+
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
->>>>>>> added segues from events to add calendar
+
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Highlights"/>
                         <color key="barTintColor" name="Primary"/>
@@ -234,11 +233,9 @@
     <resources>
         <image name="Romeo" width="820" height="145"/>
         <namedColor name="Highlights">
-<<<<<<< HEAD
-            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
+
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> added segues from events to add calendar
+
         </namedColor>
         <namedColor name="OffWhite">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

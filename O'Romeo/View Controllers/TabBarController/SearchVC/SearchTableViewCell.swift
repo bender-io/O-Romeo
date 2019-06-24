@@ -9,24 +9,22 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-    
-<<<<<<< HEAD
-=======
+
     // MARK: - IBOutlets
->>>>>>> added segues from events to add calendar
+
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var searchNameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    
+
     var yelp: Yelp? {
         didSet {
             updateViews()
         }
     }
-    
+
     func updateViews() {
         guard let yelp = yelp else { return }
         self.searchNameLabel.text = yelp.name

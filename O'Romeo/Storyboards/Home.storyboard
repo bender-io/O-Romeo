@@ -141,11 +141,9 @@
                                                                     <rect key="frame" x="250" y="0.0" width="84" height="64"/>
                                                                     <state key="normal" image="Calender"/>
                                                                     <connections>
-<<<<<<< HEAD
-                                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="addDateDetailVC" id="zhy-EK-y3N"/>
-=======
+
                                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
->>>>>>> added segues from events to add calendar
+
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -316,27 +314,18 @@
             </objects>
             <point key="canvasLocation" x="-29" y="627"/>
         </scene>
-<<<<<<< HEAD
-        <!--Table View Controller-->
-        <scene sceneID="vqx-Q0-8Cj">
-            <objects>
-                <tableViewController id="CCc-tm-Olh" sceneMemberID="viewController">
-=======
         <!--Calendar Table View Controller-->
         <scene sceneID="vqx-Q0-8Cj">
             <objects>
                 <tableViewController storyboardIdentifier="CalendarTable" id="CCc-tm-Olh" customClass="CalendarTableViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> added segues from events to add calendar
+
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Primary"/>
                         <prototypes>
-<<<<<<< HEAD
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="130" id="wAk-Hm-0I3">
-=======
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
->>>>>>> added segues from events to add calendar
+
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wAk-Hm-0I3" id="RiF-VV-Ktz">
@@ -409,16 +398,14 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Primary"/>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="T8g-8l-1y4" kind="show" identifier="editDateDetailVC" id="DEl-sq-28l"/>
-=======
+
                                     <outlet property="addressLabel" destination="xOe-lz-RYI" id="YCn-dz-zD0"/>
                                     <outlet property="dateLabel" destination="QAS-Ne-4mA" id="jbC-6y-vPo"/>
                                     <outlet property="eventNameLabel" destination="rdW-vG-Yk7" id="B0J-o7-IOH"/>
                                     <outlet property="julietNameLabel" destination="v5x-TS-jCq" id="9Tb-NS-cht"/>
                                     <outlet property="timeLabel" destination="TCy-oo-jn8" id="cGw-NV-Fe1"/>
                                     <segue destination="T8g-8l-1y4" kind="presentation" identifier="editDateDetailVC" id="DEl-sq-28l"/>
->>>>>>> added segues from events to add calendar
+
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -431,11 +418,8 @@
                         <barButtonItem key="rightBarButtonItem" image="Add" id="WnO-EG-dWC">
                             <color key="tintColor" name="Highlights"/>
                             <connections>
-<<<<<<< HEAD
-                                <segue destination="T8g-8l-1y4" kind="show" identifier="addDateDetailVC" id="yVP-oN-gfR"/>
-=======
                                 <segue destination="T8g-8l-1y4" kind="presentation" identifier="addDateDetailVC" id="yVP-oN-gfR"/>
->>>>>>> added segues from events to add calendar
+
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -444,17 +428,11 @@
             </objects>
             <point key="canvasLocation" x="-2771" y="627"/>
         </scene>
-<<<<<<< HEAD
-        <!--View Controller-->
-        <scene sceneID="ZpS-aK-R5l">
-            <objects>
-                <viewController id="T8g-8l-1y4" sceneMemberID="viewController">
-=======
         <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
             <objects>
                 <viewController storyboardIdentifier="addDateVC" id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> added segues from events to add calendar
+
                     <view key="view" contentMode="scaleToFill" id="tix-HP-h0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,11 +465,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="A8d-jd-R6f"/>
                                                 </constraints>
-<<<<<<< HEAD
-                                                <color key="textColor" name="Highlights"/>
-=======
+
                                                 <color key="textColor" name="White50"/>
->>>>>>> added segues from events to add calendar
+
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -500,29 +476,23 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event / activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-Mm-iLM" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="46" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-<<<<<<< HEAD
-                                        <color key="textColor" name="Highlights"/>
-=======
+
                                         <color key="textColor" name="White50"/>
->>>>>>> added segues from events to add calendar
+
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-BO-SbI" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="374" height="40"/>
                                         <color key="backgroundColor" name="White10"/>
-<<<<<<< HEAD
-                                        <color key="textColor" name="Highlights"/>
-=======
+
                                         <color key="textColor" name="White50"/>
->>>>>>> added segues from events to add calendar
+
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-<<<<<<< HEAD
-=======
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-BC-2pB" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="157" y="241.5" width="100" height="40"/>
                                 <constraints>
@@ -551,19 +521,13 @@
                                     <action selector="cancelButtonTapped:" destination="T8g-8l-1y4" eventType="touchUpInside" id="5Xa-uY-uSF"/>
                                 </connections>
                             </button>
->>>>>>> added segues from events to add calendar
+
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="4Fj-Za-sNh"/>
                             <constraint firstItem="rRR-zm-A5H" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="6Fb-s8-e32"/>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="top" secondItem="b0r-sH-Z4H" secondAttribute="top" constant="20" id="782-nd-M44"/>
-<<<<<<< HEAD
-                            <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="uTp-F7-HZC" secondAttribute="trailing" constant="20" id="RaL-oI-w0d"/>
-                            <constraint firstItem="uTp-F7-HZC" firstAttribute="top" secondItem="80d-Qh-DIS" secondAttribute="bottom" constant="8" id="Sbt-ky-Bmg"/>
-                            <constraint firstItem="uTp-F7-HZC" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="f6p-Ac-owK"/>
-                            <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="80d-Qh-DIS" secondAttribute="trailing" constant="20" id="nTV-pt-jaP"/>
-=======
                             <constraint firstItem="k85-J0-Q9K" firstAttribute="top" secondItem="MX6-BC-2pB" secondAttribute="bottom" constant="16" id="Dxp-aZ-q5F"/>
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="uTp-F7-HZC" secondAttribute="trailing" constant="20" id="RaL-oI-w0d"/>
                             <constraint firstItem="uTp-F7-HZC" firstAttribute="top" secondItem="80d-Qh-DIS" secondAttribute="bottom" constant="8" id="Sbt-ky-Bmg"/>
@@ -572,15 +536,12 @@
                             <constraint firstItem="b0r-sH-Z4H" firstAttribute="trailing" secondItem="80d-Qh-DIS" secondAttribute="trailing" constant="20" id="nTV-pt-jaP"/>
                             <constraint firstItem="MX6-BC-2pB" firstAttribute="top" secondItem="uTp-F7-HZC" secondAttribute="bottom" constant="16" id="nkU-ka-d6k"/>
                             <constraint firstItem="MX6-BC-2pB" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="qHa-8S-Ajw"/>
->>>>>>> added segues from events to add calendar
+
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0r-sH-Z4H"/>
                     </view>
                     <navigationItem key="navigationItem" id="iWV-Uk-cTd">
-<<<<<<< HEAD
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MRd-PV-0SU"/>
-                    </navigationItem>
-=======
+
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="MRd-PV-0SU">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="T8g-8l-1y4" id="fGS-Sw-ST4"/>
@@ -593,23 +554,18 @@
                         <outlet property="eventTF" destination="Xgr-Mm-iLM" id="2JQ-SB-ccc"/>
                         <outlet property="julietNameTF" destination="E3Y-TR-rp3" id="L4i-Y4-JFf"/>
                     </connections>
->>>>>>> added segues from events to add calendar
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5e-cV-Vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1816" y="627"/>
         </scene>
-<<<<<<< HEAD
-        <!--Home View Controller-->
-        <scene sceneID="Zdy-S5-gFG">
-            <objects>
-                <viewController id="ETL-l2-8UL" customClass="HomeViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
-=======
+
         <!--Event View Controller-->
         <scene sceneID="Zdy-S5-gFG">
             <objects>
                 <viewController id="ETL-l2-8UL" customClass="EventViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> added segues from events to add calendar
+
                     <view key="view" contentMode="scaleToFill" id="XwA-Jk-cfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,11 +594,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
-<<<<<<< HEAD
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
-=======
+
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v">
->>>>>>> added segues from events to add calendar
+
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <color key="textColor" name="Highlights"/>
@@ -694,11 +648,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g5c-2Q-0wd">
                                                             <rect key="frame" x="0.0" y="0.0" width="250" height="71"/>
                                                             <subviews>
-<<<<<<< HEAD
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
-=======
+
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(description)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Him-bG-rDP">
->>>>>>> added segues from events to add calendar
+
                                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="17"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
@@ -729,12 +681,10 @@
                                                     </constraints>
                                                     <state key="normal" image="Calender"/>
                                                     <connections>
-<<<<<<< HEAD
-                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="addDateDetailVC" id="kOA-gh-dMq"/>
-=======
+
                                                         <action selector="calendarButtonTapped:" destination="LFj-Wn-VZR" eventType="touchUpInside" id="d4I-u5-ZS1"/>
                                                         <segue destination="T8g-8l-1y4" kind="show" identifier="fromEventVC" id="kOA-gh-dMq"/>
->>>>>>> added segues from events to add calendar
+
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -757,12 +707,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
                                         <connections>
-<<<<<<< HEAD
-                                            <outlet property="distanceLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
-                                            <outlet property="eventAddressLabel" destination="FJT-qF-Alo" id="yWP-Tb-jeZ"/>
-                                            <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
-                                            <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
-=======
+
                                             <outlet property="cityLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
                                             <outlet property="dateLabel" destination="pak-cb-Em8" id="GKk-7O-v6s"/>
                                             <outlet property="descriptionLabel" destination="Him-bG-rDP" id="n3w-Yg-kWx"/>
@@ -770,7 +715,7 @@
                                             <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
                                             <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
                                             <outlet property="urlButton" destination="qMt-AA-ChJ" id="wI4-mP-Bk4"/>
->>>>>>> added segues from events to add calendar
+
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -910,11 +855,9 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pZ6-5m-MEW">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="287.5" width="374" height="112.5"/>
-=======
+
                                 <rect key="frame" x="20" y="287.5" width="374" height="21.5"/>
->>>>>>> added segues from events to add calendar
+
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-8k-X7h">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
@@ -922,38 +865,6 @@
                                         <color key="textColor" name="Highlights"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-Vg-ypt">
-                                        <rect key="frame" x="0.0" y="26.5" width="374" height="86"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite color..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ben-bW-5pz" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
-                                                <color key="backgroundColor" name="White10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="jPB-yu-7N2"/>
-                                                </constraints>
-                                                <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="favorite flower..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utQ-O1-yY4" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="46" width="374" height="40"/>
-                                                <color key="backgroundColor" name="White10"/>
-                                                <color key="textColor" name="Highlights"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czB-xX-rKO" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="157" y="579" width="100" height="40"/>
-                                <color key="backgroundColor" name="Secondary"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="77O-gU-zu0"/>
-                                    <constraint firstAttribute="width" secondItem="czB-xX-rKO" secondAttribute="height" multiplier="10:3" id="VPh-ZH-fE0"/>
-=======
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czB-xX-rKO" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
@@ -962,18 +873,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FNK-sV-0e2"/>
                                     <constraint firstAttribute="width" constant="100" id="q2U-p3-IDu"/>
->>>>>>> added segues from events to add calendar
+
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <state key="normal" title="add more">
                                     <color key="titleColor" name="White100"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="b8a-eZ-DqN" kind="show" identifier="toAddMoreVC" id="cJl-dU-OAU"/>
-                                </connections>
-                            </button>
-=======
                                     <action selector="addMoreButtonTapped:" destination="nh2-1X-ri3" eventType="touchUpInside" id="Cay-ct-jae"/>
                                     <segue destination="b8a-eZ-DqN" kind="show" identifier="toAddMoreVC" id="cJl-dU-OAU"/>
                                 </connections>
@@ -996,19 +902,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
->>>>>>> added segues from events to add calendar
+
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="bMv-NP-9rI" firstAttribute="top" secondItem="hFU-Pb-yvA" secondAttribute="top" constant="20" id="0t3-2b-464"/>
-<<<<<<< HEAD
-                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="pZ6-5m-MEW" secondAttribute="trailing" constant="20" id="DMR-NG-vjH"/>
-                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="20" id="Qpk-Dn-ruA"/>
-                            <constraint firstItem="gXi-Rh-bHA" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="UDG-M5-7RJ"/>
-                            <constraint firstItem="bMv-NP-9rI" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="aKH-0T-Qph"/>
-                            <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="gXi-Rh-bHA" secondAttribute="trailing" constant="20" id="cHV-wo-kEm"/>
-                            <constraint firstItem="pZ6-5m-MEW" firstAttribute="top" secondItem="bMv-NP-9rI" secondAttribute="bottom" constant="20" id="caf-pn-ZQc"/>
-=======
+
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="bottom" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="250" id="2V2-xe-obj"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="pZ6-5m-MEW" secondAttribute="trailing" constant="20" id="DMR-NG-vjH"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="trailing" secondItem="bMv-NP-9rI" secondAttribute="trailing" constant="20" id="Qpk-Dn-ruA"/>
@@ -1019,7 +918,7 @@
                             <constraint firstItem="gXi-Rh-bHA" firstAttribute="top" secondItem="pZ6-5m-MEW" secondAttribute="bottom" constant="8" id="cah-Ho-o65"/>
                             <constraint firstItem="czB-xX-rKO" firstAttribute="centerX" secondItem="ehA-xj-fjL" secondAttribute="centerX" id="o7K-Tk-Sjg"/>
                             <constraint firstItem="czB-xX-rKO" firstAttribute="top" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="16" id="raZ-7m-ZOw"/>
->>>>>>> added segues from events to add calendar
+
                             <constraint firstItem="pZ6-5m-MEW" firstAttribute="leading" secondItem="hFU-Pb-yvA" secondAttribute="leading" constant="20" id="yqe-vr-kSb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFU-Pb-yvA"/>
@@ -1038,10 +937,9 @@
                         <outlet property="birthdayTF" destination="clg-GF-zQz" id="697-rC-yXS"/>
                         <outlet property="interestsLabel" destination="Ttz-8k-X7h" id="ekI-ba-FfY"/>
                         <outlet property="julietNameTF" destination="LVy-aw-QZc" id="zuB-Le-jzR"/>
-<<<<<<< HEAD
-=======
+
                         <outlet property="tableView" destination="gXi-Rh-bHA" id="Lhv-st-yvK"/>
->>>>>>> added segues from events to add calendar
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-0C-2DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1160,11 +1058,9 @@
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
         <namedColor name="Highlights">
-<<<<<<< HEAD
-            <color red="0.11764705882352941" green="0.8901960784313725" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
+
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> added segues from events to add calendar
+
         </namedColor>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1178,13 +1074,7 @@
         <namedColor name="White100">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-<<<<<<< HEAD
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="2fo-xV-UHK"/>
-        <segue reference="7N5-EK-FNd"/>
-        <segue reference="kOA-gh-dMq"/>
-=======
+
         <namedColor name="White50">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1193,6 +1083,6 @@
         <segue reference="cJl-dU-OAU"/>
         <segue reference="7N5-EK-FNd"/>
         <segue reference="yVP-oN-gfR"/>
->>>>>>> added segues from events to add calendar
+
     </inferredMetricsTieBreakers>
 </document>
