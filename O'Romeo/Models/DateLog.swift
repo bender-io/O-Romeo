@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Calendar {
+struct DateLog {
     var date: Date?
     var julietName: String?
     var event: String?
     var address: String?
     let personUID: String
-    let calendarUID: String
+    let dateLogUID: String
     var description: String?
     
     init?(from dictionary: [String: Any], uid: String) {
@@ -32,13 +32,13 @@ struct Calendar {
         self.address = address
         self.personUID = personUID
         self.description = description
-        self.calendarUID = uid
+        self.dateLogUID = uid
     }
 }
 
-extension Calendar: Equatable {
+extension DateLog: Equatable {
     
-    static func ==(lhs: Calendar, rhs: Calendar) -> Bool {
-        return lhs.calendarUID == rhs.calendarUID
+    static func ==(lhs: DateLog, rhs: DateLog) -> Bool {
+        return lhs.dateLogUID == rhs.dateLogUID
     }
 }
