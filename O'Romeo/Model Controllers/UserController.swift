@@ -11,42 +11,46 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class UserController {
-    
+
     // MARK: - Properties
-    
+
     static let shared = UserController()
-    
+
     lazy var db = Firestore.firestore()
-    
+
     // MARK: - Methods
-    
+
     /// Creates a new user with the given email and password. Adds them as a document in the "users" collection. Each new user document has a dictionary that contains a key of "personUIDs" with a value of an empty array. Everytime a new person document is created, the persons uid will be added to the users "personUIDs" array.
     ///
     /// - Parameters:
     ///   - email: Users email (String)
     ///   - password: Users password (String)
     ///   - completion: Returns an error if there was one (Error)
+
     func createUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             if let error = error {
                 print("There was an error creating the user: \(error) : \(error.localizedDescription): \(#function)")
                 completion(error)
             }
-            
+
             guard let data = data else { completion(Errors.unwrapData); return }
+
             self.db.collection("user").document(data.user.uid).setData([
                 "personUIDs" : []
                 ], completion: { (error) in
                     if let error = error {
                         print("Error adding document: \(error) : \(error.localizedDescription): \(#function)")
+
                     } else {
                         print("Document added with ID: \(data.user.uid)")
                     }
             })
             completion(nil)
+
         }
     }
-    
+
     /// Takes in a persons uid and appends it to the users "personUIDs" array.
     ///
     /// - Parameter person: Person uid (string)
@@ -60,7 +64,7 @@ class UserController {
             }
         }
     }
-    
+
     /// Sign in the user with the given email and password.
     ///
     /// - Parameters:
@@ -76,7 +80,7 @@ class UserController {
             completion(nil)
         }
     }
-    
+
     /// Sign out the current user
     func signOutUser() {
         do {

@@ -8,19 +8,16 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - IBOutlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK: - Properties
     var eventType: EventType = .nightLife
     var eventResults: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
             self.eventResults = event
             DispatchQueue.main.async {
@@ -29,7 +26,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    // MARK: - IBActions
     @IBAction func eventSegmentControl(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             eventType = .nightLife
@@ -77,30 +73,18 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let eventRow = eventResults[indexPath.row]
         cell.event = eventRow
-        cell.delegate = self
         
         return cell
     }
     
+    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
-        if segue.identifier == "fromEventVC" {
-            if let destinationVC = segue.destination as? AddDateViewController, let indexPath = tableView.indexPathForSelectedRow {
-                let event = eventResults[indexPath.row]
-                destinationVC.event = event
-            }
-        }
      }
-}
-
-extension EventViewController: EventTableViewCellDelegate {
-    func calendarButtonTapped(event: Event) {
-        guard let addDateVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "addDateVC") as? AddDateViewController else { return }
-        addDateVC.event = event
-        present(addDateVC, animated: true, completion: nil)
-    }
+     */
+    
 }
