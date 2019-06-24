@@ -9,27 +9,22 @@
 import Foundation
 import UserNotifications
 
-protocol CalendarScheduler : class {
-    func scheduleUserNotifications(for calendar: Calendar)
-    func cancelUserNotifications(for calendar: Calendar)
+protocol LocalNotificationScheduler : class {
+    func scheduleUserNotifications(for time: Date, uid: String)
+    func cancelUserNotifications(for uid: String)
 }
 
 class LocalNotificationsController {
     
-    var isOn : Bool = true
-    
     // MARK: - Singleton
     static let shared = LocalNotificationsController()
-    
-    // MARK: - CRUD Methods
-    func createDateReminderFor(name: String, time: Date?, at event: String?, address: String?, isON: Bool = true) {
-        let calendar = Calendar(date: <#T##String#>, julietName: <#T##String#>, event: <#T##String#>, address: <#T##String#>)
-        scheduleUserNotifications(for: calendar)
-    }
+    static let notificationID = "LocalNotification"
+    private init() {}
+
 }
 
-extension LocalNotificationsController : CalendarScheduler {
-    func scheduleUserNotifications(for calendar: Calendar) {
+extension LocalNotificationsController : LocalNotificationScheduler {
+    func scheduleUserNotifications(for time: Date, uid: String) {
         let notificationSound = UNNotificationSound.default
         let notificationContent = UNMutableNotificationContent()
         notificationContent.badge = .init(integerLiteral: 1)
@@ -37,11 +32,20 @@ extension LocalNotificationsController : CalendarScheduler {
         notificationContent.body = "You got this"
         notificationContent.sound = notificationSound
         
-//        let dateComponents = Calendar.
-        let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: <#T##DateComponents#>, repeats: false)
+        // TODO: - Test and Replace with One Day Before
+//        let oneDayBeforeDate = Date(timeInterval: -86400, since: time)
+        let thirtySecondsBeforeDate = Date(timeInterval: -30, since: time)
+        let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: thirtySecondsBeforeDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let request = UNNotificationRequest(identifier: "LocalNotification", content: notificationContent, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print(" 🐌 Snail it found in \(#function) : \(error.localizedDescription) : \(error)")
+            }
+        }
     }
     
-    func cancelUserNotifications(for calendar: Calendar) {
+    func cancelUserNotifications(for uid: String) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }
