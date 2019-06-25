@@ -47,6 +47,7 @@ class EventTableViewCell: UITableViewCell {
             }
         }
     }
+    
     @IBAction func calendarButtonTapped(_ sender: Any) {
         guard let event = event else { return }
         delegate?.calendarButtonTapped(event: event)

@@ -55,7 +55,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
-
+        cell.delegate = self
         return cell
     }
 }
@@ -72,5 +72,13 @@ extension SearchViewController : UISearchBarDelegate {
                 }
             }
         }
+    }
+}
+
+extension SearchViewController: SearchTableViewCellDelegate {
+    func calendarButtonTapped(yelp: Yelp) {
+        guard let addDateVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "addDateVC") as? AddDateViewController else { return }
+        addDateVC.yelp = yelp
+        present(addDateVC, animated: true, completion: nil)
     }
 }

@@ -17,6 +17,8 @@ struct DateLog {
     let dateLogUID: String
     var description: String?
     
+//    init(date: Date, julietName: String)
+    
     init?(from dictionary: [String: Any], uid: String) {
         guard let date = dictionary["date"] as? Date,
             let julietName = dictionary["julietName"] as? String,

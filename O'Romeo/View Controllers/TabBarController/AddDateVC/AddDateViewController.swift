@@ -19,8 +19,10 @@ class AddDateViewController: UIViewController {
     var dateLog: DateLog?
     
     var event: Event?
-        
+    
     var person: Person?
+    
+    var yelp: Yelp?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,17 @@ class AddDateViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let event = event else { return }
-        julietNameTF.text = ""
-        dateTF.text = event.startTime
-        eventTF.text = event.title
-        dateLocationTF.text = event.venueName
+        if let event = event {
+            julietNameTF.text = ""
+            dateTF.text = event.startTime
+            eventTF.text = event.title
+            dateLocationTF.text = event.venueName
+        } else if let yelp = yelp {
+            julietNameTF.text = ""
+            dateTF.text = ""
+            eventTF.text = yelp.name
+            dateLocationTF.text = yelp.location.displayAddress.first
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -42,9 +50,9 @@ class AddDateViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text, let person = person
-        else { return }
-        DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: person.personUID, description: "") { (error) in
+        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text
+            else { return }
+        DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: "123", description: "") { (error) in
             if let error = error {
                 print("Error saving to calendar 🤬 \(error.localizedDescription)")
             }

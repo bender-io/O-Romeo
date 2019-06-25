@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SearchTableViewCellDelegate: class {
+    func calendarButtonTapped(yelp: Yelp)
+}
+
 class SearchTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
@@ -24,6 +28,8 @@ class SearchTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    
+    weak var delegate: SearchTableViewCellDelegate?
 
     func updateViews() {
         guard let yelp = yelp,
@@ -41,5 +47,10 @@ class SearchTableViewCell: UITableViewCell {
                 self.searchImageView.image = image
             }
         }
+    }
+    
+    @IBAction func calendarButtonTapped(_ sender: Any) {
+        guard let yelp = yelp else { return }
+        delegate?.calendarButtonTapped(yelp: yelp)
     }
 }
