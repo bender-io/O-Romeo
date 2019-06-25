@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddDateViewController: UIViewController {
+class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var julietNameTF: RomeoTextField!
@@ -16,20 +16,21 @@ class AddDateViewController: UIViewController {
     @IBOutlet weak var eventTF: RomeoTextField!
     @IBOutlet weak var dateLocationTF: RomeoTextField!
     
+    // MARK: - Properties
     var dateLog: DateLog?
-    
     var event: Event?
-    
     var person: Person?
-    
     var yelp: Yelp?
+    var personUID : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        setupPicker()
         self.hideKeyboardWhenTappedAround()
     }
     
+    // MARK: - Methods
     func updateViews() {
         if let event = event {
             julietNameTF.text = ""
@@ -41,6 +42,11 @@ class AddDateViewController: UIViewController {
             dateTF.text = ""
             eventTF.text = yelp.name
             dateLocationTF.text = yelp.location!.displayAddress.first
+        } else if let dateLog = dateLog {
+            julietNameTF.text = dateLog.julietName
+            dateTF.text = "\(dateLog.date)"
+            eventTF.text = dateLog.event
+            dateLocationTF.text = dateLog.address
         }
     }
     
@@ -48,11 +54,59 @@ class AddDateViewController: UIViewController {
         return resignFirstResponder()
     }
     
+    // MARK: - DatePicker Methods
+    @IBAction func datePickerSelected(_ sender: UITextField) {
+        let datePickerView : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePicker.Mode.dateAndTime
+        sender.inputView = datePickerView
+        datePickerView.backgroundColor = .black
+        datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
+        datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateTF.text = dateFormatter.string(from: sender.date)
+    }
+    
+    // MARK: - // MARK: - DropDownPicker Methods
+    func setupPicker() {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.backgroundColor = .black
+        julietNameTF.inputView = pickerView
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return PersonController.shared.persons.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return PersonController.shared.persons[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        julietNameTF.text = PersonController.shared.persons[row].name
+        personUID = PersonController.shared.persons[row].personUID
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let person = PersonController.shared.persons[row].name
+        return NSAttributedString(string: person, attributes: [NSAttributedString.Key.foregroundColor: UIColor.highlights])
+    }
+    
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text
+        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
             else { return }
-        DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: "123", description: "") { (error) in
+        DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
             if let error = error {
                 print("Error saving to calendar 🤬 \(error.localizedDescription)")
             }

@@ -23,6 +23,13 @@ class LaunchScreenViewController: UIViewController {
         animateLayers()
         launchLogo.center = self.view.center
         
+        // MARK: - Fetch Data
+        PersonController.shared.fetchPersonsFromFirestore { (error) in
+            if let error = error {
+                print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
+            }
+        }
+        
         // MARK: - Screen Segues
         let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let home: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
