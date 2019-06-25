@@ -243,6 +243,7 @@
 			children = (
 				563FD19422BC249700ADA9CA /* GoogleService-Info.plist */,
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
+				EC9E495022C165B20061AAB4 /* DateFormatter.swift */,
 				56F694EC22C28B2C008F47BF /* extensionsVC.swift */,
 				56CCE33722BC3A5900CEFE3B /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
@@ -300,7 +301,6 @@
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
 				ECA07C3F22BD361D008741B0 /* DateLog.swift */,
-				EC9E495022C165B20061AAB4 /* DateFormatter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

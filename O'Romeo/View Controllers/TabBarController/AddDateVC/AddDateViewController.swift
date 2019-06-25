@@ -55,7 +55,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     // MARK: - DatePicker Methods
-    @IBAction func datePickerSelected(_ sender: UITextField) {
+    @IBAction func datePickerSelected(_ sender: RomeoTextField) {
         let datePickerView : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.dateAndTime
         sender.inputView = datePickerView
@@ -63,6 +63,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
         datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
     }
+    
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -104,7 +105,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let julietName = julietNameTF.text, let date = dateTF.text?.asDate(), let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
+        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
             else { return }
         DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
             if let error = error {

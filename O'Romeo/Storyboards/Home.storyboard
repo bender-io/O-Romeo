@@ -328,7 +328,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T7-Lb-FYq">
+                                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="5T7-Lb-FYq">
                                             <rect key="frame" x="40" y="21" width="334" height="88"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yD9-eg-9pj">
@@ -460,6 +460,9 @@
                                                 <color key="textColor" name="Highlights"/>
                                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="datePickerSelected:" destination="T8g-8l-1y4" eventType="editingDidBegin" id="SkY-V7-MGk"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
