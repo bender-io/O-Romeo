@@ -52,4 +52,10 @@ class EventTableViewCell: UITableViewCell {
         guard let event = event else { return }
         delegate?.calendarButtonTapped(event: event)
     }
+    
+    @IBAction func urlButtonTapped(_ sender: Any) {
+        guard let event = event else { return }
+        let eventURL = NSURL(string: event.url!)! as URL
+        UIApplication.shared.open(eventURL, options: [:], completionHandler: nil)
+    }
 }

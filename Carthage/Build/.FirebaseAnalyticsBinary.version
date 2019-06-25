@@ -11,24 +11,24 @@
   "commitish" : "6.3.0",
   "iOS" : [
     {
-      "name" : "nanopb",
-      "hash" : "2872461c576bb92792f2484de5b045c6cfd76fa1179eca949a06a960641b397e"
-    },
-    {
-      "name" : "FIRAnalyticsConnector",
-      "hash" : "620630296781708cbd37c9f33f268d91a8d8a1948ecfef264c33f40190934271"
-    },
-    {
       "name" : "FirebaseCore",
       "hash" : "3f00133f4036bb7078ae1c571fc03e90f4a1d29b410cfe1143b62e2692dc500e"
+    },
+    {
+      "name" : "FirebaseAnalytics",
+      "hash" : "09666e79a09d14bd022539ddb85afb8fda073f920339afb779ffa4837dfa8e81"
+    },
+    {
+      "name" : "nanopb",
+      "hash" : "2872461c576bb92792f2484de5b045c6cfd76fa1179eca949a06a960641b397e"
     },
     {
       "name" : "Firebase",
       "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae"
     },
     {
-      "name" : "FirebaseAnalytics",
-      "hash" : "09666e79a09d14bd022539ddb85afb8fda073f920339afb779ffa4837dfa8e81"
+      "name" : "FIRAnalyticsConnector",
+      "hash" : "620630296781708cbd37c9f33f268d91a8d8a1948ecfef264c33f40190934271"
     },
     {
       "name" : "GoogleUtilities",

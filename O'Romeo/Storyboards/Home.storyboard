@@ -653,6 +653,9 @@
                                                                     <state key="normal" title="(url)">
                                                                         <color key="titleColor" name="Highlights"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="urlButtonTapped:" destination="LFj-Wn-VZR" eventType="touchUpInside" id="fvN-iz-QoN"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
