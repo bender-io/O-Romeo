@@ -16,7 +16,7 @@ struct Person {
     let userUID: String
     let personUID: String
     var interests: [String]?
-    var events: [String]?
+    var dateLog: [String]?
 
     init?(from dictionary: [String : Any], uid: String) {
         guard let name = dictionary["name"] as? String,
@@ -24,7 +24,7 @@ struct Person {
             let anniversary = dictionary["anniversary"] as? String,
             let userUID = dictionary["userUID"] as? String,
             let interests = dictionary["interests"] as? [String],
-            let events = dictionary["events"] as? [String]
+            let dateLog = dictionary["dateLog"] as? [String]
 
             else { return nil }
 
@@ -34,7 +34,7 @@ struct Person {
         self.userUID = userUID
         self.interests = interests
         self.personUID = uid
-        self.events = events
+        self.dateLog = dateLog
 
     }
 }

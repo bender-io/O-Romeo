@@ -26,11 +26,15 @@ class SearchTableViewCell: UITableViewCell {
     }
 
     func updateViews() {
-        guard let yelp = yelp else { return }
+        guard let yelp = yelp,
+            let rating = yelp.rating,
+            let categories = yelp.categories?.first?.title,
+            let location = yelp.location?.displayAddress.first
+            else { return }
         self.searchNameLabel.text = yelp.name
-        self.ratingLabel.text = String(yelp.rating)
-        self.categoriesLabel.text = yelp.categories.first?.title
-        self.directionsLabel.text = yelp.location.displayAddress.first
+        self.ratingLabel.text = String(rating)
+        self.categoriesLabel.text = categories
+        self.directionsLabel.text = location
         self.phoneNumberLabel.text = yelp.displayPhone
         YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
             DispatchQueue.main.async {

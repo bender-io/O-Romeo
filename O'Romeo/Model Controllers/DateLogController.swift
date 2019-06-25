@@ -50,6 +50,7 @@ class DateLogController {
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")
                         }
+                        LocalNotificationsController.shared.scheduleUserNotifications(for: date, uid: docID)
                     })
                 }
                 completion(nil)
@@ -79,7 +80,7 @@ class DateLogController {
     ///   - event: New event name (String)
     ///   - address: New Address (String)
     ///   - description: New Description (String)
-    func updateEvents(dateLog: DateLog, date: Date, julietName: String, event: String, address: String, description: String) {
+    func updateDateLog(dateLog: DateLog, date: Date, julietName: String, event: String, address: String, description: String) {
         db.collection("dateLog").document(dateLog.dateLogUID).updateData([
             "date" : date,
             "julietName" : julietName,
@@ -98,7 +99,7 @@ class DateLogController {
     /// - Parameters:
     ///   - person: The person to fetch from (Person)
     ///   - completion: error (Error)
-    func fetchCalendarEventsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
+    func fetchDateLogFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("dateLog").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching dateLogs: \(error) : \(error.localizedDescription) : \(#function)")

@@ -52,7 +52,9 @@ class YelpController {
     }
     
     func fetchImageFor(yelp: Yelp, completion: @escaping((UIImage?) -> Void)) {
-        guard let baseURL = URL(string: yelp.imageURL) else { return }
+        guard let imageURL = yelp.imageURL,
+            let baseURL = URL(string: imageURL)
+            else { return }
         var request = URLRequest(url: baseURL)
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         
