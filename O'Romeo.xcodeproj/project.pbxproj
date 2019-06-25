@@ -15,7 +15,7 @@
 		563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */; };
 		563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD19022BAE31200ADA9CA /* SearchTableViewCell.swift */; };
 		563FD19522BC249700ADA9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563FD19422BC249700ADA9CA /* GoogleService-Info.plist */; };
-		5641189922BEB4790014010E /* extensionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641189822BEB4790014010E /* extensionsVC.swift */; };
+		5641189922BEB4790014010E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CC922B45ADC0025C319 /* AppDelegate.swift */; };
 		569A6CCF22B45ADC0025C319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CCD22B45ADC0025C319 /* Main.storyboard */; };
 		569A6CD422B45ADE0025C319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A6CD222B45ADE0025C319 /* LaunchScreen.storyboard */; };
@@ -24,8 +24,9 @@
 		569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE622B58A430025C319 /* LoginViewController.swift */; };
 		569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CE822B58A580025C319 /* SignupViewController.swift */; };
 		569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A6CF222B7E11D0025C319 /* HomeViewController.swift */; };
+		56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */; };
 		56CCE33822BC3A5900CEFE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCE33722BC3A5900CEFE3B /* Assets.xcassets */; };
-		56F694E122C145DC008F47BF /* LocalNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F694E022C145DC008F47BF /* LocalNotificationsController.swift */; };
+		56F694ED22C28B2C008F47BF /* extensionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F694EC22C28B2C008F47BF /* extensionsVC.swift */; };
 		E412349722B950AD0066796E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349622B950AD0066796E /* Person.swift */; };
 		E412349A22B9517C0066796E /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349922B9517C0066796E /* PersonController.swift */; };
 		E412349C22B9521D0066796E /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E412349B22B9521D0066796E /* gRPCCertificates-Cpp.bundle */; };
@@ -71,7 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		560BC9D822BD6D82003D7248 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		560BC9DB22BD7207003D7248 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		560BF55422B972CC000E7F66 /* extensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsUI.swift; sourceTree = "<group>"; };
@@ -90,8 +90,9 @@
 		569A6CE622B58A430025C319 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		569A6CF222B7E11D0025C319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
 		56CCE33722BC3A5900CEFE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		56F694E022C145DC008F47BF /* LocalNotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
+		56F694EC22C28B2C008F47BF /* extensionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionsVC.swift; sourceTree = "<group>"; };
 		E412349622B950AD0066796E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E412349922B9517C0066796E /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		E412349B22B9521D0066796E /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/FirebaseFirestore.framework/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
@@ -242,10 +243,10 @@
 			children = (
 				563FD19422BC249700ADA9CA /* GoogleService-Info.plist */,
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
+				56F694EC22C28B2C008F47BF /* extensionsVC.swift */,
 				56CCE33722BC3A5900CEFE3B /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
 				569A6CD522B45ADE0025C319 /* Info.plist */,
-				5641189822BEB4790014010E /* extensionsVC.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -309,6 +310,7 @@
 			children = (
 				E412349922B9517C0066796E /* PersonController.swift */,
 				E41234C622B955170066796E /* UserController.swift */,
+				56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */,
 				E49AAE1922B99FC90099C45A /* InterestController.swift */,
 				ECFE939C22B99D2E0042C00A /* YelpController.swift */,
 				ECFE939E22B99D400042C00A /* EventfulController.swift */,
@@ -438,12 +440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */,
 				E412349722B950AD0066796E /* Person.swift in Sources */,
 				E49AAE1822B99FB20099C45A /* Interest.swift in Sources */,
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
-				56F694E122C145DC008F47BF /* LocalNotificationsController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
 				E49AAE2822BD800A0099C45A /* Errors.swift in Sources */,
@@ -464,9 +466,10 @@
 				EC9E495122C165B20061AAB4 /* DateFormatter.swift in Sources */,
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				EC9E495322C16B750061AAB4 /* CalendarTableViewController.swift in Sources */,
-				5641189922BEB4790014010E /* extensionsVC.swift in Sources */,
+				5641189922BEB4790014010E /* (null) in Sources */,
 				ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */,
 				ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */,
+				56F694ED22C28B2C008F47BF /* extensionsVC.swift in Sources */,
 				E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */,
 				563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
