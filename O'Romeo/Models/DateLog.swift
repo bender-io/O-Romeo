@@ -9,7 +9,7 @@
 import Foundation
 
 struct DateLog {
-    var date: Date
+    var date: String
     var julietName: String?
     var event: String?
     var address: String?
@@ -18,7 +18,7 @@ struct DateLog {
     var description: String?
     
 //    init(date: Date, julietName: String)
-    init(date: Date, julietName: String, event: String, address: String, personUID: String, dateLogUID: String, description: String) {
+    init(date: String, julietName: String, event: String, address: String, personUID: String, dateLogUID: String, description: String) {
         self.date = date
         self.julietName = julietName
         self.event = event
@@ -29,7 +29,7 @@ struct DateLog {
     }
     
     init?(from dictionary: [String: Any], uid: String) {
-        guard let date = dictionary["date"] as? Date,
+        guard let date = dictionary["date"] as? String,
             let julietName = dictionary["julietName"] as? String,
             let event = dictionary["event"] as? String,
             let address = dictionary["address"] as? String,
@@ -47,7 +47,8 @@ struct DateLog {
     }
     
     init(event: Event, personUID: String, dateLogUID: String, julietName: String) {
-        self.date = event.startTime.asDate()
+        //self.date = event.startTime.asDate()
+        self.date = event.startTime
         self.event = event.title
         self.address = event.venueAddress
         self.personUID = personUID
