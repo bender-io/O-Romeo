@@ -29,7 +29,7 @@ class PersonController {
     ///   - anniversary: Anniversary of relationship (String = "")
     ///   - birthday: Birthday of person (String = "")
     ///   - interests: Interests of person ([String] = [])
-    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], completion: @escaping (Error?) -> Void) {
+    func createPersonWith(name: String, anniversary: String = "", birthday: String = "", interests: [String] = [], dateLog: [String] = [], completion: @escaping (Error?) -> Void) {
         let person = persons.filter { $0.name == name }
 
         guard name != person.first?.name else { completion(Errors.personAlreadyExists); return }
@@ -138,10 +138,15 @@ class PersonController {
         }
     }
 
-    /// Fetches all the persons for the current user and sets them to the persons array ([Person])
+    /// Fetches the users person documents from the firstore and adds them to local array (Source of truth)
+    ///
+    /// - Parameter completion: error (Error)
     func fetchPersonsFromFirestore(completion: @escaping (Error?) -> Void) {
         guard let userUID = Auth.auth().currentUser?.uid else { completion(Errors.unwrapCurrentUserUID); return }
         db.collection("person").whereField("userUID", isEqualTo: userUID).getDocuments { (snapshot, error) in
+            if let error = error {
+                print("There was an error fetching persons: \(error) : \(error.localizedDescription) : \(#function)")
+            }
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }

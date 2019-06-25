@@ -33,9 +33,9 @@ extension Errors: LocalizedError {
         case .unwrapPersonUID:
             return NSLocalizedString("Couldn't unwrap value.first?.personUID", comment: "")
         case .unwrapCurrentUserUID:
-            return NSLocalizedString("Couldn't unwrap value.first?.personUID", comment: "")
-        case .snapshotGuard:
             return NSLocalizedString("Couldn't unwrap Auth.auth().currentUser.uid", comment: "")
+        case .snapshotGuard:
+            return NSLocalizedString("Failed snapshot guard", comment: "")
         case .unwrapData:
             return NSLocalizedString("Couldnt unwrap data", comment: "")
         }
