@@ -40,7 +40,7 @@ class AddDateViewController: UIViewController {
             julietNameTF.text = ""
             dateTF.text = ""
             eventTF.text = yelp.name
-            dateLocationTF.text = yelp.location.displayAddress.first
+            dateLocationTF.text = yelp.location!.displayAddress.first
         }
     }
     
@@ -56,7 +56,6 @@ class AddDateViewController: UIViewController {
             if let error = error {
                 print("Error saving to calendar 🤬 \(error.localizedDescription)")
             }
-            
             
             self.dismiss(animated: true, completion: nil)
         }
