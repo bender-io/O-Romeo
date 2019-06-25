@@ -14,12 +14,12 @@ struct TopLevelJSON: Codable {
 
 struct Yelp: Codable {
     let name: String
-    let imageURL: String
-    let displayPhone: String
-    let rating: Double
-    let location: Location
+    let imageURL: String?
+    let displayPhone: String?
+    let rating: Double?
+    let location: Location?
     let price: Price?
-    let categories: [Category]
+    let categories: [Category]?
     
     enum CodingKeys: String, CodingKey {
         case name, location, rating, price, categories
@@ -38,8 +38,9 @@ struct Location: Codable {
 }
 
 enum Price: String, Codable {
-    case empty = "$"
-    case price = "$$"
+    case cheap = "$"
+    case moderate = "$$"
+    case pricey = "$$$"
 }
 
 struct Category: Codable {

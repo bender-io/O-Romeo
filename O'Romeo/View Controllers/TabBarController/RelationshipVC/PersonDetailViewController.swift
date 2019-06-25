@@ -70,9 +70,9 @@ class PersonDetailViewController: UIViewController {
 
     func updateViews() {
         if let person = person {
-//            tableView.isHidden = false
-//            addMoreButton.isHidden = false
-//            interestsLabel.isHidden = false
+            tableView.isHidden = false
+            addMoreButton.isHidden = false
+            interestsLabel.isHidden = false
             julietNameTF.text = person.name
             birthdayTF.text = person.birthday
             anniversaryTF.text = person.anniversary
@@ -83,9 +83,9 @@ class PersonDetailViewController: UIViewController {
                 self.tableView.reloadData()
             }
         } else {
-//            tableView.isHidden = true
-//            addMoreButton.isHidden = true
-//            interestsLabel.isHidden = true
+            tableView.isHidden = true
+            addMoreButton.isHidden = true
+            interestsLabel.isHidden = true
         }
     }
 
