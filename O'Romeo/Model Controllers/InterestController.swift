@@ -90,7 +90,9 @@ class InterestController {
 
     /// Fetches the interests for the specified person from the firestore
     ///
-    /// - Parameter person: The person object to fetch from (Person)
+    /// - Parameters:
+    ///   - person: Person to fetch interests for (Person)
+    ///   - completion: error (Error)
     func fetchInterestsFromFirestore(for person: Person, completion: @escaping (Error?) -> Void) {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
