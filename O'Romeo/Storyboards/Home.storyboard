@@ -141,7 +141,7 @@
                                                                     <rect key="frame" x="250" y="0.0" width="84" height="64"/>
                                                                     <state key="normal" image="Calender"/>
                                                                     <connections>
-                                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="fromSearchVC" id="zhy-EK-y3N"/>
+                                                                        <action selector="calendarButtonTapped:" destination="OE5-Lx-6Cj" eventType="touchUpInside" id="wlv-H7-35y"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -424,7 +424,7 @@
         <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
             <objects>
-                <viewController id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addDateVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T8g-8l-1y4" customClass="AddDateViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tix-HP-h0B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +666,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Calender"/>
                                                     <connections>
-                                                        <segue destination="T8g-8l-1y4" kind="show" identifier="fromEventVC" id="kOA-gh-dMq"/>
+                                                        <action selector="calendarButtonTapped:" destination="LFj-Wn-VZR" eventType="touchUpInside" id="pof-Xc-Wl1"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1048,6 +1048,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="2fo-xV-UHK"/>
         <segue reference="7N5-EK-FNd"/>
-        <segue reference="yVP-oN-gfR"/>
+        <segue reference="DEl-sq-28l"/>
     </inferredMetricsTieBreakers>
 </document>
