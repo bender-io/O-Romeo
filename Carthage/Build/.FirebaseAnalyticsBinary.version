@@ -8,43 +8,43 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.2.0",
+  "commitish" : "6.3.0",
   "iOS" : [
+    {
+      "name" : "nanopb",
+      "hash" : "2872461c576bb92792f2484de5b045c6cfd76fa1179eca949a06a960641b397e"
+    },
+    {
+      "name" : "FIRAnalyticsConnector",
+      "hash" : "620630296781708cbd37c9f33f268d91a8d8a1948ecfef264c33f40190934271"
+    },
+    {
+      "name" : "FirebaseCore",
+      "hash" : "3f00133f4036bb7078ae1c571fc03e90f4a1d29b410cfe1143b62e2692dc500e"
+    },
     {
       "name" : "Firebase",
       "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae"
     },
     {
       "name" : "FirebaseAnalytics",
-      "hash" : "68567fa3b8df89fd24b707a8a1722569fe35d6afc61da482e03719dc7abca26d"
-    },
-    {
-      "name" : "FirebaseCore",
-      "hash" : "b26f4e986d094033dee95f3adaa3f904d31a70cf47ff8218db4b92ceb746a523"
-    },
-    {
-      "name" : "nanopb",
-      "hash" : "22e93a5d9b649501ca706fab88308d5223b07d1fb3acd49d9cad63e1e1c7707d"
-    },
-    {
-      "name" : "FIRAnalyticsConnector",
-      "hash" : "3d4b245c27cf45e6948ac9daad7955ed18364ab9375a29040c323afa9fe0845e"
+      "hash" : "09666e79a09d14bd022539ddb85afb8fda073f920339afb779ffa4837dfa8e81"
     },
     {
       "name" : "GoogleUtilities",
-      "hash" : "de4bfe124b9b91d86080c4d2e60470f10e9793c655057603872fc847850ae000"
+      "hash" : "e81e825cd3facda5f3effaaffdf9069cd548e1c6743b16d409d2dd3ea54d2e5f"
     },
     {
       "name" : "FirebaseCoreDiagnostics",
-      "hash" : "7d6d87092cfec07bd0c99b7c31b5dd69410128d5123add2a4e03f8ab2f70ad61"
+      "hash" : "3ec0a2026b56cfa8567d131b55bd3fd189269e874340ef36dcb2efff2b2a7fc7"
     },
     {
       "name" : "FirebaseInstanceID",
-      "hash" : "afbed3dd8f5a8e67eebcc008299b5cfbb11e11156f3ac0ee5d19915ffdaa56e8"
+      "hash" : "25a020e5c3d91536f04a6e54f1ad11c2efe8e46c1d762046932a9155760f85df"
     },
     {
       "name" : "GoogleAppMeasurement",
-      "hash" : "597eafe45bdc5f3dd46a5866f6614616327071a9fd26e86cbb28dc0a54d836f4"
+      "hash" : "d512b88235bb0b54395bef3beb635642fdb929bfb8953c38e6c75282aa709ab0"
     }
   ]
 }

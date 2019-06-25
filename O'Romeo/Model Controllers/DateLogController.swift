@@ -46,6 +46,8 @@ class DateLogController {
                     print("There was an error adding to calendar: \(error.localizedDescription) : \(#function)")
                 } else {
                     guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
+                    let dateLog = DateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, dateLogUID: docID, description: description)
+                    self.dateLogs.append(dateLog)
                     PersonController.shared.updatePersonDateLog(for: personUID, with: docID, completion: { (error) in
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")

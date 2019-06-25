@@ -10,24 +10,34 @@ import UIKit
 
 class CalendarTableViewController: UITableViewController {
     
-    var dateLog: [DateLog] = []
+    var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let person = person else { return }
+        DateLogController.shared.fetchDateLogFromFirestore(for: person) { (error) in
+            if let error = error {
+                print("fetching date log \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dateLog.count
+        return DateLogController.shared.dateLogs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "datesCell", for: indexPath) as! CalendarTableViewCell
 
-        let date = dateLog[indexPath.row]
+        let date = DateLogController.shared.dateLogs[indexPath.row]
         cell.dateLog = date
 
         return cell
