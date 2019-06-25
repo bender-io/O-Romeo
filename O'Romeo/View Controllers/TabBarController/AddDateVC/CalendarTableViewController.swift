@@ -10,23 +10,27 @@ import UIKit
 
 class CalendarTableViewController: UITableViewController {
     
-    var person: Person?
+    var dateLogs = [DateLog]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let person = person else { return }
-        DateLogController.shared.fetchDateLogFromFirestore(for: person) { (error) in
-            if let error = error {
-                print("fetching date log \(error.localizedDescription)")
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        loadData()
+    }
+    
+    func loadData() {
+        for person in PersonController.shared.persons {
+            DateLogController.shared.fetchDateLogFromFirestore(for: person) { (error) in
+                if let error = error {
+                    print("fetching date log \(error.localizedDescription)")
+                }
+                self.dateLogs.append(contentsOf: DateLogController.shared.dateLogs)
+            }
+        }
         tableView.reloadData()
     }
 
@@ -44,8 +48,7 @@ class CalendarTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "datesCell", for: indexPath) as! CalendarTableViewCell
         
-        let dates = DateLogController.shared.dateLogs
-        let sortedDates = dates.sorted(by: { $0.date < $1.date })
+        let sortedDates = dateLogs.sorted(by: { $0.date < $1.date })
         let date = sortedDates[indexPath.row]
         cell.dateLog = date
 
@@ -70,8 +73,7 @@ class CalendarTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "editDateDetailVC" {
             if let destinationVC = segue.destination as? AddDateViewController, let indexPath = tableView.indexPathForSelectedRow {
-                let dates = DateLogController.shared.dateLogs
-                let sortedDates = dates.sorted(by: { $0.date < $1.date })
+                let sortedDates = dateLogs.sorted(by: { $0.date < $1.date })
                 let date = sortedDates[indexPath.row]
                 destinationVC.dateLog = date
             }

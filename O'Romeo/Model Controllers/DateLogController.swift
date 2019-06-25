@@ -31,7 +31,7 @@ class DateLogController {
     ///   - personUID: Uid of person (String)
     ///   - description: Description of event (String)
     ///   - completion: error (Error)
-    func createDateLog(date: Date, julietName: String, event: String, address: String, personUID: String, description: String, completion: @escaping (Error?) -> Void) {
+    func createDateLog(date: String, julietName: String, event: String, address: String, personUID: String, description: String, completion: @escaping (Error?) -> Void) {
         
         var ref: DocumentReference? = nil
         ref = db.collection("dateLog").addDocument(data: [
@@ -52,7 +52,7 @@ class DateLogController {
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")
                         }
-                        LocalNotificationsController.shared.scheduleUserNotifications(for: date, uid: docID)
+                        LocalNotificationsController.shared.scheduleUserNotifications(for: date.asDate(), uid: docID)
                     })
                 }
                 completion(nil)
