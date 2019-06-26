@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        guard let emailText = usernameTextField.text,
+        guard let emailText = usernameTextField.text, 
             let passwordText = passwordTextField.text
             else { print("Couldn't unwrap textfield text: \(#function)"); return }
         UserController.shared.signInUserWith(email: emailText, password: passwordText) { (error) in
@@ -34,6 +34,9 @@ class LoginViewController: UIViewController {
             PersonController.shared.fetchPersonsFromFirestore { (error) in
                 if let error = error {
                     print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
+                }
+                else {
+                    self.performSegue(withIdentifier: "loginToHomeVC", sender: self)
                 }
             }
         }

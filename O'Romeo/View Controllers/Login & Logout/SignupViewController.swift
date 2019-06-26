@@ -12,7 +12,6 @@ import FirebaseAuth
 class SignupViewController: UIViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -24,7 +23,6 @@ class SignupViewController: UIViewController {
     }
 
     // MARK: - IBActions
-
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         guard let emailText = emailTextField.text,
             let passwordText = passwordTextField.text
@@ -33,14 +31,14 @@ class SignupViewController: UIViewController {
         UserController.shared.createUserWith(email: emailText, password: passwordText) { (error) in
             if let error = error {
                 print("There was an error creating a new user: \(error.localizedDescription): \(#function)")
-
                 self.presentSignupErrorAlert()
+            } else {
+                self.performSegue(withIdentifier: "signupToHomeVC", sender: self)
             }
         }
     }
 
     // MARK: - Methods
-
     func presentSignupErrorAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Signup Failed", message: "This Email address belongs to another account", preferredStyle: .alert)

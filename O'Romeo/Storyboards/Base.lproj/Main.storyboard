@@ -62,7 +62,6 @@
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="a69-jP-tbj"/>
-                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="loginToHomeTVC" id="Y8D-Be-TOp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,7 +89,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="5yI-B3-oIL"/>
-                                            <segue destination="pDG-fY-qF4" kind="show" identifier="toSignUpVC" id="NNv-2b-pUW"/>
+                                            <segue destination="pDG-fY-qF4" kind="show" id="2u3-pm-Fxm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -117,6 +116,7 @@
                         <outlet property="loginButton" destination="NFu-5k-Ocz" id="3fb-oI-F6S"/>
                         <outlet property="passwordTextField" destination="5ss-2o-ykW" id="9cg-1C-VVb"/>
                         <outlet property="usernameTextField" destination="rDJ-mK-J43" id="jKG-Ha-OUk"/>
+                        <segue destination="cjA-6w-YVr" kind="show" identifier="loginToHomeVC" id="ud3-mB-3za"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7r-kH-kjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,7 +171,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
-                                            <segue destination="cjA-6w-YVr" kind="showDetail" identifier="signupToHomeTVC" id="lqN-Zy-QEQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -201,6 +200,7 @@
                         <outlet property="emailTextField" destination="UmI-8T-OWO" id="3xz-79-040"/>
                         <outlet property="passwordTextField" destination="sc5-WH-ZA1" id="HdI-lI-mAr"/>
                         <outlet property="signupButton" destination="i5e-gD-qcS" id="m1B-vE-BI8"/>
+                        <segue destination="cjA-6w-YVr" kind="show" identifier="signupToHomeVC" id="1a1-2S-fBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5N-Wt-i9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,9 +213,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VNR-oh-r1i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLe-fe-397">
-
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Highlights"/>
                         <color key="barTintColor" name="Primary"/>
@@ -233,9 +231,7 @@
     <resources>
         <image name="Romeo" width="820" height="145"/>
         <namedColor name="Highlights">
-
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-
         </namedColor>
         <namedColor name="OffWhite">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -254,6 +250,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lqN-Zy-QEQ"/>
+        <segue reference="ud3-mB-3za"/>
     </inferredMetricsTieBreakers>
 </document>
