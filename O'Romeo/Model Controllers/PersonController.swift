@@ -58,7 +58,7 @@ class PersonController {
         })
     }
 
-    /// Deletes the person document from the given person
+    /// Deletes the person document for the given person
     ///
     /// - Parameters:
     ///   - person: Person to be deleted (Person)

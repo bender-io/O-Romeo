@@ -55,10 +55,11 @@ class InterestController {
         })
     }
 
-    /// Deletes the interest with the given interest
+    /// Deletes the interest with the given interest or interestUID
     ///
     /// - Parameters:
-    ///   - interest: Interest to be deleted (Interest)
+    ///   - interest: Interest to be deleted (Interest?)
+    ///   - interestUID: Uid of interest to be deleted (String?)
     ///   - completion: error (Error)
     func deleteInterest(interest: Interest?, interestUID: String?, completion: @escaping (Error?) -> Void) {
         if let interest = interest {

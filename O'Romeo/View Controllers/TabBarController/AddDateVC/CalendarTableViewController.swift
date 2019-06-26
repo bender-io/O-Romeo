@@ -18,7 +18,12 @@ class CalendarTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadData()
+        PersonController.shared.fetchPersonsFromFirestore { (error) in
+            if let error = error {
+                print("There was an error fetching the people: \(error) : \(#function)")
+            }
+            self.loadData()
+        }
     }
     
     func loadData() {
