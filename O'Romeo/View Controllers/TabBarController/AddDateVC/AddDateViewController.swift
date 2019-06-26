@@ -34,7 +34,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func updateViews() {
         if let event = event {
             julietNameTF.text = ""
-            dateTF.text = event.startTime
+            dateTF.text = event.startTime.asEventDateString()
             eventTF.text = event.title
             dateLocationTF.text = event.venueName
         } else if let yelp = yelp {

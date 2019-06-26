@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "O&apos;Romeo/View Controllers/Login &amp; Logout/SignupViewController.swift"
+            timestampString = "583279884.371048"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "signupButtonTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "O_Romeo.SignupViewController.signupButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "O&apos;Romeo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhersh/Offline/iOS-Developement/Portfolio/O-Romeo/O&apos;Romeo/View%20Controllers/Login%20&amp;%20Logout/SignupViewController.swift"
+                  timestampString = "583279884.545354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in O_Romeo.SignupViewController.signupButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "O&apos;Romeo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bhersh/Offline/iOS-Developement/Portfolio/O-Romeo/O&apos;Romeo/View%20Controllers/Login%20&amp;%20Logout/SignupViewController.swift"
+                  timestampString = "583279884.548233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "166">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

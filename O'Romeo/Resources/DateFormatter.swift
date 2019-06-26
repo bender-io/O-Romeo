@@ -25,4 +25,12 @@ extension String {
         let date = formatter.date(from: self)
         return "\(date!)"
     }
+    
+    func asEventDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = formatter.date(from: self)
+        formatter.dateFormat = "MMM dd, yyyy 'at' hh:mm a"
+        return formatter.string(from: date!)
+    }
 }

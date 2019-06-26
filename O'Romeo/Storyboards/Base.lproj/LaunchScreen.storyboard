@@ -10,7 +10,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -33,7 +32,6 @@
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2L7-Ar-59p"/>
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.99" constant="10" id="SCY-Zd-gGn"/>
                             <constraint firstItem="raY-Wh-hKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94.5" id="Tz5-xp-G2B"/>
-
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,7 +43,6 @@
     </scenes>
     <resources>
         <image name="LoadingLogo" width="956" height="956"/>
-
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

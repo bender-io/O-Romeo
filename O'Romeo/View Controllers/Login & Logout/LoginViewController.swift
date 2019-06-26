@@ -31,6 +31,11 @@ class LoginViewController: UIViewController {
                 print("There was an error: \(error) : \(#function)")
                 self.presentLoginErrorAlert()
             }
+            PersonController.shared.fetchPersonsFromFirestore { (error) in
+                if let error = error {
+                    print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
+                }
+            }
         }
     }
 
