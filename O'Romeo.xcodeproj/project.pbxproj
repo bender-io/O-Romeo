@@ -58,6 +58,7 @@
 		E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */; };
 		E49AAE2822BD800A0099C45A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2722BD800A0099C45A /* Errors.swift */; };
 		E49AAE2A22C145F20099C45A /* DateLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AAE2922C145F20099C45A /* DateLogController.swift */; };
+		EC719B6422C3D9C6000AE200 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC719B6322C3D9C6000AE200 /* CurrentLocation.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
 		EC9E495122C165B20061AAB4 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495022C165B20061AAB4 /* DateFormatter.swift */; };
@@ -124,6 +125,7 @@
 		E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDetailViewController.swift; sourceTree = "<group>"; };
 		E49AAE2722BD800A0099C45A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		E49AAE2922C145F20099C45A /* DateLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLogController.swift; sourceTree = "<group>"; };
+		EC719B6322C3D9C6000AE200 /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		EC9E495022C165B20061AAB4 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				EC88206022BA625A006438B4 /* Enums.swift */,
 				E49AAE2722BD800A0099C45A /* Errors.swift */,
+				EC719B6322C3D9C6000AE200 /* CurrentLocation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				EC9E495522C16BBE0061AAB4 /* CalendarTableViewCell.swift in Sources */,
 				560BC9D922BD6D82003D7248 /* LaunchScreenViewController.swift in Sources */,
 				E49AAE2A22C145F20099C45A /* DateLogController.swift in Sources */,
+				EC719B6422C3D9C6000AE200 /* CurrentLocation.swift in Sources */,
 				ECFE939922B99CE10042C00A /* Yelp.swift in Sources */,
 				560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */,
 				569A6CCA22B45ADC0025C319 /* AppDelegate.swift in Sources */,

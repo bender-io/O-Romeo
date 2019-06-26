@@ -15,12 +15,11 @@ class YelpController {
     let apiKey = "5lGUJfWuPeOedsyXWTGUSO37-Ct3hL4XnzEXqKdUCJ0uY8CqCualyOwcX3hkh2aN88eLZvrhNkE0TDIwmSCTSFWRom4vVr3zcrZHxbqps49RaPpk-H0PuTxgDrYKXXYx"
 
     let searchBaseURL = "https://api.yelp.com/v3/businesses/search"
-    let locationManager = CLLocation()
-        
-    func fetchRestaurants(searchTerm: String, completion: @escaping ([Yelp]) -> Void) {
+    
+    func fetchRestaurants(searchTerm: String, location: CLLocation, completion: @escaping ([Yelp]) -> Void) {
         guard let baseURL = URL(string: searchBaseURL) else { completion([]) ; return }
-        let latitude = locationManager.coordinate.latitude
-        let longitude = locationManager.coordinate.longitude
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let searchItem = URLQueryItem(name: "term", value: searchTerm)
         let latitudeItem = URLQueryItem(name: "latitude", value: "\(latitude)")

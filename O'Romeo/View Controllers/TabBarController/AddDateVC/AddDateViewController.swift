@@ -105,6 +105,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
             else { return }
         
@@ -115,7 +116,6 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 if let error = error {
                     print("Error saving to calendar 🤬 \(error.localizedDescription)")
                 }
-                
             }
         }
         self.dismiss(animated: true, completion: nil)
