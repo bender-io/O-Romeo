@@ -26,8 +26,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
-        CurrentLocation.shared.findLocation()
-        CurrentLocation.shared.locationManager.startUpdatingLocation()
+//        CurrentLocation.shared.findLocation()
+//        CurrentLocation.shared.locationManager.startUpdatingLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
