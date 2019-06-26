@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogoutViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class LogoutViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func logoutButtonTapped(_ sender: Any) {
         UserController.shared.signOutUser()
+        
+        PersonController.shared.persons = []
+        InterestController.shared.interests = []
+        DateLogController.shared.dateLogs = []
+        
         let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
         UIApplication.shared.windows.first!.rootViewController = loginViewController
     }
