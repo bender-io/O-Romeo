@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Bold.otf">
+            <string>SFCompactRounded-Bold</string>
+        </array>
         <array key="SF-Compact-Rounded-Regular.otf">
             <string>SFCompactRounded-Regular</string>
         </array>
@@ -218,6 +221,37 @@
             </objects>
             <point key="canvasLocation" x="-932" y="-106"/>
         </scene>
+        <!--Logout View Controller-->
+        <scene sceneID="afM-CF-pQa">
+            <objects>
+                <viewController id="0gF-Y4-yp5" customClass="LogoutViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f6e-xP-rRD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-7K-mjf" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="100"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="0gF-Y4-yp5" eventType="touchUpInside" id="jlI-br-cmK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="FJ8-K9-0th" firstAttribute="trailing" secondItem="AQF-7K-mjf" secondAttribute="trailing" constant="20" id="Jqm-2k-dyq"/>
+                            <constraint firstItem="AQF-7K-mjf" firstAttribute="leading" secondItem="FJ8-K9-0th" secondAttribute="leading" constant="20" id="YqL-ik-TP1"/>
+                            <constraint firstItem="AQF-7K-mjf" firstAttribute="top" secondItem="FJ8-K9-0th" secondAttribute="top" constant="20" id="caS-9q-gLV"/>
+                            <constraint firstItem="FJ8-K9-0th" firstAttribute="bottom" secondItem="AQF-7K-mjf" secondAttribute="bottom" constant="20" id="kyq-NC-KXs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FJ8-K9-0th"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJ6-k2-2Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="1349"/>
+        </scene>
         <!--People List View Controller-->
         <scene sceneID="3hd-I7-heg">
             <objects>
@@ -297,6 +331,12 @@
                         <viewLayoutGuide key="safeArea" id="uA6-TB-X4g"/>
                     </view>
                     <navigationItem key="navigationItem" id="CFQ-Ou-zNh">
+                        <barButtonItem key="leftBarButtonItem" title="Setting" id="yvY-ij-8XB">
+                            <connections>
+                                <action selector="settingsButtonTapped:" destination="oqN-4U-ghx" id="6TL-jq-GbL"/>
+                                <segue destination="0gF-Y4-yp5" kind="show" identifier="toLogoutVC" id="HM0-uY-a9f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Add" id="nl1-wF-kBC">
                             <color key="tintColor" name="Highlights"/>
                             <connections>
@@ -312,62 +352,51 @@
             </objects>
             <point key="canvasLocation" x="-29" y="627"/>
         </scene>
-        <!--Calendar Table View Controller-->
+        <!--Date Log-->
         <scene sceneID="vqx-Q0-8Cj">
             <objects>
                 <tableViewController id="CCc-tm-Olh" customClass="CalendarTableViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Primary"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="wAk-Hm-0I3" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" id="LkN-SB-kSM" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wAk-Hm-0I3" id="RiF-VV-Ktz" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LkN-SB-kSM" id="L8G-M7-Vfu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5T7-Lb-FYq">
-                                            <rect key="frame" x="41.5" y="13" width="331" height="104"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-7S-QQ8">
+                                            <rect key="frame" x="20" y="10" width="374" height="110"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yD9-eg-9pj">
-                                                    <rect key="frame" x="8" y="8" width="315" height="69.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-Pb-XRk">
+                                                    <rect key="frame" x="8" y="8" width="358" height="94"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-Vt-Rwh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="69.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-M8-UlD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="94"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(juliet)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-TS-jCq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="153.5" height="19.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(juliet)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87k-b1-vJs">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="16"/>
                                                                     <color key="textColor" name="Highlights"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(event)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdW-vG-Yk7">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="153.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-q7-UHU">
+                                                                    <rect key="frame" x="0.0" y="24.5" width="358" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOe-lz-RYI">
-                                                                    <rect key="frame" x="0.0" y="52.5" width="153.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(event)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhK-4p-Aqw">
+                                                                    <rect key="frame" x="0.0" y="49" width="358" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="UaE-ZY-BdW">
-                                                            <rect key="frame" x="161.5" y="0.0" width="153.5" height="69.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-Ne-4mA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="153.5" height="30.5"/>
-                                                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                                    <color key="textColor" name="White100"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(time)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCy-oo-jn8">
-                                                                    <rect key="frame" x="0.0" y="39.5" width="153.5" height="30"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-tx-3ft">
+                                                                    <rect key="frame" x="0.0" y="73.5" width="358" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <color key="textColor" name="White100"/>
                                                                     <nil key="highlightedColor"/>
@@ -379,25 +408,27 @@
                                             </subviews>
                                             <color key="backgroundColor" name="White10"/>
                                             <constraints>
-                                                <constraint firstItem="yD9-eg-9pj" firstAttribute="top" secondItem="5T7-Lb-FYq" secondAttribute="top" constant="8" id="04a-hw-tA9"/>
-                                                <constraint firstAttribute="trailing" secondItem="yD9-eg-9pj" secondAttribute="trailing" constant="8" id="4FT-Si-KJF"/>
-                                                <constraint firstItem="yD9-eg-9pj" firstAttribute="leading" secondItem="5T7-Lb-FYq" secondAttribute="leading" constant="8" id="aaZ-c4-ekL"/>
+                                                <constraint firstAttribute="bottom" secondItem="yOp-Pb-XRk" secondAttribute="bottom" constant="8" id="Rdv-ar-2zF"/>
+                                                <constraint firstItem="yOp-Pb-XRk" firstAttribute="top" secondItem="tbc-7S-QQ8" secondAttribute="top" constant="8" id="Z57-Gt-scF"/>
+                                                <constraint firstAttribute="trailing" secondItem="yOp-Pb-XRk" secondAttribute="trailing" constant="8" id="f1a-Id-aqJ"/>
+                                                <constraint firstItem="yOp-Pb-XRk" firstAttribute="leading" secondItem="tbc-7S-QQ8" secondAttribute="leading" constant="8" id="fwZ-bJ-slT"/>
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" name="Primary"/>
                                     <constraints>
-                                        <constraint firstItem="5T7-Lb-FYq" firstAttribute="width" secondItem="RiF-VV-Ktz" secondAttribute="width" multiplier="0.8" id="5zS-zK-5bm"/>
-                                        <constraint firstItem="5T7-Lb-FYq" firstAttribute="height" secondItem="RiF-VV-Ktz" secondAttribute="height" multiplier="0.8" id="e7f-2b-4UC"/>
+                                        <constraint firstItem="tbc-7S-QQ8" firstAttribute="top" secondItem="L8G-M7-Vfu" secondAttribute="top" constant="10" id="FPV-RE-h0S"/>
+                                        <constraint firstAttribute="bottom" secondItem="tbc-7S-QQ8" secondAttribute="bottom" constant="10" id="QbM-YI-ioW"/>
+                                        <constraint firstItem="tbc-7S-QQ8" firstAttribute="leading" secondItem="L8G-M7-Vfu" secondAttribute="leading" constant="20" id="T9X-xC-ZYN"/>
+                                        <constraint firstAttribute="trailing" secondItem="tbc-7S-QQ8" secondAttribute="trailing" constant="20" id="ZDB-m9-IV2"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="Primary"/>
                                 <connections>
-                                    <outlet property="addressLabel" destination="xOe-lz-RYI" id="YCn-dz-zD0"/>
-                                    <outlet property="dateLabel" destination="QAS-Ne-4mA" id="jbC-6y-vPo"/>
-                                    <outlet property="eventNameLabel" destination="rdW-vG-Yk7" id="B0J-o7-IOH"/>
-                                    <outlet property="julietNameLabel" destination="v5x-TS-jCq" id="9Tb-NS-cht"/>
-                                    <outlet property="timeLabel" destination="TCy-oo-jn8" id="cGw-NV-Fe1"/>
-                                    <segue destination="T8g-8l-1y4" kind="presentation" identifier="editDateDetailVC" id="DEl-sq-28l"/>
+                                    <outlet property="addressLabel" destination="2fs-tx-3ft" id="P8b-He-9VB"/>
+                                    <outlet property="dateLabel" destination="5LW-q7-UHU" id="ayj-pQ-gpI"/>
+                                    <outlet property="eventNameLabel" destination="BhK-4p-Aqw" id="CgN-kg-9Wc"/>
+                                    <outlet property="julietNameLabel" destination="87k-b1-vJs" id="C4m-dE-Wym"/>
+                                    <segue destination="T8g-8l-1y4" kind="show" identifier="editDateDetailVC" id="Ws6-FH-f73"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -406,7 +437,7 @@
                             <outlet property="delegate" destination="CCc-tm-Olh" id="TM4-5V-CF7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="el9-Wo-fQN">
+                    <navigationItem key="navigationItem" title="Date Log" id="el9-Wo-fQN">
                         <barButtonItem key="rightBarButtonItem" image="Add" id="WnO-EG-dWC">
                             <color key="tintColor" name="Highlights"/>
                             <connections>
@@ -417,7 +448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFv-Nr-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2771" y="627"/>
+            <point key="canvasLocation" x="-2771.0144927536235" y="626.78571428571422"/>
         </scene>
         <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
@@ -428,13 +459,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80d-Qh-DIS">
-                                <rect key="frame" x="20" y="64" width="374" height="21.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" name="Highlights"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uTp-F7-HZC">
-                                <rect key="frame" x="20" y="93.5" width="374" height="132"/>
+                                <rect key="frame" x="20" y="137.5" width="374" height="132"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ahg-0h-ICn">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -481,7 +512,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rRR-zm-A5H">
-                                <rect key="frame" x="99" y="245.5" width="216" height="40"/>
+                                <rect key="frame" x="99" y="289.5" width="216" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-J0-Q9K" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
@@ -1011,6 +1042,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="Highlights"/>
                         <color key="barTintColor" name="Primary"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="Highlights"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1036,6 +1070,9 @@
         <namedColor name="Highlights">
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Highlights">
+            <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1052,6 +1089,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="2fo-xV-UHK"/>
         <segue reference="7N5-EK-FNd"/>
-        <segue reference="DEl-sq-28l"/>
+        <segue reference="Ws6-FH-f73"/>
     </inferredMetricsTieBreakers>
 </document>

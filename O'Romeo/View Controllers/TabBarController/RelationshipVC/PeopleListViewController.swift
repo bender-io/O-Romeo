@@ -9,9 +9,8 @@
 import UIKit
 
 class PeopleListViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
-
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var helperLabel: UILabel!
 
@@ -39,9 +38,12 @@ class PeopleListViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    
+    // MARK: - IBActions
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+    }
+    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editPersonDetailVC" {
             guard let index = tableView.indexPathForSelectedRow,

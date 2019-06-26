@@ -12,6 +12,7 @@
 		560BF55522B972CC000E7F66 /* extensionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55422B972CC000E7F66 /* extensionsUI.swift */; };
 		560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55822B97737000E7F66 /* RomeoButton.swift */; };
 		560BF55B22B9784F000E7F66 /* RomeoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560BF55A22B9784F000E7F66 /* RomeoTextField.swift */; };
+		560D5FAD22C3E5BA00D2A0AB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5FAC22C3E5BA00D2A0AB /* LogoutViewController.swift */; };
 		563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */; };
 		563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FD19022BAE31200ADA9CA /* SearchTableViewCell.swift */; };
 		563FD19522BC249700ADA9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563FD19422BC249700ADA9CA /* GoogleService-Info.plist */; };
@@ -77,6 +78,7 @@
 		560BF55422B972CC000E7F66 /* extensionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsUI.swift; sourceTree = "<group>"; };
 		560BF55822B97737000E7F66 /* RomeoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoButton.swift; sourceTree = "<group>"; };
 		560BF55A22B9784F000E7F66 /* RomeoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoTextField.swift; sourceTree = "<group>"; };
+		560D5FAC22C3E5BA00D2A0AB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		563FD18B22BAA41B00ADA9CA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		563FD19022BAE31200ADA9CA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		563FD19422BC249700ADA9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -180,8 +182,8 @@
 		563FD18D22BAB4AF00ADA9CA /* RelationshipVC */ = {
 			isa = PBXGroup;
 			children = (
-				E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */,
 				E49AAE1B22BAA4040099C45A /* PeopleListViewController.swift */,
+				E49AAE1F22BAA6CB0099C45A /* PersonDetailViewController.swift */,
 				E49AAE2122BAAF350099C45A /* InterestDetailViewController.swift */,
 				E49AAE1D22BAA5030099C45A /* PersonTableViewCell.swift */,
 			);
@@ -266,20 +268,21 @@
 		569A6CE522B58A270025C319 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				569A6CEA22B58A7E0025C319 /* Login */,
+				569A6CEA22B58A7E0025C319 /* Login & Logout */,
 				569A6CEB22B58A910025C319 /* TabBarController */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		569A6CEA22B58A7E0025C319 /* Login */ = {
+		569A6CEA22B58A7E0025C319 /* Login & Logout */ = {
 			isa = PBXGroup;
 			children = (
 				560BC9D822BD6D82003D7248 /* LaunchScreenViewController.swift */,
 				569A6CE622B58A430025C319 /* LoginViewController.swift */,
 				569A6CE822B58A580025C319 /* SignupViewController.swift */,
+				560D5FAC22C3E5BA00D2A0AB /* LogoutViewController.swift */,
 			);
-			path = Login;
+			path = "Login & Logout";
 			sourceTree = "<group>";
 		};
 		569A6CEB22B58A910025C319 /* TabBarController */ = {
@@ -474,6 +477,7 @@
 				563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
 				ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */,
+				560D5FAD22C3E5BA00D2A0AB /* LogoutViewController.swift in Sources */,
 				E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
