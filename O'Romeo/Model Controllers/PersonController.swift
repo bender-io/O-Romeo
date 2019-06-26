@@ -58,13 +58,13 @@ class PersonController {
         })
     }
 
-    /// Deletes the person document using the passed in personUID
+    /// Deletes the person document from the given person
     ///
     /// - Parameters:
-    ///   - personUID: Uid of person to be deleted (String)
+    ///   - person: Person to be deleted (Person)
     ///   - completion: error (Error)
-    func deletePerson(personUID: String, completion: @escaping (Error?) -> Void) {
-        db.collection("person").document(personUID).delete { (error) in
+    func deletePerson(person: Person, completion: @escaping (Error?) -> Void) {
+        db.collection("person").document(person.personUID).delete { (error) in
             if let error = error {
                 print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
@@ -72,11 +72,27 @@ class PersonController {
         }
         guard let currentUser = Auth.auth().currentUser else { completion(Errors.noCurrentUser); return }
         db.collection("user").document(currentUser.uid).updateData([
-            "personUIDs" : FieldValue.arrayRemove([personUID])
+            "personUIDs" : FieldValue.arrayRemove([person.personUID])
         ]) { (error) in
             if let error = error {
                 print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+            }
+        }
+        guard let interests = person.interests else { return }
+        for interest in interests {
+            InterestController.shared.deleteInterest(interest: nil, interestUID: interest) { (error) in
+                if let error = error {
+                    print("There was an error deleting the interest: \(error) : \(#function)")
+                }
+            }
+        }
+        guard let dateLogs = person.dateLog else { return }
+        for dateLog in dateLogs {
+            DateLogController.shared.deleteDateLog(dateLog: nil, dateLogUID: dateLog) { (error) in
+                if let error = error {
+                    print("There was an error deleting the dateLog: \(error) : \(#function)")
+                }
             }
         }
         completion(nil)
