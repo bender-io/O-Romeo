@@ -55,24 +55,33 @@ class InterestController {
         })
     }
 
-    /// Deletes the interest with the given interestUID
+    /// Deletes the interest with the given interest
     ///
     /// - Parameters:
     ///   - interest: Interest to be deleted (Interest)
     ///   - completion: error (Error)
-    func deleteInterest(interest: Interest, completion: @escaping (Error?) -> Void) {
-        db.collection("interest").document(interest.interestUID).delete { (error) in
-            if let error = error {
-                print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
-                completion(error)
+    func deleteInterest(interest: Interest?, interestUID: String?, completion: @escaping (Error?) -> Void) {
+        if let interest = interest {
+            db.collection("interest").document(interest.interestUID).delete { (error) in
+                if let error = error {
+                    print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
             }
-        }
-        db.collection("person").document(interest.personUID).updateData([
-            "interests" : FieldValue.arrayRemove([interest.interestUID])
-        ]) { (error) in
-            if let error = error {
-                print("There was an error deleting the interestUID in person: \(error) : \(error.localizedDescription) : \(#function)")
-                completion(error)
+            db.collection("person").document(interest.personUID).updateData([
+                "interests" : FieldValue.arrayRemove([interest.interestUID])
+            ]) { (error) in
+                if let error = error {
+                    print("There was an error deleting the interestUID in person: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
+            }
+        } else if let interestUID = interestUID {
+            db.collection("interest").document(interestUID).delete { (error) in
+                if let error = error {
+                    print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
             }
         }
         completion(nil)

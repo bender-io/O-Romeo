@@ -59,25 +59,34 @@ class DateLogController {
         })
     }
     
-    /// Deletes the interest with the given dateLogUID
+    /// Deletes the interest with the given dateLog
     ///
     /// - Parameters:
     ///   - dateLog: DateLog to be deleted (DateLog)
     ///   - completion: error (Error)
-    func deleteDateLog(dateLog: DateLog, completion: @escaping (Error?) -> Void) {
-        db.collection("dateLog").document(dateLog.dateLogUID).delete { (error) in
-            if let error = error {
-                print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
-                completion(error)
+    func deleteDateLog(dateLog: DateLog?, dateLogUID: String?, completion: @escaping (Error?) -> Void) {
+        if let dateLog = dateLog {
+            db.collection("dateLog").document(dateLog.dateLogUID).delete { (error) in
+                if let error = error {
+                    print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
             }
-        }
-        guard let personUID = dateLog.personUID else { completion(Errors.unwrapPersonUID); return }
-        db.collection("person").document(personUID).updateData([
-            "dateLog" : FieldValue.arrayRemove([dateLog.dateLogUID])
-        ]) { (error) in
-            if let error = error {
-                print("There was an error deleting the dateLogUID from person: \(error) : \(error.localizedDescription) : \(#function)")
-                completion(error)
+            guard let personUID = dateLog.personUID else { completion(Errors.unwrapPersonUID); return }
+            db.collection("person").document(personUID).updateData([
+                "dateLog" : FieldValue.arrayRemove([dateLog.dateLogUID])
+            ]) { (error) in
+                if let error = error {
+                    print("There was an error deleting the dateLogUID from person: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
+            }
+        } else if let dateLogUID = dateLogUID {
+            db.collection("dateLog").document(dateLogUID).delete { (error) in
+                if let error = error {
+                    print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
             }
         }
         completion(nil)

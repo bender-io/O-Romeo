@@ -66,7 +66,7 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         if editingStyle == .delete {
             // Delete the row from the data source
             let dateLog = dateLogs[indexPath.row]
-            DateLogController.shared.deleteDateLog(dateLog: dateLog) { (error) in
+            DateLogController.shared.deleteDateLog(dateLog: dateLog, dateLogUID: nil) { (error) in
                 if let error = error {
                     print("There was an error deleting the datelog: \(error) : \(#function)")
                 }

@@ -76,7 +76,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let person = PersonController.shared.persons[indexPath.row]
-            PersonController.shared.deletePerson(personUID: person.personUID) { (error) in
+            PersonController.shared.deletePerson(person: person) { (error) in
                 if let error = error {
                     print("There was an error deleting the person: \(error) : \(#function)")
                 }

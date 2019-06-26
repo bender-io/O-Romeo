@@ -129,7 +129,7 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let interest = InterestController.shared.interests[indexPath.row]
-            InterestController.shared.deleteInterest(interest: interest) { (error) in
+            InterestController.shared.deleteInterest(interest: interest, interestUID: nil) { (error) in
                 if let error = error {
                     print("There was an error deleting the interest: \(error) : \(#function)")
                 }
