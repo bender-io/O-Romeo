@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,23 +18,26 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Properties
     var eventType: EventType = .nightLife
     var eventResults: [Event] = []
+    var location: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
-            self.eventResults = event
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        CurrentLocation.shared.findLocation()
+        CurrentLocation.shared.locationManager.startUpdatingLocation()      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        CurrentLocation.shared.delegate = self
     }
     
     // MARK: - IBActions
     @IBAction func eventSegmentControl(_ sender: Any) {
+        guard let location = location else { return }
         if segmentedControl.selectedSegmentIndex == 0 {
             eventType = .nightLife
-            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
+            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -41,16 +45,15 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         } else if segmentedControl.selectedSegmentIndex == 1 {
             eventType = .food
-            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
+            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    
                 }
             }
         } else if segmentedControl.selectedSegmentIndex == 2 {
             eventType = .culture
-            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
+            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -58,7 +61,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         } else if segmentedControl.selectedSegmentIndex == 3 {
             eventType = .music
-            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue) { (event) in
+            EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
                 self.eventResults = event
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -102,5 +105,18 @@ extension EventViewController: EventTableViewCellDelegate {
         guard let addDateVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "addDateVC") as? AddDateViewController else { return }
         addDateVC.event = event
         present(addDateVC, animated: true, completion: nil)
+    }
+}
+
+extension EventViewController: CurrentLocationDelegate {
+    func locationWasUpdated(location: CLLocation) {
+        self.location = location
+        
+        EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
+            self.eventResults = event
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ class CurrentLocation: NSObject {
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
-    let placemarks = CLPlacemark()
+//    let placemarks: CLPlacemark?
     var location: CLLocation?
     var isUpdatingLocation = false
     weak var delegate: CurrentLocationDelegate?
@@ -34,6 +34,25 @@ class CurrentLocation: NSObject {
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         }
     }
+    
+    func getCityName(location: CLLocation, completion: @escaping (String?) -> Void) {
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                print("City name \(error.localizedDescription)")
+                completion(nil)
+            }
+
+            guard let placemarks = placemarks else { return }
+            let cityName = placemarks.first?.locality
+            completion(cityName)
+        }
+    }
+    
+//    func getCityName(from placemark: CLPlacemark) -> String {
+//        guard let placemark = placemark else { return }
+//        let city = placemark.locality
+//        return String(city)
+//    }
     
     func findLocation() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
