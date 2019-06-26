@@ -46,8 +46,6 @@ class DateLogController {
                     print("There was an error adding to calendar: \(error.localizedDescription) : \(#function)")
                 } else {
                     guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
-                    let dateLog = DateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, dateLogUID: docID, description: description)
-                    self.dateLogs.append(dateLog)
                     PersonController.shared.updatePersonDateLog(for: personUID, with: docID, completion: { (error) in
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")
@@ -59,10 +57,11 @@ class DateLogController {
         })
     }
     
-    /// Deletes the interest with the given dateLog
+    /// Deletes the interest with the given dateLog or dateLog UID
     ///
     /// - Parameters:
-    ///   - dateLog: DateLog to be deleted (DateLog)
+    ///   - dateLog: DateLog to be deleted (DateLog?)
+    ///   - dateLogUID: Uid of dateLog to be deleted (String?)
     ///   - completion: error (Error)
     func deleteDateLog(dateLog: DateLog?, dateLogUID: String?, completion: @escaping (Error?) -> Void) {
         if let dateLog = dateLog {
@@ -129,9 +128,11 @@ class DateLogController {
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }
-            
+            print("NUMBER 1--- \(self.dateLogs)")
             let fetchedDateLogs = snapshot.documents.compactMap { DateLog(from: $0.data(), uid: $0.documentID) }
             self.dateLogs.append(contentsOf: fetchedDateLogs)
+            print("FETCHED LOGSS ---- \(fetchedDateLogs)")
+            print("NUMBER 2--- \(self.dateLogs)")
             completion(nil)
         }
     }
