@@ -14,4 +14,14 @@ extension String {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         return formatter.date(from: self) ?? Date()
     }
+    
+    func shortDateStyle() -> String {
+        let formatter = DateFormatter()
+        //formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "h:mm a 'on' MMMM dd, yyyy"
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        let date = formatter.date(from: self) ?? Date()
+        return "\(date)"
+    }
 }
