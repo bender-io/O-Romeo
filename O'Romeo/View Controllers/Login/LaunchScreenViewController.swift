@@ -28,19 +28,18 @@ class LaunchScreenViewController: UIViewController {
             if let error = error {
                 print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
             }
-        }
-        
-        // MARK: - Screen Segues
-        let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let home: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if let _ = Auth.auth().currentUser {
-                let homeViewController = home.instantiateViewController(withIdentifier: "HomeViewController")
-                UIApplication.shared.windows.first!.rootViewController = homeViewController
-            } else {
-                let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
-                UIApplication.shared.windows.first!.rootViewController = loginViewController
+            // MARK: - Screen Segues
+            let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let home: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                if let _ = Auth.auth().currentUser {
+                    let homeViewController = home.instantiateViewController(withIdentifier: "HomeViewController")
+                    UIApplication.shared.windows.first!.rootViewController = homeViewController
+                } else {
+                    let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
+                    UIApplication.shared.windows.first!.rootViewController = loginViewController
+                }
             }
         }
     }
