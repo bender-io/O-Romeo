@@ -107,13 +107,18 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
             else { return }
-        DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
-            if let error = error {
-                print("Error saving to calendar 🤬 \(error.localizedDescription)")
+        
+        if let dateLog = dateLog {
+            DateLogController.shared.updateDateLog(dateLog: dateLog, date: date.asDate(), julietName: julietName, event: event, address: address, description: "")
+        } else {
+            DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
+                if let error = error {
+                    print("Error saving to calendar 🤬 \(error.localizedDescription)")
+                }
+                
             }
-            
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
