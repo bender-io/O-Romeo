@@ -58,15 +58,24 @@ class InterestController {
     /// Deletes the interest with the given interestUID
     ///
     /// - Parameters:
-    ///   - interestUID: Uid of interest to be deleted (String)
+    ///   - interest: Interest to be deleted (Interest)
     ///   - completion: error (Error)
-    func deleteInterest(interestUID: String, completion: @escaping (Error?) -> Void) {
-        db.collection("interest").document(interestUID).delete { (error) in
+    func deleteInterest(interest: Interest, completion: @escaping (Error?) -> Void) {
+        db.collection("interest").document(interest.interestUID).delete { (error) in
             if let error = error {
                 print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
             }
         }
+        db.collection("person").document(interest.personUID).updateData([
+            "interests" : FieldValue.arrayRemove([interest.interestUID])
+        ]) { (error) in
+            if let error = error {
+                print("There was an error deleting the interestUID in person: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+        completion(nil)
     }
 
     /// Updates the interest with the specified parameters.

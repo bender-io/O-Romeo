@@ -125,4 +125,17 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let interest = InterestController.shared.interests[indexPath.row]
+            InterestController.shared.deleteInterest(interest: interest) { (error) in
+                if let error = error {
+                    print("There was an error deleting the interest: \(error) : \(#function)")
+                }
+            }
+            InterestController.shared.interests.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

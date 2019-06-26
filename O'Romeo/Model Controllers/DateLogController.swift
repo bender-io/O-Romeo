@@ -62,15 +62,25 @@ class DateLogController {
     /// Deletes the interest with the given dateLogUID
     ///
     /// - Parameters:
-    ///   - dateLogUID: Uid of dateLog to be deleted (String)
+    ///   - dateLog: DateLog to be deleted (DateLog)
     ///   - completion: error (Error)
-    func deleteDateLog(dateLogUID: String, completion: @escaping (Error?) -> Void) {
-        db.collection("dateLog").document(dateLogUID).delete { (error) in
+    func deleteDateLog(dateLog: DateLog, completion: @escaping (Error?) -> Void) {
+        db.collection("dateLog").document(dateLog.dateLogUID).delete { (error) in
             if let error = error {
                 print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
             }
         }
+        guard let personUID = dateLog.personUID else { completion(Errors.unwrapPersonUID); return }
+        db.collection("person").document(personUID).updateData([
+            "dateLog" : FieldValue.arrayRemove([dateLog.dateLogUID])
+        ]) { (error) in
+            if let error = error {
+                print("There was an error deleting the dateLogUID from person: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+        completion(nil)
     }
     
     /// Updates the dateLog with the specified parameters

@@ -70,6 +70,16 @@ class PersonController {
                 completion(error)
             }
         }
+        guard let currentUser = Auth.auth().currentUser else { completion(Errors.noCurrentUser); return }
+        db.collection("user").document(currentUser.uid).updateData([
+            "personUIDs" : FieldValue.arrayRemove([personUID])
+        ]) { (error) in
+            if let error = error {
+                print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+        completion(nil)
     }
 
     /// Takes in a persons name and an interest. Filters through the persons array ([Person]) to find the person with matching name. Then grabs the personUID of the person and uses that to find the persons document in firestore. Once the document is found, the interest is added to the intrests array in the person document.
