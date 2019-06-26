@@ -105,12 +105,14 @@ class DateLogController {
         db.collection("dateLog").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching dateLogs: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
             }
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }
             
-            self.dateLogs = snapshot.documents.compactMap { DateLog(from: $0.data(), uid: $0.documentID) }
+            let fetchedDateLogs = snapshot.documents.compactMap { DateLog(from: $0.data(), uid: $0.documentID) }
+            self.dateLogs.append(contentsOf: fetchedDateLogs)
             completion(nil)
         }
     }

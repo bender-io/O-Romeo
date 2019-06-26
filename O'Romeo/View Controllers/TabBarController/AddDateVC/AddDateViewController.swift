@@ -67,7 +67,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateTF.text = dateFormatter.string(from: sender.date)
     }
