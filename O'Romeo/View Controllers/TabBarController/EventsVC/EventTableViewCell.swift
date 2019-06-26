@@ -37,7 +37,7 @@ class EventTableViewCell: UITableViewCell {
         self.cityLabel.text = event.cityName
         self.descriptionLabel.text = event.eventDescription
         self.dateLabel.text = event.startTime
-        self.urlButton.titleLabel?.text = event.url
+        self.urlButton.setTitle("Click here for more info", for: .normal)
 
         EventfulController.shared.fetchImageFor(eventful: event) { (image) in
             if let image = image {
