@@ -22,6 +22,7 @@ class CalendarTableViewController: UITableViewController {
         loadData()
     }
     
+    // STILL NOT WORKING
     func loadData() {
         for person in PersonController.shared.persons {
             DateLogController.shared.fetchDateLogFromFirestore(for: person) { (error) in
@@ -29,9 +30,11 @@ class CalendarTableViewController: UITableViewController {
                     print("fetching date log \(error.localizedDescription)")
                 }
                 self.dateLogs.append(contentsOf: DateLogController.shared.dateLogs)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
-        tableView.reloadData()
     }
 
     // MARK: - Table view data source

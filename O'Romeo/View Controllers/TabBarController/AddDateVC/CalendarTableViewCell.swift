@@ -27,6 +27,6 @@ class CalendarTableViewCell: UITableViewCell {
         self.julietNameLabel.text = dateLog.julietName
         self.eventNameLabel.text = dateLog.event
         self.addressLabel.text = dateLog.address
-        self.dateLabel.text = "\(String(describing: dateLog.date))"
+        self.dateLabel.text = "\(String(describing: dateLog.date.shortDateStyle()))"
     }
 }
