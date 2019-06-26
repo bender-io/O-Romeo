@@ -179,6 +179,7 @@
                                         <connections>
                                             <outlet property="categoriesLabel" destination="eAo-tv-aCF" id="bfH-0f-m6l"/>
                                             <outlet property="directionsLabel" destination="lPQ-PJ-AZC" id="6wQ-ZC-UF8"/>
+                                            <outlet property="distanceLabel" destination="GgJ-da-hI4" id="TgX-4R-Y5O"/>
                                             <outlet property="phoneNumberLabel" destination="6fq-ce-Vjh" id="ZVX-LL-WNn"/>
                                             <outlet property="ratingLabel" destination="vYH-sb-Kpw" id="VaJ-h3-KE3"/>
                                             <outlet property="searchImageView" destination="Qqu-nv-Dfz" id="HzB-G4-W1H"/>

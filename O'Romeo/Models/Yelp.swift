@@ -20,9 +20,10 @@ struct Yelp: Codable {
     let location: Location?
     let price: Price?
     let categories: [Category]?
+    let distance: Double
     
     enum CodingKeys: String, CodingKey {
-        case name, location, rating, price, categories
+        case name, location, rating, price, categories, distance
         case imageURL = "image_url"
         case displayPhone = "display_phone"
     }
