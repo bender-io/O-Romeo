@@ -10,9 +10,17 @@ import UIKit
 
 class LogoutViewController: UIViewController {
 
+    // MARK: - Properties
+    let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - IBActions
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        UserController.shared.signOutUser()
+        let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
+        UIApplication.shared.windows.first!.rootViewController = loginViewController
     }
 }

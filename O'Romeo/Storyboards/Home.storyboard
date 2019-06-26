@@ -219,6 +219,48 @@
             </objects>
             <point key="canvasLocation" x="-932" y="-106"/>
         </scene>
+        <!--Logout View Controller-->
+        <scene sceneID="LVK-gL-Kke">
+            <objects>
+                <viewController id="O7J-a3-ezk" customClass="LogoutViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c7w-XB-eIz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-HW-ICU" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="753" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QEf-j0-2eh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="14"/>
+                                <state key="normal" title="logout ">
+                                    <color key="titleColor" name="White100"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="O7J-a3-ezk" eventType="touchUpInside" id="qPz-zc-AOY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="Wgn-0u-o21">
+                                <rect key="frame" x="100" y="128" width="214" height="145"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Primary"/>
+                        <constraints>
+                            <constraint firstItem="zVx-HW-ICU" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="20" id="KcZ-dc-ile"/>
+                            <constraint firstItem="zVx-HW-ICU" firstAttribute="centerX" secondItem="MFx-at-PSb" secondAttribute="centerX" id="bdK-jh-Wi6"/>
+                            <constraint firstItem="Wgn-0u-o21" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="100" id="dnV-7Q-2T6"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="Wgn-0u-o21" secondAttribute="trailing" constant="100" id="j2K-RI-d3q"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="zVx-HW-ICU" secondAttribute="trailing" constant="20" id="oeQ-nJ-oLn"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="bottom" secondItem="zVx-HW-ICU" secondAttribute="bottom" constant="20" id="qpD-DL-tif"/>
+                            <constraint firstItem="Wgn-0u-o21" firstAttribute="top" secondItem="MFx-at-PSb" secondAttribute="top" constant="40" id="uGJ-I0-SP5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MFx-at-PSb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2js-AH-n8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="1370"/>
+        </scene>
         <!--People List View Controller-->
         <scene sceneID="3hd-I7-heg">
             <objects>
@@ -298,6 +340,11 @@
                         <viewLayoutGuide key="safeArea" id="uA6-TB-X4g"/>
                     </view>
                     <navigationItem key="navigationItem" id="CFQ-Ou-zNh">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="6Uo-yP-iTZ">
+                            <connections>
+                                <segue destination="O7J-a3-ezk" kind="show" identifier="toLogoutVC" id="qT7-Gw-5mx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Add" id="nl1-wF-kBC">
                             <color key="tintColor" name="Highlights"/>
                             <connections>
@@ -1024,6 +1071,7 @@
         <image name="Martini" width="31" height="34"/>
         <image name="Music" width="48" height="48"/>
         <image name="Relationships" width="34" height="23"/>
+        <image name="Romeo" width="820" height="145"/>
         <image name="Search" width="23" height="25"/>
         <namedColor name="Highlights">
             <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
