@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -19,13 +20,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
     var yelpResults: [Yelp] = []
     var isExpanded = false
-
+    var location: CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
+        CurrentLocation.shared.findLocation()
+        CurrentLocation.shared.locationManager.startUpdatingLocation()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        CurrentLocation.shared.delegate = self
+    }
 
     // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
@@ -64,8 +72,10 @@ extension SearchViewController : UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.tag == 0 {
-            guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-            YelpController.shared.fetchRestaurants(searchTerm: searchText) { (yelps) in
+            guard let searchText = searchBar.text, !searchText.isEmpty,
+            let location = location
+            else { return }
+            YelpController.shared.fetchRestaurants(searchTerm: searchText, location: location) { (yelps) in
                 self.yelpResults = yelps
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -80,5 +90,11 @@ extension SearchViewController: SearchTableViewCellDelegate {
         guard let addDateVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "addDateVC") as? AddDateViewController else { return }
         addDateVC.yelp = yelp
         present(addDateVC, animated: true, completion: nil)
+    }
+}
+
+extension SearchViewController: CurrentLocationDelegate {
+    func locationWasUpdated(location: CLLocation) {
+        self.location = location
     }
 }
