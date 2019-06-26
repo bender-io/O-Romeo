@@ -22,7 +22,8 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     var yelp: Yelp? {
         didSet {
             updateViews()
@@ -42,6 +43,7 @@ class SearchTableViewCell: UITableViewCell {
         self.categoriesLabel.text = categories
         self.directionsLabel.text = location
         self.phoneNumberLabel.text = yelp.displayPhone
+        self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
         YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
             DispatchQueue.main.async {
                 self.searchImageView.image = image
