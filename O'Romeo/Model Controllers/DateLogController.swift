@@ -91,27 +91,48 @@ class DateLogController {
         completion(nil)
     }
     
-    /// Updates the dateLog with the specified parameters
+    /// Updates the dateLog with the specified parameters. If the person is different, updates the person documents
     ///
     /// - Parameters:
     ///   - dateLog: DateLog to be updated (DateLog)
     ///   - date: New date (Date)
-    ///   - julietName: New person name (String)
+    ///   - person: Person object (Person)
     ///   - event: New event name (String)
     ///   - address: New Address (String)
     ///   - description: New Description (String)
-    func updateDateLog(dateLog: DateLog, date: Date, julietName: String, event: String, address: String, description: String) {
+    func updateDateLog(dateLog: DateLog, date: Date, person: Person, event: String, address: String, description: String, completion: @escaping (Error?) -> Void) {
         db.collection("dateLog").document(dateLog.dateLogUID).updateData([
             "date" : date,
-            "julietName" : julietName,
+            "julietName" : person.name,
             "event" : event,
             "address" : address,
             "description" : description
         ]) { (error) in
             if let error = error {
                 print("There was an error updating the calendar event: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
             }
         }
+        if dateLog.personUID != person.personUID {
+            guard let personUID = dateLog.personUID else { completion(Errors.unwrapPersonUID); return }
+            db.collection("person").document(personUID).updateData([
+                "dateLog" : FieldValue.arrayRemove([dateLog.dateLogUID])
+            ]) { (error) in
+                if let error = error {
+                    print("There was an error updating old person: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
+            }
+            db.collection("person").document(person.personUID).updateData([
+                "dateLog" : FieldValue.arrayUnion([dateLog.dateLogUID])
+            ]) { (error) in
+                if let error = error {
+                    print("There was an error updating new person: \(error) : \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                }
+            }
+        }
+        completion(nil)
     }
     
     /// Fetches the dateLog for the specified person from the firestore
