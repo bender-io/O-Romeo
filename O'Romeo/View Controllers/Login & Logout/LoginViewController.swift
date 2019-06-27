@@ -24,18 +24,18 @@ class LoginViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let emailText = usernameTextField.text, 
-            let passwordText = passwordTextField.text
+            let passwordText = passwordTextField.text,
+            !passwordText.isEmpty
             else { print("Couldn't unwrap textfield text: \(#function)"); return }
         UserController.shared.signInUserWith(email: emailText, password: passwordText) { (error) in
             if let error = error {
                 print("There was an error: \(error) : \(#function)")
                 self.presentLoginErrorAlert()
-            }
-            PersonController.shared.fetchPersonsFromFirestore { (error) in
-                if let error = error {
-                    print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
-                }
-                else {
+            } else {
+                PersonController.shared.fetchPersonsFromFirestore { (error) in
+                    if let error = error {
+                        print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
+                    }
                     self.performSegue(withIdentifier: "loginToHomeVC", sender: self)
                 }
             }
