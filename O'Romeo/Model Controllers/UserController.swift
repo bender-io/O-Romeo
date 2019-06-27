@@ -32,6 +32,7 @@ class UserController {
             if let error = error {
                 print("There was an error creating the user: \(error) : \(error.localizedDescription): \(#function)")
                 completion(error)
+                return
             }
 
             guard let data = data else { completion(Errors.unwrapData); return }
@@ -41,7 +42,8 @@ class UserController {
                 ], completion: { (error) in
                     if let error = error {
                         print("Error adding document: \(error) : \(error.localizedDescription): \(#function)")
-
+                        completion(error)
+                        return
                     } else {
                         print("Document added with ID: \(data.user.uid)")
                     }
@@ -76,6 +78,7 @@ class UserController {
             if let error = error {
                 print("There was an error signing in the user: \(error) : \(error.localizedDescription)")
                 completion(error)
+                return
             }
             completion(nil)
         }

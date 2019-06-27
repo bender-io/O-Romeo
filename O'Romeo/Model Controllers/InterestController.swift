@@ -41,11 +41,15 @@ class InterestController {
             ], completion: { (error) in
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription)")
+                    completion(error)
+                    return
                 } else {
                     guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
                     PersonController.shared.updatePersonInterests(for: personUID, with: docID, completion: { (error) in
                         if let error = error {
                             print("There was an error: \(error.localizedDescription): \(#function)")
+                            completion(error)
+                            return
                         }
                     })
                     print("Document added with ID: \(docID)")
@@ -67,6 +71,7 @@ class InterestController {
                 if let error = error {
                     print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
             db.collection("person").document(interest.personUID).updateData([
@@ -75,6 +80,7 @@ class InterestController {
                 if let error = error {
                     print("There was an error deleting the interestUID in person: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
         } else if let interestUID = interestUID {
@@ -82,6 +88,7 @@ class InterestController {
                 if let error = error {
                     print("There was an error deleting the interest: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
         }
@@ -116,6 +123,8 @@ class InterestController {
         db.collection("interest").whereField("personUID", isEqualTo: person.personUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching interests: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+                return
             }
 
             guard let snapshot = snapshot,
