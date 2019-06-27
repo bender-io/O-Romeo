@@ -30,17 +30,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search locations" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Wa-Blx">
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search locations" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Wa-Blx" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <color key="barTintColor" name="Primary"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="m6i-b0-Fee" id="GQr-0i-Sva"/>
                                 </connections>
                             </searchBar>
-                            <searchBar tag="1" contentMode="redraw" barStyle="black" placeholder="Location" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-Fm-O8R">
+                            <searchBar tag="1" contentMode="redraw" barStyle="black" placeholder="Location" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-Fm-O8R" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="414" height="56"/>
-                                <color key="barTintColor" name="Primary"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -195,7 +193,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="uCu-Wa-Blx" firstAttribute="trailing" secondItem="BdA-6w-R4c" secondAttribute="trailing" id="1ab-n5-jj3"/>
                             <constraint firstItem="WV7-tn-5Kc" firstAttribute="top" secondItem="eDz-Fm-O8R" secondAttribute="bottom" constant="20" id="BLP-ve-75K"/>
@@ -807,8 +804,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5yA-6F-XAo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Primary"/>
-                        <color key="selectedImageTintColor" name="Highlights"/>
                     </tabBar>
                     <connections>
                         <segue destination="JiI-H1-oNJ" kind="relationship" relationship="viewControllers" id="gpY-Os-Hsg"/>
