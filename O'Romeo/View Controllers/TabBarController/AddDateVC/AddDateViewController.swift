@@ -22,6 +22,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var person: Person?
     var yelp: Yelp?
     var personUID : String?
+    var newPerson: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         julietNameTF.text = PersonController.shared.persons[row].name
         personUID = PersonController.shared.persons[row].personUID
+        newPerson = PersonController.shared.persons[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -106,15 +108,19 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID
+        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID, let newPerson = newPerson
             else { return }
         
         if let dateLog = dateLog {
-            DateLogController.shared.updateDateLog(dateLog: dateLog, date: date.asDate(), julietName: julietName, event: event, address: address, description: "")
+            DateLogController.shared.updateDateLog(dateLog: dateLog, date: date, person: newPerson, event: event, address: address, description: "") { (error) in
+                if let error = error {
+                    print("There was an error updating the dateLog: \(error) : \(#function)")
+                }
+            }
         } else {
             DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
                 if let error = error {
-                    print("Error saving to calendar 🤬 \(error.localizedDescription)")
+                    print("Error saving to calendar 🤬 \(error.localizedDescription) : \(#function)")
                 }
             }
         }
