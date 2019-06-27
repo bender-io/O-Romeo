@@ -9,7 +9,9 @@
 import UIKit
 
 class PersonDetailViewController: UIViewController {
-
+    
+    var interestArray: [Interest] = []
+    
     // MARK: - IBOutlets
     @IBOutlet weak var julietNameTF: UITextField!
     @IBOutlet weak var birthdayTF: UITextField!
@@ -27,12 +29,21 @@ class PersonDetailViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         tableView.delegate = self
         tableView.dataSource = self
-        updateViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         updateViews()
+//        interestArray = InterestController.shared.interests.sorted(by: {
+//            if $0.name == "Favorite Color"{
+//                return $0.name < $1.name
+//            } else if $0.name == "Favorite Movie" {
+//                return $0.name < $1.name
+//            } else if $0.name == "Favorite Flower" {
+//                return $0.name < $1.name
+//            }
+//            return $0.name > $1.name
+//        })
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -48,6 +59,14 @@ class PersonDetailViewController: UIViewController {
         datePickerView.backgroundColor = .black
         datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
         datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+        if let text = birthdayTF.text, !text.isEmpty {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            let date = dateFormatter.date(from: text)
+            datePickerView.date = date!
+        } else {
+            datePickerValueChanged(sender: datePickerView)
+        }
     }
     
     @IBAction func anniversaryFieldTapped(_ sender: RomeoHighlightedTextField) {
@@ -57,6 +76,14 @@ class PersonDetailViewController: UIViewController {
         datePickerView.backgroundColor = .black
         datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
         datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+        if let text = anniversaryTF.text, !text.isEmpty {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            let date = dateFormatter.date(from: text)
+            datePickerView.date = date!
+        } else {
+            datePickerValueChanged(sender: datePickerView)
+        }
     }
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
@@ -108,6 +135,7 @@ class PersonDetailViewController: UIViewController {
                 if let error = error {
                     print("There was an error fetching interests: \(error.localizedDescription): \(#function)")
                 }
+                self.interestArray = InterestController.shared.interests
                 self.tableView.reloadData()
             }
         } else {
@@ -139,15 +167,36 @@ class PersonDetailViewController: UIViewController {
 // MARK: - Extensions
 
 extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return InterestController.shared.interests.count
+        return interestArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath)
 
-        let interest = InterestController.shared.interests[indexPath.row]
+//        var interest: Interest?
+//
+//        switch indexPath.row {
+//        case 0:
+//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Color" }) else { fallthrough }
+//            interest = InterestController.shared.interests[index]
+//        case 1:
+//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Flower" }) else { fallthrough }
+//            interest = InterestController.shared.interests[index]
+//        case 2:
+//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Movie" }) else { fallthrough }
+//            interest = InterestController.shared.interests[index]
+//        default:
+//            interest = InterestController.shared.interests[indexPath.row]
+//        }
+//
+//        if let interest = interest {
+//            cell.textLabel?.text = interest.name
+//            cell.textLabel?.textColor = .highlights
+//        }
+        
+        let interest = interestArray[indexPath.row]
         cell.textLabel?.text = interest.name
         cell.textLabel?.textColor = .highlights
 
@@ -156,13 +205,35 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let interest = InterestController.shared.interests[indexPath.row]
+            
+//            var interest: Interest?
+//
+//            switch indexPath.row {
+//            case 0:
+//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Color" }) else { fallthrough }
+//                interest = InterestController.shared.interests[index]
+//                InterestController.shared.interests.remove(at: index)
+//            case 1:
+//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Flower" }) else { fallthrough }
+//                interest = InterestController.shared.interests[index]
+//                InterestController.shared.interests.remove(at: index)
+//            case 2:
+//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Movie" }) else { fallthrough }
+//                interest = InterestController.shared.interests[index]
+//                InterestController.shared.interests.remove(at: index)
+//            default:
+//                interest = InterestController.shared.interests[indexPath.row]
+//                InterestController.shared.interests.remove(at: indexPath.row)
+//            }
+            
+            let interest = interestArray[indexPath.row]
+            let index = interestArray.firstIndex(of: interest)
+            interestArray.remove(at: index!)
             InterestController.shared.deleteInterest(interest: interest, interestUID: nil) { (error) in
                 if let error = error {
                     print("There was an error deleting the interest: \(error) : \(#function)")
                 }
             }
-            InterestController.shared.interests.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

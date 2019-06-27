@@ -28,13 +28,23 @@ class InterestDetailViewController: UIViewController {
         nameTextField.text = interest.name
         descriptionTextField.text = interest.description
     }
+    
+    func presentAlert() {
+        let alert = UIAlertController(title: "Error", message: "Please fill in the name and description", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 
     // MARK: - IBActions
 
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text,
-            let description = descriptionTextField.text
-            else { print("Couldn't unwrap textfields: \(#function)"); return }
+            !name.isEmpty,
+            let description = descriptionTextField.text,
+            !description.isEmpty
+            else { print("Couldn't unwrap textfields: \(#function)"); presentAlert(); return }
 
         if let interest = interest {
             InterestController.shared.updateInterest(interest: interest, name: name, description: description)
