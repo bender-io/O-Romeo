@@ -17,7 +17,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    
     var yelpResults: [Yelp] = []
     var isExpanded = false
     var location: CLLocation?
@@ -34,6 +33,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewWillAppear(animated)
         CurrentLocation.shared.findLocation()
         CurrentLocation.shared.delegate = self
+        view.backgroundColor = .primary
+        tabBarController?.tabBar.tintColor = .highlights
     }
     
     // TODO: - Add function to Model Controller
