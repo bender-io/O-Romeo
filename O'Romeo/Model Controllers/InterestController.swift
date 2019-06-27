@@ -131,7 +131,18 @@ class InterestController {
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }
 
-            self.interests = snapshot.documents.compactMap { Interest(from: $0.data(), uid: $0.documentID) }
+            let foundInterests = snapshot.documents.compactMap { Interest(from: $0.data(), uid: $0.documentID) }
+            for interest in foundInterests {
+                if interest.name == "Favorite Color" {
+                    self.interests.insert(interest, at: 0)
+                } else if interest.name == "Favorite Movie" {
+                    self.interests.insert(interest, at: 0)
+                } else if interest.name == "Favorite Flower" {
+                    self.interests.insert(interest, at: 0)
+                } else {
+                    self.interests.append(interest)
+                }
+            }
             completion(nil)
 
         }

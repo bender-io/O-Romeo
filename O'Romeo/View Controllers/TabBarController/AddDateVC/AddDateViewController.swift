@@ -10,6 +10,8 @@ import UIKit
 
 class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var personArray: [Person] = []
+    
     // MARK: - IBOutlets
     @IBOutlet weak var julietNameTF: RomeoTextField!
     @IBOutlet weak var dateTF: RomeoTextField!
@@ -26,9 +28,11 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        personArray = PersonController.shared.persons.sorted(by: { $0.name < $1.name })
         updateViews()
         setupPicker()
         self.hideKeyboardWhenTappedAround()
+        
     }
     
     // MARK: - Methods
@@ -63,6 +67,15 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         datePickerView.backgroundColor = .black
         datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
         datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+        if let text = dateTF.text, !text.isEmpty {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .short
+            let date = dateFormatter.date(from: text)
+            datePickerView.date = date!
+        } else {
+            datePickerValueChanged(sender: datePickerView)
+        }
     }
     
     
@@ -79,6 +92,14 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickerView.delegate = self
         pickerView.backgroundColor = .black
         julietNameTF.inputView = pickerView
+        if let text = julietNameTF.text, text.isEmpty {
+        julietNameTF.text = personArray[0].name
+            personUID = personArray[0].personUID
+            newPerson = personArray[0]
+        } else {
+            guard let index = personArray.firstIndex(where: { $0.personUID == dateLog?.personUID }) else { return }
+            pickerView.selectRow(index, inComponent: 0, animated: true)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -86,22 +107,22 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return PersonController.shared.persons.count
+        return personArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return PersonController.shared.persons[row].name
+        return personArray[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        julietNameTF.text = PersonController.shared.persons[row].name
-        personUID = PersonController.shared.persons[row].personUID
-        newPerson = PersonController.shared.persons[row]
+        julietNameTF.text = personArray[row].name
+        personUID = personArray[row].personUID
+        newPerson = personArray[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let person = PersonController.shared.persons[row].name
+        let person = personArray[row].name
         return NSAttributedString(string: person, attributes: [NSAttributedString.Key.foregroundColor: UIColor.highlights])
     }
     
