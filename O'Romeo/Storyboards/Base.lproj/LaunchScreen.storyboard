@@ -20,18 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="raY-Wh-hKG">
-                                <rect key="frame" x="94.5" y="346" width="225" height="225"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="raY-Wh-hKG" secondAttribute="height" multiplier="1:1" id="ROK-BN-Oth"/>
-                                </constraints>
+                                <rect key="frame" x="93" y="440.5" width="228" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="raY-Wh-hKG" secondAttribute="trailing" constant="94.5" id="0bk-jr-Tch"/>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2L7-Ar-59p"/>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.99" constant="10" id="SCY-Zd-gGn"/>
-                            <constraint firstItem="raY-Wh-hKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94.5" id="Tz5-xp-G2B"/>
+                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.99" id="RX2-SJ-cxa"/>
+                            <constraint firstItem="raY-Wh-hKG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dkf-qy-FJJ"/>
+                            <constraint firstItem="raY-Wh-hKG" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.55" id="fpA-KO-3ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
