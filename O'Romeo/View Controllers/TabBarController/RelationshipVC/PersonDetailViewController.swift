@@ -33,6 +33,7 @@ class PersonDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        view.backgroundColor = .primary
         updateViews()
 //        interestArray = InterestController.shared.interests.sorted(by: {
 //            if $0.name == "Favorite Color"{

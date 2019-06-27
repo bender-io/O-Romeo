@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
-                                <rect key="frame" x="20" y="100" width="374" height="159"/>
+                                <rect key="frame" x="20" y="229" width="374" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -72,16 +72,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
-                                <rect key="frame" x="107" y="817" width="200.5" height="29"/>
+                                <rect key="frame" x="111.5" y="817" width="191" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp" customClass="RomeoButtonText" customModule="O_Romeo" customModuleProvider="target">
-                                        <rect key="frame" x="154.5" y="0.0" width="46" height="29"/>
+                                        <rect key="frame" x="144" y="0.0" width="47" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                         <state key="normal" title="sign up"/>
                                         <connections>
@@ -92,10 +92,9 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
-                                <rect key="frame" x="100" y="64" width="214" height="16"/>
+                                <rect key="frame" x="100" y="64" width="214" height="145"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="o1q-YQ-5cp" firstAttribute="trailing" secondItem="FTl-qy-7Yg" secondAttribute="trailing" constant="100" id="80q-YZ-Uku"/>
                             <constraint firstItem="QUu-0U-tSP" firstAttribute="centerX" secondItem="o1q-YQ-5cp" secondAttribute="centerX" id="Lrz-A9-TTQ"/>
@@ -137,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
-                                <rect key="frame" x="20" y="100" width="374" height="159"/>
+                                <rect key="frame" x="20" y="229" width="374" height="159"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -200,10 +199,9 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
-                                <rect key="frame" x="100" y="64" width="214" height="16"/>
+                                <rect key="frame" x="100" y="64" width="214" height="145"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="c6v-iM-ozN" firstAttribute="trailing" secondItem="FRU-rg-hsu" secondAttribute="trailing" constant="100" id="2sG-lJ-u96"/>
                             <constraint firstItem="FRU-rg-hsu" firstAttribute="top" secondItem="c6v-iM-ozN" secondAttribute="top" constant="20" id="GTe-LA-ITE"/>
@@ -229,9 +227,6 @@
     </scenes>
     <resources>
         <image name="Romeo" width="820" height="145"/>
-        <namedColor name="Primary">
-            <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="White10">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -240,6 +235,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ud3-mB-3za"/>
+        <segue reference="1a1-2S-fBg"/>
     </inferredMetricsTieBreakers>
 </document>

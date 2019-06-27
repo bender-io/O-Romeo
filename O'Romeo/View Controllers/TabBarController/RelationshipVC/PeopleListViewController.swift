@@ -13,7 +13,6 @@ class PeopleListViewController: UIViewController {
     var personArray: [Person] = []
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -33,7 +32,12 @@ class PeopleListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        view.backgroundColor = .primary
+        navigationController?.navigationBar.tintColor = .highlights
+        navigationController?.navigationBar.barTintColor = .primary
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
+        tableView.backgroundColor = .white10
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
@@ -44,7 +48,6 @@ class PeopleListViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editPersonDetailVC" {
             guard let index = tableView.indexPathForSelectedRow,

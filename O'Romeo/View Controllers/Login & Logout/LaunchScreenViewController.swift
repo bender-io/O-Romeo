@@ -22,6 +22,7 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidLoad()
         animateLayers()
         launchLogo.center = self.view.center
+        view.backgroundColor = .primary
         
         // MARK: - Fetch Data
         PersonController.shared.fetchPersonsFromFirestore { (error) in

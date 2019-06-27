@@ -27,6 +27,8 @@
 		569D284322C4070900789312 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569D284222C4070900789312 /* LogoutViewController.swift */; };
 		56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */; };
 		56CCE33822BC3A5900CEFE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCE33722BC3A5900CEFE3B /* Assets.xcassets */; };
+		56D89AC322C586240085F7EC /* RomeoBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D89AC222C586240085F7EC /* RomeoBarButton.swift */; };
+		56D89AC722C58A740085F7EC /* RomeoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D89AC622C58A740085F7EC /* RomeoView.swift */; };
 		56E1115122C572BD00AF3E09 /* RomeoSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1115022C572BD00AF3E09 /* RomeoSearchBar.swift */; };
 		56F4626D22C554B6000F442D /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4626C22C554B6000F442D /* ColorScheme.swift */; };
 		56F4627322C5647F000F442D /* RomeoPrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627222C5647F000F442D /* RomeoPrimaryLabel.swift */; };
@@ -102,6 +104,8 @@
 		569D284222C4070900789312 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
 		56CCE33722BC3A5900CEFE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56D89AC222C586240085F7EC /* RomeoBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoBarButton.swift; sourceTree = "<group>"; };
+		56D89AC622C58A740085F7EC /* RomeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoView.swift; sourceTree = "<group>"; };
 		56E1115022C572BD00AF3E09 /* RomeoSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoSearchBar.swift; sourceTree = "<group>"; };
 		56F4626C22C554B6000F442D /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorScheme.swift; path = ../Resources/ColorScheme.swift; sourceTree = "<group>"; };
 		56F4627222C5647F000F442D /* RomeoPrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoPrimaryLabel.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 				56F4627422C56527000F442D /* RomeoHighlightedLabel.swift */,
 				56F4627A22C56C74000F442D /* RomeoSegmentController.swift */,
 				56E1115022C572BD00AF3E09 /* RomeoSearchBar.swift */,
+				56D89AC222C586240085F7EC /* RomeoBarButton.swift */,
+				56D89AC622C58A740085F7EC /* RomeoView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */,
 				56F4627522C56527000F442D /* RomeoHighlightedLabel.swift in Sources */,
 				E412349722B950AD0066796E /* Person.swift in Sources */,
+				56D89AC722C58A740085F7EC /* RomeoView.swift in Sources */,
 				E49AAE1822B99FB20099C45A /* Interest.swift in Sources */,
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
 				56F4627922C5683B000F442D /* RomeoPrimaryTextField.swift in Sources */,
@@ -477,6 +484,7 @@
 				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
 				E49AAE2022BAA6CB0099C45A /* PersonDetailViewController.swift in Sources */,
+				56D89AC322C586240085F7EC /* RomeoBarButton.swift in Sources */,
 				E49AAE2822BD800A0099C45A /* Errors.swift in Sources */,
 				EC9E495522C16BBE0061AAB4 /* CalendarTableViewCell.swift in Sources */,
 				560BC9D922BD6D82003D7248 /* LaunchScreenViewController.swift in Sources */,
@@ -657,7 +665,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VGUCD6ZAV7;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -685,7 +692,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VGUCD6ZAV7;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

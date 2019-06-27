@@ -22,6 +22,11 @@ class LogoutViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        view.backgroundColor = .primary
+    }
+    
     // MARK: - IBActions
     @IBAction func segmentControlTapped(_ sender: Any) {
         let currentSegment = segmentControl.selectedSegmentIndex
@@ -37,6 +42,7 @@ class LogoutViewController: UIViewController {
             UIColor.white100 = UIColor.DMWhite100
             UIColor.white50 = UIColor.DMWhite50
             UIColor.white10 = UIColor.DMWhite10
+            view.reloadInputViews()
         case 2:
             selectedColor = ColorScheme.light
         default:

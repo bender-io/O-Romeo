@@ -30,6 +30,15 @@ class EventTableViewCell: UITableViewCell {
     }
     weak var delegate: EventTableViewCellDelegate?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.backgroundColor = .white10
+    }
+    
     func updateViews() {
         guard let event = event else { return }
         self.eventNameLabel.text = event.title

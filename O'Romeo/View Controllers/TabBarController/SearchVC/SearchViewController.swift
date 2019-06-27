@@ -31,11 +31,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CurrentLocation.shared.findLocation()
-        CurrentLocation.shared.delegate = self
         view.backgroundColor = .primary
         tabBarController?.tabBar.tintColor = .highlights
         tabBarController?.tabBar.barTintColor = .primary
+        CurrentLocation.shared.findLocation()
+        CurrentLocation.shared.delegate = self
     }
     
     // TODO: - Add function to Model Controller

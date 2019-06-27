@@ -258,7 +258,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="zVx-HW-ICU" firstAttribute="leading" secondItem="KoR-SE-8Nw" secondAttribute="leading" id="3tP-Z1-vW9"/>
                             <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="KoR-SE-8Nw" secondAttribute="trailing" constant="20" id="O7B-nM-QfD"/>
@@ -289,7 +288,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reH-5c-4Pz">
                                 <rect key="frame" x="20" y="108" width="374" height="705"/>
-                                <color key="backgroundColor" name="Primary"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="relationshipCell" rowHeight="100" id="G5t-10-VPd" customClass="PersonTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="100"/>
@@ -298,9 +297,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-CA-qHS">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-CA-qHS" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="90" width="374" height="10"/>
-                                                    <color key="backgroundColor" name="Primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="YIF-Wf-tKZ"/>
                                                     </constraints>
@@ -337,7 +335,6 @@
                                                 <constraint firstItem="hrs-JG-7iI" firstAttribute="leading" secondItem="Zjw-1C-2PT" secondAttribute="leadingMargin" id="xce-B9-qQT"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" name="White10"/>
                                         <connections>
                                             <outlet property="anniversaryLabel" destination="4pS-8d-w2r" id="H3V-SO-uSC"/>
                                             <outlet property="birthdayLabel" destination="GYZ-Yo-G1C" id="eKL-Xe-gll"/>
@@ -348,7 +345,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="reH-5c-4Pz" firstAttribute="leading" secondItem="uA6-TB-X4g" secondAttribute="leading" constant="20" id="CLh-GZ-4f3"/>
                             <constraint firstItem="uA6-TB-X4g" firstAttribute="trailing" secondItem="reH-5c-4Pz" secondAttribute="trailing" constant="20" id="bqQ-8o-92T"/>
@@ -363,8 +359,7 @@
                                 <segue destination="O7J-a3-ezk" kind="show" identifier="toLogoutVC" id="qT7-Gw-5mx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Add" id="nl1-wF-kBC">
-                            <color key="tintColor" name="Highlights"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nl1-wF-kBC" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target">
                             <connections>
                                 <segue destination="nh2-1X-ri3" kind="show" identifier="addPersonDetailVC" id="7N5-EK-FNd"/>
                             </connections>
@@ -385,7 +380,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tdW-Sn-vrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="Primary"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="ISE-gV-kfG" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="130"/>
@@ -448,7 +443,6 @@
                                         <constraint firstItem="EdO-Z3-Rcu" firstAttribute="leading" secondItem="QVb-yC-5zo" secondAttribute="leading" constant="20" id="epb-zf-lYD"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="Primary"/>
                                 <connections>
                                     <outlet property="addressLabel" destination="WZc-yZ-J5S" id="oEn-cQ-9hv"/>
                                     <outlet property="dateLabel" destination="MBC-v3-0eP" id="Y0y-8g-ObZ"/>
@@ -464,8 +458,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="el9-Wo-fQN">
-                        <barButtonItem key="rightBarButtonItem" image="Add" id="WnO-EG-dWC">
-                            <color key="tintColor" name="Highlights"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WnO-EG-dWC" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target">
                             <connections>
                                 <segue destination="T8g-8l-1y4" kind="presentation" identifier="addDateDetailVC" id="yVP-oN-gfR"/>
                             </connections>
@@ -567,7 +560,6 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="80d-Qh-DIS" firstAttribute="leading" secondItem="b0r-sH-Z4H" secondAttribute="leading" constant="20" id="4Fj-Za-sNh"/>
                             <constraint firstItem="rRR-zm-A5H" firstAttribute="centerX" secondItem="b0r-sH-Z4H" secondAttribute="centerX" id="6Fb-s8-e32"/>
@@ -615,7 +607,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="309" estimatedRowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eo-zK-Nix">
                                 <rect key="frame" x="20" y="129" width="374" height="684"/>
-                                <color key="backgroundColor" name="White10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="309" id="LFj-Wn-VZR" customClass="EventTableViewCell" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="309"/>
@@ -662,9 +654,8 @@
                                                         <constraint firstAttribute="bottom" secondItem="jjs-Nw-ov1" secondAttribute="bottom" id="noO-FU-wwD"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-VF-zQ7">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-VF-zQ7" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="277" width="374" height="32"/>
-                                                    <color key="backgroundColor" name="Primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="Qaq-4k-UIR"/>
                                                     </constraints>
@@ -775,7 +766,6 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="0eo-zK-Nix" firstAttribute="top" secondItem="UJB-DM-97g" secondAttribute="bottom" constant="20" id="6Gh-K2-0tL"/>
                             <constraint firstItem="PRI-QO-QuT" firstAttribute="trailing" secondItem="UJB-DM-97g" secondAttribute="trailing" constant="20" id="PPD-Cz-CG6"/>
@@ -825,8 +815,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rcP-DI-mhB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="Highlights"/>
-                        <color key="barTintColor" name="Primary"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -926,7 +914,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" name="White10"/>
                                         <connections>
                                             <segue destination="b8a-eZ-DqN" kind="show" identifier="toInterestDetailView" id="2fo-xV-UHK"/>
                                         </connections>
@@ -934,7 +921,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="bMv-NP-9rI" firstAttribute="top" secondItem="hFU-Pb-yvA" secondAttribute="top" constant="20" id="0t3-2b-464"/>
                             <constraint firstItem="hFU-Pb-yvA" firstAttribute="bottom" secondItem="gXi-Rh-bHA" secondAttribute="bottom" constant="250" id="2V2-xe-obj"/>
@@ -953,7 +939,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="heR-aI-ieU">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ce1-7D-JOQ">
-                            <color key="tintColor" name="Highlights"/>
                             <connections>
                                 <action selector="saveButtonTapped:" destination="nh2-1X-ri3" id="7vh-T7-mJk"/>
                             </connections>
@@ -1020,7 +1005,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" name="Primary"/>
                         <constraints>
                             <constraint firstItem="WM5-Ga-AVy" firstAttribute="trailing" secondItem="m9V-hd-IVz" secondAttribute="trailing" constant="20" id="19S-pD-1aB"/>
                             <constraint firstItem="m9V-hd-IVz" firstAttribute="top" secondItem="2ik-pv-Nlm" secondAttribute="bottom" constant="8" id="2si-uh-jSH"/>
@@ -1056,8 +1040,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0oZ-ae-Td4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="Highlights"/>
-                        <color key="barTintColor" name="Primary"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1070,7 +1052,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add" width="22" height="22"/>
         <image name="Calender" width="28" height="27"/>
         <image name="Culture" width="49" height="47"/>
         <image name="Event" width="29" height="29"/>
@@ -1080,9 +1061,6 @@
         <image name="Music" width="48" height="48"/>
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
-        <namedColor name="Highlights">
-            <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1094,7 +1072,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cJl-dU-OAU"/>
+        <segue reference="2fo-xV-UHK"/>
         <segue reference="7N5-EK-FNd"/>
         <segue reference="dZt-rL-huT"/>
     </inferredMetricsTieBreakers>

@@ -32,6 +32,15 @@ class SearchTableViewCell: UITableViewCell {
     
     weak var delegate: SearchTableViewCellDelegate?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.backgroundColor = .white10
+    }
+    
     func updateViews() {
         guard let yelp = yelp,
             let rating = yelp.rating,
