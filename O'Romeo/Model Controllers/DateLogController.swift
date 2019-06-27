@@ -96,20 +96,29 @@ class DateLogController {
     /// - Parameters:
     ///   - dateLog: DateLog to be updated (DateLog)
     ///   - date: New date (Date)
-    ///   - person: Person object (Person)
+    ///   - person: Person object (Person?)
     ///   - event: New event name (String)
     ///   - address: New Address (String)
     ///   - description: New Description (String)
-    func updateDateLog(dateLog: DateLog, date: Date, person: Person, event: String, address: String, description: String, completion: @escaping (Error?) -> Void) {
+    func updateDateLog(dateLog: DateLog, date: String, person: Person?, event: String, address: String, description: String, completion: @escaping (Error?) -> Void) {
         db.collection("dateLog").document(dateLog.dateLogUID).updateData([
             "date" : date,
-            "julietName" : person.name,
             "event" : event,
             "address" : address,
             "description" : description
         ]) { (error) in
             if let error = error {
-                print("There was an error updating the calendar event: \(error) : \(error.localizedDescription) : \(#function)")
+                print("There was an error updating the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+            }
+        }
+        guard let person = person else { return }
+        db.collection("dateLog").document(dateLog.dateLogUID).updateData([
+            "julietName" : person.name,
+            "personUID" : person.personUID
+        ]) { (error) in
+            if let error = error {
+                print("There was an error updating the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
             }
         }
