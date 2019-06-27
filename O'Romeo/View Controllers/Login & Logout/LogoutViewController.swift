@@ -10,15 +10,40 @@ import UIKit
 import FirebaseAuth
 
 class LogoutViewController: UIViewController {
-
+    
     // MARK: - Properties
     let login: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    var selectedColor = ColorScheme.standard
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     // MARK: - IBActions
+    @IBAction func segmentControlTapped(_ sender: Any) {
+        let currentSegment = segmentControl.selectedSegmentIndex
+        
+        switch currentSegment {
+        case 0:
+            selectedColor = ColorScheme.standard
+        case 1:
+            selectedColor = ColorScheme.dark
+            UIColor.highlights = .orange
+            UIColor.primary = .blue
+            UIColor.secondary = .red
+            UIColor.white100 = .black
+            UIColor.white50 = .green
+            UIColor.white10 = .yellow
+        case 2:
+            selectedColor = ColorScheme.light
+        default:
+            selectedColor = ColorScheme.standard
+        }
+    }
+    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         UserController.shared.signOutUser()
         

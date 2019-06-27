@@ -32,10 +32,10 @@ enum FontNames {
 }
 
 extension UIColor {
-    static let primary = UIColor(named: "Primary")!
-    static let secondary = UIColor(named: "Secondary")!
-    static let highlights = UIColor(named: "Highlights")!
-    static let white10 = UIColor(named: "White10")!
-    static let white50 = UIColor(named: "White50")!
-    static let white100 = UIColor(named: "White100")!
+    static var primary = UIColor(named: "Primary")!
+    static var secondary = UIColor(named: "Secondary")!
+    static var highlights = UIColor(named: "Highlights")!
+    static var white10 = UIColor(named: "White10")!
+    static var white50 = UIColor(named: "White50")!
+    static var white100 = UIColor(named: "White100")!
 }

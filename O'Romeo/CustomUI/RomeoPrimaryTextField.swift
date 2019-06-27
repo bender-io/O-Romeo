@@ -1,15 +1,15 @@
 //
-//  RomeoTextField.swift
+//  RomeoPrimaryTextField.swift
 //  O'Romeo
 //
-//  Created by Brian Hersh on 6/18/19.
+//  Created by Brian Hersh on 6/27/19.
 //  Copyright © 2019 Brian Daniel. All rights reserved.
 //
 
 import UIKit
 
-class RomeoHighlightedTextField: UITextField {
-    
+class RomeoPrimaryTextField: UITextField {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -29,8 +29,9 @@ class RomeoHighlightedTextField: UITextField {
     func setupUI() {
         updatePlaceholderColor()
         updateFontTo(fontName: FontNames.sfRegular)
-        self.textColor = .highlights
+        self.textColor = .white100
         self.backgroundColor = .white10
         self.cornerRadios(10)
     }
+
 }

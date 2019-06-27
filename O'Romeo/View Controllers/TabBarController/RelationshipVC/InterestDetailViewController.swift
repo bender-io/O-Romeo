@@ -12,7 +12,7 @@ class InterestDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: RomeoTextField!
+    @IBOutlet weak var descriptionTextField: RomeoHighlightedTextField!
 
     // MARK: - Properties
 

@@ -27,6 +27,12 @@
 		569D284322C4070900789312 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569D284222C4070900789312 /* LogoutViewController.swift */; };
 		56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */; };
 		56CCE33822BC3A5900CEFE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CCE33722BC3A5900CEFE3B /* Assets.xcassets */; };
+		56F4626D22C554B6000F442D /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4626C22C554B6000F442D /* ColorScheme.swift */; };
+		56F4627322C5647F000F442D /* RomeoPrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627222C5647F000F442D /* RomeoPrimaryLabel.swift */; };
+		56F4627522C56527000F442D /* RomeoHighlightedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627422C56527000F442D /* RomeoHighlightedLabel.swift */; };
+		56F4627722C5663E000F442D /* RomeoButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627622C5663E000F442D /* RomeoButtonText.swift */; };
+		56F4627922C5683B000F442D /* RomeoPrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627822C5683A000F442D /* RomeoPrimaryTextField.swift */; };
+		56F4627B22C56C74000F442D /* RomeoSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4627A22C56C74000F442D /* RomeoSegmentController.swift */; };
 		56F694ED22C28B2C008F47BF /* extensionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F694EC22C28B2C008F47BF /* extensionsVC.swift */; };
 		E412349722B950AD0066796E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349622B950AD0066796E /* Person.swift */; };
 		E412349A22B9517C0066796E /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E412349922B9517C0066796E /* PersonController.swift */; };
@@ -95,6 +101,12 @@
 		569D284222C4070900789312 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
 		56CCE33722BC3A5900CEFE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56F4626C22C554B6000F442D /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorScheme.swift; path = ../Resources/ColorScheme.swift; sourceTree = "<group>"; };
+		56F4627222C5647F000F442D /* RomeoPrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoPrimaryLabel.swift; sourceTree = "<group>"; };
+		56F4627422C56527000F442D /* RomeoHighlightedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoHighlightedLabel.swift; sourceTree = "<group>"; };
+		56F4627622C5663E000F442D /* RomeoButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoButtonText.swift; sourceTree = "<group>"; };
+		56F4627822C5683A000F442D /* RomeoPrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoPrimaryTextField.swift; sourceTree = "<group>"; };
+		56F4627A22C56C74000F442D /* RomeoSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoSegmentController.swift; sourceTree = "<group>"; };
 		56F694EC22C28B2C008F47BF /* extensionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionsVC.swift; sourceTree = "<group>"; };
 		E412349622B950AD0066796E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E412349922B9517C0066796E /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
@@ -176,7 +188,12 @@
 			children = (
 				560BF55422B972CC000E7F66 /* extensionsUI.swift */,
 				560BF55822B97737000E7F66 /* RomeoButton.swift */,
+				56F4627622C5663E000F442D /* RomeoButtonText.swift */,
+				56F4627822C5683A000F442D /* RomeoPrimaryTextField.swift */,
 				560BF55A22B9784F000E7F66 /* RomeoTextField.swift */,
+				56F4627222C5647F000F442D /* RomeoPrimaryLabel.swift */,
+				56F4627422C56527000F442D /* RomeoHighlightedLabel.swift */,
+				56F4627A22C56C74000F442D /* RomeoSegmentController.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -301,6 +318,7 @@
 		E412349522B9506C0066796E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56F4626C22C554B6000F442D /* ColorScheme.swift */,
 				E412349622B950AD0066796E /* Person.swift */,
 				E49AAE1722B99FB20099C45A /* Interest.swift */,
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
@@ -447,9 +465,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CBCA4B22C28C9E00003033 /* LocalNotificationsController.swift in Sources */,
+				56F4627522C56527000F442D /* RomeoHighlightedLabel.swift in Sources */,
 				E412349722B950AD0066796E /* Person.swift in Sources */,
 				E49AAE1822B99FB20099C45A /* Interest.swift in Sources */,
 				569A6CE722B58A430025C319 /* LoginViewController.swift in Sources */,
+				56F4627922C5683B000F442D /* RomeoPrimaryTextField.swift in Sources */,
 				E41234C722B955170066796E /* UserController.swift in Sources */,
 				563FD18C22BAA41B00ADA9CA /* SearchViewController.swift in Sources */,
 				569A6CE922B58A580025C319 /* SignupViewController.swift in Sources */,
@@ -469,18 +489,22 @@
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
 				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
+				56F4627322C5647F000F442D /* RomeoPrimaryLabel.swift in Sources */,
 				E49AAE1A22B99FC90099C45A /* InterestController.swift in Sources */,
+				56F4626D22C554B6000F442D /* ColorScheme.swift in Sources */,
 				560BF55522B972CC000E7F66 /* extensionsUI.swift in Sources */,
 				EC9E495122C165B20061AAB4 /* DateFormatter.swift in Sources */,
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				EC9E495322C16B750061AAB4 /* CalendarTableViewController.swift in Sources */,
 				5641189922BEB4790014010E /* (null) in Sources */,
 				ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */,
+				56F4627722C5663E000F442D /* RomeoButtonText.swift in Sources */,
 				ECFE939F22B99D400042C00A /* EventfulController.swift in Sources */,
 				56F694ED22C28B2C008F47BF /* extensionsVC.swift in Sources */,
 				E49AAE1E22BAA5030099C45A /* PersonTableViewCell.swift in Sources */,
 				563FD19122BAE31200ADA9CA /* SearchTableViewCell.swift in Sources */,
 				E412349A22B9517C0066796E /* PersonController.swift in Sources */,
+				56F4627B22C56C74000F442D /* RomeoSegmentController.swift in Sources */,
 				ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */,
 				E49AAE2222BAAF350099C45A /* InterestDetailViewController.swift in Sources */,
 			);

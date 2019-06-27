@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bcD-8L-k3x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,9 +31,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-Qb-Vu0">
-                                <rect key="frame" x="20" y="273" width="374" height="159"/>
+                                <rect key="frame" x="20" y="100" width="374" height="159"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDJ-mK-J43" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                         <color key="backgroundColor" name="White10"/>
                                         <constraints>
@@ -43,7 +43,7 @@
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-2o-ykW" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-2o-ykW" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="374" height="45"/>
                                         <color key="backgroundColor" name="White10"/>
                                         <nil key="textColor"/>
@@ -52,7 +52,6 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFu-5k-Ocz" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="112" y="114" width="150" height="45"/>
-                                        <color key="backgroundColor" name="Secondary"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NFu-5k-Ocz" secondAttribute="height" multiplier="10:3" id="Um6-ER-Yhi"/>
                                         </constraints>
@@ -73,20 +72,18 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QUu-0U-tSP">
-                                <rect key="frame" x="111.5" y="817" width="191" height="29"/>
+                                <rect key="frame" x="107" y="817" width="200.5" height="29"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-lP-ul5" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Light" family="SF Compact Rounded" pointSize="12"/>
-                                        <color key="textColor" name="OffWhite"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp">
-                                        <rect key="frame" x="144" y="0.0" width="47" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-g0-rpp" customClass="RomeoButtonText" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="154.5" y="0.0" width="46" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                        <state key="normal" title="sign up">
-                                            <color key="titleColor" name="Highlights"/>
-                                        </state>
+                                        <state key="normal" title="sign up"/>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="5yI-B3-oIL"/>
                                             <segue destination="pDG-fY-qF4" kind="show" identifier="" id="3nt-ux-PvZ"/>
@@ -95,7 +92,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-qy-7Yg">
-                                <rect key="frame" x="100" y="108" width="214" height="145"/>
+                                <rect key="frame" x="100" y="64" width="214" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
@@ -140,9 +137,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CPm-be-fjd">
-                                <rect key="frame" x="20" y="273" width="374" height="159"/>
+                                <rect key="frame" x="20" y="100" width="374" height="159"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8T-OWO" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                         <color key="backgroundColor" name="White10"/>
                                         <constraints>
@@ -152,7 +149,7 @@
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field" customClass="RomeoTextField" customModule="O_Romeo" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sc5-WH-ZA1" userLabel="Password Text Field" customClass="RomeoHighlightedTextField" customModule="O_Romeo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="374" height="45"/>
                                         <color key="backgroundColor" name="White10"/>
                                         <nil key="textColor"/>
@@ -164,7 +161,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-AV-5pK" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
-                                                <color key="backgroundColor" name="Secondary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Czo-AV-5pK" secondAttribute="height" multiplier="10:3" id="vy4-8c-lZc"/>
                                                 </constraints>
@@ -179,7 +175,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
                                                 <rect key="frame" x="162" y="0.0" width="150" height="45"/>
-                                                <color key="backgroundColor" name="Secondary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
                                                 </constraints>
@@ -205,7 +200,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Romeo" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-rg-hsu">
-                                <rect key="frame" x="100" y="108" width="214" height="145"/>
+                                <rect key="frame" x="100" y="64" width="214" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Primary"/>
@@ -231,39 +226,11 @@
             </objects>
             <point key="canvasLocation" x="4086.9565217391309" y="-522.32142857142856"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hSB-ef-DtO">
-            <objects>
-                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bcD-8L-k3x" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Czr-AM-qOr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Primary"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yeN-YR-20c" kind="relationship" relationship="rootViewController" id="OXJ-Uu-bqk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IQl-3M-Q3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2188.4057971014495" y="-521.65178571428567"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Romeo" width="820" height="145"/>
-        <namedColor name="Highlights">
-            <color red="0.11800000071525574" green="0.88999998569488525" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="OffWhite">
-            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Primary">
             <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Secondary">
-            <color red="0.41960784313725491" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White10">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
@@ -273,6 +240,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1a1-2S-fBg"/>
+        <segue reference="ud3-mB-3za"/>
     </inferredMetricsTieBreakers>
 </document>
