@@ -11,10 +11,10 @@ import UIKit
 class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var julietNameTF: RomeoTextField!
-    @IBOutlet weak var dateTF: RomeoTextField!
-    @IBOutlet weak var eventTF: RomeoTextField!
-    @IBOutlet weak var dateLocationTF: RomeoTextField!
+    @IBOutlet weak var julietNameTF: RomeoHighlightedTextField!
+    @IBOutlet weak var dateTF: RomeoHighlightedTextField!
+    @IBOutlet weak var eventTF: RomeoHighlightedTextField!
+    @IBOutlet weak var dateLocationTF: RomeoHighlightedTextField!
     
     // MARK: - Properties
     var dateLog: DateLog?
@@ -56,7 +56,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     // MARK: - DatePicker Methods
-    @IBAction func datePickerSelected(_ sender: RomeoTextField) {
+    @IBAction func datePickerSelected(_ sender: RomeoHighlightedTextField) {
         let datePickerView : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.dateAndTime
         sender.inputView = datePickerView

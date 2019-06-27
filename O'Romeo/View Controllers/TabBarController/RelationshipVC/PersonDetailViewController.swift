@@ -41,7 +41,7 @@ class PersonDetailViewController: UIViewController {
     }
 
     // MARK: - IBActions
-    @IBAction func birthdayFieldTapped(_ sender: RomeoTextField) {
+    @IBAction func birthdayFieldTapped(_ sender: RomeoHighlightedTextField) {
         let datePickerView : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.date
         sender.inputView = datePickerView
@@ -50,7 +50,7 @@ class PersonDetailViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
     }
     
-    @IBAction func anniversaryFieldTapped(_ sender: RomeoTextField) {
+    @IBAction func anniversaryFieldTapped(_ sender: RomeoHighlightedTextField) {
         let datePickerView : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.date
         sender.inputView = datePickerView
