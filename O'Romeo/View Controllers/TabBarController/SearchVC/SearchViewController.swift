@@ -10,14 +10,14 @@ import UIKit
 import CoreLocation
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var placesSearchBar: UISearchBar!
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
+    
     // MARK: - Properties
-
+    
     var yelpResults: [Yelp] = []
     var isExpanded = false
     var location: CLLocation?
@@ -26,20 +26,21 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
-//        CurrentLocation.shared.findLocation()
-//        CurrentLocation.shared.locationManager.startUpdatingLocation()
+        //        CurrentLocation.shared.findLocation()
+        //        CurrentLocation.shared.locationManager.startUpdatingLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        CurrentLocation.shared.findLocation()
         CurrentLocation.shared.delegate = self
     }
-
+    
     // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
-
+        
         if let phoneCallURL = URL(string: "telprompt://\(phoneNumber)") {
-
+            
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 if #available(iOS 10.0, *) {
@@ -47,20 +48,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 } else {
                     // Fallback on earlier versions
                     application.openURL(phoneCallURL as URL)
-
+                    
                 }
             }
         }
     }
-
+    
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return yelpResults.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTableViewCell
-
+        
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
         cell.delegate = self
@@ -69,17 +70,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 }
 
 extension SearchViewController : UISearchBarDelegate {
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.tag == 0 {
-            guard let searchText = searchBar.text, !searchText.isEmpty,
-            let location = location
+        guard let searchText = placesSearchBar.text, !searchText.isEmpty,
+            let location = locationSearchBar.text
             else { return }
-            YelpController.shared.fetchRestaurants(searchTerm: searchText, location: location) { (yelps) in
-                self.yelpResults = yelps
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+        YelpController.shared.fetchRestaurants(searchTerm: searchText, location: location) { (yelps) in
+            self.yelpResults = yelps
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }

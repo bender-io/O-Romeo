@@ -39,7 +39,7 @@ class SearchTableViewCell: UITableViewCell {
             let location = yelp.location?.displayAddress.first
             else { return }
         self.searchNameLabel.text = yelp.name
-        self.ratingLabel.text = String(rating)
+        self.ratingLabel.text = "Rating: \(rating)"
         self.categoriesLabel.text = categories
         self.directionsLabel.text = location
         self.phoneNumberLabel.text = yelp.displayPhone
