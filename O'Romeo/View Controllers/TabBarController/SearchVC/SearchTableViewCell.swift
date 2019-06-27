@@ -21,7 +21,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var directionsLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNumberButton: RomeoButtonText!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var yelp: Yelp? {
@@ -42,7 +42,7 @@ class SearchTableViewCell: UITableViewCell {
         self.ratingLabel.text = "Rating: \(rating)"
         self.categoriesLabel.text = categories
         self.directionsLabel.text = location
-        self.phoneNumberLabel.text = yelp.displayPhone
+        self.phoneNumberButton.setTitle(yelp.displayPhone, for: .normal)
         self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
         YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
             DispatchQueue.main.async {
@@ -54,5 +54,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBAction func calendarButtonTapped(_ sender: Any) {
         guard let yelp = yelp else { return }
         delegate?.calendarButtonTapped(yelp: yelp)
+    }
+    
+    @IBAction func phoneNumberButtonTapped(_ sender: Any) {
+        guard let yelp = yelp, let yelpNumber = yelp.displayPhone else { return }
+        let number = yelpNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        if let url = URL(string: "tel://\(number)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

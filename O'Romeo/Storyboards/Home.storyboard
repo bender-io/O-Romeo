@@ -133,6 +133,9 @@
                                                                             <rect key="frame" x="0.0" y="34" width="242" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                             <state key="normal" title="(phoneNumber)"/>
+                                                                            <connections>
+                                                                                <action selector="phoneNumberButtonTapped:" destination="OE5-Lx-6Cj" eventType="touchUpInside" id="xa7-Rn-EA5"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                 </stackView>
@@ -179,6 +182,7 @@
                                             <outlet property="categoriesLabel" destination="eAo-tv-aCF" id="bfH-0f-m6l"/>
                                             <outlet property="directionsLabel" destination="lPQ-PJ-AZC" id="6wQ-ZC-UF8"/>
                                             <outlet property="distanceLabel" destination="GgJ-da-hI4" id="TgX-4R-Y5O"/>
+                                            <outlet property="phoneNumberButton" destination="awX-np-E0l" id="ExV-ve-R8X"/>
                                             <outlet property="ratingLabel" destination="vYH-sb-Kpw" id="VaJ-h3-KE3"/>
                                             <outlet property="searchImageView" destination="Qqu-nv-Dfz" id="HzB-G4-W1H"/>
                                             <outlet property="searchNameLabel" destination="bLq-DI-sty" id="691-CO-n9I"/>
