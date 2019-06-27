@@ -35,6 +35,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         CurrentLocation.shared.delegate = self
         view.backgroundColor = .primary
         tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
     }
     
     // TODO: - Add function to Model Controller

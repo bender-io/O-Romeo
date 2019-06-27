@@ -38,4 +38,11 @@ extension UIColor {
     static var white10 = UIColor(named: "White10")!
     static var white50 = UIColor(named: "White50")!
     static var white100 = UIColor(named: "White100")!
+    
+    static var DMPrimary = UIColor(named: "DMPrimary")!
+    static var DMSecondary = UIColor(named: "DMSecondary")!
+    static var DMHighlights = UIColor(named: "DMHighlights")!
+    static var DMWhite10 = UIColor(named: "DMWhite10")!
+    static var DMWhite50 = UIColor(named: "DMWhite50")!
+    static var DMWhite100 = UIColor(named: "DMWhite100")!
 }

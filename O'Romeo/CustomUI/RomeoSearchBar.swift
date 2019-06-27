@@ -17,5 +17,6 @@ class RomeoSearchBar: UISearchBar {
     
     func setupUI() {
         self.barTintColor = .primary
+        self.tintColor = .highlights
     }
 }

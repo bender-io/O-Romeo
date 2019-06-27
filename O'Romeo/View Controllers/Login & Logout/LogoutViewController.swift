@@ -31,12 +31,12 @@ class LogoutViewController: UIViewController {
             selectedColor = ColorScheme.standard
         case 1:
             selectedColor = ColorScheme.dark
-            UIColor.highlights = .orange
-            UIColor.primary = .blue
-            UIColor.secondary = .red
-            UIColor.white100 = .black
-            UIColor.white50 = .green
-            UIColor.white10 = .yellow
+            UIColor.highlights = UIColor.DMHighlights
+            UIColor.primary = UIColor.DMPrimary
+            UIColor.secondary = UIColor.DMSecondary
+            UIColor.white100 = UIColor.DMWhite100
+            UIColor.white50 = UIColor.DMWhite50
+            UIColor.white10 = UIColor.DMWhite10
         case 2:
             selectedColor = ColorScheme.light
         default:
