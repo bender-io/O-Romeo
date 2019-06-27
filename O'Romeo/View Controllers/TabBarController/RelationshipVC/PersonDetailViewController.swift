@@ -11,7 +11,6 @@ import UIKit
 class PersonDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var julietNameTF: UITextField!
     @IBOutlet weak var birthdayTF: UITextField!
     @IBOutlet weak var anniversaryTF: UITextField!
@@ -21,7 +20,6 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var interestsLabel: UILabel!
 
     // MARK: - Landing Pad
-
     var person: Person?
 
     override func viewDidLoad() {
@@ -43,6 +41,36 @@ class PersonDetailViewController: UIViewController {
     }
 
     // MARK: - IBActions
+    @IBAction func birthdayFieldTapped(_ sender: RomeoTextField) {
+        let datePickerView : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePicker.Mode.date
+        sender.inputView = datePickerView
+        datePickerView.backgroundColor = .black
+        datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
+        datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+    }
+    
+    @IBAction func anniversaryFieldTapped(_ sender: RomeoTextField) {
+        let datePickerView : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePicker.Mode.date
+        sender.inputView = datePickerView
+        datePickerView.backgroundColor = .black
+        datePickerView.setValue(UIColor.highlights, forKeyPath: "textColor")
+        datePickerView.addTarget(self, action: #selector(AddDateViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        
+        if birthdayTF.isFirstResponder {
+            birthdayTF.text = dateFormatter.string(from: sender.date)
+        }
+        else if anniversaryTF.isFirstResponder {
+            anniversaryTF.text = dateFormatter.string(from: sender.date)
+        }
+    }
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = julietNameTF.text, let anniversary = anniversaryTF.text, let birthday = birthdayTF.text  else { return }
         if let person = person {
