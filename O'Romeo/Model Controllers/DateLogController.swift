@@ -44,11 +44,15 @@ class DateLogController {
             ], completion: { (error) in
                 if let error = error {
                     print("There was an error adding to calendar: \(error.localizedDescription) : \(#function)")
+                    completion(error)
+                    return
                 } else {
                     guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
                     PersonController.shared.updatePersonDateLog(for: personUID, with: docID, completion: { (error) in
                         if let error = error {
                             print("There was an error: \(error.localizedDescription) : \(#function)")
+                            completion(error)
+                            return
                         }
                         LocalNotificationsController.shared.scheduleUserNotifications(for: date.asDate(), uid: docID)
                     })
@@ -69,6 +73,7 @@ class DateLogController {
                 if let error = error {
                     print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
             guard let personUID = dateLog.personUID else { completion(Errors.unwrapPersonUID); return }
@@ -78,6 +83,7 @@ class DateLogController {
                 if let error = error {
                     print("There was an error deleting the dateLogUID from person: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
         } else if let dateLogUID = dateLogUID {
@@ -85,6 +91,7 @@ class DateLogController {
                 if let error = error {
                     print("There was an error deleting the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
         }
@@ -110,6 +117,7 @@ class DateLogController {
             if let error = error {
                 print("There was an error updating the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+                return
             }
         }
         guard let person = person else { return }
@@ -120,6 +128,7 @@ class DateLogController {
             if let error = error {
                 print("There was an error updating the dateLog: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+                return
             }
         }
         if dateLog.personUID != person.personUID {
@@ -130,6 +139,7 @@ class DateLogController {
                 if let error = error {
                     print("There was an error updating old person: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
             db.collection("person").document(person.personUID).updateData([
@@ -138,6 +148,7 @@ class DateLogController {
                 if let error = error {
                     print("There was an error updating new person: \(error) : \(error.localizedDescription) : \(#function)")
                     completion(error)
+                    return
                 }
             }
         }
@@ -154,15 +165,14 @@ class DateLogController {
             if let error = error {
                 print("There was an error fetching dateLogs: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+                return
             }
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
                 else { completion(Errors.snapshotGuard); return }
-            print("NUMBER 1--- \(self.dateLogs)")
+            
             let fetchedDateLogs = snapshot.documents.compactMap { DateLog(from: $0.data(), uid: $0.documentID) }
             self.dateLogs.append(contentsOf: fetchedDateLogs)
-            print("FETCHED LOGSS ---- \(fetchedDateLogs)")
-            print("NUMBER 2--- \(self.dateLogs)")
             completion(nil)
         }
     }

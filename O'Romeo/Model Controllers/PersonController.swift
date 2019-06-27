@@ -46,6 +46,8 @@ class PersonController {
             ], completion: { (error) in
                 if let error = error {
                     print("Error adding document: \(error) : \(error.localizedDescription): \(#function)")
+                    completion(error)
+                    return
                 } else {
                     guard let docID = ref?.documentID else { completion(Errors.unwrapDocumentID); return }
 
@@ -68,6 +70,7 @@ class PersonController {
             if let error = error {
                 print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+                return
             }
         }
         guard let currentUser = Auth.auth().currentUser else { completion(Errors.noCurrentUser); return }
@@ -77,6 +80,7 @@ class PersonController {
             if let error = error {
                 print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
                 completion(error)
+                return
             }
         }
         guard let interests = person.interests else { return }
@@ -84,6 +88,8 @@ class PersonController {
             InterestController.shared.deleteInterest(interest: nil, interestUID: interest) { (error) in
                 if let error = error {
                     print("There was an error deleting the interest: \(error) : \(#function)")
+                    completion(error)
+                    return
                 }
             }
         }
@@ -92,6 +98,8 @@ class PersonController {
             DateLogController.shared.deleteDateLog(dateLog: nil, dateLogUID: dateLog) { (error) in
                 if let error = error {
                     print("There was an error deleting the dateLog: \(error) : \(#function)")
+                    completion(error)
+                    return
                 }
             }
         }
@@ -114,6 +122,8 @@ class PersonController {
         ]) { (error) in
             if let error = error {
                 print("there was an error updating the persons interests: \(error) : \(error.localizedDescription): \(#function)")
+                completion(error)
+                return
             }
             completion(nil)
         }
@@ -134,6 +144,8 @@ class PersonController {
         ]) { (error) in
             if let error = error {
                 print("There was an error updating the persons datelog: \(error): \(error.localizedDescription) : \(#function)")
+                completion(error)
+                return
             }
             completion(nil)
         }
@@ -158,6 +170,8 @@ class PersonController {
         ]) { (error) in
             if let error = error {
                 print("there was an error updating the person: \(error) : \(error.localizedDescription): \(#function)")
+                completion(error)
+                return
             }
             completion(nil)
 
@@ -172,6 +186,8 @@ class PersonController {
         db.collection("person").whereField("userUID", isEqualTo: userUID).getDocuments { (snapshot, error) in
             if let error = error {
                 print("There was an error fetching persons: \(error) : \(error.localizedDescription) : \(#function)")
+                completion(error)
+                return
             }
             guard let snapshot = snapshot,
                 snapshot.documents.count > 0
