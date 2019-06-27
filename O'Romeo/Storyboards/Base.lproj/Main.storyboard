@@ -162,22 +162,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PzB-gd-YyX">
                                         <rect key="frame" x="31" y="114" width="312" height="45"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
-                                                <color key="backgroundColor" name="Secondary"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                                <state key="normal" title="sign up">
-                                                    <color key="titleColor" name="White100"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-AV-5pK" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                                <rect key="frame" x="162" y="0.0" width="150" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
                                                 <color key="backgroundColor" name="Secondary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Czo-AV-5pK" secondAttribute="height" multiplier="10:3" id="vy4-8c-lZc"/>
@@ -189,6 +175,20 @@
                                                 <connections>
                                                     <action selector="cancelButton:" destination="pDG-fY-qF4" eventType="touchUpInside" id="g9k-Yb-Ks4"/>
                                                     <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="f4o-aQ-eDk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-gD-qcS" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                                <rect key="frame" x="162" y="0.0" width="150" height="45"/>
+                                                <color key="backgroundColor" name="Secondary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
+                                                <state key="normal" title="sign up">
+                                                    <color key="titleColor" name="White100"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
