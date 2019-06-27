@@ -108,7 +108,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text, let personUID = personUID, let newPerson = newPerson
+        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text
             else { return }
         
         if let dateLog = dateLog {
@@ -118,6 +118,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 }
             }
         } else {
+            guard let personUID = personUID else { return }
             DateLogController.shared.createDateLog(date: date, julietName: julietName, event: event, address: address, personUID: personUID, description: "") { (error) in
                 if let error = error {
                     print("Error saving to calendar 🤬 \(error.localizedDescription) : \(#function)")
