@@ -54,7 +54,7 @@ class SearchTableViewCell: UITableViewCell {
         self.addressButton.setTitle(location, for: .normal)
         self.phoneNumberButton.setTitle(yelp.displayPhone, for: .normal)
         self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
-        searchImageView.fetchImageFor(yelp: yelp)
+        searchImageView.fetchImageForYelp(yelp: yelp)
     }
     
     @IBAction func calendarButtonTapped(_ sender: Any) {

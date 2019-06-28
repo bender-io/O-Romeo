@@ -16,7 +16,7 @@ protocol EventTableViewCellDelegate: class {
 class EventTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var eventImageView: UIImageView!
+    @IBOutlet weak var eventImageView: CustomImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -48,14 +48,7 @@ class EventTableViewCell: UITableViewCell {
         self.descriptionLabel.text = event.eventDescription
         self.dateLabel.text = event.startTime.asEventDateString()
         self.urlButton.setTitle("Click here for more details", for: .normal)
-
-        EventfulController.shared.fetchImageFor(eventful: event) { (image) in
-            if let image = image {
-                DispatchQueue.main.async {
-                    self.eventImageView.image = image
-                }
-            }
-        }
+        eventImageView.fetchImageFor(eventful: event)
     }
     
     @IBAction func calendarButtonTapped(_ sender: Any) {

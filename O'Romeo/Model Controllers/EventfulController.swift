@@ -56,28 +56,4 @@ class EventfulController {
                 }.resume()
         }
     }
-    
-    func fetchImageFor(eventful: Event, completion: @escaping ((UIImage?) -> Void)) {
-        // unwrpa image first
-        guard let imageURL = eventful.image?.medium.url else { return }
-        //        imageURL.removeFirst()
-        let finalURL = "https:" + imageURL
-        
-        //        print(imageURL)
-        guard let baseURL = URL(string: finalURL) else { return }
-        //        guard let baseURL = URL(string: eventful.image.medium.url) else { return }
-        //        print(baseURL)
-        
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
-            if let error = error {
-                print("fetching image \(error.localizedDescription)")
-                completion(nil)
-                return
-            }
-            
-            guard let data = data else { completion(nil); return }
-            let image = UIImage(data: data)
-            completion(image)
-            }.resume()
-    }
 }
