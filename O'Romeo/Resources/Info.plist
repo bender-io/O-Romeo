@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>O'Romeo needs to use your location for better usage!</string>
+	<string>O&apos;Romeo needs to use your location for better usage!</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Compact-Rounded-Black.otf</string>
@@ -58,5 +58,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key></key>
+	<string></string>
 </dict>
 </plist>
