@@ -30,8 +30,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         view.backgroundColor = .primary
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
         tableView.backgroundColor = .white10
         CurrentLocation.shared.delegate = self
     }

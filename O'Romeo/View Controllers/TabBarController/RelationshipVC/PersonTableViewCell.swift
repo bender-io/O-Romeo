@@ -29,6 +29,7 @@ class PersonTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
+        self.layer.cornerRadius = 10
     }
     
     // MARK: - Cell Methods

@@ -32,8 +32,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = .primary
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
         CurrentLocation.shared.findLocation()
         CurrentLocation.shared.delegate = self
     }

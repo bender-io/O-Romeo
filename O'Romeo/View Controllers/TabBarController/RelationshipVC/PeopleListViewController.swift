@@ -35,8 +35,6 @@ class PeopleListViewController: UIViewController {
         view.backgroundColor = .primary
         navigationController?.navigationBar.tintColor = .highlights
         navigationController?.navigationBar.barTintColor = .primary
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
         tableView.backgroundColor = .white10
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {

@@ -108,7 +108,7 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-DM-a6D">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-DM-a6D" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="116" width="374" height="2"/>
                                                             <color key="backgroundColor" name="Primary"/>
                                                             <constraints>
@@ -148,7 +148,6 @@
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-rN-tq2">
                                                             <rect key="frame" x="0.0" y="214" width="374" height="16"/>
-                                                            <color key="backgroundColor" name="Primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="NbU-Nz-jXh"/>
                                                             </constraints>
@@ -175,7 +174,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="XNk-Or-JVN" secondAttribute="trailing" id="hWS-fE-tWz"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" name="White10"/>
                                         <connections>
                                             <outlet property="categoriesLabel" destination="eAo-tv-aCF" id="bfH-0f-m6l"/>
                                             <outlet property="directionsLabel" destination="lPQ-PJ-AZC" id="6wQ-ZC-UF8"/>
@@ -221,13 +219,45 @@
         <!--Logout View Controller-->
         <scene sceneID="LVK-gL-Kke">
             <objects>
-                <viewController id="O7J-a3-ezk" customClass="LogoutViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="O7J-a3-ezk" customClass="LogoutViewController" customModule="O_Romeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c7w-XB-eIz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nk5-9k-vOp">
+                                <rect key="frame" x="20" y="64" width="374" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Scheme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxl-gs-exM" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-SE-8Nw" customClass="RomeoSegmentController" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3E3-c0-tUT"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Scheme:"/>
+                                            <segment title="Default"/>
+                                            <segment title="Dark"/>
+                                            <segment title="Light"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentControlTapped:" destination="O7J-a3-ezk" eventType="valueChanged" id="l4u-g7-J0N"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KoR-SE-8Nw" secondAttribute="trailing" id="3aF-Na-66d"/>
+                                    <constraint firstItem="KoR-SE-8Nw" firstAttribute="leading" secondItem="Nk5-9k-vOp" secondAttribute="leading" id="BEu-wZ-cCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="zxl-gs-exM" secondAttribute="trailing" id="LLn-Kf-0xI"/>
+                                    <constraint firstItem="zxl-gs-exM" firstAttribute="leading" secondItem="Nk5-9k-vOp" secondAttribute="leading" id="dzM-yB-H0J"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVx-HW-ICU" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="136.5" y="188" width="257.5" height="40"/>
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QEf-j0-2eh"/>
                                 </constraints>
@@ -237,36 +267,42 @@
                                     <action selector="logoutButtonTapped:" destination="O7J-a3-ezk" eventType="touchUpInside" id="qPz-zc-AOY"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-SE-8Nw" customClass="RomeoSegmentController" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="136.5" y="128" width="257.5" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3E3-c0-tUT"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Default"/>
-                                    <segment title="Dark"/>
-                                    <segment title="Light"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentControlTapped:" destination="O7J-a3-ezk" eventType="valueChanged" id="l4u-g7-J0N"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Scheme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxl-gs-exM" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="20" y="138" width="108.5" height="21.5"/>
-                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dca-6b-qRs">
+                                <rect key="frame" x="100" y="204" width="214" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il9-zL-5B5" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eCD-2J-D6Y"/>
+                                        </constraints>
+                                        <state key="normal" title="save changes"/>
+                                        <connections>
+                                            <action selector="saveChangesButtonTapped:" destination="O7J-a3-ezk" eventType="touchUpInside" id="zxr-1T-Ck4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EP-Ri-9Fd" customClass="RomeoButton" customModule="O_Romeo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="214" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="SMZ-lw-rNb"/>
+                                        </constraints>
+                                        <state key="normal" title="cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="O7J-a3-ezk" eventType="touchUpInside" id="kiM-Py-1F3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="zVx-HW-ICU" firstAttribute="leading" secondItem="KoR-SE-8Nw" secondAttribute="leading" id="3tP-Z1-vW9"/>
-                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="KoR-SE-8Nw" secondAttribute="trailing" constant="20" id="O7B-nM-QfD"/>
-                            <constraint firstItem="zxl-gs-exM" firstAttribute="top" secondItem="MFx-at-PSb" secondAttribute="top" constant="50" id="OcR-ww-H4K"/>
-                            <constraint firstItem="KoR-SE-8Nw" firstAttribute="leading" secondItem="zxl-gs-exM" secondAttribute="trailing" constant="8" id="ZAG-29-WXd"/>
-                            <constraint firstItem="zVx-HW-ICU" firstAttribute="top" secondItem="KoR-SE-8Nw" secondAttribute="bottom" constant="20" id="eih-e3-Fg3"/>
-                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="zVx-HW-ICU" secondAttribute="trailing" constant="20" id="oeQ-nJ-oLn"/>
-                            <constraint firstItem="zxl-gs-exM" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="20" id="svp-8S-1of"/>
-                            <constraint firstItem="KoR-SE-8Nw" firstAttribute="top" secondItem="MFx-at-PSb" secondAttribute="top" constant="40" id="wGf-G0-iJs"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="Nk5-9k-vOp" secondAttribute="trailing" constant="20" id="2bj-5a-KrL"/>
+                            <constraint firstItem="Nk5-9k-vOp" firstAttribute="top" secondItem="MFx-at-PSb" secondAttribute="top" constant="20" id="3MS-8i-2vW"/>
+                            <constraint firstItem="zVx-HW-ICU" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="20" id="3kV-OW-vZP"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="bottom" secondItem="zVx-HW-ICU" secondAttribute="bottom" constant="20" id="HVO-WI-ycf"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="dca-6b-qRs" secondAttribute="trailing" constant="100" id="cr9-ok-N25"/>
+                            <constraint firstItem="dca-6b-qRs" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="100" id="doe-MG-jxR"/>
+                            <constraint firstItem="dca-6b-qRs" firstAttribute="top" secondItem="Nk5-9k-vOp" secondAttribute="bottom" constant="60" id="lA4-wy-I0h"/>
+                            <constraint firstItem="MFx-at-PSb" firstAttribute="trailing" secondItem="zVx-HW-ICU" secondAttribute="trailing" constant="20" id="mFS-d5-oW6"/>
+                            <constraint firstItem="Nk5-9k-vOp" firstAttribute="leading" secondItem="MFx-at-PSb" secondAttribute="leading" constant="20" id="onQ-B8-jiI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MFx-at-PSb"/>
                     </view>
@@ -356,7 +392,7 @@
                     <navigationItem key="navigationItem" id="CFQ-Ou-zNh">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="6Uo-yP-iTZ">
                             <connections>
-                                <segue destination="O7J-a3-ezk" kind="show" identifier="toLogoutVC" id="qT7-Gw-5mx"/>
+                                <segue destination="O7J-a3-ezk" kind="presentation" identifier="toLogoutVC" id="qT7-Gw-5mx"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nl1-wF-kBC" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target">
@@ -667,9 +703,8 @@
                                                     <color key="textColor" name="White100"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxd-GC-0Zd">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxd-GC-0Zd" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="186" width="374" height="2"/>
-                                                    <color key="backgroundColor" name="Primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="TdG-Wj-u8l"/>
                                                     </constraints>
@@ -905,7 +940,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXi-Rh-bHA">
                                 <rect key="frame" x="20" y="317" width="374" height="246"/>
-                                <color key="backgroundColor" name="Primary"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="interestCell" id="Whd-nI-wQZ">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
