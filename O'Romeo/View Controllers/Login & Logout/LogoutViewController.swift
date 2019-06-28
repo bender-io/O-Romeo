@@ -40,23 +40,23 @@ class LogoutViewController: UIViewController {
         case 0:
             selectedColor = ColorScheme.standard
             
-            
         case 1:
-            colorPickerStandard()
+            selectedColor = ColorScheme.standard
+            colorPicker(scheme: selectedColor)
             loadView()
             viewDidLoad()
             
         case 2:
-            colorPickerDark()
+            selectedColor = ColorScheme.dark
+            colorPicker(scheme: selectedColor)
             loadView()
             viewDidLoad()
 
-            
         case 3:
-            colorPickerLight()
+            selectedColor = ColorScheme.light
+            colorPicker(scheme: selectedColor)
             loadView()
             viewDidLoad()
-
             
         default:
             selectedColor = ColorScheme.standard
@@ -64,12 +64,13 @@ class LogoutViewController: UIViewController {
     }
     
     @IBAction func saveChangesButtonTapped(_ sender: Any) {
+        UserDefaults.standard.set(selectedColor, forKey: "ColorScheme")
+        print("Color \(selectedColor) saved to UserDefaults")
         let splashScreenViewController = splashScreen.instantiateViewController(withIdentifier: "SplashScreenVC")
         UIApplication.shared.windows.first!.rootViewController = splashScreenViewController
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        colorPickerStandard()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -83,33 +84,40 @@ class LogoutViewController: UIViewController {
         UIApplication.shared.windows.first!.rootViewController = loginViewController
     }
     
-    func colorPickerDark() {
-        selectedColor = ColorScheme.dark
-        UIColor.highlights = UIColor.DMHighlights
-        UIColor.primary = UIColor.DMPrimary
-        UIColor.secondary = UIColor.DMSecondary
-        UIColor.white100 = UIColor.DMWhite100
-        UIColor.white50 = UIColor.DMWhite50
-        UIColor.white10 = UIColor.DMWhite10
-    }
-    
-    func colorPickerStandard() {
-        selectedColor = ColorScheme.light
-        UIColor.highlights = UIColor.STHighlights
-        UIColor.primary = UIColor.STPrimary
-        UIColor.secondary = UIColor.STSecondary
-        UIColor.white100 = UIColor.STWhite100
-        UIColor.white50 = UIColor.STWhite50
-        UIColor.white10 = UIColor.STWhite10
-    }
-    
-    func colorPickerLight() {
-        selectedColor = ColorScheme.light
-        UIColor.highlights = UIColor.LMHighlights
-        UIColor.primary = UIColor.LMPrimary
-        UIColor.secondary = UIColor.LMSecondary
-        UIColor.white100 = UIColor.LMWhite100
-        UIColor.white50 = UIColor.LMWhite50
-        UIColor.white10 = UIColor.LMWhite10
+    func colorPicker(scheme: String?) {
+        
+        switch scheme {
+        case ColorScheme.standard:
+            UIColor.highlights = UIColor.STHighlights
+            UIColor.primary = UIColor.STPrimary
+            UIColor.secondary = UIColor.STSecondary
+            UIColor.white100 = UIColor.STWhite100
+            UIColor.white50 = UIColor.STWhite50
+            UIColor.white10 = UIColor.STWhite10
+            
+        case ColorScheme.dark:
+            UIColor.highlights = UIColor.DMHighlights
+            UIColor.primary = UIColor.DMPrimary
+            UIColor.secondary = UIColor.DMSecondary
+            UIColor.white100 = UIColor.DMWhite100
+            UIColor.white50 = UIColor.DMWhite50
+            UIColor.white10 = UIColor.DMWhite10
+            
+        case ColorScheme.light:
+            UIColor.highlights = UIColor.LMHighlights
+            UIColor.primary = UIColor.LMPrimary
+            UIColor.secondary = UIColor.LMSecondary
+            UIColor.white100 = UIColor.LMWhite100
+            UIColor.white50 = UIColor.LMWhite50
+            UIColor.white10 = UIColor.LMWhite10
+            
+        default:
+            UIColor.highlights = UIColor.STHighlights
+            UIColor.primary = UIColor.STPrimary
+            UIColor.secondary = UIColor.STSecondary
+            UIColor.white100 = UIColor.STWhite100
+            UIColor.white50 = UIColor.STWhite50
+            UIColor.white10 = UIColor.STWhite10
+        }
     }
 }
