@@ -44,15 +44,19 @@ class LogoutViewController: UIViewController {
         case 1:
             colorPickerStandard()
             loadView()
+            viewDidLoad()
             
         case 2:
             colorPickerDark()
             loadView()
+            viewDidLoad()
 
             
         case 3:
             colorPickerLight()
             loadView()
+            viewDidLoad()
+
             
         default:
             selectedColor = ColorScheme.standard

@@ -27,7 +27,7 @@ class CalendarTableViewCell: UITableViewCell {
     }
     
     func setupUI() {
-        self.backgroundColor = .white10
+        self.backgroundColor = .primary
     }
 
     func updateViews() {

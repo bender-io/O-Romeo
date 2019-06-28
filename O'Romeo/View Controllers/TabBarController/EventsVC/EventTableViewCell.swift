@@ -37,7 +37,6 @@ class EventTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
-        self.layer.cornerRadius = 10
     }
     
     func updateViews() {
