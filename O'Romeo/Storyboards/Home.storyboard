@@ -110,7 +110,6 @@
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVC-DM-a6D" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="116" width="374" height="2"/>
-                                                            <color key="backgroundColor" name="Primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="Mth-gZ-nEj"/>
                                                             </constraints>
@@ -1100,9 +1099,6 @@
         <image name="Music" width="48" height="48"/>
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
-        <namedColor name="Primary">
-            <color red="0.050980392156862744" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="White10">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

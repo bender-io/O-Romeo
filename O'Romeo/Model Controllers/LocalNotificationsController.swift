@@ -28,14 +28,13 @@ extension LocalNotificationsController : LocalNotificationScheduler {
         let notificationSound = UNNotificationSound.default
         let notificationContent = UNMutableNotificationContent()
         notificationContent.badge = .init(integerLiteral: 1)
-        notificationContent.title = "Ready for that date?"
+        notificationContent.title = "Ready for that date tomorrow?"
         notificationContent.body = "You got this"
         notificationContent.sound = notificationSound
         
-        // TODO: - Test and Replace with One Day Before
-//        let oneDayBeforeDate = Date(timeInterval: -86400, since: time)
-        let thirtySecondsBeforeDate = Date(timeInterval: -30, since: time)
-        let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: thirtySecondsBeforeDate)
+//        let thirtySecondsBeforeDate = Date(timeInterval: -30, since: time)
+        let oneDayBeforeDate = Date(timeInterval: -86400, since: time)
+        let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: oneDayBeforeDate)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "LocalNotification", content: notificationContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (error) in
