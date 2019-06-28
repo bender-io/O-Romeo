@@ -22,6 +22,16 @@ class PersonTableViewCell: UITableViewCell {
         }
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.backgroundColor = .white10
+        self.layer.cornerRadius = 10
+    }
+    
     // MARK: - Cell Methods
     func updateViews() {
         guard let person = person else { print("Couldn't unwrap person: \(#function)"); return }

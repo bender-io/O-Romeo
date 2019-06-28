@@ -29,6 +29,11 @@ class InterestDetailViewController: UIViewController {
         descriptionTextField.text = interest.description
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        view.backgroundColor = .primary
+    }
+    
     func presentAlert() {
         let alert = UIAlertController(title: "Error", message: "Please fill in the name and description", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)

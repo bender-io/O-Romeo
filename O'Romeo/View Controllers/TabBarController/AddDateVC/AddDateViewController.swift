@@ -32,7 +32,11 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         updateViews()
         setupPicker()
         self.hideKeyboardWhenTappedAround()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        view.backgroundColor = .primary
     }
     
     // MARK: - Methods

@@ -10,15 +10,24 @@ import UIKit
 
 class CalendarTableViewCell: UITableViewCell {
 
+    var dateLog: DateLog? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     @IBOutlet weak var julietNameLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var dateLog: DateLog? {
-        didSet {
-            updateViews()
-        }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.backgroundColor = .white10
     }
 
     func updateViews() {

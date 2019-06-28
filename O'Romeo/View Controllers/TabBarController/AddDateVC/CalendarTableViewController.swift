@@ -18,6 +18,11 @@ class CalendarTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        view.backgroundColor = .primary
+        navigationController?.navigationBar.barTintColor = .primary
+        navigationController?.navigationBar.tintColor = .highlights
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching the people: \(error) : \(#function)")

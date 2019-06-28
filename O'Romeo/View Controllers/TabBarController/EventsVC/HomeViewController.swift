@@ -29,6 +29,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        view.backgroundColor = .primary
+        tableView.backgroundColor = .white10
         CurrentLocation.shared.delegate = self
     }
     

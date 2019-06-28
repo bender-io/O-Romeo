@@ -33,6 +33,8 @@ class PersonDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        view.backgroundColor = .primary
+        tableView.backgroundColor = .white10
         updateViews()
 //        interestArray = InterestController.shared.interests.sorted(by: {
 //            if $0.name == "Favorite Color"{
@@ -199,6 +201,8 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
         let interest = interestArray[indexPath.row]
         cell.textLabel?.text = interest.name
         cell.textLabel?.textColor = .highlights
+        cell.backgroundColor = .white10
+        cell.layer.cornerRadius = 10
 
         return cell
     }

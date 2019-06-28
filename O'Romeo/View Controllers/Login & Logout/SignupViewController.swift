@@ -21,6 +21,11 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        view.backgroundColor = .primary
+    }
 
     // MARK: - IBActions
     @IBAction func signupButtonTapped(_ sender: UIButton) {
