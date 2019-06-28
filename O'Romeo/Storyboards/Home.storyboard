@@ -146,7 +146,7 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-rN-tq2">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-rN-tq2" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="214" width="374" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="NbU-Nz-jXh"/>
@@ -426,34 +426,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdO-Z3-Rcu">
-                                            <rect key="frame" x="20" y="30" width="374" height="100"/>
+                                            <rect key="frame" x="20" y="10" width="374" height="120"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4xS-Zw-frO">
-                                                    <rect key="frame" x="8" y="8" width="358" height="84"/>
+                                                    <rect key="frame" x="8" y="8" width="358" height="104"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-4g-lQ0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="84"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="358" height="104"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(juliet)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd3-dx-C0m" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="23"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBC-v3-0eP" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="22" width="358" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="27" width="358" height="23"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(event)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-dL-bgZ" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="44" width="358" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="54" width="358" height="23"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZc-yZ-J5S" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="66" width="358" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="81" width="358" height="23"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -475,7 +475,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="EdO-Z3-Rcu" secondAttribute="trailing" constant="20" id="5pL-fJ-oda"/>
                                         <constraint firstAttribute="bottom" secondItem="EdO-Z3-Rcu" secondAttribute="bottom" id="HmR-wf-fuH"/>
-                                        <constraint firstItem="EdO-Z3-Rcu" firstAttribute="top" secondItem="QVb-yC-5zo" secondAttribute="top" constant="30" id="Z60-sV-SCo"/>
+                                        <constraint firstItem="EdO-Z3-Rcu" firstAttribute="top" secondItem="QVb-yC-5zo" secondAttribute="top" constant="10" id="Z60-sV-SCo"/>
                                         <constraint firstItem="EdO-Z3-Rcu" firstAttribute="leading" secondItem="QVb-yC-5zo" secondAttribute="leading" constant="20" id="epb-zf-lYD"/>
                                     </constraints>
                                 </tableViewCellContentView>

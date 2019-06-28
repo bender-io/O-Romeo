@@ -35,7 +35,7 @@ class PeopleListViewController: UIViewController {
         view.backgroundColor = .primary
         navigationController?.navigationBar.tintColor = .highlights
         navigationController?.navigationBar.barTintColor = .primary
-        tableView.backgroundColor = .white10
+        tableView.backgroundColor = .primary
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching persons: \(error.localizedDescription): \(#function)")

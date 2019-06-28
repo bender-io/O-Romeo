@@ -36,16 +36,6 @@ class PersonDetailViewController: UIViewController {
         view.backgroundColor = .primary
         tableView.backgroundColor = .white10
         updateViews()
-//        interestArray = InterestController.shared.interests.sorted(by: {
-//            if $0.name == "Favorite Color"{
-//                return $0.name < $1.name
-//            } else if $0.name == "Favorite Movie" {
-//                return $0.name < $1.name
-//            } else if $0.name == "Favorite Flower" {
-//                return $0.name < $1.name
-//            }
-//            return $0.name > $1.name
-//        })
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -176,60 +166,15 @@ extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath)
-
-//        var interest: Interest?
-//
-//        switch indexPath.row {
-//        case 0:
-//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Color" }) else { fallthrough }
-//            interest = InterestController.shared.interests[index]
-//        case 1:
-//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Flower" }) else { fallthrough }
-//            interest = InterestController.shared.interests[index]
-//        case 2:
-//            guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Movie" }) else { fallthrough }
-//            interest = InterestController.shared.interests[index]
-//        default:
-//            interest = InterestController.shared.interests[indexPath.row]
-//        }
-//
-//        if let interest = interest {
-//            cell.textLabel?.text = interest.name
-//            cell.textLabel?.textColor = .highlights
-//        }
-        
         let interest = interestArray[indexPath.row]
         cell.textLabel?.text = interest.name
         cell.textLabel?.textColor = .highlights
         cell.backgroundColor = .white10
-        cell.layer.cornerRadius = 10
-
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-//            var interest: Interest?
-//
-//            switch indexPath.row {
-//            case 0:
-//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Color" }) else { fallthrough }
-//                interest = InterestController.shared.interests[index]
-//                InterestController.shared.interests.remove(at: index)
-//            case 1:
-//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Flower" }) else { fallthrough }
-//                interest = InterestController.shared.interests[index]
-//                InterestController.shared.interests.remove(at: index)
-//            case 2:
-//                guard let index = InterestController.shared.interests.firstIndex(where: { $0.name == "Favorite Movie" }) else { fallthrough }
-//                interest = InterestController.shared.interests[index]
-//                InterestController.shared.interests.remove(at: index)
-//            default:
-//                interest = InterestController.shared.interests[indexPath.row]
-//                InterestController.shared.interests.remove(at: indexPath.row)
-//            }
-            
             let interest = interestArray[indexPath.row]
             let index = interestArray.firstIndex(of: interest)
             interestArray.remove(at: index!)
