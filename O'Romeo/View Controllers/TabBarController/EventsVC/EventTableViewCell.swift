@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol EventTableViewCellDelegate: class {
     func calendarButtonTapped(event: Event)
@@ -17,12 +18,12 @@ class EventTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
-    @IBOutlet weak var eventAddressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var urlButton: UIButton!
-
+    @IBOutlet weak var addressButton: RomeoButtonText!
+    
     var event: Event? {
         didSet {
             updateViews()
@@ -42,7 +43,7 @@ class EventTableViewCell: UITableViewCell {
     func updateViews() {
         guard let event = event else { return }
         self.eventNameLabel.text = event.title
-        self.eventAddressLabel.text = event.venueAddress
+        self.addressButton.setTitle(event.venueAddress, for: .normal)
         self.cityLabel.text = event.cityName
         self.descriptionLabel.text = event.eventDescription
         self.dateLabel.text = event.startTime.asEventDateString()
@@ -66,5 +67,26 @@ class EventTableViewCell: UITableViewCell {
         guard let event = event else { return }
         let eventURL = NSURL(string: event.url!)! as URL
         UIApplication.shared.open(eventURL, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func addressButtonTapped(_ sender: Any) {
+        guard let street = event?.venueAddress,
+            let city = event?.cityName
+            else { return }
+        let address = street + ", " + city
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if let error = error {
+                print(error)
+            }
+            if let location = placemarks?.first?.location, let name = self.event?.venueName{
+                let coordinates = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+                let option = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: coordinates)]
+                let placemark = MKPlacemark(coordinate: coordinates)
+                let mapitem = MKMapItem(placemark: placemark)
+                mapitem.name = name
+                mapitem.openInMaps(launchOptions: option)
+            }
+        }
     }
 }
