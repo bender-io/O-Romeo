@@ -17,7 +17,7 @@ class SearchTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
 
-    @IBOutlet weak var searchImageView: UIImageView!
+    @IBOutlet weak var searchImageView: CustomImageView!
     @IBOutlet weak var searchNameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
@@ -54,11 +54,7 @@ class SearchTableViewCell: UITableViewCell {
         self.addressButton.setTitle(location, for: .normal)
         self.phoneNumberButton.setTitle(yelp.displayPhone, for: .normal)
         self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
-        YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
-            DispatchQueue.main.async {
-                self.searchImageView.image = image
-            }
-        }
+        searchImageView.fetchImageFor(yelp: yelp)
     }
     
     @IBAction func calendarButtonTapped(_ sender: Any) {
