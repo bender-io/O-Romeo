@@ -30,14 +30,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search locations" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Wa-Blx" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search for " translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Wa-Blx" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="m6i-b0-Fee" id="GQr-0i-Sva"/>
                                 </connections>
                             </searchBar>
-                            <searchBar tag="1" contentMode="redraw" barStyle="black" placeholder="Location" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-Fm-O8R" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
+                            <searchBar tag="1" contentMode="redraw" barStyle="black" placeholder="Enter Location..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-Fm-O8R" customClass="RomeoSearchBar" customModule="O_Romeo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>

@@ -48,12 +48,6 @@ class CurrentLocation: NSObject {
         }
     }
     
-//    func getCityName(from placemark: CLPlacemark) -> String {
-//        guard let placemark = placemark else { return }
-//        let city = placemark.locality
-//        return String(city)
-//    }
-    
     func findLocation() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         switch authorizationStatus {

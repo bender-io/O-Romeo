@@ -113,7 +113,6 @@ extension EventViewController: EventTableViewCellDelegate {
 extension EventViewController: CurrentLocationDelegate {
     func locationWasUpdated(location: CLLocation) {
         self.location = location
-        
         EventfulController.shared.fetchEvents(searchTerm: eventType.rawValue, location: location) { (event) in
             self.eventResults = event
             DispatchQueue.main.async {
