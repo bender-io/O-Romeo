@@ -76,6 +76,7 @@
 		EC9E495522C16BBE0061AAB4 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495422C16BBE0061AAB4 /* CalendarTableViewCell.swift */; };
 		ECA07C4022BD361D008741B0 /* DateLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* DateLog.swift */; };
 		ECC8FB5422BD7EBC002CC29E /* AddDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */; };
+		ECE1336322C68B6C0061A502 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE1336222C68B6C0061A502 /* CustomImageView.swift */; };
 		ECFE939922B99CE10042C00A /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939822B99CE10042C00A /* Yelp.swift */; };
 		ECFE939B22B99CF30042C00A /* Eventful.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939A22B99CF30042C00A /* Eventful.swift */; };
 		ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE939C22B99D2E0042C00A /* YelpController.swift */; };
@@ -153,6 +154,7 @@
 		EC9E495422C16BBE0061AAB4 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		ECA07C3F22BD361D008741B0 /* DateLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLog.swift; sourceTree = "<group>"; };
 		ECC8FB5322BD7EBC002CC29E /* AddDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDateViewController.swift; sourceTree = "<group>"; };
+		ECE1336222C68B6C0061A502 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		ECFE939822B99CE10042C00A /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		ECFE939A22B99CF30042C00A /* Eventful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventful.swift; sourceTree = "<group>"; };
 		ECFE939C22B99D2E0042C00A /* YelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				ECFE939822B99CE10042C00A /* Yelp.swift */,
 				ECFE939A22B99CF30042C00A /* Eventful.swift */,
 				ECA07C3F22BD361D008741B0 /* DateLog.swift */,
+				ECE1336222C68B6C0061A502 /* CustomImageView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */,
 				569A6CF322B7E11D0025C319 /* HomeViewController.swift in Sources */,
 				560BF55922B97737000E7F66 /* RomeoButton.swift in Sources */,
+				ECE1336322C68B6C0061A502 /* CustomImageView.swift in Sources */,
 				56F4627322C5647F000F442D /* RomeoPrimaryLabel.swift in Sources */,
 				E49AAE1A22B99FC90099C45A /* InterestController.swift in Sources */,
 				56F4626D22C554B6000F442D /* ColorScheme.swift in Sources */,
