@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol SearchTableViewCellDelegate: class {
     func calendarButtonTapped(yelp: Yelp)
@@ -20,9 +21,9 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var searchNameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
-    @IBOutlet weak var directionsLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: RomeoButtonText!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var addressButton: UIButton!
     
     var yelp: Yelp? {
         didSet {
@@ -50,7 +51,7 @@ class SearchTableViewCell: UITableViewCell {
         self.searchNameLabel.text = yelp.name
         self.ratingLabel.text = "Rating: \(rating)"
         self.categoriesLabel.text = categories
-        self.directionsLabel.text = location
+        self.addressButton.setTitle(location, for: .normal)
         self.phoneNumberButton.setTitle(yelp.displayPhone, for: .normal)
         self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
         YelpController.shared.fetchImageFor(yelp: yelp) { (image) in
@@ -70,6 +71,26 @@ class SearchTableViewCell: UITableViewCell {
         let number = yelpNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         if let url = URL(string: "tel://\(number)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    @IBAction func addressButtonTapped(_ sender: Any) {
+        guard let street = yelp?.location?.displayAddress.first,
+            let cityState = yelp?.location?.displayAddress.last
+            else { return }
+        let address = street + ", " + cityState
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if let error = error {
+                print(error)
+            }
+            if let location = placemarks?.first?.location, let name = self.yelp?.name{
+                let coordinates = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+                let option = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: coordinates)]
+                let placemark = MKPlacemark(coordinate: coordinates)
+                let mapitem = MKMapItem(placemark: placemark)
+                mapitem.name = name
+                mapitem.openInMaps(launchOptions: option)
+            }
         }
     }
 }

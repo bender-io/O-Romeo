@@ -121,12 +121,14 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ipH-Jk-kMT">
                                                                     <rect key="frame" x="0.0" y="0.0" width="242" height="64"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(address)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-PJ-AZC" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMA-jF-1O9" customClass="RomeoButtonText" customModule="O_Romeo" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="242" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                            <state key="normal" title="(address)"/>
+                                                                            <connections>
+                                                                                <action selector="addressButtonTapped:" destination="OE5-Lx-6Cj" eventType="touchUpInside" id="5ou-QF-8Ke"/>
+                                                                            </connections>
+                                                                        </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awX-np-E0l" customClass="RomeoButtonText" customModule="O_Romeo" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="34" width="242" height="30"/>
                                                                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
@@ -175,8 +177,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addressButton" destination="kMA-jF-1O9" id="2Fd-N5-lvC"/>
                                             <outlet property="categoriesLabel" destination="eAo-tv-aCF" id="bfH-0f-m6l"/>
-                                            <outlet property="directionsLabel" destination="lPQ-PJ-AZC" id="6wQ-ZC-UF8"/>
                                             <outlet property="distanceLabel" destination="GgJ-da-hI4" id="TgX-4R-Y5O"/>
                                             <outlet property="phoneNumberButton" destination="awX-np-E0l" id="ExV-ve-R8X"/>
                                             <outlet property="ratingLabel" destination="vYH-sb-Kpw" id="VaJ-h3-KE3"/>
@@ -666,19 +668,21 @@
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="58"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="48"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(street)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-qF-Alo" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="58" width="176" height="46"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2K-WF-xZQ" customClass="RomeoButtonText" customModule="O_Romeo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="48" width="176" height="64"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                    <state key="normal" title="(address)"/>
+                                                                    <connections>
+                                                                        <action selector="addressButtonTapped:" destination="LFj-Wn-VZR" eventType="touchUpInside" id="VXL-5F-ec1"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(distance)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erB-7b-V1m" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="104" width="176" height="46"/>
+                                                                    <rect key="frame" x="0.0" y="112" width="176" height="38"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -770,10 +774,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White10"/>
                                         <connections>
+                                            <outlet property="addressButton" destination="C2K-WF-xZQ" id="YOA-5k-D9y"/>
                                             <outlet property="cityLabel" destination="erB-7b-V1m" id="n4p-gd-0as"/>
                                             <outlet property="dateLabel" destination="pak-cb-Em8" id="GKk-7O-v6s"/>
                                             <outlet property="descriptionLabel" destination="Him-bG-rDP" id="n3w-Yg-kWx"/>
-                                            <outlet property="eventAddressLabel" destination="FJT-qF-Alo" id="yWP-Tb-jeZ"/>
                                             <outlet property="eventImageView" destination="kJ4-3D-kqF" id="kmq-2m-gMS"/>
                                             <outlet property="eventNameLabel" destination="wLP-hu-X7v" id="uGN-Ab-pHq"/>
                                             <outlet property="urlButton" destination="qMt-AA-ChJ" id="wI4-mP-Bk4"/>
