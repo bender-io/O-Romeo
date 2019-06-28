@@ -26,6 +26,7 @@ class LogoutViewController: UIViewController {
         tabBarController?.tabBar.barTintColor = .primary
         navigationController?.navigationBar.tintColor = .highlights
         navigationController?.navigationBar.barTintColor = .primary
+        segmentControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "CurrentSegment") 
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,18 +44,21 @@ class LogoutViewController: UIViewController {
         case 1:
             selectedColor = ColorScheme.standard
             colorPicker(scheme: selectedColor)
+            UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
             loadView()
             viewDidLoad()
             
         case 2:
             selectedColor = ColorScheme.dark
             colorPicker(scheme: selectedColor)
+            UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
             loadView()
             viewDidLoad()
 
         case 3:
             selectedColor = ColorScheme.light
             colorPicker(scheme: selectedColor)
+            UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
             loadView()
             viewDidLoad()
             
