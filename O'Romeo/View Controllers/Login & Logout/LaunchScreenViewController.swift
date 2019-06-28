@@ -20,6 +20,7 @@ class LaunchScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchColorScheme()
         animateLayers()
         launchLogo.center = self.view.center
         view.backgroundColor = .primary
@@ -42,6 +43,45 @@ class LaunchScreenViewController: UIViewController {
                     UIApplication.shared.windows.first!.rootViewController = loginViewController
                 }
             }
+        }
+    }
+    
+    // MARK: - UserDefaults Methods
+    func fetchColorScheme() {
+        let scheme = UserDefaults.standard.string(forKey: "ColorScheme")
+        
+        switch scheme {
+        case ColorScheme.standard:
+            UIColor.highlights = UIColor.STHighlights
+            UIColor.primary = UIColor.STPrimary
+            UIColor.secondary = UIColor.STSecondary
+            UIColor.white100 = UIColor.STWhite100
+            UIColor.white50 = UIColor.STWhite50
+            UIColor.white10 = UIColor.STWhite10
+            
+        case ColorScheme.dark:
+            UIColor.highlights = UIColor.DMHighlights
+            UIColor.primary = UIColor.DMPrimary
+            UIColor.secondary = UIColor.DMSecondary
+            UIColor.white100 = UIColor.DMWhite100
+            UIColor.white50 = UIColor.DMWhite50
+            UIColor.white10 = UIColor.DMWhite10
+            
+        case ColorScheme.light:
+            UIColor.highlights = UIColor.LMHighlights
+            UIColor.primary = UIColor.LMPrimary
+            UIColor.secondary = UIColor.LMSecondary
+            UIColor.white100 = UIColor.LMWhite100
+            UIColor.white50 = UIColor.LMWhite50
+            UIColor.white10 = UIColor.LMWhite10
+            
+        default:
+            UIColor.highlights = UIColor.STHighlights
+            UIColor.primary = UIColor.STPrimary
+            UIColor.secondary = UIColor.STSecondary
+            UIColor.white100 = UIColor.STWhite100
+            UIColor.white50 = UIColor.STWhite50
+            UIColor.white10 = UIColor.STWhite10
         }
     }
     
