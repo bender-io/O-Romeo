@@ -489,7 +489,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0f9-h8-nmR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yxB-dl-1V7" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yxB-dl-1V7" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target">
+                            <connections>
+                                <segue destination="T8g-8l-1y4" kind="presentation" identifier="addDateVC" id="xiL-zc-CZH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="yxB-dl-1V7" id="kbG-be-Pzh"/>
@@ -1095,5 +1099,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="2fo-xV-UHK"/>
         <segue reference="7N5-EK-FNd"/>
+        <segue reference="xiL-zc-CZH"/>
     </inferredMetricsTieBreakers>
 </document>
