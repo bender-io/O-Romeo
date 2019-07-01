@@ -11,10 +11,12 @@ import UIKit
 class PersonTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
+    
+    // TODO: - Drag View Outlet & Change Color
+    // TODO: - Link RomeoBarButton UI
 
     var person: Person? {
         didSet {
@@ -29,6 +31,9 @@ class PersonTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
+        nameLabel.textColor = .highlights
+        anniversaryLabel.textColor = .white100
+        birthdayLabel.textColor = .white100
     }
     
     // MARK: - Cell Methods
