@@ -412,16 +412,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To get started you'll need to add one or more Juliets in the Relationship Tab" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMa-xY-lIg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="ISE-gV-kfG" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ISE-gV-kfG" id="QVb-yC-5zo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -495,16 +488,11 @@
                             <outlet property="delegate" destination="CCc-tm-Olh" id="TM4-5V-CF7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="el9-Wo-fQN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WnO-EG-dWC" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target">
-                            <connections>
-                                <segue destination="T8g-8l-1y4" kind="presentation" identifier="addDateDetailVC" id="yVP-oN-gfR"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="0f9-h8-nmR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yxB-dl-1V7" customClass="RomeoBarButton" customModule="O_Romeo" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="WnO-EG-dWC" id="F1x-p1-mrW"/>
-                        <outlet property="emptyCalendarLabel" destination="zMa-xY-lIg" id="CWB-Re-4zm"/>
+                        <outlet property="addButton" destination="yxB-dl-1V7" id="kbG-be-Pzh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFv-Nr-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1116,6 +1104,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="2fo-xV-UHK"/>
         <segue reference="7N5-EK-FNd"/>
-        <segue reference="dZt-rL-huT"/>
     </inferredMetricsTieBreakers>
 </document>

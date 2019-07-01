@@ -32,6 +32,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        tabBarController?.tabBar.alpha = 1
         placesSearchBar.barTintColor = .primary
         placesSearchBar.tintColor = .highlights
         locationSearchBar.barTintColor = .primary

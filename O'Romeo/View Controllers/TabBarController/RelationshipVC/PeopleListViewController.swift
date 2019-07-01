@@ -9,15 +9,16 @@
 import UIKit
 
 class PeopleListViewController: UIViewController {
-    
-    var personArray: [Person] = []
 
+    var personArray: [Person] = []
+    
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var romeoBarButton: RomeoBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         self.hideKeyboardWhenTappedAround()
 //        let helperLabel = UILabel()
 
@@ -33,6 +34,7 @@ class PeopleListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.alpha = 1
         view.backgroundColor = .primary
         tableView.backgroundColor = .primary
         tableView.reloadData()
