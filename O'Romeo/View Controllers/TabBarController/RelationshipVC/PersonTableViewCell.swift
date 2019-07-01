@@ -14,10 +14,8 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var cellViewFooter: RomeoView!
     
-    // TODO: - Drag View Outlet & Change Color
-    // TODO: - Link RomeoBarButton UI
-
     var person: Person? {
         didSet {
             updateViews()
@@ -34,6 +32,7 @@ class PersonTableViewCell: UITableViewCell {
         nameLabel.textColor = .highlights
         anniversaryLabel.textColor = .white100
         birthdayLabel.textColor = .white100
+        cellViewFooter.backgroundColor = .primary
     }
     
     // MARK: - Cell Methods

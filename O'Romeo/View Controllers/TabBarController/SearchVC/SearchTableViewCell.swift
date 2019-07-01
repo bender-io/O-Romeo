@@ -24,6 +24,8 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneNumberButton: RomeoButtonText!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var addressButton: UIButton!
+    @IBOutlet weak var cellViewDivider: RomeoView!
+    @IBOutlet weak var cellViewFooter: RomeoView!
     
     var yelp: Yelp? {
         didSet {
@@ -40,6 +42,14 @@ class SearchTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
+        cellViewDivider.backgroundColor = .primary
+        cellViewFooter.backgroundColor = .primary
+        searchNameLabel.textColor = .highlights
+        ratingLabel.textColor = .white100
+        categoriesLabel.textColor = .white100
+        phoneNumberButton.setTitleColor(.highlights, for: .normal)
+        distanceLabel.textColor = .white100
+        addressButton.setTitleColor(.highlights, for: .normal)
     }
     
     func updateViews() {

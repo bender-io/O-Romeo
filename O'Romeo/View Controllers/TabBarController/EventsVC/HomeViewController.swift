@@ -29,9 +29,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         view.backgroundColor = .primary
         tableView.backgroundColor = .white10
+        segmentedControl.tintColor = .highlights
+        
         CurrentLocation.shared.delegate = self
     }
     
@@ -84,6 +85,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let eventRow = eventResults[indexPath.row]
         cell.event = eventRow
         cell.delegate = self
+        cell.awakeFromNib()
         
         return cell
     }

@@ -13,6 +13,7 @@ class CalendarTableViewController: UITableViewController {
     var dateLogs = [DateLog]()
     
     @IBOutlet weak var emptyCalendarLabel: UILabel!
+    @IBOutlet weak var addButton: RomeoBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,13 @@ class CalendarTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        tableView.reloadData()
         view.backgroundColor = .primary
         navigationController?.navigationBar.barTintColor = .primary
         navigationController?.navigationBar.tintColor = .highlights
         tabBarController?.tabBar.tintColor = .highlights
         tabBarController?.tabBar.barTintColor = .primary
+        addButton.tintColor = .highlights
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching the people: \(error) : \(#function)")
@@ -71,7 +74,8 @@ class CalendarTableViewController: UITableViewController {
         
         let dateLog = dateLogs[indexPath.row]
         cell.dateLog = dateLog
-        
+        cell.awakeFromNib()
+
         return cell
     }
     
