@@ -25,8 +25,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         placesSearchBar.delegate = self
-        //        CurrentLocation.shared.findLocation()
-        //        CurrentLocation.shared.locationManager.startUpdatingLocation()
+        CurrentLocation.shared.findLocation()
+        CurrentLocation.shared.locationManager.startUpdatingLocation()
+        locationSearchBar.placeholder = "Current Location"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,18 +73,27 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 extension SearchViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = placesSearchBar.text, !searchText.isEmpty,
-            let location = locationSearchBar.text
+        guard let searchText = placesSearchBar.text, !searchText.isEmpty
             else { return }
-        YelpController.shared.fetchRestaurants(searchTerm: searchText, location: location) { (yelps) in
-            self.yelpResults = yelps
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        if searchBar.tag == 0 {
+            guard let location = location else { return }
+            YelpController.shared.fetchRestaurantsCurrentLocation(searchTerm: searchText, location: location) { (yelps) in
+                self.yelpResults = yelps
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        } else if searchBar.tag == 1 {
+            guard let location = locationSearchBar.text else { return }
+            YelpController.shared.fetchRestaurants(searchTerm: searchText, location: location) { (yelps) in
+                self.yelpResults = yelps
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
 }
-
 extension SearchViewController: SearchTableViewCellDelegate {
     func calendarButtonTapped(yelp: Yelp) {
         guard let addDateVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "addDateVC") as? AddDateViewController else { return }

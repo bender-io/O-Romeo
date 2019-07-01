@@ -418,16 +418,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To get started you'll need to add one or more Juliets in the Relationship Tab" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMa-xY-lIg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="ISE-gV-kfG" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ISE-gV-kfG" id="QVb-yC-5zo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -508,9 +501,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="emptyCalendarLabel" destination="zMa-xY-lIg" id="CWB-Re-4zm"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFv-Nr-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -676,7 +666,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Nw-ov1">
                                                             <rect key="frame" x="158" y="0.0" width="176" height="150"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hu-X7v" customClass="RomeoHighlightedLabel" customModule="O_Romeo" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="176" height="48"/>
                                                                     <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="18"/>
                                                                     <nil key="textColor"/>
@@ -703,12 +693,6 @@
                                                         <constraint firstAttribute="bottom" secondItem="jjs-Nw-ov1" secondAttribute="bottom" id="noO-FU-wwD"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-VF-zQ7" customClass="RomeoView" customModule="O_Romeo" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="277" width="374" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="Qaq-4k-UIR"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-LQ-JnJ">
                                                     <rect key="frame" x="20" y="189" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -765,19 +749,16 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Ltk-VF-zQ7" secondAttribute="bottom" id="ENr-AK-vxH"/>
                                                 <constraint firstItem="Zxd-GC-0Zd" firstAttribute="top" secondItem="9uD-kk-meM" secondAttribute="bottom" constant="16" id="Fjz-KJ-w8X"/>
                                                 <constraint firstItem="awy-Ql-YiA" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leadingMargin" constant="6" id="G5Z-2c-IeM"/>
                                                 <constraint firstItem="9uD-kk-meM" firstAttribute="top" secondItem="Q3l-vg-Bqk" secondAttribute="top" constant="20" id="GqZ-wN-nO8"/>
                                                 <constraint firstItem="kgw-a2-m8w" firstAttribute="top" secondItem="Zxd-GC-0Zd" secondAttribute="bottom" constant="8" id="LWp-WJ-LCU"/>
                                                 <constraint firstItem="kgw-a2-m8w" firstAttribute="leading" secondItem="awy-Ql-YiA" secondAttribute="trailing" constant="8" id="Nma-9y-K4M"/>
                                                 <constraint firstItem="9uD-kk-meM" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" constant="20" id="S5U-OQ-1Xa"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ltk-VF-zQ7" secondAttribute="trailing" id="aXP-tR-6Qp"/>
                                                 <constraint firstAttribute="trailing" secondItem="9uD-kk-meM" secondAttribute="trailing" constant="20" id="cmN-wC-NNw"/>
                                                 <constraint firstItem="kgw-a2-m8w" firstAttribute="trailing" secondItem="Q3l-vg-Bqk" secondAttribute="trailingMargin" id="mge-1H-9vj"/>
                                                 <constraint firstItem="awy-Ql-YiA" firstAttribute="top" secondItem="Zxd-GC-0Zd" secondAttribute="bottom" constant="8" id="onm-XT-xuI"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zxd-GC-0Zd" secondAttribute="trailing" id="pqg-HM-UAh"/>
-                                                <constraint firstItem="Ltk-VF-zQ7" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="tgb-of-8cP"/>
                                                 <constraint firstItem="Zxd-GC-0Zd" firstAttribute="leading" secondItem="Q3l-vg-Bqk" secondAttribute="leading" id="x8M-VD-Pf7"/>
                                             </constraints>
                                         </tableViewCellContentView>
