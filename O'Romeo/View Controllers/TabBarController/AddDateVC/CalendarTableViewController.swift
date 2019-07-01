@@ -13,17 +13,17 @@ class CalendarTableViewController: UITableViewController {
     var dateLogs = [DateLog]()
     var imageView : UIImageView?
     
-    @IBOutlet weak var emptyCalendarLabel: UILabel!
     @IBOutlet weak var addButton: RomeoBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setOverlayImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadViewIfNeeded()
-        setOverlayImage()
+        checkIsHidden()
         tableView.reloadData()
         setUI()
         
@@ -111,17 +111,21 @@ class CalendarTableViewController: UITableViewController {
         addButton.tintColor = .highlights
     }
     
-    func setOverlayImage() {
+    func setOverlayImageView() {
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        imageView?.image = #imageLiteral(resourceName: "WelcomeScreens")
+        imageView?.contentMode = .scaleAspectFill
+        self.navigationController?.view.addSubview(imageView ?? UIImageView())
+    }
+    
+    func checkIsHidden() {
         if PersonController.shared.persons.count == 0 {
-            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-            
-            imageView?.image = #imageLiteral(resourceName: "WelcomeScreens")
-            imageView?.contentMode = .scaleAspectFill
-            
             tabBarController?.tabBar.alpha = 0.25
-            self.navigationController?.view.addSubview(imageView ?? UIImageView())
+            imageView?.isHidden = false
+        
         } else {
             imageView?.isHidden = true
+            tabBarController?.tabBar.alpha = 1
         }
     }
 }

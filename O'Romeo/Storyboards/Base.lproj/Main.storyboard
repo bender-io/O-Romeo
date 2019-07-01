@@ -56,9 +56,7 @@
                                             <constraint firstAttribute="width" secondItem="NFu-5k-Ocz" secondAttribute="height" multiplier="10:3" id="Um6-ER-Yhi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                        <state key="normal" title="log in">
-                                            <color key="titleColor" name="White100"/>
-                                        </state>
+                                        <state key="normal" title="log in"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="a69-jP-tbj"/>
                                         </connections>
@@ -164,9 +162,7 @@
                                                     <constraint firstAttribute="width" secondItem="Czo-AV-5pK" secondAttribute="height" multiplier="10:3" id="vy4-8c-lZc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                                <state key="normal" title="cancel">
-                                                    <color key="titleColor" name="White100"/>
-                                                </state>
+                                                <state key="normal" title="cancel"/>
                                                 <connections>
                                                     <action selector="cancelButton:" destination="pDG-fY-qF4" eventType="touchUpInside" id="g9k-Yb-Ks4"/>
                                                     <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="f4o-aQ-eDk"/>
@@ -178,9 +174,7 @@
                                                     <constraint firstAttribute="width" secondItem="i5e-gD-qcS" secondAttribute="height" multiplier="10:3" id="Oc4-ww-Yxt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SFCompactRounded-Semibold" family="SF Compact Rounded" pointSize="14"/>
-                                                <state key="normal" title="sign up">
-                                                    <color key="titleColor" name="White100"/>
-                                                </state>
+                                                <state key="normal" title="sign up"/>
                                                 <connections>
                                                     <action selector="signupButtonTapped:" destination="pDG-fY-qF4" eventType="touchUpInside" id="Kt8-PV-oGA"/>
                                                 </connections>
@@ -230,11 +224,8 @@
         <namedColor name="White10">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="White100">
-            <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1a1-2S-fBg"/>
+        <segue reference="ud3-mB-3za"/>
     </inferredMetricsTieBreakers>
 </document>
