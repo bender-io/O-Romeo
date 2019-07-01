@@ -33,9 +33,12 @@ class PeopleListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.backgroundColor = .primary
+        tableView.backgroundColor = .primary
         navigationController?.navigationBar.tintColor = .highlights
         navigationController?.navigationBar.barTintColor = .primary
-        tableView.backgroundColor = .primary
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
+        
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching persons: \(error.localizedDescription): \(#function)")
@@ -69,6 +72,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let person = personArray[indexPath.row]
         cell?.person = person
+        cell?.awakeFromNib()
 
         return cell ?? UITableViewCell()
     }
