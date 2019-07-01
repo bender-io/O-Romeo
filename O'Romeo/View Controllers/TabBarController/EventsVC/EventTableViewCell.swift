@@ -24,6 +24,8 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var urlButton: UIButton!
     @IBOutlet weak var addressButton: RomeoButtonText!
     
+    @IBOutlet weak var cellViewDivider: RomeoView!
+    @IBOutlet weak var cellViewFooter: RomeoView!
     var event: Event? {
         didSet {
             updateViews()
@@ -38,6 +40,14 @@ class EventTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
+        cellViewFooter.backgroundColor = .primary
+        cellViewDivider.backgroundColor = .primary
+        eventNameLabel.textColor = .highlights
+        cityLabel.textColor = .white100
+        descriptionLabel.textColor = .white100
+        dateLabel.textColor = .white100
+        urlButton.setTitleColor(.highlights, for: .normal)
+        addressButton.setTitleColor(.highlights, for: .normal)
     }
     
     func updateViews() {

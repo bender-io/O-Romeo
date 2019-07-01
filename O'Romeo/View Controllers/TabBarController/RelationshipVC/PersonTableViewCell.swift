@@ -11,11 +11,11 @@ import UIKit
 class PersonTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var anniversaryLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
-
+    @IBOutlet weak var cellViewFooter: RomeoView!
+    
     var person: Person? {
         didSet {
             updateViews()
@@ -29,6 +29,10 @@ class PersonTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .white10
+        nameLabel.textColor = .highlights
+        anniversaryLabel.textColor = .white100
+        birthdayLabel.textColor = .white100
+        cellViewFooter.backgroundColor = .primary
     }
     
     // MARK: - Cell Methods

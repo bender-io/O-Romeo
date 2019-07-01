@@ -11,21 +11,22 @@ import UIKit
 class CalendarTableViewController: UITableViewController {
     
     var dateLogs = [DateLog]()
+    var imageView : UIImageView?
     
     @IBOutlet weak var emptyCalendarLabel: UILabel!
+    @IBOutlet weak var addButton: RomeoBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyCalendar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        view.backgroundColor = .primary
-        navigationController?.navigationBar.barTintColor = .primary
-        navigationController?.navigationBar.tintColor = .highlights
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
+        loadViewIfNeeded()
+        setOverlayImage()
+        tableView.reloadData()
+        setUI()
+        
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
                 print("There was an error fetching the people: \(error) : \(#function)")
@@ -71,7 +72,8 @@ class CalendarTableViewController: UITableViewController {
         
         let dateLog = dateLogs[indexPath.row]
         cell.dateLog = dateLog
-        
+        cell.awakeFromNib()
+
         return cell
     }
     
@@ -100,12 +102,26 @@ class CalendarTableViewController: UITableViewController {
         }
     }
     
-    func emptyCalendar() {
-        if dateLogs.count == 0 {
-            let alert = UIAlertController(title: "Welcome", message: "To get started add a Juliet in the Relationship Tab", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
+    func setUI() {
+        view.backgroundColor = .primary
+        navigationController?.navigationBar.barTintColor = .primary
+        navigationController?.navigationBar.tintColor = .highlights
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
+        addButton.tintColor = .highlights
+    }
+    
+    func setOverlayImage() {
+        if PersonController.shared.persons.count == 0 {
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+            
+            imageView?.image = #imageLiteral(resourceName: "WelcomeScreens")
+            imageView?.contentMode = .scaleAspectFill
+            
+            tabBarController?.tabBar.alpha = 0.25
+            self.navigationController?.view.addSubview(imageView ?? UIImageView())
+        } else {
+            imageView?.isHidden = true
         }
     }
 }

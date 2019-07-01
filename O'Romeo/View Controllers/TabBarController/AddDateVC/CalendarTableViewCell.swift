@@ -13,6 +13,7 @@ class CalendarTableViewCell: UITableViewCell {
     var dateLog: DateLog? {
         didSet {
             updateViews()
+            setupUI()
         }
     }
     
@@ -28,6 +29,10 @@ class CalendarTableViewCell: UITableViewCell {
     
     func setupUI() {
         self.backgroundColor = .primary
+        julietNameLabel.textColor = .highlights
+        eventNameLabel.textColor = .white100
+        addressLabel.textColor = .white100
+        dateLabel.textColor = .white100
     }
 
     func updateViews() {
