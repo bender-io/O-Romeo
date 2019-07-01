@@ -19,14 +19,10 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .primary
         self.hideKeyboardWhenTappedAround()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        view.backgroundColor = .primary
-    }
-
     // MARK: - IBActions
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         guard let emailText = emailTextField.text,

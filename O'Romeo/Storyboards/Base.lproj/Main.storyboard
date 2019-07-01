@@ -86,7 +86,7 @@
                                         <state key="normal" title="sign up"/>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="yeN-YR-20c" eventType="touchUpInside" id="5yI-B3-oIL"/>
-                                            <segue destination="pDG-fY-qF4" kind="show" identifier="" id="3nt-ux-PvZ"/>
+                                            <segue destination="pDG-fY-qF4" kind="presentation" identifier="" modalPresentationStyle="pageSheet" modalTransitionStyle="crossDissolve" id="3nt-ux-PvZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
