@@ -37,6 +37,9 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         view.backgroundColor = .primary
+        if PersonController.shared.persons.isEmpty {
+            presentAlert()
+        }
     }
     
     // MARK: - Methods
@@ -61,6 +64,18 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return resignFirstResponder()
+    }
+    
+    func presentAlert() {
+        let alert = UIAlertController(title: "No Relationships", message: "Please create a relationship", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay! Take me there.", style: .default) { (_) in
+            let tab = self.presentingViewController as? UITabBarController
+            tab?.selectedIndex = 3
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okayAction)
+        present(alert, animated: true)
     }
     
     // MARK: - DatePicker Methods
@@ -90,16 +105,16 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         dateTF.text = dateFormatter.string(from: sender.date)
     }
     
-    // MARK: - // MARK: - DropDownPicker Methods
+    // MARK: - DropDownPicker Methods
     func setupPicker() {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.backgroundColor = .black
         julietNameTF.inputView = pickerView
         if let text = julietNameTF.text, text.isEmpty {
-        julietNameTF.text = personArray[0].name
-            personUID = personArray[0].personUID
-            newPerson = personArray[0]
+        julietNameTF.text = personArray.first?.name
+            personUID = personArray.first?.personUID
+            newPerson = personArray.first
         } else {
             guard let index = personArray.firstIndex(where: { $0.personUID == dateLog?.personUID }) else { return }
             pickerView.selectRow(index, inComponent: 0, animated: true)

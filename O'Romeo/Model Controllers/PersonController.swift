@@ -66,6 +66,9 @@ class PersonController {
     ///   - person: Person to be deleted (Person)
     ///   - completion: error (Error)
     func deletePerson(person: Person, completion: @escaping (Error?) -> Void) {
+        if let index = persons.firstIndex(of: person) {
+            persons.remove(at: index)
+        }
         db.collection("person").document(person.personUID).delete { (error) in
             if let error = error {
                 print("There was an error deleting the person: \(error) : \(error.localizedDescription) : \(#function)")
