@@ -13,6 +13,7 @@ class CalendarTableViewCell: UITableViewCell {
     var dateLog: DateLog? {
         didSet {
             updateViews()
+            setupUI()
         }
     }
     

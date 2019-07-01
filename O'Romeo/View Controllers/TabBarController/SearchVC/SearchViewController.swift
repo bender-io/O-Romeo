@@ -31,6 +31,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
+        placesSearchBar.barTintColor = .primary
+        placesSearchBar.tintColor = .highlights
+        locationSearchBar.barTintColor = .primary
+        placesSearchBar.tintColor = .highlights
         view.backgroundColor = .primary
         CurrentLocation.shared.findLocation()
         CurrentLocation.shared.delegate = self
@@ -65,6 +70,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let yelpRow = yelpResults[indexPath.row]
         cell.yelp = yelpRow
         cell.delegate = self
+        cell.awakeFromNib()
         return cell
     }
 }

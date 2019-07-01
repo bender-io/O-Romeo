@@ -14,7 +14,8 @@ class PeopleListViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var romeoBarButton: RomeoBarButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -34,10 +35,12 @@ class PeopleListViewController: UIViewController {
         super.viewWillAppear(animated)
         view.backgroundColor = .primary
         tableView.backgroundColor = .primary
+        tableView.reloadData()
         navigationController?.navigationBar.tintColor = .highlights
         navigationController?.navigationBar.barTintColor = .primary
         tabBarController?.tabBar.tintColor = .highlights
         tabBarController?.tabBar.barTintColor = .primary
+        romeoBarButton.tintColor = .highlights
         
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
@@ -94,3 +97,4 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+

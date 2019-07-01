@@ -13,7 +13,6 @@ class LogoutViewController: UIViewController {
     
     // MARK: - Properties
     let login : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let splashScreen : UIStoryboard = UIStoryboard(name: "SplashScreen", bundle: nil)
     var selectedColor = ColorScheme.standard
     
     // MARK: - IBOutlets
@@ -40,22 +39,19 @@ class LogoutViewController: UIViewController {
         switch currentSegment {
         case 0:
             selectedColor = ColorScheme.standard
+            colorPicker(scheme: selectedColor)
+            UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
+            loadView()
+            viewDidLoad()
             
         case 1:
-            selectedColor = ColorScheme.standard
+            selectedColor = ColorScheme.dark
             colorPicker(scheme: selectedColor)
             UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
             loadView()
             viewDidLoad()
             
         case 2:
-            selectedColor = ColorScheme.dark
-            colorPicker(scheme: selectedColor)
-            UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
-            loadView()
-            viewDidLoad()
-
-        case 3:
             selectedColor = ColorScheme.light
             colorPicker(scheme: selectedColor)
             UserDefaults.standard.set(currentSegment, forKey: "CurrentSegment")
@@ -67,19 +63,15 @@ class LogoutViewController: UIViewController {
         }
     }
     
-    @IBAction func saveChangesButtonTapped(_ sender: Any) {
+    @IBAction func backButtonTapped(_ sender: Any) {
         UserDefaults.standard.set(selectedColor, forKey: "ColorScheme")
         print("Color \(selectedColor) saved to UserDefaults")
-        let splashScreenViewController = splashScreen.instantiateViewController(withIdentifier: "SplashScreenVC")
-        UIApplication.shared.windows.first!.rootViewController = splashScreenViewController
-    }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func logoutButtonTapped(_ sender: Any) {
+        UserDefaults.standard.set(selectedColor, forKey: "ColorScheme")
         UserController.shared.signOutUser()
-        
         PersonController.shared.persons = []
         InterestController.shared.interests = []
         DateLogController.shared.dateLogs = []
