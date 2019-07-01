@@ -12,6 +12,8 @@ class CalendarTableViewController: UITableViewController {
     
     var dateLogs = [DateLog]()
     
+    @IBOutlet weak var emptyCalendarLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -94,6 +96,14 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
                 let dateLog = dateLogs[indexPath.row]
                 destinationVC.dateLog = dateLog
             }
+        }
+    }
+    
+    func emptyCalendar() {
+        if dateLogs.count == 0 {
+            emptyCalendarLabel.isHidden = false
+        } else {
+            emptyCalendarLabel.isHidden = true
         }
     }
 }
