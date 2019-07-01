@@ -412,9 +412,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label key="tableHeaderView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To get started you'll need to add one or more Juliets in the Relationship Tab" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMa-xY-lIg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="datesCell" rowHeight="130" id="ISE-gV-kfG" customClass="CalendarTableViewCell" customModule="O_Romeo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ISE-gV-kfG" id="QVb-yC-5zo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -497,11 +504,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="WnO-EG-dWC" id="F1x-p1-mrW"/>
+                        <outlet property="emptyCalendarLabel" destination="zMa-xY-lIg" id="CWB-Re-4zm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFv-Nr-gwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2771" y="627"/>
+            <point key="canvasLocation" x="-2771.0144927536235" y="626.78571428571422"/>
         </scene>
         <!--Add Date View Controller-->
         <scene sceneID="ZpS-aK-R5l">
