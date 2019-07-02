@@ -21,7 +21,7 @@ class CustomImageView: UIImageView {
         var request = URLRequest(url: baseURL)
         request.setValue("Bearer \(YelpController.shared.apiKey)", forHTTPHeaderField: "Authorization")
         
-        image = UIImage(named: "Logo")
+        image = UIImage(named: "LoadingLogo")
         
         if let imageFromCache = imageCache.object(forKey: imageURL as AnyObject) as? UIImage {
             self.image = imageFromCache
