@@ -112,7 +112,12 @@ class CalendarTableViewController: UITableViewController {
     }
     
     func setOverlayImageView() {
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        if (screenHeight / screenWidth) > 2.15 {
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        } else {
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0.86 * UIScreen.main.bounds.height))
+        }
+        
         imageView?.image = #imageLiteral(resourceName: "WelcomeScreens")
         imageView?.contentMode = .scaleAspectFill
         self.navigationController?.view.addSubview(imageView ?? UIImageView())
@@ -129,3 +134,15 @@ class CalendarTableViewController: UITableViewController {
         }
     }
 }
+
+extension CalendarTableViewController {
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    // Screen height.
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+}
+
