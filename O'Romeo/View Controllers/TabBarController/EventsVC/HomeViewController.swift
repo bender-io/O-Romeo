@@ -29,6 +29,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        loadViewIfNeeded()
         tabBarController?.tabBar.alpha = 1
         view.backgroundColor = .primary
         tableView.backgroundColor = .white10
