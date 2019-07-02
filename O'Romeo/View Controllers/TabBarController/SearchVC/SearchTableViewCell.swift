@@ -19,7 +19,7 @@ class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var searchImageView: CustomImageView!
     @IBOutlet weak var searchNameLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingImageView: CustomImageView!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: RomeoButtonText!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -45,7 +45,6 @@ class SearchTableViewCell: UITableViewCell {
         cellViewDivider.backgroundColor = .primary
         cellViewFooter.backgroundColor = .primary
         searchNameLabel.textColor = .highlights
-        ratingLabel.textColor = .white100
         categoriesLabel.textColor = .white100
         phoneNumberButton.setTitleColor(.highlights, for: .normal)
         distanceLabel.textColor = .white100
@@ -54,17 +53,16 @@ class SearchTableViewCell: UITableViewCell {
     
     func updateViews() {
         guard let yelp = yelp,
-            let rating = yelp.rating,
             let categories = yelp.categories?.first?.title,
             let location = yelp.location?.displayAddress.first
             else { return }
         self.searchNameLabel.text = yelp.name
-        self.ratingLabel.text = "Rating: \(rating)"
         self.categoriesLabel.text = categories
         self.addressButton.setTitle(location, for: .normal)
         self.phoneNumberButton.setTitle(yelp.displayPhone, for: .normal)
         self.distanceLabel.text = "\((yelp.distance / 1609.344).rounded(.down)) mi"
         searchImageView.fetchImageForYelp(yelp: yelp)
+        ratingImageView.image = ratingImageView.ratingsToYelpStarRating(yelp: yelp)
     }
     
     @IBAction func calendarButtonTapped(_ sender: Any) {
@@ -98,5 +96,11 @@ class SearchTableViewCell: UITableViewCell {
                 mapitem.openInMaps(launchOptions: option)
             }
         }
+    }
+    
+    @IBAction func yelpButtonPressed(_ sender: Any) {
+        guard let yelp = yelp else { return }
+        let yelpURL = NSURL(string: yelp.url)! as URL
+        UIApplication.shared.open(yelpURL, options: [:], completionHandler: nil)
     }
 }

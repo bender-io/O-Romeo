@@ -21,7 +21,7 @@ class CustomImageView: UIImageView {
         var request = URLRequest(url: baseURL)
         request.setValue("Bearer \(YelpController.shared.apiKey)", forHTTPHeaderField: "Authorization")
         
-        image = nil
+        image = UIImage(named: "Logo")
         
         if let imageFromCache = imageCache.object(forKey: imageURL as AnyObject) as? UIImage {
             self.image = imageFromCache
@@ -42,6 +42,33 @@ class CustomImageView: UIImageView {
             }
             imageCache.setObject(imageToCache, forKey: image)
             }.resume()
+    }
+    
+    func ratingsToYelpStarRating(yelp: Yelp) -> UIImage? {
+        guard let rating = yelp.rating else { return nil }
+        var image: UIImage?
+        if rating == 0 {
+            image = UIImage(named: "zero")
+        } else if rating == 1 {
+            image = UIImage(named: "onestar")
+        } else if rating == 1.5 {
+            image = UIImage(named: "oneandhalfstar")
+        } else if rating == 2 {
+            image = UIImage(named: "twostars")
+        } else if rating == 2.5 {
+            image = UIImage(named: "twoandhalfstar")
+        } else if rating == 3 {
+            image = UIImage(named: "threestars")
+        } else if rating == 3.5 {
+            image = UIImage(named: "threeandhalfstars")
+        } else if rating == 4 {
+            image = UIImage(named: "fourstars")
+        } else if rating == 4.5 {
+            image = UIImage(named: "fourandhalfstars")
+        } else if rating == 5 {
+            image = UIImage(named: "fivestars")
+        }
+        return image
     }
     
     func fetchImageFor(eventful: Event) {
@@ -72,4 +99,5 @@ class CustomImageView: UIImageView {
             imageCache.setObject(imageToCache, forKey: image)
             }.resume()
     }
+    
 }

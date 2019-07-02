@@ -81,12 +81,25 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(rating)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYH-sb-Kpw" customClass="RomeoPrimaryLabel" customModule="O_Romeo" customModuleProvider="target">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="doa-7Y-NIG">
                                                                             <rect key="frame" x="0.0" y="33.5" width="226" height="33"/>
-                                                                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="14"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                            <subviews>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" image="zero" translatesAutoresizingMaskIntoConstraints="NO" id="K3T-fy-mgO" customClass="CustomImageView" customModule="O_Romeo" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="184.5" height="33"/>
+                                                                                </imageView>
+                                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfu-lm-JQr">
+                                                                                    <rect key="frame" x="192.5" y="0.0" width="33.5" height="33"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" secondItem="Jfu-lm-JQr" secondAttribute="height" multiplier="1:1" id="xXa-Lf-lHJ"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <state key="normal" image="yelplogo"/>
+                                                                                    <connections>
+                                                                                        <action selector="yelpButtonPressed:" destination="OE5-Lx-6Cj" eventType="touchUpInside" id="VaW-e0-9Cv"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </subviews>
+                                                                        </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-Kf-h2Z">
                                                                             <rect key="frame" x="0.0" y="66.5" width="226" height="33.5"/>
                                                                             <subviews>
@@ -182,7 +195,7 @@
                                             <outlet property="cellViewFooter" destination="eQr-rN-tq2" id="yRr-u2-i71"/>
                                             <outlet property="distanceLabel" destination="GgJ-da-hI4" id="TgX-4R-Y5O"/>
                                             <outlet property="phoneNumberButton" destination="awX-np-E0l" id="ExV-ve-R8X"/>
-                                            <outlet property="ratingLabel" destination="vYH-sb-Kpw" id="VaJ-h3-KE3"/>
+                                            <outlet property="ratingImageView" destination="K3T-fy-mgO" id="jT2-iW-fw1"/>
                                             <outlet property="searchImageView" destination="Qqu-nv-Dfz" id="HzB-G4-W1H"/>
                                             <outlet property="searchNameLabel" destination="bLq-DI-sty" id="691-CO-n9I"/>
                                         </connections>
@@ -217,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi8-NZ-V6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="-106"/>
+            <point key="canvasLocation" x="-933.33333333333337" y="-106.47321428571428"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="LVK-gL-Kke">
@@ -1100,6 +1113,8 @@
         <image name="Music" width="48" height="48"/>
         <image name="Relationships" width="34" height="23"/>
         <image name="Search" width="23" height="25"/>
+        <image name="yelplogo" width="360" height="360"/>
+        <image name="zero" width="82" height="14"/>
         <namedColor name="White10">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.96470588235294119" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

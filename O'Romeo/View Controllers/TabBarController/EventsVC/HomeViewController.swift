@@ -83,7 +83,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
-        
+        cell.imageView?.image = nil
+        cell.dateLabel.text = ""
         let eventRow = eventResults[indexPath.row]
         cell.event = eventRow
         cell.delegate = self
