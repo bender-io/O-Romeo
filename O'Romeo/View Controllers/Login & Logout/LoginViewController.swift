@@ -50,7 +50,6 @@ class LoginViewController: UIViewController {
     }
 
     // MARK: - Methods
-
     func presentLoginErrorAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Login Failed", message: "The Email or Password is Incorrect", preferredStyle: .alert)

@@ -29,12 +29,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadViewIfNeeded()
-        tabBarController?.tabBar.alpha = 1
-        view.backgroundColor = .primary
-        tableView.backgroundColor = .white10
-        segmentedControl.tintColor = .highlights
-        
+        setupUI()
         CurrentLocation.shared.delegate = self
     }
     
@@ -94,11 +89,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "fromEventVC" {
             if let destinationVC = segue.destination as? AddDateViewController, let indexPath = tableView.indexPathForSelectedRow {
                 let event = eventResults[indexPath.row]
@@ -125,5 +117,16 @@ extension EventViewController: CurrentLocationDelegate {
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+extension EventViewController {
+    
+    func setupUI() {
+        loadViewIfNeeded()
+        tabBarController?.tabBar.alpha = 1
+        view.backgroundColor = .primary
+        tableView.backgroundColor = .white10
+        segmentedControl.tintColor = .highlights
     }
 }

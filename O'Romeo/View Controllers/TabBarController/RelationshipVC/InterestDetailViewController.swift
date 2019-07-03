@@ -15,14 +15,12 @@ class InterestDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: RomeoHighlightedTextField!
 
     // MARK: - Properties
-
     var interest: Interest?
     var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
 
         guard let interest = interest else { print("Could not unwrap interest: \(#function)"); return }
         nameTextField.text = interest.name
@@ -43,7 +41,6 @@ class InterestDetailViewController: UIViewController {
     }
 
     // MARK: - IBActions
-
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text,
             !name.isEmpty,
@@ -61,6 +58,5 @@ class InterestDetailViewController: UIViewController {
             }
         }
         self.navigationController?.popViewController(animated: true)
-
     }
 }

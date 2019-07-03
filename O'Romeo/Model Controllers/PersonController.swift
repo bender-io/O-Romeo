@@ -56,7 +56,6 @@ class PersonController {
                     print("Document added with ID: \(docID)")
                 }
                 completion(nil)
-
         })
     }
 

@@ -20,16 +20,8 @@ class LogoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .primary
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
-        navigationController?.navigationBar.tintColor = .highlights
-        navigationController?.navigationBar.barTintColor = .primary
+        setupUI()
         segmentControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "CurrentSegment") 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
     }
     
     // MARK: - IBActions
@@ -78,6 +70,14 @@ class LogoutViewController: UIViewController {
         
         let loginViewController = login.instantiateViewController(withIdentifier: "LoginViewController")
         UIApplication.shared.windows.first!.rootViewController = loginViewController
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .primary
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
+        navigationController?.navigationBar.tintColor = .highlights
+        navigationController?.navigationBar.barTintColor = .primary
     }
     
     func colorPicker(scheme: String?) {

@@ -71,7 +71,7 @@
 		EC719B6422C3D9C6000AE200 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC719B6322C3D9C6000AE200 /* CurrentLocation.swift */; };
 		EC88206122BA625A006438B4 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206022BA625A006438B4 /* Enums.swift */; };
 		EC88206422BA6559006438B4 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88206322BA6559006438B4 /* EventTableViewCell.swift */; };
-		EC9E495122C165B20061AAB4 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495022C165B20061AAB4 /* DateFormatter.swift */; };
+		EC9E495122C165B20061AAB4 /* dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495022C165B20061AAB4 /* dateFormatter.swift */; };
 		EC9E495322C16B750061AAB4 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495222C16B750061AAB4 /* CalendarTableViewController.swift */; };
 		EC9E495522C16BBE0061AAB4 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E495422C16BBE0061AAB4 /* CalendarTableViewCell.swift */; };
 		ECA07C4022BD361D008741B0 /* DateLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA07C3F22BD361D008741B0 /* DateLog.swift */; };
@@ -103,6 +103,7 @@
 		569A6CE822B58A580025C319 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		569A6CF222B7E11D0025C319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		569D284222C4070900789312 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		56B0549C22CBF838001DAFDE /* O'Romeo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "O'Romeo.entitlements"; sourceTree = "<group>"; };
 		56CBCA4A22C28C9E00003033 /* LocalNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsController.swift; sourceTree = "<group>"; };
 		56CCE33722BC3A5900CEFE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56D89AC222C586240085F7EC /* RomeoBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomeoBarButton.swift; sourceTree = "<group>"; };
@@ -149,7 +150,7 @@
 		EC719B6322C3D9C6000AE200 /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		EC88206022BA625A006438B4 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EC88206322BA6559006438B4 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		EC9E495022C165B20061AAB4 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		EC9E495022C165B20061AAB4 /* dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFormatter.swift; sourceTree = "<group>"; };
 		EC9E495222C16B750061AAB4 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		EC9E495422C16BBE0061AAB4 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		ECA07C3F22BD361D008741B0 /* DateLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLog.swift; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 		569A6CC822B45ADC0025C319 /* O'Romeo */ = {
 			isa = PBXGroup;
 			children = (
+				56B0549C22CBF838001DAFDE /* O'Romeo.entitlements */,
 				569A6CDB22B45AF90025C319 /* Resources */,
 				560BF55322B972B4000E7F66 /* CustomUI */,
 				569A6CDC22B45B060025C319 /* Storyboards */,
@@ -275,7 +277,7 @@
 			children = (
 				560D5FB022C3F08700D2A0AB /* GoogleService-Info.plist */,
 				569A6CC922B45ADC0025C319 /* AppDelegate.swift */,
-				EC9E495022C165B20061AAB4 /* DateFormatter.swift */,
+				EC9E495022C165B20061AAB4 /* dateFormatter.swift */,
 				56F694EC22C28B2C008F47BF /* extensionsVC.swift */,
 				56CCE33722BC3A5900CEFE3B /* Assets.xcassets */,
 				569A6CDD22B57A800025C319 /* Fonts */,
@@ -432,6 +434,11 @@
 				TargetAttributes = {
 					569A6CC522B45ADC0025C319 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -509,7 +516,7 @@
 				56F4626D22C554B6000F442D /* ColorScheme.swift in Sources */,
 				56E1115122C572BD00AF3E09 /* RomeoSearchBar.swift in Sources */,
 				560BF55522B972CC000E7F66 /* extensionsUI.swift in Sources */,
-				EC9E495122C165B20061AAB4 /* DateFormatter.swift in Sources */,
+				EC9E495122C165B20061AAB4 /* dateFormatter.swift in Sources */,
 				ECFE939D22B99D2E0042C00A /* YelpController.swift in Sources */,
 				EC9E495322C16B750061AAB4 /* CalendarTableViewController.swift in Sources */,
 				5641189922BEB4790014010E /* (null) in Sources */,
@@ -668,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "O'Romeo/O'Romeo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				ENABLE_BITCODE = NO;
@@ -695,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "O'Romeo/O'Romeo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F9Q94NNH5;
 				ENABLE_BITCODE = NO;

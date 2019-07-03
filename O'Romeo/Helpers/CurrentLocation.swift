@@ -19,7 +19,6 @@ class CurrentLocation: NSObject {
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
-//    let placemarks: CLPlacemark?
     var location: CLLocation?
     var isUpdatingLocation = false
     weak var delegate: CurrentLocationDelegate?

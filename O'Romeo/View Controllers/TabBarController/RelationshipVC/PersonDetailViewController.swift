@@ -156,8 +156,6 @@ class PersonDetailViewController: UIViewController {
     }
 }
 
-// MARK: - Extensions
-
 extension PersonDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

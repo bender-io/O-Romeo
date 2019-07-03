@@ -18,31 +18,14 @@ class PeopleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         self.hideKeyboardWhenTappedAround()
-//        let helperLabel = UILabel()
-
         tableView.delegate = self
         tableView.dataSource = self
-//        helperLabel.text = "Looks like you don't have any hoes, click the button below to add some!"
-//        if tableView.numberOfRows(inSection: 0) == 0 {
-//            helperLabel.isHidden = false
-//        } else {
-//            helperLabel.isHidden = true
-//        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.alpha = 1
-        view.backgroundColor = .primary
-        tableView.backgroundColor = .primary
-        tableView.reloadData()
-        navigationController?.navigationBar.tintColor = .highlights
-        navigationController?.navigationBar.barTintColor = .primary
-        tabBarController?.tabBar.tintColor = .highlights
-        tabBarController?.tabBar.barTintColor = .primary
-        romeoBarButton.tintColor = .highlights
+        setupUI()
         
         PersonController.shared.fetchPersonsFromFirestore { (error) in
             if let error = error {
@@ -97,6 +80,18 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource {
             personArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func setupUI() {
+        tabBarController?.tabBar.alpha = 1
+        view.backgroundColor = .primary
+        tableView.backgroundColor = .primary
+        tableView.reloadData()
+        navigationController?.navigationBar.tintColor = .highlights
+        navigationController?.navigationBar.barTintColor = .primary
+        tabBarController?.tabBar.tintColor = .highlights
+        tabBarController?.tabBar.barTintColor = .primary
+        romeoBarButton.tintColor = .highlights
     }
 }
 

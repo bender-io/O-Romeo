@@ -9,7 +9,6 @@
 import Foundation
 
 enum EventType: String {
-    //nightlife food culture music
     case nightLife = "nightlife"
     case food = "food"
     case culture = "culture"
