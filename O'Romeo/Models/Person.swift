@@ -10,6 +10,7 @@ import Foundation
 
 struct Person {
 
+    // MARK: - Properties
     let name: String
     let birthday: String?
     let anniversary: String?

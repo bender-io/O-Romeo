@@ -16,10 +16,9 @@ protocol LocalNotificationScheduler : class {
 
 class LocalNotificationsController {
     
-    // MARK: - Singleton
     static let shared = LocalNotificationsController()
     static let notificationID = "LocalNotification"
-    private init() {}
+    private init(){}
 
 }
 
@@ -27,12 +26,10 @@ extension LocalNotificationsController : LocalNotificationScheduler {
     func scheduleUserNotifications(for time: Date, uid: String) {
         let notificationSound = UNNotificationSound.default
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.badge = .init(integerLiteral: 1)
         notificationContent.title = "Ready for that date tomorrow?"
         notificationContent.body = "You got this"
         notificationContent.sound = notificationSound
         
-//        let thirtySecondsBeforeDate = Date(timeInterval: -30, since: time)
         let oneDayBeforeDate = Date(timeInterval: -86400, since: time)
         let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: oneDayBeforeDate)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)

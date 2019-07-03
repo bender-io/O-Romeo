@@ -10,6 +10,7 @@ import Foundation
 
 struct Interest {
     
+    // MARK: - Properties
     var name: String
     var description: String
     let personUID: String

@@ -26,7 +26,6 @@ class UserController {
     ///   - email: Users email (String)
     ///   - password: Users password (String)
     ///   - completion: Returns an error if there was one (Error)
-
     func createUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             if let error = error {

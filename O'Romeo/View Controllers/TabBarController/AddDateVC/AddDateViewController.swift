@@ -10,14 +10,6 @@ import UIKit
 
 class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var personArray: [Person] = []
-    
-    // MARK: - IBOutlets
-    @IBOutlet weak var julietNameTF: RomeoHighlightedTextField!
-    @IBOutlet weak var dateTF: RomeoHighlightedTextField!
-    @IBOutlet weak var eventTF: RomeoHighlightedTextField!
-    @IBOutlet weak var dateLocationTF: RomeoHighlightedTextField!
-    
     // MARK: - Properties
     var dateLog: DateLog?
     var event: Event?
@@ -25,6 +17,13 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var yelp: Yelp?
     var personUID : String?
     var newPerson: Person?
+    var personArray: [Person] = []
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var julietNameTF: RomeoHighlightedTextField!
+    @IBOutlet weak var dateTF: RomeoHighlightedTextField!
+    @IBOutlet weak var eventTF: RomeoHighlightedTextField!
+    @IBOutlet weak var dateLocationTF: RomeoHighlightedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +96,6 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         }
     }
     
-    
     @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -148,7 +146,7 @@ class AddDateViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        guard let julietName = julietNameTF.text, let date = dateTF.text, let event = eventTF.text, let address = dateLocationTF.text
+        guard let julietName = julietNameTF.text, !julietName.isEmpty, let date = dateTF.text, !date.isEmpty, let event = eventTF.text, let address = dateLocationTF.text
             else { return }
         
         if let dateLog = dateLog {

@@ -58,7 +58,6 @@ class CalendarTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -79,7 +78,6 @@ class CalendarTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             let dateLog = dateLogs[indexPath.row]
             DateLogController.shared.deleteDateLog(dateLog: dateLog, dateLogUID: nil) { (error) in
                 if let error = error {
@@ -92,7 +90,6 @@ class CalendarTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editDateDetailVC" {
             if let destinationVC = segue.destination as? AddDateViewController, let indexPath = tableView.indexPathForSelectedRow {

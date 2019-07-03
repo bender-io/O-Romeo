@@ -13,7 +13,6 @@ import FirebaseAuth
 class InterestController {
 
     // MARK: - Properties
-
     static let shared = InterestController()
 
     let db = UserController.shared.db
@@ -144,7 +143,6 @@ class InterestController {
                 }
             }
             completion(nil)
-
         }
     }
 }

@@ -29,21 +29,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         CurrentLocation.shared.locationManager.startUpdatingLocation()
         locationSearchBar.placeholder = "Current Location"
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
-        tabBarController?.tabBar.alpha = 1
-        placesSearchBar.barTintColor = .primary
-        placesSearchBar.tintColor = .highlights
-        locationSearchBar.barTintColor = .primary
-        placesSearchBar.tintColor = .highlights
-        view.backgroundColor = .primary
+        setupUI()
         CurrentLocation.shared.findLocation()
         CurrentLocation.shared.delegate = self
     }
     
-    // TODO: - Add function to Model Controller
     private func callNumber(phoneNumber:String) {
         
         if let phoneCallURL = URL(string: "telprompt://\(phoneNumber)") {
@@ -74,6 +66,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         cell.delegate = self
         cell.awakeFromNib()
         return cell
+    }
+    
+    func setupUI() {
+        tableView.reloadData()
+        tabBarController?.tabBar.alpha = 1
+        placesSearchBar.barTintColor = .primary
+        placesSearchBar.tintColor = .highlights
+        locationSearchBar.barTintColor = .primary
+        placesSearchBar.tintColor = .highlights
+        view.backgroundColor = .primary
     }
 }
 
