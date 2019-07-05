@@ -43,6 +43,7 @@ enum Price: String, Codable {
     case cheap = "$"
     case moderate = "$$"
     case pricey = "$$$"
+    case silly = "$$$$"
 }
 
 struct Category: Codable {
