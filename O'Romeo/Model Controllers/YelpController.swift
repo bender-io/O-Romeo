@@ -46,7 +46,7 @@ class YelpController {
                 let yelpResults = yelpDecode.businesses
                 completion(yelpResults)
             } catch {
-                print(error.localizedDescription)
+                print(error.localizedDescription, error)
                 completion([])
                 return
             }
