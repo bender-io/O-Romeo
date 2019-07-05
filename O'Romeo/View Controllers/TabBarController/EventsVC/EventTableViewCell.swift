@@ -41,6 +41,7 @@ class EventTableViewCell: UITableViewCell {
     func setupUI() {
         self.backgroundColor = .white10
         cellViewDivider.backgroundColor = .primary
+        cellViewFooter.backgroundColor = .primary
         eventNameLabel.textColor = .highlights
         cityLabel.textColor = .white100
         descriptionLabel.textColor = .white100
