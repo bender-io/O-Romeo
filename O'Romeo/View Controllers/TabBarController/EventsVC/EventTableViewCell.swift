@@ -26,6 +26,7 @@ class EventTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellViewDivider: RomeoView!
     @IBOutlet weak var cellViewFooter: RomeoView!
+    
     var event: Event? {
         didSet {
             updateViews()

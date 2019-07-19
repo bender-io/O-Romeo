@@ -75,7 +75,6 @@ class CustomImageView: UIImageView {
         // unwrpa image first
         let imageCache = NSCache<AnyObject, AnyObject>()
         guard let imageURL = eventful.image?.medium.url else { return }
-        //        imageURL.removeFirst()
         let finalURL = "https:" + imageURL
         imageURLString = finalURL
         //        print(imageURL)
